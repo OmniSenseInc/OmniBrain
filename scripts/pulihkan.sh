@@ -124,12 +124,24 @@ if step 7 "Pasang firewall (UFW) + fail2ban"; then
   sudo ufw default deny incoming >/dev/null
   sudo ufw default allow outgoing >/dev/null
   sudo ufw limit 22/tcp comment 'OmniSense SSH rate limit' >/dev/null
-  for net in $(grep -oE '^[0-9.]+/[0-9]+' "$PLAIN/03-ufw-rules.txt" 2>/dev/null | sort -u); do
+  # PENTING: ambil HANYA alamat Cloudflare dari kolom "From" pada baris aturan web.
+  # Pola lama '^[0-9.]+/[0-9]+' tidak cocok sama sekali (baris ufw status menjorok
+  # dengan "[ 2] 80,443/tcp"), sehingga loop-nya kosong dan VPS baru berakhir dengan
+  # firewall yang MEMBLOKIR 80/443 dari Cloudflare -> situs 522/down.
+  mapfile -t NETS < <(grep 'OmniSense Cloudflare web' "$PLAIN/03-ufw-rules.txt" \
+    | grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}|[0-9a-fA-F:]+::?/[0-9]{1,3}' | sort -u)
+  if [[ ${#NETS[@]} -lt 20 ]]; then
+    echo "FATAL: hanya ${#NETS[@]} jaringan Cloudflare terbaca dari 03-ufw-rules.txt."
+    echo "       Jangan lanjut dengan firewall setengah jadi — periksa berkas itu dulu."
+    exit 4
+  fi
+  for net in "${NETS[@]}"; do
     sudo ufw allow from "$net" to any port 80,443 proto tcp comment 'OmniSense Cloudflare web' >/dev/null
   done
   sudo ufw --force enable >/dev/null
   sudo systemctl enable --now fail2ban >/dev/null 2>&1 || true
   sudo ufw status verbose | head -8
+  echo "catatan: situs di VPS ini baru bisa diakses setelah record A Cloudflare diarahkan ke IP-nya"
 fi
 
 if step 8 "Pasang 9router (router model lokal) — opsional"; then

@@ -1,0 +1,9 @@
+python: 3.12.3
+hermes: Hermes Agent v0.21.0 (2026.8.31) · upstream 7bc05085 · local a7198a88 (+1 carried commit)
+Install directory: /home/ubuntu/.hermes/hermes-agent
+Install method: git
+Python: 3.11.16
+OpenAI SDK: 2.24.0
+Update available: 18815 commits behind — run 'hermes update'
+node: v26.8.1
+nginx: nginx version: nginx/1.24.0 (Ubuntu)

@@ -59,6 +59,11 @@ tar czf "$OUT/04-9router.tar.gz" --exclude='.9router/bin' --exclude='.9router/ru
 
 echo "[5/9] Catat keadaan sistem ..."
 sudo ufw status numbered > "$OUT/03-ufw-rules.txt" 2>&1 || true
+# Penjaga: tanpa aturan web Cloudflare, pemulihan di VPS baru akan mengunci 80/443.
+if ! grep -q 'OmniSense Cloudflare web' "$OUT/03-ufw-rules.txt"; then
+  echo "  PERINGATAN: 03-ufw-rules.txt tidak memuat aturan 'OmniSense Cloudflare web'."
+  echo "  Pemulihan nanti akan MEMBLOKIR 80/443. Pasang dulu aturan CF, lalu ulangi bundel."
+fi
 sudo iptables-save > "$OUT/03-iptables.txt" 2>&1 || true
 apt-mark showmanual 2>/dev/null | sort > "$OUT/03-apt-manual.txt" || true
 /opt/omnisense-web/venv/bin/pip freeze 2>/dev/null | sort > "$OUT/03-pip-freeze-web.txt" || true

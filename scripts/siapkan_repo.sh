@@ -88,5 +88,13 @@ if ls "$BASE/bundel"/*.part >/dev/null 2>&1; then
 else
   echo "  (belum ada bundel — jalankan buat_bundel.sh dulu)"
 fi
+# Keadaan sistem (ufw/iptables/apt/pip/versi) TIDAK ikut terenkripsi, jadi harus
+# disalin terpisah. Tanpa 03-ufw-rules.txt, pemulihan di VPS baru akan mengunci 80/443.
+if ls "$BASE/bundel"/03-*.txt >/dev/null 2>&1; then
+  cp -f "$BASE/bundel"/03-*.txt "$REPO/bundel/"
+  echo "  keadaan sistem: $(ls "$REPO/bundel"/03-*.txt | wc -l) berkas"
+else
+  echo "  PERINGATAN: tidak ada berkas 03-*.txt di bundel — jalankan buat_bundel.sh dulu"
+fi
 
 du -sh "$REPO"/* 2>/dev/null ; echo; echo "Jumlah berkas repo: $(find "$REPO" -type f -not -path '*/.git/*' | wc -l)"
