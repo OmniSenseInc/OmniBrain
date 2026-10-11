@@ -1,0 +1,32 @@
+{
+  "version": "3.0",
+  "mode": "screening",
+  "answers": {
+    "S1a": { "value": 4, "evidence": "self_reported", "source": "" },
+    "S1b": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S2a": { "value": null, "evidence": "self_reported", "source": "" },
+    "S2b": { "value": null, "evidence": "self_reported", "source": "" },
+    "S3a": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S3b": { "value": 4, "evidence": "self_reported", "source": "" },
+    "S4a": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S4b": { "value": null, "evidence": "self_reported", "source": "" },
+    "S5a": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S5b": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S6a": { "value": 4, "evidence": "self_reported", "source": "" },
+    "S6b": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S7a": { "value": null, "evidence": "self_reported", "source": "" },
+    "S7b": { "value": null, "evidence": "self_reported", "source": "" },
+    "S8a": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S8b": { "value": 3, "evidence": "self_reported", "source": "" }
+  },
+  "context": {
+    "process": "Pencatatan stok bahan",
+    "problem": "Stok sering kosong saat jam ramai, tidak ada catatan",
+    "process_owner": "Belum ditetapkan",
+    "baseline": { "metric": "kejadian stok kosong", "value": 6, "unit": "kejadian/bulan", "period": "30 hari", "source": "simulasi: ingatan pemilik" },
+    "access_permission": "unknown",
+    "impact": "high",
+    "human_review": "unknown",
+    "fallback": "missing"
+  }
+}

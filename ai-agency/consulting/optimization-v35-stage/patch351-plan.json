@@ -1,0 +1,14 @@
+[
+  {
+    "source": "hermes-plugin/__init__.py",
+    "target": "/home/ubuntu/.hermes/plugins/omnisense-consultation/__init__.py",
+    "before": "157677394a888e925ff9af9867a5880cac882bc88fe40f78c5adff236227252b",
+    "after": "bfbc1dbdc6564eb1d20dc3c93bca912f2257de74963592f83992686fd54213ef"
+  },
+  {
+    "source": "website/assets/konsultasi-ui-v35.js",
+    "target": "/home/ubuntu/ai-agency/website/assets/konsultasi-ui-v35.js",
+    "before": "ad30e7360e5261fd2895afeb345e0a39819e8d34c6ea56a5111fc701fc443684",
+    "after": "54205838079387505417f8a09ff4f0468e903bc85e94463c6891ddda939fa59d"
+  }
+]

@@ -1,0 +1,221 @@
+{
+  "siklus": "SIKLUS 1",
+  "periode": "21 SEP - 18 OKT 2026",
+  "subjudul": "4 PEKAN · TIAP PEKAN 3 RAPAT (1 DATANG + 2 ONLINE) · TIAP PEKAN KELUAR 1 VERSI BARU",
+  "hari0": "HARI 0 · MIN 20 SEP — RAPAT KICKOFF DATANG 19:30 (kunci target Siklus 1 & pasang sistem)",
+  "legenda": [
+    "RAPAT DATANG",
+    "RAPAT ONLINE",
+    "KONTEN",
+    "BATAS AKHIR / VERSI UJI"
+  ],
+  "pekan": [
+    {
+      "label": "PEKAN 1",
+      "tema": "DATA PENJUALAN TERSIMPAN DI SATU TEMPAT",
+      "offline_info": "RAPAT DATANG Sab 26 Sep 16:00",
+      "hari": [
+        {
+          "tgl": "21",
+          "tag": [
+            "KONTEN 1"
+          ]
+        },
+        {
+          "tgl": "22",
+          "tag": []
+        },
+        {
+          "tgl": "23",
+          "tag": [
+            "RAPAT ONLINE 1",
+            "20:00"
+          ]
+        },
+        {
+          "tgl": "24",
+          "tag": [
+            "BATAS 12:00",
+            "KONTEN 2"
+          ]
+        },
+        {
+          "tgl": "25",
+          "tag": [
+            "RAPAT ONLINE 2",
+            "20:00",
+            "VERSI UJI"
+          ]
+        },
+        {
+          "tgl": "26",
+          "tag": [
+            "RAPAT DATANG",
+            "16:00",
+            "VERSI JADI"
+          ],
+          "tipe": "offline"
+        },
+        {
+          "tgl": "27",
+          "tag": []
+        }
+      ]
+    },
+    {
+      "label": "PEKAN 2",
+      "tema": "LAPORAN HARIAN OTOMATIS LEWAT WHATSAPP",
+      "offline_info": "RAPAT DATANG Min 4 Okt 19:30",
+      "hari": [
+        {
+          "tgl": "28",
+          "tag": [
+            "KONTEN 1"
+          ]
+        },
+        {
+          "tgl": "29",
+          "tag": [
+            "RAPAT ONLINE 1",
+            "20:00"
+          ]
+        },
+        {
+          "tgl": "30",
+          "tag": []
+        },
+        {
+          "tgl": "1",
+          "tag": [
+            "RAPAT ONLINE 2",
+            "20:00",
+            "BATAS 12:00",
+            "KONTEN 2"
+          ]
+        },
+        {
+          "tgl": "2",
+          "tag": [
+            "VERSI UJI"
+          ]
+        },
+        {
+          "tgl": "3",
+          "tag": []
+        },
+        {
+          "tgl": "4",
+          "tag": [
+            "RAPAT DATANG",
+            "19:30",
+            "VERSI JADI"
+          ],
+          "tipe": "offline"
+        }
+      ]
+    },
+    {
+      "label": "PEKAN 3",
+      "tema": "INGAT STOK OTOMATIS + TANYA JAWAB 1 PERTANYAAN",
+      "offline_info": "RAPAT DATANG Sab 10 Okt 16:00",
+      "hari": [
+        {
+          "tgl": "5",
+          "tag": [
+            "KONTEN 1"
+          ]
+        },
+        {
+          "tgl": "6",
+          "tag": []
+        },
+        {
+          "tgl": "7",
+          "tag": [
+            "RAPAT ONLINE 1",
+            "20:00"
+          ]
+        },
+        {
+          "tgl": "8",
+          "tag": [
+            "RAPAT ONLINE 2",
+            "20:00",
+            "BATAS 12:00",
+            "KONTEN 2"
+          ]
+        },
+        {
+          "tgl": "9",
+          "tag": [
+            "VERSI UJI"
+          ]
+        },
+        {
+          "tgl": "10",
+          "tag": [
+            "RAPAT DATANG",
+            "16:00",
+            "VERSI JADI"
+          ],
+          "tipe": "offline"
+        },
+        {
+          "tgl": "11",
+          "tag": []
+        }
+      ]
+    },
+    {
+      "label": "PEKAN 4",
+      "tema": "PENGUATAN + SIAP DIPAKAI KLIEN",
+      "offline_info": "RAPAT DATANG Min 18 Okt 19:30",
+      "hari": [
+        {
+          "tgl": "12",
+          "tag": [
+            "KONTEN 1"
+          ]
+        },
+        {
+          "tgl": "13",
+          "tag": [
+            "RAPAT ONLINE 1",
+            "20:00"
+          ]
+        },
+        {
+          "tgl": "14",
+          "tag": []
+        },
+        {
+          "tgl": "15",
+          "tag": [
+            "RAPAT ONLINE 2",
+            "20:00",
+            "KONTEN 2"
+          ]
+        },
+        {
+          "tgl": "16",
+          "tag": [
+            "VERSI UJI"
+          ]
+        },
+        {
+          "tgl": "17",
+          "tag": []
+        },
+        {
+          "tgl": "18",
+          "tag": [
+            "RAPAT DATANG",
+            "19:30",
+            "CEK AKHIR"
+          ],
+          "tipe": "offline"
+        }
+      ]
+    }
+  ]
+}

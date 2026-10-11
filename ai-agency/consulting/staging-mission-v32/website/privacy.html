@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kebijakan Privasi — OmniSense</title>
+<meta name="description" content="Kebijakan Privasi OmniSense: data apa yang diproses lewat API Instagram dan lewat penilaian kesiapan di situs, untuk apa, dan cara meminta penghapusannya.">
+<meta name="theme-color" content="#080808">
+<link rel="canonical" href="https://omnisense.id/privacy.html" />
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    color-scheme: dark;
+    --obsidian:#080808; --obsidian-2:#101010; --panel:rgba(255,255,255,.035);
+    --line:rgba(255,255,255,.10); --line-2:rgba(255,255,255,.16);
+    --signal:#14B8A4; --white:#FAFAFA; --slate:#A1A1AA;
+  }
+  *{box-sizing:border-box}
+  body { margin:0; background:var(--obsidian); color:var(--white);
+         font:16px/1.75 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         -webkit-font-smoothing:antialiased; }
+  main { max-width:760px; margin:0 auto; padding:44px 22px 96px; }
+  .top { display:flex; align-items:center; justify-content:space-between; gap:16px;
+         border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:38px; }
+  .brand { display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--white);
+           font-family:"Outfit",sans-serif; font-size:17px; letter-spacing:-.01em; }
+  .brand img { width:26px; height:26px; }
+  .back { color:var(--slate); text-decoration:none; font-size:14px; }
+  .back:hover, a:hover { color:var(--signal); }
+  h1 { font-family:"Outfit",sans-serif; font-size:clamp(26px,4vw,32px); line-height:1.22;
+       color:var(--white); letter-spacing:-.02em; margin:0 0 8px; font-weight:600; }
+  h2 { font-family:"Outfit",sans-serif; font-size:19px; color:var(--white); margin:38px 0 10px; font-weight:600; }
+  h3 { font-size:16px; color:var(--white); margin:26px 0 8px; font-weight:600; }
+  p, li { color:var(--slate); }
+  strong { color:var(--white); }
+  .meta { color:var(--slate); font-size:14px; margin:0 0 30px; }
+  hr { border:0; border-top:1px solid var(--line); margin:44px 0; }
+  a { color:var(--signal); }
+  code { background:var(--obsidian-2); border:1px solid var(--line); border-radius:5px;
+         padding:1px 6px; font-size:14px; color:var(--white); }
+  .box { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:18px 0; }
+  footer { color:var(--slate); font-size:14px; margin-top:56px; border-top:1px solid var(--line); padding-top:20px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <a class="brand" href="./"><img src="assets/logo-mark-white-256.png" alt="" width="26" height="26" /><span>omnisense</span></a>
+    <a class="back" href="./">← Kembali ke beranda</a>
+  </div>
+
+  <h1>Kebijakan Privasi OmniSense</h1>
+  <p class="meta">Berlaku sejak: 21 September 2026 · Terakhir diperbarui: 30 September 2026</p>
+
+  <p>OmniSense adalah layanan konsultasi dan implementasi AI untuk bisnis, beroperasi di
+  <a href="https://omnisense.id">omnisense.id</a> dan mengelola akun Instagram resmi
+  <a href="https://instagram.com/omnisense_id">@omnisense_id</a>. Kebijakan ini menjelaskan
+  data apa yang kami proses — baik melalui API Instagram maupun melalui fitur penilaian
+  kesiapan di situs kami — untuk apa, dan bagaimana kamu bisa meminta penghapusannya.</p>
+
+  <h2>1. Data yang kami proses</h2>
+  <p>Kami menggunakan API resmi Instagram (Instagram Platform) hanya untuk mengelola akun Instagram
+  milik kami sendiri. Data yang diproses terbatas pada:</p>
+  <ul>
+    <li>informasi akun Instagram kami sendiri: ID akun, nama pengguna, jenis akun, dan jumlah media;</li>
+    <li>token akses (access token) yang diterbitkan Instagram untuk akun kami, disimpan di server kami
+        dengan izin file terbatas dan masa berlaku terbatas;</li>
+    <li>konten yang kami publikasikan sendiri: gambar dan teks caption yang kami buat, serta metadata
+        publikasi (waktu, ID media, tautan pos).</li>
+  </ul>
+  <p>Kami <strong>tidak</strong> mengakses data pengguna Instagram lain, tidak mengirim pesan langsung
+  (DM) secara otomatis, tidak melakukan tindakan mengikuti atau menyukai, dan tidak mengumpulkan data
+  pribadi pihak ketiga melalui API ini.</p>
+
+  <h2 id="penilaian">2. Penilaian kesiapan versi sebelumnya</h2>
+  <p>Fitur <a href="./#penilaian">penilaian kesiapan</a> di situs kami berjalan
+  <strong>sepenuhnya di perangkat kamu</strong>. Jawaban lima belas pertanyaan, pilihan tingkat
+  keyakinan, dan hasil skor disimpan hanya di penyimpanan lokal peramban kamu
+  (<code>localStorage</code>) supaya tidak hilang saat halaman dimuat ulang. Data itu
+  <strong>tidak dikirim ke server kami dan tidak kami simpan</strong>.</p>
+  <ul>
+    <li>Kami tidak memakai cookie pelacak, tidak memasang analitik pihak ketiga, dan tidak membuat profil pengunjung.</li>
+    <li>Kamu bisa menghapus seluruh jawaban kapan saja lewat tombol hapus di halaman penilaian, atau dengan membersihkan data situs di peramban kamu.</li>
+    <li>Kalau kamu menekan tombol kirim ke WhatsApp, aplikasi WhatsApp di perangkat kamu yang membuka percakapan dengan kami dan mengirimkan isi pesan (skor dan jawaban) atas persetujuan kamu. Sejak itu, isi percakapan tersebut kami proses sebagai permintaan konsultasi — sama seperti pesan WhatsApp biasa yang kamu kirim ke kami.</li>
+  </ul>
+
+  <h2>3. Tujuan pemrosesan</h2>
+  <ul>
+    <li>mempublikasikan konten edukasi dan informasi milik OmniSense ke akun Instagram kami;</li>
+    <li>memeriksa status akun dan status publikasi konten kami sendiri;</li>
+    <li>menanggapi permintaan penilaian dan konsultasi yang kamu kirim sendiri lewat WhatsApp;</li>
+    <li>menjaga keamanan dan keandalan integrasi (memperbarui token, mencatat log publikasi).</li>
+  </ul>
+
+  <h2>4. Pembagian data</h2>
+  <p>Kami tidak menjual dan tidak menyewakan data. Data hanya diproses oleh kami dan oleh penyedia
+  infrastruktur yang kami pakai untuk menjalankan layanan (server, penyimpanan file). Instagram/Meta
+  memproses data sesuai kebijakan mereka sendiri sebagai penyedia platform.</p>
+
+  <h2>5. Penyimpanan dan retensi</h2>
+  <ul>
+    <li>token akses disimpan sampai dicabut oleh pemilik akun atau diperbarui secara berkala;</li>
+    <li>log publikasi (judul konten, waktu, ID media, tautan) disimpan untuk keperluan audit internal;</li>
+    <li>berkas gambar poster disimpan selama diperlukan untuk keperluan publikasi dan arsip brand;</li>
+    <li>jawaban penilaian di situs tidak pernah masuk ke server kami, jadi tidak ada yang perlu dihapus di sisi kami.</li>
+  </ul>
+
+  <h2 id="hapus-data">6. Cara meminta penghapusan data</h2>
+  <div class="box">
+    <p style="margin:0 0 10px"><strong>Instruksi penghapusan data (data deletion instructions)</strong></p>
+    <ol style="margin:0">
+      <li>Kirim permintaan melalui salah satu kanal resmi kami: pesan langsung (DM) ke Instagram
+          <a href="https://instagram.com/omnisense_id">@omnisense_id</a>, atau WhatsApp ke
+          <a href="https://wa.me/6288809640700">0888 0964 0700</a>, dengan keterangan akun Instagram
+          atau percakapan yang dimaksud.</li>
+      <li>Kami akan menghapus token akses dan data terkait akun tersebut dari sistem kami dalam
+          <strong>7 hari kerja</strong>, lalu mengirim konfirmasi melalui kanal yang sama.</li>
+    </ol>
+    <p style="margin:12px 0 0">Kamu juga dapat mencabut akses aplikasi secara mandiri kapan saja melalui
+    Instagram → <em>Settings and activity</em> → <em>Apps and websites</em> → pilih aplikasi →
+    <em>Remove</em>. Setelah dicabut, kami tidak lagi memiliki akses ke akun tersebut.</p>
+  </div>
+
+  <h2>7. Keamanan</h2>
+  <p>Kredensial disimpan hanya di server kami dengan izin akses terbatas, tidak ditulis di dalam
+  kode sumber, dan tidak dibagikan melalui kanal publik. Akses internal dibatasi pada tim inti OmniSense.</p>
+
+  <h2>8. Perubahan kebijakan</h2>
+  <p>Jika kebijakan ini berubah, kami memperbarui tanggal di bagian atas halaman dan menampilkan
+  versi terbaru di alamat ini.</p>
+
+  <h2>9. Kontak</h2>
+  <p>Pertanyaan tentang kebijakan ini atau permintaan terkait data:
+  DM Instagram <a href="https://instagram.com/omnisense_id">@omnisense_id</a> ·
+  WhatsApp <a href="https://wa.me/6288809640700">0888 0964 0700</a> ·
+  situs <a href="https://omnisense.id">omnisense.id</a>.</p>
+
+  <hr>
+
+  <h2 id="english">Privacy Policy (English)</h2>
+  <p class="meta">Effective: 21 September 2026 · Last updated: 30 September 2026</p>
+  <p>OmniSense is an AI consultancy operating at <a href="https://omnisense.id">omnisense.id</a>.
+  We use the official Instagram Platform APIs solely to manage our own Instagram account
+  (@omnisense_id). We process only: our own account information (account ID, username, account type,
+  media count), the access token issued for our own account (stored on our servers with restricted
+  file permissions), and the content we publish ourselves (image, caption, publication metadata).
+  We do <strong>not</strong> access other users' data, send automated direct messages, follow or like
+  on behalf of anyone, or collect third-party personal data through these APIs. We do not sell or rent
+  data; it is processed by us and by the infrastructure providers we use to run the service.</p>
+  <h3>Readiness assessment on this site</h3>
+  <p>The <a href="./#penilaian">readiness assessment</a> runs entirely in your browser. Your answers,
+  confidence choices and score are kept only in your browser's local storage so they survive a page
+  reload; they are <strong>never sent to or stored on our servers</strong>. If you tap the WhatsApp
+  button, your own WhatsApp app opens and sends the message with your consent — from then on it is
+  treated as a consultation request, like any WhatsApp message you send us.</p>
+  <h3>Data deletion</h3>
+  <p>To request deletion of data related to an Instagram account, send a direct message to
+  <a href="https://instagram.com/omnisense_id">@omnisense_id</a> or WhatsApp
+  <a href="https://wa.me/6288809640700">0888 0964 0700</a>. We remove the access token and related records
+  within <strong>7 business days</strong> and confirm through the same channel. You may also revoke app
+  access yourself via Instagram → Settings and activity → Apps and websites → select the app → Remove.</p>
+  <h3>Contact</h3>
+  <p>Instagram DM <a href="https://instagram.com/omnisense_id">@omnisense_id</a> ·
+  <a href="https://omnisense.id">omnisense.id</a></p>
+
+  <h2 id="konsultasi-v3">Screening konsultasi v3 (pratinjau internal)</h2>
+  <p>Halaman <a href="konsultasi-v3.html">konsultasi v3</a> menghitung jawaban di browser dan tidak menyimpannya ke localStorage atau mengirimnya otomatis ke server. Memuat ulang halaman menghapus isian. Setelah Anda memberikan persetujuan dan menekan tombol WhatsApp, aplikasi WhatsApp membuka draf berisi konteks, jawaban, dan hasil; Anda tetap menentukan apakah mengirimnya. Pesan yang Anda kirim kemudian dapat tercatat dalam riwayat WhatsApp dan sistem konsultasi OmniSense. Jangan memasukkan password, token, atau data rahasia ke form/chat. Keterangan penyimpanan versi sebelumnya di atas tidak berlaku untuk v3.</p>
+  <h3>Consultation screening v3 (internal preview)</h3>
+  <p>The v3 preview calculates answers in the browser, without localStorage or automatic submission. Reloading clears the form. After consent, the WhatsApp button opens a draft containing context, answers and results; you decide whether to send it. Sent messages may be recorded in WhatsApp history and OmniSense consultation systems. Do not enter passwords, tokens or confidential data. The legacy storage description above does not apply to v3.</p>
+
+  <footer>© 2026 OmniSense · <a href="./">omnisense.id</a> · <a href="https://instagram.com/omnisense_id">@omnisense_id</a></footer>
+</main>
+</body>
+</html>

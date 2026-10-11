@@ -1,0 +1,28 @@
+{
+  "tag": "[ RADAR AI ]",
+  "tanggal": "19 SEPTEMBER 2026 · KABAR AI",
+  "label_kartu": "YANG PERLU KAMU TAHU",
+  "poin": [
+    {
+      "judul": "Apa yang terjadi",
+      "isi": "Mantan peneliti OpenAI merilis model AI baru bernama Jev. Ia tidak menulis teks, tapi langsung mengambil keputusan untuk tugas otomatis."
+    },
+    {
+      "judul": "Kenapa ini penting",
+      "isi": "Karena jawabannya ditentukan di awal, model ini tidak bisa mengarang. Di uji nyata: 5-18 kali lebih cepat dan jauh lebih murah."
+    },
+    {
+      "judul": "Untuk bisnis kamu",
+      "isi": "Pekerjaan berulang seperti memilah pesanan, merapikan data, dan menjawab rutin bisa diserahkan ke AI tanpa takut jawabannya ngawur."
+    }
+  ],
+  "headline": [
+    "AI BARU: CEPAT, MURAH,",
+    "TIDAK BISA MENGARANG"
+  ],
+  "headline_caption": "Model AI baru Jev: cepat, murah, dan tidak bisa mengarang",
+  "subjudul": "Otomatisasi makin terjangkau dan bisa dipercaya. Mulai dari pekerjaan kecil yang paling sering bikin repot.",
+  "cta": "JADWALKAN KONSULTASI GRATIS",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #KecerdasanBuatan #BisnisIndonesia"
+}

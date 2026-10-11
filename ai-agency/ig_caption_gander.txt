@@ -1,0 +1,19 @@
+Ada satu kebiasaan asisten AI yang bikin kita menunggu: dia berhenti bicara begitu mulai mengerjakan sesuatu.
+
+Tencent baru memperkenalkan Gander, dan pendekatannya berbeda. Model ini memproses suara, gambar, dan teks sekaligus — bisa disela kapan saja, dan tetap mengerjakan tugas berat di latar belakang. Contoh yang mereka pakai: sementara agen memperbaiki bug, kamu masih bisa bertanya dan menambah permintaan.
+
+Caranya, pekerjaan dibagi dua. Satu bagian menjaga obrolan tetap lancar detik per detik. Satu bagian lagi menangani tugas panjang — dan bagian ini bisa ditukar dengan sistem agen lain seperti Codex atau Claude Code, tanpa melatih ulang model obrolannya.
+
+Catatan jujur, karena ini riset yang masih awal: pada uji Full-Duplex-Bench v3, Gander paling tepat waktu — menyela pengguna hanya 8% kasus, dibanding 13,5% GPT-Realtime. Tapi akurasi tugasnya masih sedikit di bawah pesaing terlemah, dan pemahaman video serta audionya masih lemah. Tim Tencent menyebut bobot dan data latihnya akan dirilis terbuka.
+
+Yang menarik untuk bisnis kamu:
+• Asisten AI tidak lagi harus diam saat bekerja — pengalaman pakainya jadi jauh lebih natural
+• Bagian otaknya bisa ditukar: ganti mesinnya saat model baru muncul, tanpa membangun ulang alur kerja
+• Prinsip ini berlaku umum — pisahkan bagian yang harus cepat dari bagian yang butuh berpikir panjang
+• Mulai dari satu alur kerja, ukur hasilnya, baru diperluas ke tim lain
+
+Di OmniSense, kami membantu bisnis memetakan pekerjaan mana yang layak dijalankan dengan AI, lalu menyusun alur kerjanya — dari assessment gratis, roadmap, implementasi, sampai pendampingan.
+
+Mau tahu pekerjaan mana di bisnis kamu yang paling cepat terbantu? DM atau buka profil → lanjut chat ke WhatsApp, dan jadwalkan konsultasi gratis. Tanpa biaya, tanpa komitmen.
+
+#OmniSense #AIAgent #AIuntukBisnis #KonsultanAI #OmniSenseID

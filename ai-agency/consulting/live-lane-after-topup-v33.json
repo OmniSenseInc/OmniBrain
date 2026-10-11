@@ -1,0 +1,9 @@
+{
+  "model_success": true,
+  "personalized_reply_used": true,
+  "application_question_appended": true,
+  "reply_quality_guard": true,
+  "transport": "simulated; no WhatsApp sent",
+  "database": "temporary; removed",
+  "reply": "Prioritas bisnisnya tampak pada percepatan dan akurasi pelaporan mingguan, tetapi nilainya belum bisa dipastikan karena durasi dan tingkat kesalahan masih tanpa angka dasar. Bukti yang perlu diperiksa adalah log waktu siklus penyusunan laporan, jumlah koreksi atau rekonsiliasi ulang, serta volume pencarian dokumen per minggu.\n\nBagaimana urutan proses ini dari awal sampai selesai, dan bagian mana yang paling sering tersendat?"
+}

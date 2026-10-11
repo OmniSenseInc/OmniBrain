@@ -1,0 +1,21 @@
+Ada satu perubahan besar yang jarang jadi berita utama, padahal ini soal cara kita bekerja.
+
+Mulai 9 Oktober, Claude (buatan Anthropic) bisa memimpin sampai 1.000 agen AI dalam satu tugas. Satu "agen utama" menyusun rencana, membagi pekerjaan ke banyak agen (maksimal 64 bekerja bersamaan), lalu menggabungkan hasilnya — semuanya berjalan sendiri di latar belakang.
+
+Uji mereka: pada 70 masalah yang disembunyikan di dalam kode sebesar 116.000 baris, satu agen biasa hanya menemukan 14–27. Dengan banyak agen yang bekerja berlapis, hasilnya konsisten 66 dari 70 — tiga kali berturut-turut.
+
+Kenapa ini penting:
+• Pekerjaan besar — memeriksa, merapikan, dan mengaudit banyak hal sekaligus — kini bisa selesai dalam jam, bukan minggu.
+• Agen utama tidak lagi jadi penyumbat: yang mengatur pembagian kerja adalah program, bukan satu orang.
+• Catatan jujurnya: makin banyak agen, makin banyak biaya. Anthropic sendiri menyarankan mulai dari tugas yang kecil.
+
+Untuk bisnis kamu:
+Bayangkan punya satu orang yang bisa mendelegasikan pekerjaan ke ratusan tangan — asal tahu mana yang boleh disentuh, berapa anggarannya, dan bagaimana hasilnya diperiksa. Di situ bedanya antara "punya AI" dan "memakai AI yang benar-benar menghemat waktu".
+
+Kalau kamu ingin tahu bagian mana dari bisnis kamu yang paling pas dikerjakan agen AI — dan mana yang lebih baik tetap di tangan manusia — kami bantu petakan dari nol.
+
+DM / buka profil → lanjut chat ke WhatsApp. Konsultasi awal gratis, tanpa komitmen.
+
+Foto: Dario Amodei at TechCrunch Disrupt 2023 01 (CC BY 2.0) — Wikimedia Commons
+
+#OmniSense #AIAgent #AIuntukBisnis #KonsultanAI #OmniSenseID

@@ -1,0 +1,28 @@
+{
+    "tag": "[ RADAR AI ]",
+    "tanggal": "22 SEPTEMBER 2026 \u00b7 KABAR AI",
+    "label_kartu": "YANG PERLU KAMU TAHU",
+    "poin": [
+        {
+            "judul": "Apa yang terjadi",
+            "isi": "OpenAI merilis GPT-6 Sol dan Luna pada 22 September. Harga pemakaiannya dipotong separuh dari seri sebelumnya: Sol dari 4 jadi 2 dolar per juta token input, Luna dari 0,20 jadi 0,10 dolar. Potongan ini datang dari perbaikan cache dan efisiensi mesinnya."
+        },
+        {
+            "judul": "Kenapa ini penting",
+            "isi": "OpenAI mengklaim Sol membuat kesalahan fakta sekitar separuh lebih sedikit dari pendahulunya, dan memberi diskon 90% untuk input yang tersimpan di cache. Penilai independen mencatat kepintarannya tidak melonjak \u2014 yang berubah terutama biayanya."
+        },
+        {
+            "judul": "Untuk bisnis kamu",
+            "isi": "Ini saat yang tepat menghitung ulang anggaran otomatisasi: pekerjaan bervolume tinggi seperti meringkas dan menarik data kini jauh lebih murah. Mulai dari satu alur kerja yang paling sering diulang, ukur hasilnya, baru diperluas."
+        }
+    ],
+    "headline": [
+        "BIAYA AI DIPOTONG",
+        "SAMPAI SETENGAH"
+    ],
+    "headline_caption": "OpenAI memangkas harga model GPT-6 Sol dan Luna sampai separuh.",
+    "subjudul": "OpenAI merilis GPT-6 Sol dan Luna: biaya menjalankannya turun separuh, kesalahan fakta lebih sedikit \u2014 kepintarannya belum melonjak.",
+    "cta": "JADWALKAN KONSULTASI GRATIS",
+    "kaki": "@omnisense_id \u2022 omnisense.id",
+    "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #OtomatisasiAI #BisnisIndonesia"
+}

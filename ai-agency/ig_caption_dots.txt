@@ -1,0 +1,23 @@
+Di acara DevDay hari ini, OpenAI memperkenalkan Dots: agen AI yang bekerja terus-menerus di komputer awannya sendiri — bukan menunggu kamu mengetik pertanyaan.
+
+Yang paling menarik untuk bisnis bukan versi pribadinya. Tapi "specialist Dots": agen dengan peran tetap di dalam organisasi — pengadaan, pemrosesan faktur, pemasaran email, layanan pelanggan, pengelolaan kontrak. Setiap Dot punya identitas, kredensial, dan komputernya sendiri.
+
+Tiga hal yang OpenAI tekankan soal pagar pengamannya:
+• Setiap Dot punya identitas dan kredensial sendiri, jadi jejak tindakannya bisa ditelusuri.
+• Ada "Custom Rules" — kamu tentukan tindakan mana yang boleh jalan sendiri, mana yang wajib minta izin, mana yang dilarang.
+• Tindakan sensitif seperti mengganti kata sandi atau menghapus data permanen selalu tetap di tangan manusia.
+
+Arahnya makin jelas: kemampuan agen tidak lagi dinilai dari seberapa banyak ia bisa melakukan, tapi dari seberapa jelas batas dan jejak tindakannya.
+
+Untuk bisnis kamu, urutannya sederhana:
+1. Pilih satu pekerjaan rutin yang hasilnya mudah diperiksa.
+2. Tetapkan lebih dulu daftar tindakan yang wajib minta izin — pembayaran, pengiriman pesan, perubahan harga.
+3. Pantau beberapa minggu, baru tambah pekerjaan berikutnya.
+
+Agen yang baik bukan yang paling banyak bisa, tapi yang batasnya paling jelas.
+
+Kalau kamu ingin tahu pekerjaan mana di bisnis kamu yang paling layak diserahkan ke agen — dan pagar apa yang perlu dipasang lebih dulu — kami siap membantu. DM atau buka profil kami, lalu lanjut chat ke WhatsApp untuk jadwal konsultasi gratis.
+
+Foto: Close-up view of a laptop keyboard while in use (CC BY 2.0) — Wikimedia Commons.
+
+#OmniSense #AIAgent #AIuntukBisnis #KonsultanAI #OmniSenseID

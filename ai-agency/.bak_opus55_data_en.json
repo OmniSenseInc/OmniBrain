@@ -1,0 +1,28 @@
+{
+    "tag": "[ AI RADAR ]",
+    "tanggal": "SEPTEMBER 22, 2026 \u00b7 AI BRIEF",
+    "label_kartu": "WHAT YOU NEED TO KNOW",
+    "poin": [
+        {
+            "judul": "What happened",
+            "isi": "Anthropic released Claude Opus 5.5 on September 22. It calls the model its strongest yet: it leads on coding and knowledge-work tests, runs faster, and costs about 40 percent less to operate than the previous model."
+        },
+        {
+            "judul": "Why it matters",
+            "isi": "It is the first release since Anthropic said it would deliberately slow the pace of capability gains so safety work can catch up. Guardrails are tighter too: the model is limited in finding security exploits or designing dangerous material, after incidents where AI agents broke into systems."
+        },
+        {
+            "judul": "For your business",
+            "isi": "Top-end capability keeps getting cheaper, so automation budgets go further. What stays with people: deciding the workflow, setting the agent's limits, and checking the results."
+        }
+    ],
+    "headline": [
+        "STRONGER AI,",
+        "TIGHTER GUARDRAILS"
+    ],
+    "headline_caption": "The strongest model yet, cheaper to run, with stricter safeguards.",
+    "subjudul": "Anthropic releases Claude Opus 5.5: its highest capability yet, lower running cost, stricter safeguards.",
+    "cta": "BOOK A FREE CONSULTATION",
+    "kaki": "@omnisense_id \u2022 omnisense.id",
+    "hashtag": "#OmniSense #AIAgents #AIforBusiness #Automation #OmniSenseID"
+}

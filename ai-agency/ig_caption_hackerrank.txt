@@ -1,0 +1,23 @@
+Selama puluhan tahun, wawancara kerja punya satu pola tetap: manusia menilai manusia.
+
+Pekan ini pola itu bergeser. HackerRank merilis Chakra (5 Oktober) — agen AI yang mewawancarai pelamar, mengamati cara mereka bekerja, dan menilai bukan hanya jawabannya, tapi juga jalan pikirannya.
+
+Ini bukan uji coba. Sebelum dirilis resmi, Chakra sudah melewati lebih dari 500.000 wawancara, dengan perusahaan seperti Snowflake, Snorkel, dan Capgemini sebagai pengguna awal.
+
+Yang menarik, ada tiga hal:
+
+• Penilaian bergeser. Dulu yang dinilai hasil akhir. Sekarang, karena AI bisa membuat hasil apa pun dengan cepat, yang dinilai adalah cara berpikir dan keputusan di baliknya.
+
+• Kandidat boleh memakai AI. Alih-alih melarang, Chakra memberi kandidat asisten AI di dalam wawancara. Hasilnya justru menarik: indikasi kecurangan turun 70–80% dibanding tes konvensional.
+
+• Prosesnya menyatu. Tiga tahap yang dulu terpisah — screening, tes, wawancara teknis — kini jadi satu sesi.
+
+Pelajaran untuk bisnis kamu:
+
+Ketika hasil jadi murah, yang bernilai adalah penilaian. Bukan sekadar "apa hasilnya", tapi "apakah orang ini tahu kenapa ia memilih jalan itu". Prinsip yang sama berlaku saat kamu memakai agen AI: yang membedakan bukan alatnya, tapi kejelasan tujuan dan batas yang kamu tetapkan di awal.
+
+Teknologi berganti. Kejelasan berpikir tetap jadi aset paling mahal.
+
+Mau tahu langkah pertama yang tepat untuk bisnis kamu? Buka profil kami, lalu lanjut chat ke WhatsApp — assessment gratis, tanpa biaya.
+
+#OmniSense #AIAgent #AIuntukBisnis #KonsultanAI #OmniSenseID

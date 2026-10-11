@@ -1,0 +1,71 @@
+========================================================================
+PROMPT 2 — ENGLISH (same prompt, paste as-is)
+========================================================================
+Vertical monthly-calendar poster, 4:5 ratio (1080x1350 px), premium minimalist
+Swiss-tech editorial, dark monochrome, generous whitespace. Obsidian black background #09090B.
+Centered dark glass card #121215, 20px rounded corners, 1px border #27272A. Vital content only
+inside the safe area Y 135-1215 px. Modern geometric sans-serif typography (Inter Tight Bold /
+Montserrat ExtraBold), tight letter-spacing, crisp clean letterforms. Top-left header: small
+bracketed label "[ KALENDER SIKLUS ]" in slate grey #94A3B8. Top-right header: white spiral
+logo #FFFFFF with lowercase wordmark "omnisense" in white. Ultra-bold ALL-CAPS white headline:
+"RENCANA BULANAN". Below it a smaller white subtitle, then one slate-grey explainer line.
+One dark glass strip holding a single small white line of text. Main body: 8-column x 4-row
+grid — leftmost column holds week labels (white) with small slate theme text beneath, then
+seven day columns SEN SEL RAB KAM JUM SAB MIN. Each cell: dark rounded rectangle with bold
+white date number; offline-meeting cells are solid white #FFFFFF with a black date number;
+online-meeting cells have a thin 2px white outline. Below the grid a small legend row
+(white swatch = OFFLINE, white-outline swatch = ONLINE) plus dim grey note text. Small dim
+grey centered footer: "@omnisense_id • omnisense.id".
+LOCKED PALETTE: only black #09090B, glass #121215, white #FFFFFF, slate grey #94A3B8 and
+#64748B. NO other colors, NO glow, NO colorful gradients, NO 3D ornaments, NO people,
+NO busy icons. Clean, calm, professional.
+Legend below the grid: "RAPAT DATANG" (white swatch), "RAPAT ONLINE" (white-outline swatch),
+and small text "tulisan kecil di kotak = tugas hari itu".
+
+TEXT THAT MUST APPEAR EXACTLY AS WRITTEN (do not translate, do not paraphrase, spell every letter exactly):
+- Subtitle: "SIKLUS 1 · 21 SEP - 18 OKT 2026"
+- Explainer line: "4 PEKAN · TIAP PEKAN 3 RAPAT (1 DATANG + 2 ONLINE) · TIAP PEKAN KELUAR 1 VERSI BARU"
+- Glass strip under the headline: "HARI 0 · MIN 20 SEP — RAPAT KICKOFF DATANG 19:30 (kunci target Siklus 1 & pasang sistem)"
+
+GRID CONTENT (8 columns x 4 rows). Column 1 = week label + theme; columns 2-8 = days SEN..MIN. Cell contents:
+
+  PEKAN 1 | theme: "DATA PENJUALAN TERSIMPAN DI SATU TEMPAT" | column footnote: "RAPAT DATANG Sab 26 Sep 16:00"
+    SEN date 21 -> plain dark cell; small text: KONTEN 1
+    SEL date 22 -> plain dark cell; small text: (empty, date number only)
+    RAB date 23 -> WHITE-OUTLINED CELL (online meeting); small text: RAPAT ONLINE 1, 20:00
+    KAM date 24 -> plain dark cell; small text: BATAS 12:00, KONTEN 2
+    JUM date 25 -> WHITE-OUTLINED CELL (online meeting); small text: RAPAT ONLINE 2, 20:00, VERSI UJI
+    SAB date 26 -> SOLID WHITE CELL (onsite meeting); small text: RAPAT DATANG, 16:00, VERSI JADI
+    MIN date 27 -> plain dark cell; small text: (empty, date number only)
+
+  PEKAN 2 | theme: "LAPORAN HARIAN OTOMATIS LEWAT WHATSAPP" | column footnote: "RAPAT DATANG Min 4 Okt 19:30"
+    SEN date 28 -> plain dark cell; small text: KONTEN 1
+    SEL date 29 -> WHITE-OUTLINED CELL (online meeting); small text: RAPAT ONLINE 1, 20:00
+    RAB date 30 -> plain dark cell; small text: (empty, date number only)
+    KAM date  1 -> WHITE-OUTLINED CELL (online meeting); small text: RAPAT ONLINE 2, 20:00, BATAS 12:00, KONTEN 2
+    JUM date  2 -> plain dark cell; small text: VERSI UJI
+    SAB date  3 -> plain dark cell; small text: (empty, date number only)
+    MIN date  4 -> SOLID WHITE CELL (onsite meeting); small text: RAPAT DATANG, 19:30, VERSI JADI
+
+  PEKAN 3 | theme: "INGAT STOK OTOMATIS + TANYA JAWAB 1 PERTANYAAN" | column footnote: "RAPAT DATANG Sab 10 Okt 16:00"
+    SEN date  5 -> plain dark cell; small text: KONTEN 1
+    SEL date  6 -> plain dark cell; small text: (empty, date number only)
+    RAB date  7 -> WHITE-OUTLINED CELL (online meeting); small text: RAPAT ONLINE 1, 20:00
+    KAM date  8 -> WHITE-OUTLINED CELL (online meeting); small text: RAPAT ONLINE 2, 20:00, BATAS 12:00, KONTEN 2
+    JUM date  9 -> plain dark cell; small text: VERSI UJI
+    SAB date 10 -> SOLID WHITE CELL (onsite meeting); small text: RAPAT DATANG, 16:00, VERSI JADI
+    MIN date 11 -> plain dark cell; small text: (empty, date number only)
+
+  PEKAN 4 | theme: "PENGUATAN + SIAP DIPAKAI KLIEN" | column footnote: "RAPAT DATANG Min 18 Okt 19:30"
+    SEN date 12 -> plain dark cell; small text: KONTEN 1
+    SEL date 13 -> WHITE-OUTLINED CELL (online meeting); small text: RAPAT ONLINE 1, 20:00
+    RAB date 14 -> plain dark cell; small text: (empty, date number only)
+    KAM date 15 -> WHITE-OUTLINED CELL (online meeting); small text: RAPAT ONLINE 2, 20:00, KONTEN 2
+    JUM date 16 -> plain dark cell; small text: VERSI UJI
+    SAB date 17 -> plain dark cell; small text: (empty, date number only)
+    MIN date 18 -> SOLID WHITE CELL (onsite meeting); small text: RAPAT DATANG, 19:30, CEK AKHIR
+
+Legend below the grid: "RAPAT DATANG" (white swatch) · "RAPAT ONLINE" (white-outline swatch) · "tulisan kecil di kotak = tugas hari itu"
+
+NEGATIVE: colors other than black/white/slate, glow, colorful gradients, photos of people, wrong date numbers, blurred or misspelled text, watermark, signature, device mockups.
+

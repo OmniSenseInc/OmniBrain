@@ -1,0 +1,83 @@
+'use strict';
+(()=>{
+const BANK=window.OMNISENSE_CONSULTING_V3,$=id=>document.getElementById(id),answers={};
+const fields=['process','problem','owner','metric','baseline','unit','period','source'];
+const titles=['Konteks bisnis','Strategi dan fondasi','Data dan teknologi','Tim dan proses','Tata kelola dan kelayakan'];
+const DRAFT_KEY='omnisense-screening-draft-v35',DRAFT_TTL=2*60*60*1000;
+let step=0,lastPayload=null,requestId=null,gatewayRevision=0,sending=false,expiresAt=0;
+const el=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
+for(const d of BANK.dimensions){const line=el('p',d.name+' · '+Math.round(d.weight*(d.weight<=1?100:1))+'%');line.className='hint';$('weights').append(line);}
+for(const id of fields){const error=el('p');error.id=id+'Error';error.className='field-error';error.hidden=true;$(id).insertAdjacentElement('afterend',error);$(id).setAttribute('aria-describedby',error.id);}
+for(const [index,q] of BANK.screening.entries()){
+ const card=el('section');card.className='card';card.dataset.step=String(1+Math.floor(index/4));
+ const meta=el('div',BANK.dimensions.find(d=>d.id===q.dimension).name);meta.className='eyebrow';card.append(meta);
+ const fs=el('fieldset');fs.id='question-'+q.id;fs.append(el('legend',q.question));
+ const example=el('p','Contoh bukti untuk dibahas: '+q.evidence);example.className='hint';fs.append(example);
+ const error=el('p');error.id='error-'+q.id;error.className='question-error';error.hidden=true;fs.setAttribute('aria-describedby',error.id);
+ for(const [value,label] of [...Object.entries(q.anchors),['unknown','Belum tahu / perlu cek dengan penanggung jawab']]){
+  const l=el('label');l.className='option';const radio=el('input');radio.type='radio';radio.name=q.id;radio.value=value;
+  radio.addEventListener('change',()=>{answers[q.id]={value:value==='unknown'?null:Number(value)};error.hidden=true;fs.removeAttribute('aria-invalid');update();saveDraft();});l.append(radio,el('span',label));fs.append(l);
+ }fs.append(error);card.append(fs);$('questions').append(card);
+}
+function showStep(focus=false){
+ $('contextStep').hidden=step!==0;for(const card of $('questions').children)card.hidden=Number(card.dataset.step)!==step;
+ $('previous').hidden=step===0;$('next').hidden=step===4;$('calculate').hidden=step!==4;
+ const first=BANK.screening[(step-1)*4];$('stepText').textContent='Langkah '+(step+1)+' dari 5 · '+(step===0?'Konteks bisnis':first?BANK.dimensions.find(d=>d.id===first.dimension).name+' dan '+BANK.dimensions.find(d=>d.id===BANK.screening[(step-1)*4+2].dimension).name:titles[step]);
+ $('error').textContent='';if(focus){const target=step===0?$('process'):$('question-'+BANK.screening[(step-1)*4].id).querySelector('input');target.focus();target.scrollIntoView({block:'center',behavior:'instant'});}
+}
+function fieldError(id,message){if(step!==0){step=0;showStep();}$(id).setAttribute('aria-invalid','true');$(id+'Error').textContent=message;$(id+'Error').hidden=false;const details=$(id).closest('details');if(details)details.open=true;$(id).focus();$(id).scrollIntoView({block:'center',behavior:'instant'});return false;}
+function validateContext(){
+ if(!$('process').value.trim())return fieldError('process','Sebutkan satu proses yang ingin dibahas.');
+ if(!$('problem').value.trim())return fieldError('problem','Ceritakan hambatan yang Anda alami.');
+ const baselineFields=['metric','baseline','unit','period','source'];
+ if(baselineFields.some(id=>$(id).value.trim())){
+  for(const id of baselineFields)if(!$(id).value.trim())return fieldError(id,'Lengkapi ukuran masalah ini, atau kosongkan seluruh bagian jika belum tahu.');
+  if(!Number.isFinite(Number($('baseline').value))||Number($('baseline').value)<0)return fieldError('baseline','Gunakan angka nol atau lebih.');
+ }return true;
+}
+function validateQuestions(currentStep){
+ for(const q of BANK.screening.slice((currentStep-1)*4,currentStep*4))if(!Object.hasOwn(answers,q.id)){
+  const fs=$('question-'+q.id),error=$('error-'+q.id);fs.setAttribute('aria-invalid','true');error.textContent='Pilih satu jawaban. Anda boleh memilih belum tahu.';error.hidden=false;$('error').textContent='Masih ada pertanyaan yang belum dijawab.';const target=fs.querySelector('input');target.focus();target.scrollIntoView({block:'center',behavior:'instant'});return false;
+ }return true;
+}
+function update(){gatewayRevision++;sending=false;requestId=null;expiresAt=0;$('gatewayStatus').textContent='';$('send').textContent='Bahas hasil saya dengan OmniSense';const n=Object.keys(answers).length;$('progress').value=n;$('progressText').textContent=n+' dari '+BANK.screening.length+' pertanyaan diisi';$('results').hidden=true;$('consent').checked=false;$('send').removeAttribute('href');$('send').setAttribute('aria-disabled','true');lastPayload=null;}
+for(const id of fields)$(id).addEventListener('input',()=>{$(id).removeAttribute('aria-invalid');$(id+'Error').hidden=true;update();saveDraft();});
+function discardDraft(){try{sessionStorage.removeItem(DRAFT_KEY);}catch(_){} }
+function saveDraft(){if(!$('saveDraft').checked)return;try{sessionStorage.setItem(DRAFT_KEY,JSON.stringify({schema:1,bank:BANK.bank_revision,version:BANK.version,saved:Date.now(),step,fields:Object.fromEntries(fields.map(id=>[id,$(id).value])),answers}));$('draftStatus').textContent='Draft tersimpan hanya di tab ini. Persetujuan pengiriman tidak ikut disimpan.';}catch(_){$('saveDraft').checked=false;$('draftStatus').textContent='Peramban tidak mengizinkan penyimpanan draft. Tetap buka tab ini selama mengisi.';}}
+function restoreDraft(){try{const raw=sessionStorage.getItem(DRAFT_KEY);if(!raw)return;const d=JSON.parse(raw),now=Date.now();if(d.schema!==1||d.bank!==BANK.bank_revision||d.version!==BANK.version||!Number.isFinite(d.saved)||d.saved>now||now-d.saved>DRAFT_TTL||!Number.isInteger(d.step)||d.step<0||d.step>4||!d.fields||typeof d.fields!=='object'||!d.answers||typeof d.answers!=='object')throw Error();
+ for(const id of fields)if(typeof d.fields[id]!=='string'||d.fields[id].length>($(id).maxLength>0?$(id).maxLength:100))throw Error();
+ for(const [id,a]of Object.entries(d.answers))if(!BANK.screening.some(q=>q.id===id)||!a||(a.value!==null&&(!Number.isInteger(a.value)||a.value<1||a.value>5)))throw Error();
+ for(let i=0;i<d.step;i++){if(i===0&&(!d.fields.process.trim()||!d.fields.problem.trim()))throw Error();if(i>0&&BANK.screening.slice((i-1)*4,i*4).some(q=>!Object.hasOwn(d.answers,q.id)))throw Error();}
+ fields.forEach(id=>$(id).value=d.fields[id]);Object.assign(answers,d.answers);for(const radio of document.querySelectorAll('#questions input'))radio.checked=Object.hasOwn(answers,radio.name)&&radio.value===(answers[radio.name].value===null?'unknown':String(answers[radio.name].value));step=d.step;$('saveDraft').checked=true;$('draftStatus').textContent='Draft dipulihkan. Periksa isian sebelum melanjutkan; persetujuan pengiriman tetap perlu diberikan lagi.';
+ }catch(_){discardDraft();$('draftStatus').textContent='Draft lama tidak dapat dipulihkan atau sudah kedaluwarsa.';}}
+$('saveDraft').addEventListener('change',()=>{if($('saveDraft').checked)saveDraft();else{discardDraft();$('draftStatus').textContent='Draft di tab ini dihapus. Isian yang sedang tampil tetap tersedia.';}});
+$('next').addEventListener('click',()=>{if(step===0?!validateContext():!validateQuestions(step))return;step++;showStep(true);saveDraft();});
+$('previous').addEventListener('click',()=>{step=Math.max(0,step-1);showStep(true);saveDraft();});
+function payload(){const context={process:$('process').value.trim(),problem:$('problem').value.trim(),process_owner:$('owner').value.trim()};if($('baseline').value!=='')context.baseline={metric:$('metric').value.trim(),value:Number($('baseline').value),unit:$('unit').value.trim(),period:$('period').value.trim(),source:$('source').value.trim()};return{version:BANK.version,bank_revision:BANK.bank_revision,mode:'screening',answers:structuredClone(answers),context};}
+$('calculate').addEventListener('click',()=>{
+ if(!$('process').value.trim()||!$('problem').value.trim()){step=0;showStep();validateContext();return;}
+ for(let i=1;i<=4;i++)if(BANK.screening.slice((i-1)*4,i*4).some(q=>!Object.hasOwn(answers,q.id))){step=i;showStep();validateQuestions(i);return;}
+ if(!validateContext())return;
+ try{update();const p=payload(),r=OmniSenseConsulting.assess(p,BANK);lastPayload=p;requestId=crypto.randomUUID().replaceAll('-','');$('error').textContent='';
+ $('score').textContent=r.score===null?r.range.join('–')+' / 100':r.score+' / 100';$('scoreNote').textContent=r.score===null?'Rentang dari jawaban yang belum diketahui; bukan peluang keberhasilan.':r.band+' · indeks berdasarkan laporan Anda sendiri.';
+ $('route').textContent=({hentikan_akses_data:'Penggunaan data belum diizinkan. Jangan mengakses atau memproses data tersebut.',klarifikasi_bukti:'Kita perlu memperjelas jawaban sebelum memilih solusi.',perkuat_fondasi:'Kita periksa fondasi proses, data dan tanggung jawab sebelum menentukan pendekatan.',discovery_dan_verifikasi:'Diskusikan proses dan periksa bukti bersama sebelum menentukan solusi.'})[r.route]||'Tinjau diagnosis, alternatif dan kelayakan bersama tim.';
+ $('dimensionResults').replaceChildren();for(const d of r.dimensions){const row=el('div');row.className='row';row.append(el('span',d.name),el('strong',d.score===null?d.range.join('–'):String(d.score)));$('dimensionResults').append(row);}
+ $('followups').replaceChildren();for(const q of r.next_questions)$('followups').append(el('li',q.probe));if(!r.next_questions.length)$('followups').append(el('li','Tinjau langkah berikut bersama tim sesuai izin dan kebutuhan proses.'));
+ $('preview').textContent=['Proses: '+p.context.process,'Hambatan: '+p.context.problem,'Peran: '+(p.context.process_owner||'belum disebut'),'Indeks awal: '+(r.score===null?r.range.join('–'):r.score)+'/100','Jawaban Anda:',...BANK.screening.map(q=>q.question+' — '+(p.answers[q.id].value===null?'Belum tahu':q.anchors[String(p.answers[q.id].value)]))].join('\n\n');$('results').hidden=false;$('resultTitle').focus();$('resultTitle').scrollIntoView({block:'center',behavior:'instant'});
+ }catch(_){$('error').textContent='Hasil belum dapat dihitung. Periksa isian atau muat ulang halaman; draft opsional dapat menjaga isian Anda.';}
+});
+$('consent').addEventListener('change',()=>{const allow=$('consent').checked&&lastPayload;gatewayRevision++;sending=false;$('send').setAttribute('aria-disabled',String(!allow));if(allow)$('send').href='#konsultasi';else $('send').removeAttribute('href');$('gatewayStatus').textContent='';$('send').textContent='Bahas hasil saya dengan OmniSense';});
+async function apiFetch(url,options={}){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);try{return await fetch(url,{...options,signal:controller.signal});}finally{clearTimeout(timer);}}
+$('send').addEventListener('click',async e=>{
+ if($('send').getAttribute('href')?.startsWith('https://wa.me/')){if(Date.now()<expiresAt)return;e.preventDefault();$('send').href='#konsultasi';$('gatewayStatus').textContent='Kode privat sudah kedaluwarsa. Tekan Lihat arah konsultasi untuk membuat hasil baru.';return;}
+ e.preventDefault();if(!$('consent').checked||!lastPayload||sending)return;
+ const revision=gatewayRevision,p=structuredClone(lastPayload),id=requestId;sending=true;$('send').setAttribute('aria-disabled','true');$('gatewayStatus').textContent='Menyiapkan konsultasi Anda…';
+ try{const session=await apiFetch('/api/consultation/session',{credentials:'same-origin',cache:'no-store'});if(!session.ok)throw new Error('Sesi belum tersedia');const auth=await session.json();if(revision!==gatewayRevision||!$('consent').checked)return;
+ const response=await apiFetch('/api/consultation/cases',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-Omni-CSRF':auth.csrf},body:JSON.stringify({payload:p,consent:true,consent_version:auth.consent_version,request_id:id})});const result=await response.json();if(!response.ok)throw new Error(result.error||'Konsultasi belum tersedia');if(revision!==gatewayRevision||!$('consent').checked)return;
+ const url=new URL(result.whatsapp_url);if(url.origin!=='https://wa.me'||url.pathname!=='/6288809640700'||typeof result.case_id!=='string'||!/^CASE-[A-F0-9]{16}$/.test(result.case_id))throw new Error('Tautan konsultasi tidak valid');expiresAt=Date.now()+Math.min(Number(result.expires_in)||0,7200)*1000;$('send').href=url.href;$('send').textContent='Buka WhatsApp dan kirim pesan';$('gatewayStatus').textContent='Hasil siap dihubungkan. Tekan tombol di bawah, lalu Kirim di WhatsApp. Kode privat berlaku 2 jam.';
+ }catch(error){if(revision===gatewayRevision){const message=error.name==='AbortError'?'Koneksi terlalu lama.':['TypeError','SyntaxError'].includes(error.name)?'Layanan konsultasi belum dapat dihubungi.':error.message+'.';$('gatewayStatus').textContent=message+' Hasil tetap tersedia. Coba sambungkan lagi; permintaan yang sama tidak membuat kasus ganda dalam sesi ini.';$('send').textContent='Coba sambungkan lagi';}}
+ finally{if(revision===gatewayRevision){sending=false;$('send').setAttribute('aria-disabled',String(!$('consent').checked||!lastPayload));}}
+});
+$('reset').addEventListener('click',()=>{discardDraft();for(const k of Object.keys(answers))delete answers[k];fields.forEach(id=>{$(id).value='';$(id).removeAttribute('aria-invalid');$(id+'Error').hidden=true;});document.querySelectorAll('#questions input').forEach(x=>x.checked=false);document.querySelectorAll('.question-error').forEach(x=>x.hidden=true);document.querySelectorAll('#questions fieldset').forEach(x=>x.removeAttribute('aria-invalid'));$('saveDraft').checked=false;$('draftStatus').textContent='Isian dan draft di tab ini dihapus.';step=0;update();showStep(true);});
+restoreDraft();update();showStep();
+})();

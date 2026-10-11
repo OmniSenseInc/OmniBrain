@@ -1,0 +1,32 @@
+{
+  "version": "3.0",
+  "mode": "screening",
+  "answers": {
+    "S1a": { "value": 4, "evidence": "self_reported", "source": "" },
+    "S1b": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S2a": { "value": 4, "evidence": "self_reported", "source": "" },
+    "S2b": { "value": 2, "evidence": "self_reported", "source": "" },
+    "S3a": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S3b": { "value": 4, "evidence": "self_reported", "source": "" },
+    "S4a": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S4b": { "value": 2, "evidence": "self_reported", "source": "" },
+    "S5a": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S5b": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S6a": { "value": 4, "evidence": "self_reported", "source": "" },
+    "S6b": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S7a": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S7b": { "value": 2, "evidence": "self_reported", "source": "" },
+    "S8a": { "value": 3, "evidence": "self_reported", "source": "" },
+    "S8b": { "value": 3, "evidence": "self_reported", "source": "" }
+  },
+  "context": {
+    "process": "Rekap penjualan harian kafe",
+    "problem": "Rekap manual, sering telat & salah catat",
+    "process_owner": "Pemilik (merangkap kasir jam ramai)",
+    "baseline": { "metric": "waktu rekap harian", "value": 150, "unit": "menit/hari", "period": "7 hari", "source": "simulasi: catatan pemilik" },
+    "access_permission": "confirmed",
+    "impact": "medium",
+    "human_review": "missing",
+    "fallback": "missing"
+  }
+}

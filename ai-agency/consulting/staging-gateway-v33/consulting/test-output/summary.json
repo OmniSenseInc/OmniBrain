@@ -1,0 +1,6 @@
+{
+  "contract_checks": 103,
+  "browser_checks": 42,
+  "parity_cases": 89,
+  "real_browser_messages": 4
+}

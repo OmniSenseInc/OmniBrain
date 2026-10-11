@@ -1,0 +1,893 @@
+{
+  "version": "3.0",
+  "updated": "2026-10-03",
+  "status": "DRAF USULAN v3.1 — konstruksi diperbaiki; bobot & ambang = heuristik internal untuk dikalibrasi, BUKAN sertifikasi/validasi empiris",
+  "owner_note": "Bobot resmi (10/20/15/15/10/15/10/5) = heuristik internal OmniSense. Bukan angka dari NIST AI RMF Playbook atau OECD; kedua sumber dipakai sebagai rujukan proses/konteks, bukan penentu bobot.",
+  "design_rules": [
+    "Satu fokus per pertanyaan; satu probe yang menanyakan satu hal.",
+    "Skor tinggi = praktik terbukti yang RELEVAN dengan kebutuhan, BUKAN otomatis/mahal/banyak orang/cepat memutuskan/bersedia membeli.",
+    "Nilai teknologi bukan jumlah perangkat, besar omzet, atau mahalnya alat.",
+    "Unknown (belum tahu/belum dicek) = null; TIDAK boleh muncul sebagai anchor 1.",
+    "Negatif faktual (mis. terbukti belum ada pemeriksaan kualitas) boleh = 1.",
+    "Screening = triage; discovery = 4 subkonstruksi lebih dalam per dimensi, bukan mengulang screening.",
+    "Tidak menyebut status patuh hukum; cukup status review kebutuhan relevan oleh penanggung jawab."
+  ],
+  "unknown_policy": "Jawaban 'belum tahu / belum pernah dicek' dicatat null (unknown), BUKAN 1, BUKAN 3. Unknown dikeluarkan dari rata-rata namun bobot penuh tetap dihitung pada rentang bawah (range), wajib satu kali probe, dan ditandai belum terverifikasi. Jangan menulis unknown sebagai skor rendah maupun netral.",
+  "scoring": {
+    "scale": "20-100; skor tunggal bila semua soal terjawab, else null + rentang skenario.",
+    "anchors": "1-5 perilaku/bukti yang bisa diverifikasi; 5 hanya untuk praktik terbukti & relevan, bukan rencana.",
+    "aggregation": "skor_dimensi = rata-rata soal terjawab x20; skor_total = jumlah(skor_dimensi x bobot). Skor tunggal hanya bila tidak ada unknown.",
+    "verified_evidence": "butir dianggap terverifikasi hanya bila evidence in {reviewed, observed} DAN ada rujukan bukti; self_reported = belum terverifikasi.",
+    "gate_rule": "Kelemahan kritis (data relevan+kualitas, pemilik data, izin, human review/fallback) menjadi PRASYARAT: agregat TIDAK menyetujui deploy; rute rekomendasi berubah, angka skor tidak.",
+    "roi_rule": "Pisahkan nilai kapasitas (jam/teoretis) dari kas riil; semua asumsi eksplisit; nilai kapasitas bukan penghematan kas otomatis."
+  },
+  "dimensions": [
+    {
+      "id": "D1",
+      "name": "Strategi & Kepemimpinan",
+      "weight": 0.1
+    },
+    {
+      "id": "D2",
+      "name": "Kesiapan Data",
+      "weight": 0.2
+    },
+    {
+      "id": "D3",
+      "name": "Infrastruktur & Teknologi",
+      "weight": 0.15
+    },
+    {
+      "id": "D4",
+      "name": "Digitalisasi Proses",
+      "weight": 0.15
+    },
+    {
+      "id": "D5",
+      "name": "Organisasi & Budaya",
+      "weight": 0.1
+    },
+    {
+      "id": "D6",
+      "name": "SDM & Keterampilan",
+      "weight": 0.15
+    },
+    {
+      "id": "D7",
+      "name": "Tata Kelola, Keamanan & Kepatuhan",
+      "weight": 0.1
+    },
+    {
+      "id": "D8",
+      "name": "Anggaran & Finansial",
+      "weight": 0.05
+    }
+  ],
+  "context": {
+    "note": "Pertanyaan konteks — TIDAK diskor. Jangan mewajibkan klien membocorkan nominal uang atau kredensial; cukup sifat/ketersediaan.",
+    "items": [
+      {
+        "id": "C1",
+        "focus": "proses_sasaran",
+        "question": "Proses atau bagian mana yang paling ingin dibantu lebih dulu?",
+        "evidence": "Nama proses + langkahnya, dalam kata klien.",
+        "probe": "Kenapa bagian itu yang pertama, bukan yang lain?"
+      },
+      {
+        "id": "C2",
+        "focus": "masalah",
+        "question": "Masalah apa yang paling mengganggu dari proses itu hari ini?",
+        "evidence": "Contoh kejadian terakhir, bukan keluhan umum.",
+        "probe": "Kapan terakhir kejadian itu, dan apa akibatnya saat itu?"
+      },
+      {
+        "id": "C3",
+        "focus": "dampak_baseline",
+        "question": "Seberapa sering dan berapa besar dampaknya? Sebutkan unit dan periodenya.",
+        "evidence": "Angka + satuan (mis. jam/minggu, kejadian/bulan) + periode + sumber.",
+        "probe": "Angka itu untuk periode apa, dan dari mana Anda tahu?"
+      },
+      {
+        "id": "C4",
+        "focus": "pic",
+        "question": "Siapa yang menjalankan proses ini dan siapa yang akan merawat perbaikannya?",
+        "evidence": "Nama/peran; apakah orang itu punya waktu.",
+        "probe": "Kalau ada perubahan, siapa yang mengeksekusi harian?"
+      },
+      {
+        "id": "C5",
+        "focus": "urgensi",
+        "question": "Ada tenggat atau pemicu yang membuat ini mendesak sekarang?",
+        "evidence": "Tanggal/peristiwa konkret bila ada; 'belum ada' itu sah.",
+        "probe": "Kalau ditunda tiga bulan, apa yang terjadi?"
+      },
+      {
+        "id": "C6",
+        "focus": "stakeholder_keputusan",
+        "question": "Siapa yang harus setuju agar perbaikan ini bisa jalan?",
+        "evidence": "Pemilik keputusan + siapa lagi yang terdampak.",
+        "probe": "Siapa yang bisa menolak rencana ini?"
+      }
+    ]
+  },
+  "screening": [
+    {
+      "id": "S1a",
+      "dimension": "D1",
+      "question": "Untuk proses yang jadi sasaran, tujuan dan ukuran keberhasilannya sudah jelas?",
+      "anchors": {
+        "1": "Belum ada tujuan/ukuran",
+        "2": "Ada tujuan, belum ada ukuran",
+        "3": "Ukuran ada, belum disepakati",
+        "4": "Tujuan & ukuran jelas, belum dipakai rutin",
+        "5": "Tujuan & ukuran jelas, dipakai untuk memutuskan"
+      },
+      "evidence": "Minta ukuran keberhasilan yang dipakai; bukan visi umum.",
+      "probe": "Ukuran apa yang dipakai untuk tahu proses itu berhasil?",
+      "critical": false
+    },
+    {
+      "id": "S1b",
+      "dimension": "D1",
+      "question": "Sudah ada orang yang jelas memutuskan untuk perbaikan proses ini (pemilik keputusan)?",
+      "anchors": {
+        "1": "Belum ada peran yang ditetapkan",
+        "2": "Peran diusulkan tetapi belum menerima tanggung jawab",
+        "3": "Peran menerima tanggung jawab; batas keputusan belum jelas",
+        "4": "Peran dan batas keputusan jelas; belum dipakai pada keputusan nyata",
+        "5": "Peran dan batas keputusan jelas serta terbukti dipakai pada keputusan nyata"
+      },
+      "evidence": "Sebut keputusan terakhir terkait proses ini: siapa & berapa lama.",
+      "probe": "Siapa yang berwenang menyetujui perbaikan proses ini?",
+      "critical": true
+    },
+    {
+      "id": "S2a",
+      "dimension": "D2",
+      "question": "Seberapa tersedia data yang dibutuhkan proses ini?",
+      "anchors": {
+        "1": "Data relevan belum dikumpulkan",
+        "2": "Sebagian tersedia tetapi belum mencakup kebutuhan proses",
+        "3": "Kebutuhan utama tersedia; cakupan atau waktu ketersediaan belum diperiksa",
+        "4": "Cakupan dan waktu ketersediaan sesuai kebutuhan proses sudah diperiksa",
+        "5": "Kecukupan data dipantau dan kekurangan ditangani oleh penanggung jawab"
+      },
+      "evidence": "Tanyakan data apa yang dipakai proses ini dan dari mana diambil.",
+      "probe": "Data apa yang dibutuhkan untuk proses ini?",
+      "critical": true
+    },
+    {
+      "id": "S2b",
+      "dimension": "D2",
+      "question": "Bagaimana pemeriksaan kualitas data untuk proses ini dilakukan?",
+      "anchors": {
+        "1": "Terbukti belum pernah diperiksa",
+        "2": "Diperiksa kalau ada masalah",
+        "3": "Diperiksa sesekali",
+        "4": "Diperiksa rutin",
+        "5": "Diperiksa rutin + ada penanggung jawab"
+      },
+      "evidence": "Contoh hasil pemeriksaan atau koreksi data terakhir; minta penanggung jawab pada giliran terpisah jika belum diketahui.",
+      "probe": "Bagaimana pemeriksaan kualitas data terakhir dilakukan?",
+      "critical": true
+    },
+    {
+      "id": "S3a",
+      "dimension": "D3",
+      "question": "Bagaimana keandalan cara pemindahan data untuk proses ini?",
+      "anchors": {
+        "1": "Belum ada cara memindahkan data yang dapat digunakan",
+        "2": "Cara yang ada sering menimbulkan kehilangan atau kesalahan data",
+        "3": "Data dapat dipindahkan tetapi hasilnya belum diperiksa rutin",
+        "4": "Cara pemindahan terdokumentasi dan hasilnya diperiksa sesuai kebutuhan",
+        "5": "Cara pemindahan telah diuji, dipantau dan punya penanganan kegagalan sesuai kebutuhan"
+      },
+      "evidence": "Contoh ekspor, impor, API atau input terkontrol beserta pemeriksaan hasil; otomatisasi bukan syarat nilai tinggi.",
+      "probe": "Bagaimana hasil pemindahan data terakhir diperiksa?",
+      "critical": false
+    },
+    {
+      "id": "S3b",
+      "dimension": "D3",
+      "question": "Alat yang dipakai cukup andal untuk kebutuhan proses (bukan jumlah/mahalnya alat)?",
+      "anchors": {
+        "1": "Sering gagal, menghambat proses",
+        "2": "Sering bermasalah saat dibutuhkan",
+        "3": "Cukup, kadang bermasalah",
+        "4": "Andal untuk kebutuhan sekarang",
+        "5": "Andal & ada rencana saat gangguan"
+      },
+      "evidence": "Frekuensi gangguan & dampaknya ke proses, bukan jenis alat.",
+      "probe": "Kapan terakhir alat gagal saat proses sedang berjalan?",
+      "critical": false
+    },
+    {
+      "id": "S4a",
+      "dimension": "D4",
+      "question": "Alur kerja proses ini (langkah normal & pengecualian) sudah dipahami dan disepakati?",
+      "anchors": {
+        "1": "Alur tidak jelas",
+        "2": "Ada di kepala, tidak konsisten",
+        "3": "Tercatat sebagian",
+        "4": "Tercatat, pengecualian belum rapi",
+        "5": "Tercatat & pengecualian ditangani jelas"
+      },
+      "evidence": "Minta satu langkah + bagaimana pengecualian ditangani.",
+      "probe": "Bagaimana pengecualian terakhir pada proses ini ditangani?",
+      "critical": false
+    },
+    {
+      "id": "S4b",
+      "dimension": "D4",
+      "question": "Baseline proses (nilai + unit + periode) sudah pernah diukur?",
+      "anchors": {
+        "1": "Belum pernah diukur",
+        "2": "Perkiraan saja",
+        "3": "Diukur sekali",
+        "4": "Diukur, belum rutin",
+        "5": "Diukur rutin dengan unit & periode jelas"
+      },
+      "evidence": "Angka + unit + periode (mis. 12 menit/tiket, 7 hari).",
+      "probe": "Periode apa yang dicakup angka baseline tersebut?",
+      "critical": false
+    },
+    {
+      "id": "S5a",
+      "dimension": "D5",
+      "question": "Ada cara baku menangani umpan balik saat proses/cara kerja berubah?",
+      "anchors": {
+        "1": "Belum ada",
+        "2": "Hanya kalau ada masalah",
+        "3": "Ada informal",
+        "4": "Ada, belum konsisten",
+        "5": "Ada & dipakai konsisten"
+      },
+      "evidence": "Minta contoh umpan balik terakhir dan apa tindakannya.",
+      "probe": "Terakhir ada usulan perubahan dari tim, bagaimana ditindaklanjuti?",
+      "critical": false
+    },
+    {
+      "id": "S5b",
+      "dimension": "D5",
+      "question": "Perubahan yang sudah dilakukan dievaluasi hasilnya?",
+      "anchors": {
+        "1": "Belum pernah dievaluasi",
+        "2": "Dibahas sekilas",
+        "3": "Dievaluasi kadang-kadang",
+        "4": "Dievaluasi rutin",
+        "5": "Dievaluasi rutin & hasilnya dipakai untuk keputusan"
+      },
+      "evidence": "Contoh perubahan terakhir dan hasil evaluasinya.",
+      "probe": "Perubahan terakhir, hasilnya dievaluasi bagaimana?",
+      "critical": false
+    },
+    {
+      "id": "S6a",
+      "dimension": "D6",
+      "question": "Operator tersedia mampu mengerjakan tugas yang dibutuhkan proses ini?",
+      "anchors": {
+        "1": "Tugas yang dibutuhkan belum dapat dijalankan oleh peran yang bertugas",
+        "2": "Tugas dasar hanya dapat dijalankan dengan bantuan langsung",
+        "3": "Tugas rutin dapat dijalankan mengikuti panduan; penanganan pengecualian belum diuji",
+        "4": "Tugas rutin dan pengecualian yang umum dapat dijalankan sesuai standar",
+        "5": "Kemampuan menjalankan tugas dan mengeskalasi pengecualian sudah dibuktikan lewat uji kerja"
+      },
+      "evidence": "Sebut tugas inti & siapa yang bisa mengerjakan.",
+      "probe": "Siapa yang bisa mengerjakan tugas inti proses ini tanpa didampingi?",
+      "critical": false
+    },
+    {
+      "id": "S6b",
+      "dimension": "D6",
+      "question": "Sudah ada penanggung jawab perawatan proses & jalur eskalasi saat ada masalah?",
+      "anchors": {
+        "1": "Belum ada penanggung jawab",
+        "2": "Semua ke pemilik, tidak terstruktur",
+        "3": "Ada, belum formal",
+        "4": "Ada penanggung jawab, eskalasi belum jelas",
+        "5": "Ada penanggung jawab + eskalasi jelas"
+      },
+      "evidence": "Sebut siapa yang merawat & ke siapa masalah dieskalasi.",
+      "probe": "Kalau proses bermasalah, siapa yang pertama menangani?",
+      "critical": false
+    },
+    {
+      "id": "S7a",
+      "dimension": "D7",
+      "question": "Izin penggunaan data relevan sudah jelas & akses dibatasi sesuai peran?",
+      "anchors": {
+        "1": "Belum ada kejelasan izin",
+        "2": "Akses bebas/akun bersama",
+        "3": "Izin informal",
+        "4": "Izin jelas, akses belum dibatasi penuh",
+        "5": "Izin jelas & akses dibatasi sesuai peran"
+      },
+      "evidence": "Siapa yang mengizinkan penggunaan data & siapa yang boleh akses.",
+      "probe": "Siapa yang berwenang mengizinkan penggunaan data untuk proses ini?",
+      "critical": true
+    },
+    {
+      "id": "S7b",
+      "dimension": "D7",
+      "question": "Ada rencana pemulihan/fallback bila proses atau data terganggu?",
+      "anchors": {
+        "1": "Belum ada",
+        "2": "Baru dipikir kalau terjadi",
+        "3": "Ada informal",
+        "4": "Ada rencana, belum diuji",
+        "5": "Ada rencana & pernah diuji"
+      },
+      "evidence": "Contoh gangguan terakhir & bagaimana dipulihkan.",
+      "probe": "Kalau data hilang atau proses terganggu, langkah pemulihannya apa?",
+      "critical": true
+    },
+    {
+      "id": "S8a",
+      "dimension": "D8",
+      "question": "Total biaya siklus hidup (beli/pasang + operasional + review) sudah dipahami?",
+      "anchors": {
+        "1": "Belum dipahami",
+        "2": "Baru biaya awal",
+        "3": "Perkiraan kasar",
+        "4": "Dipahami termasuk operasional",
+        "5": "Dipahami lengkap termasuk review manusia"
+      },
+      "evidence": "Sebut komponen biaya yang sudah diperhitungkan; nominal opsional.",
+      "probe": "Komponen biaya apa saja yang sudah diperhitungkan?",
+      "critical": false
+    },
+    {
+      "id": "S8b",
+      "dimension": "D8",
+      "question": "Ada kriteria nilai/kelayakan dan batas biaya yang dipakai untuk memutuskan?",
+      "anchors": {
+        "1": "Belum ada kriteria",
+        "2": "Kriteria samar",
+        "3": "Ada kriteria, belum ada batas biaya",
+        "4": "Ada kriteria & batas biaya, belum dipakai",
+        "5": "Ada kriteria & batas biaya, dipakai untuk memutuskan"
+      },
+      "evidence": "Sebut kriteria kelayakan yang dipakai; bukan sekadar kesediaan membeli.",
+      "probe": "Dengan kriteria apa Anda bilang sesuatu layak dijalankan?",
+      "critical": false
+    }
+  ],
+  "discovery": [
+    {
+      "id": "D1a",
+      "dimension": "D1",
+      "question": "Tujuan proses ini tersambung dengan target bisnis yang punya angka?",
+      "anchors": {
+        "1": "Tidak tersambung",
+        "2": "Tersambung, tanpa angka",
+        "3": "Ada angka, belum dipakai",
+        "4": "Tersambung & ada angka",
+        "5": "Tersambung, ada angka, dipakai untuk mengarahkan"
+      },
+      "evidence": "Lihat dokumen/rencana; sebut angka target yang relevan.",
+      "probe": "Target bisnis mana yang akan terbantu kalau proses ini membaik?",
+      "critical": false
+    },
+    {
+      "id": "D1b",
+      "dimension": "D1",
+      "question": "Ukuran keberhasilan proses sudah disepakati bersama tim dan dipakai rutin?",
+      "anchors": {
+        "1": "Belum disepakati",
+        "2": "Disepakati, tidak dipakai",
+        "3": "Dipakai kadang",
+        "4": "Dipakai rutin",
+        "5": "Dipakai rutin & hasilnya dibahas bersama"
+      },
+      "evidence": "Contoh ukuran & siapa yang memakai.",
+      "probe": "Ukuran keberhasilan apa yang sudah disepakati?",
+      "critical": false
+    },
+    {
+      "id": "D1c",
+      "dimension": "D1",
+      "question": "Alasan berbenah berasal dari masalah nyata (bukan ikut tren) dan dampaknya terukur?",
+      "anchors": {
+        "1": "Ikut tren",
+        "2": "Sadar, samar",
+        "3": "Masalah nyata, belum terukur",
+        "4": "Masalah nyata, dampak bisa dijelaskan",
+        "5": "Masalah nyata + dampak terukur (unit/periode)"
+      },
+      "evidence": "Masalah + dampak dalam angka/unit.",
+      "probe": "Bagaimana dampak masalah tersebut terakhir diukur?",
+      "critical": false
+    },
+    {
+      "id": "D1d",
+      "dimension": "D1",
+      "question": "Pemilik keputusan punya waktu & kewenangan, dan hambatan keputusan sudah jelas?",
+      "anchors": {
+        "1": "Tidak ada pemilik keputusan",
+        "2": "Ada, tanpa waktu",
+        "3": "Ada waktu & wewenang, belum fokus",
+        "4": "Ada waktu & wewenang",
+        "5": "Ada, berkomitmen & hambatan sudah dipetakan"
+      },
+      "evidence": "Jadwal/keputusan terakhir + hambatan yang pernah muncul.",
+      "probe": "Siapa yang menyetujui keputusan perbaikan proses terakhir?",
+      "critical": true
+    },
+    {
+      "id": "D2a",
+      "dimension": "D2",
+      "question": "Data yang relevan dengan proses tersedia lengkap untuk kebutuhan analisis?",
+      "anchors": {
+        "1": "Data relevan belum dikumpulkan",
+        "2": "Sebagian tersedia tetapi belum mencakup kebutuhan proses",
+        "3": "Kebutuhan utama tersedia; cakupan atau waktu ketersediaan belum diperiksa",
+        "4": "Cakupan dan waktu ketersediaan sesuai kebutuhan proses sudah diperiksa",
+        "5": "Kecukupan data dipantau dan kekurangan ditangani oleh penanggung jawab"
+      },
+      "evidence": "Sebut field/data yang tersedia vs yang dibutuhkan.",
+      "probe": "Data relevan apa yang belum tersedia untuk proses ini?",
+      "critical": true
+    },
+    {
+      "id": "D2b",
+      "dimension": "D2",
+      "question": "Kualitas data diperiksa dengan cara yang jelas (definisi, cakupan, pengecualian)?",
+      "anchors": {
+        "1": "Belum ada pemeriksaan",
+        "2": "Pemeriksaan tidak teratur",
+        "3": "Ada pemeriksaan sebagian",
+        "4": "Diperiksa rutin, belum lengkap",
+        "5": "Diperiksa rutin dengan definisi & pengecualian jelas"
+      },
+      "evidence": "Contoh hasil pemeriksaan terakhir.",
+      "probe": "Bagaimana kualitas data terakhir diperiksa?",
+      "critical": true
+    },
+    {
+      "id": "D2c",
+      "dimension": "D2",
+      "question": "Data bisa diakses/diekspor secara terkontrol, dan pemilik data ditetapkan?",
+      "anchors": {
+        "1": "Tidak tersedia jalur pengambilan data yang diizinkan",
+        "2": "Jalur pengambilan ada tetapi belum jelas siapa yang berwenang mengizinkan",
+        "3": "Pemilik data diketahui; jalur pengambilan yang diizinkan belum diuji",
+        "4": "Jalur pengambilan yang diizinkan sudah diuji untuk kebutuhan proses",
+        "5": "Jalur pengambilan diizinkan, teruji, dipantau dan memiliki penanggung jawab"
+      },
+      "evidence": "Cara ekspor & siapa pemilik data.",
+      "probe": "Bagaimana data mentah diperoleh melalui jalur yang diizinkan?",
+      "critical": true
+    },
+    {
+      "id": "D2d",
+      "dimension": "D2",
+      "question": "Siklus hidup data (buat, simpan, pakai, hapus) punya aturan & penanggung jawab?",
+      "anchors": {
+        "1": "Tidak ada aturan",
+        "2": "Aturan informal",
+        "3": "Sebagian ada",
+        "4": "Ada aturan, belum dipatuhi",
+        "5": "Ada aturan & penanggung jawab, dipatuhi"
+      },
+      "evidence": "Contoh aturan penyimpanan/penghapusan bila ada.",
+      "probe": "Data lama/pelanggan yang tak terpakai ditangani bagaimana?",
+      "critical": false
+    },
+    {
+      "id": "D3a",
+      "dimension": "D3",
+      "question": "Ada alat/sistem pendukung yang sesuai kebutuhan proses (bukan jumlah/mahalnya)?",
+      "anchors": {
+        "1": "Belum ada",
+        "2": "Ada, tidak sesuai kebutuhan",
+        "3": "Ada, sebagian sesuai",
+        "4": "Sesuai kebutuhan",
+        "5": "Sesuai & dipakai konsisten"
+      },
+      "evidence": "Sebut kebutuhan proses vs alat yang dipakai.",
+      "probe": "Kebutuhan proses apa yang belum dipenuhi alat saat ini?",
+      "critical": false
+    },
+    {
+      "id": "D3b",
+      "dimension": "D3",
+      "question": "Cara menghubungkan data antar bagian terjaga & tidak rapuh (ekspor terkontrol dihitung cukup)?",
+      "anchors": {
+        "1": "Belum ada cara memindahkan data yang dapat digunakan",
+        "2": "Cara yang ada sering menimbulkan kehilangan atau kesalahan data",
+        "3": "Data dapat dipindahkan tetapi hasilnya belum diperiksa rutin",
+        "4": "Cara pemindahan terdokumentasi dan hasilnya diperiksa sesuai kebutuhan",
+        "5": "Cara pemindahan telah diuji, dipantau dan punya penanganan kegagalan sesuai kebutuhan"
+      },
+      "evidence": "Contoh ekspor, impor, API atau input terkontrol beserta pemeriksaan hasil; otomatisasi bukan syarat nilai tinggi.",
+      "probe": "Bagaimana hasil pemindahan data terakhir diperiksa?",
+      "critical": false
+    },
+    {
+      "id": "D3c",
+      "dimension": "D3",
+      "question": "Keandalan alat & lingkungan cukup untuk kebutuhan, dengan cadangan saat gangguan?",
+      "anchors": {
+        "1": "Sering lumpuh",
+        "2": "Fluktuatif",
+        "3": "Cukup, kadang terganggu",
+        "4": "Andal, tanpa cadangan",
+        "5": "Andal + cadangan (jaringan/daya)"
+      },
+      "evidence": "Frekuensi gangguan & ada/tidaknya cadangan.",
+      "probe": "Kalau listrik/jaringan mati 2 jam, prosesnya bagaimana?",
+      "critical": false
+    },
+    {
+      "id": "D3d",
+      "dimension": "D3",
+      "question": "Rencana perubahan alat (migrasi/keluar dari alat lama) jelas & datanya bisa dibawa?",
+      "anchors": {
+        "1": "Tidak ada rencana & data terkunci",
+        "2": "Ada keinginan, data sulit dibawa",
+        "3": "Rencana samar",
+        "4": "Rencana ada, data bisa diekspor",
+        "5": "Rencana jelas & data bisa dibawa terkontrol"
+      },
+      "evidence": "Apakah data alat lama bisa diekspor & siapa yang mengurus.",
+      "probe": "Bagaimana cara membawa data saat perlu berganti alat?",
+      "critical": false
+    },
+    {
+      "id": "D4a",
+      "dimension": "D4",
+      "question": "Alur kerja inti & pengecualian terdokumentasi dan dipatuhi?",
+      "anchors": {
+        "1": "Tidak terdokumentasi",
+        "2": "Sebagian, tidak dipatuhi",
+        "3": "Terdokumentasi sebagian",
+        "4": "Terdokumentasi, belum konsisten",
+        "5": "Terdokumentasi & dipatuhi"
+      },
+      "evidence": "Lihat dokumen alur + contoh kepatuhan.",
+      "probe": "Bagaimana langkah kerja normal proses ini saat ini?",
+      "critical": false
+    },
+    {
+      "id": "D4b",
+      "dimension": "D4",
+      "question": "Baseline proses diukur dengan unit & periode jelas, dan dipakai memantau?",
+      "anchors": {
+        "1": "Belum ada baseline",
+        "2": "Perkiraan",
+        "3": "Ada baseline, tidak dipakai",
+        "4": "Ada baseline & dipakai kadang",
+        "5": "Ada baseline (unit+periode) & dipantau rutin"
+      },
+      "evidence": "Angka + unit + periode + siapa memantau.",
+      "probe": "Periode apa yang dipakai dalam pengukuran baseline?",
+      "critical": false
+    },
+    {
+      "id": "D4c",
+      "dimension": "D4",
+      "question": "Titik hambatan (bottleneck) proses sudah diidentifikasi & dampaknya diukur?",
+      "anchors": {
+        "1": "Belum ada kegiatan pemetaan hambatan proses",
+        "2": "Kira-kira saja",
+        "3": "Tahu, belum diukur",
+        "4": "Tahu & diukur kasar",
+        "5": "Terukur (jam/kejadian per periode) & dipantau"
+      },
+      "evidence": "Angka hambatan (jam/minggu atau kejadian/bulan).",
+      "probe": "Hambatan proses mana yang paling besar dampaknya?",
+      "critical": false
+    },
+    {
+      "id": "D4d",
+      "dimension": "D4",
+      "question": "Proses sudah cukup standar sehingga bisa dibantu alat/otomasi tanpa kehilangan pengecualian penting?",
+      "anchors": {
+        "1": "Serba improvisasi",
+        "2": "Bervariasi per orang",
+        "3": "Setengah standar",
+        "4": "Sebagian besar standar",
+        "5": "Standar & pengecualian ditangani jelas"
+      },
+      "evidence": "Bandingkan hasil dua orang pada proses sama.",
+      "probe": "Bagaimana pengecualian penting pada proses ini ditangani?",
+      "critical": false
+    },
+    {
+      "id": "D5a",
+      "dimension": "D5",
+      "question": "Ada bukti nyata tim mengadopsi perubahan dengan baik (bukan penilaian atas orang)?",
+      "anchors": {
+        "1": "Cara kerja baru dihentikan tanpa evaluasi penyebab",
+        "2": "Percobaan dilakukan tanpa pendampingan atau tindak lanjut",
+        "3": "Pendampingan tersedia tetapi hasil penggunaan belum dievaluasi",
+        "4": "Hasil penggunaan dievaluasi dan hambatan pengguna ditangani",
+        "5": "Evaluasi dipakai untuk mempertahankan, mengubah atau menghentikan cara kerja sesuai hasil"
+      },
+      "evidence": "Contoh perubahan terakhir + hasilnya.",
+      "probe": "Apa hasil evaluasi perubahan cara kerja terakhir?",
+      "critical": false
+    },
+    {
+      "id": "D5b",
+      "dimension": "D5",
+      "question": "Umpan balik dari tim ditangani dengan cara baku dan dicatat?",
+      "anchors": {
+        "1": "Belum ada",
+        "2": "Lisan saja",
+        "3": "Dicatat sebagian",
+        "4": "Dicatat & dibahas",
+        "5": "Dicatat, dibahas, ditindaklanjuti"
+      },
+      "evidence": "Contoh umpan balik & tindak lanjutnya.",
+      "probe": "Umpan balik terakhir dari tim, apa tindak lanjutnya?",
+      "critical": false
+    },
+    {
+      "id": "D5c",
+      "dimension": "D5",
+      "question": "Pemilik memimpin perubahan cara lama, bukan hanya menyetujui?",
+      "anchors": {
+        "1": "Bertahan pada cara lama",
+        "2": "Menyetujui, tidak terlibat",
+        "3": "Kadang terlibat",
+        "4": "Terlibat mendorong",
+        "5": "Memimpin & jadi contoh"
+      },
+      "evidence": "Contoh perubahan yang pemilik sendiri jalankan.",
+      "probe": "Perubahan apa yang terakhir Anda jalankan sendiri di tim?",
+      "critical": false
+    },
+    {
+      "id": "D5d",
+      "dimension": "D5",
+      "question": "Perubahan dievaluasi dengan cara konsisten dan hasilnya dipakai untuk keputusan?",
+      "anchors": {
+        "1": "Belum pernah dievaluasi",
+        "2": "Dibahas sekilas",
+        "3": "Dievaluasi kadang",
+        "4": "Dievaluasi rutin",
+        "5": "Dievaluasi rutin & dipakai untuk keputusan"
+      },
+      "evidence": "Contoh evaluasi perubahan terakhir.",
+      "probe": "Evaluasi perubahan terakhir menghasilkan keputusan apa?",
+      "critical": false
+    },
+    {
+      "id": "D6a",
+      "dimension": "D6",
+      "question": "Operator punya keterampilan yang dibutuhkan proses (tanpa menilai latar belakang orang)?",
+      "anchors": {
+        "1": "Tugas yang dibutuhkan belum dapat dijalankan oleh peran yang bertugas",
+        "2": "Tugas dasar hanya dapat dijalankan dengan bantuan langsung",
+        "3": "Tugas rutin dapat dijalankan mengikuti panduan; penanganan pengecualian belum diuji",
+        "4": "Tugas rutin dan pengecualian yang umum dapat dijalankan sesuai standar",
+        "5": "Kemampuan menjalankan tugas dan mengeskalasi pengecualian sudah dibuktikan lewat uji kerja"
+      },
+      "evidence": "Sebut tugas inti & siapa yang terampil.",
+      "probe": "Tugas paling teknis di proses ini, siapa yang bisa mengerjakan?",
+      "critical": false
+    },
+    {
+      "id": "D6b",
+      "dimension": "D6",
+      "question": "Ada penanggung jawab perawatan/operasional proses dan jalur eskalasi?",
+      "anchors": {
+        "1": "Belum ada",
+        "2": "Semua ke pemilik",
+        "3": "Ada, tidak formal",
+        "4": "Ada, eskalasi belum jelas",
+        "5": "Ada + eskalasi jelas"
+      },
+      "evidence": "Sebut nama/peran & jalur eskalasi.",
+      "probe": "Kalau proses bermasalah di luar jam kerja, siapa yang menangani?",
+      "critical": false
+    },
+    {
+      "id": "D6c",
+      "dimension": "D6",
+      "question": "Ada rencana pelatihan/pendampingan agar kemampuan tetap terjaga (relevan, bukan sekadar pernah ikut)?",
+      "anchors": {
+        "1": "Belum ada",
+        "2": "Pernah sekali",
+        "3": "Kadang",
+        "4": "Ada jadwal, tidak rutin",
+        "5": "Rutin & relevan dengan tugas"
+      },
+      "evidence": "Jadwal/materi pelatihan yang relevan.",
+      "probe": "Kemampuan tugas apa yang dilatih dalam pelatihan terakhir?",
+      "critical": false
+    },
+    {
+      "id": "D6d",
+      "dimension": "D6",
+      "question": "Beban kerja & pembagian tanggung jawab wajar untuk menjalankan perbaikan proses?",
+      "anchors": {
+        "1": "Tidak ada yang bisa ambil beban",
+        "2": "Hanya pemilik, kelebihan beban",
+        "3": "Ada, sering kelebihan",
+        "4": "Cukup wajar",
+        "5": "Wajar & sudah dipetakan per peran"
+      },
+      "evidence": "Siapa mengerjakan apa & perkiraan waktunya.",
+      "probe": "Bagaimana kapasitas kerja untuk perbaikan proses ini dialokasikan?",
+      "critical": false
+    },
+    {
+      "id": "D7a",
+      "dimension": "D7",
+      "question": "Ada pemilik data yang akuntabel & akses sesuai peran?",
+      "anchors": {
+        "1": "Tidak ada pemilik/akses bebas",
+        "2": "Informal",
+        "3": "Sebagian dibatasi",
+        "4": "Dibatasi, belum terdokumentasi",
+        "5": "Pemilik jelas & akses sesuai peran"
+      },
+      "evidence": "Daftar siapa akses apa & siapa pemiliknya.",
+      "probe": "Siapa yang bertanggung jawab atas data proses ini?",
+      "critical": true
+    },
+    {
+      "id": "D7b",
+      "dimension": "D7",
+      "question": "Izin penggunaan data relevan sudah dikonfirmasi penanggung jawab (status review, bukan klaim kepatuhan)?",
+      "anchors": {
+        "1": "Belum dikonfirmasi",
+        "2": "Diasumsikan boleh",
+        "3": "Dikonfirmasi lisan",
+        "4": "Dikonfirmasi, belum terdokumentasi",
+        "5": "Dikonfirmasi & terdokumentasi oleh penanggung jawab"
+      },
+      "evidence": "Siapa yang mengonfirmasi & di mana dicatat.",
+      "probe": "Apa bukti persetujuan penggunaan data untuk tujuan ini?",
+      "critical": true
+    },
+    {
+      "id": "D7c",
+      "dimension": "D7",
+      "question": "Ada prosedur human review saat sistem/alat bisa salah, dengan penanggung jawab?",
+      "anchors": {
+        "1": "Belum ada",
+        "2": "Baru dipikir kalau terjadi",
+        "3": "Ada informal",
+        "4": "Ada prosedur, belum konsisten",
+        "5": "Ada prosedur + penanggung jawab review"
+      },
+      "evidence": "Contoh insiden terakhir & siapa yang meninjau.",
+      "probe": "Kalau alat salah hitung, siapa yang meninjau sebelum dipakai?",
+      "critical": true
+    },
+    {
+      "id": "D7d",
+      "dimension": "D7",
+      "question": "Ada rencana pemulihan/fallback & human review untuk proses yang terganggu?",
+      "anchors": {
+        "1": "Belum ada",
+        "2": "Baru dipikir kalau terjadi",
+        "3": "Ada informal",
+        "4": "Ada rencana, belum diuji",
+        "5": "Ada rencana, diuji, + review manusia"
+      },
+      "evidence": "Contoh gangguan & langkah pemulihan yang pernah diuji.",
+      "probe": "Apa hasil uji pemulihan proses terakhir?",
+      "critical": true
+    },
+    {
+      "id": "D8a",
+      "dimension": "D8",
+      "question": "Total biaya siklus hidup dipahami termasuk operasional & review manusia?",
+      "anchors": {
+        "1": "Belum dipahami",
+        "2": "Hanya biaya awal",
+        "3": "Kasar",
+        "4": "Termasuk operasional",
+        "5": "Lengkap termasuk review manusia"
+      },
+      "evidence": "Komponen biaya yang sudah dihitung (nominal opsional).",
+      "probe": "Komponen biaya apa saja yang sudah diperhitungkan?",
+      "critical": false
+    },
+    {
+      "id": "D8b",
+      "dimension": "D8",
+      "question": "Ada kriteria nilai/kelayakan yang dipakai (dipisah dari kesediaan membeli)?",
+      "anchors": {
+        "1": "Belum ada kriteria",
+        "2": "Samar",
+        "3": "Ada, belum dipakai",
+        "4": "Ada & dipakai sebagian",
+        "5": "Ada & dipakai konsisten untuk keputusan"
+      },
+      "evidence": "Sebut kriteria kelayakan yang dipakai.",
+      "probe": "Dengan kriteria apa keputusan lanjut/tidak diambil?",
+      "critical": false
+    },
+    {
+      "id": "D8c",
+      "dimension": "D8",
+      "question": "Ada batas biaya & rencana penghentian bila nilai tak tercapai?",
+      "anchors": {
+        "1": "Belum ada batas",
+        "2": "Ada keinginan, belum ada angka",
+        "3": "Ada batas kasar",
+        "4": "Ada batas, belum ada rencana stop",
+        "5": "Ada batas & kriteria penghentian jelas"
+      },
+      "evidence": "Batas biaya & kondisi berhenti bila ada.",
+      "probe": "Apa kriteria penghentian jika manfaat tidak tercapai?",
+      "critical": false
+    },
+    {
+      "id": "D8d",
+      "dimension": "D8",
+      "question": "Biaya dinilai terhadap manfaat yang diharapkan (unit/periode), bukan sekadar nominal?",
+      "anchors": {
+        "1": "Belum pernah dibandingkan",
+        "2": "Perasaan saja",
+        "3": "Dibandingkan kasar",
+        "4": "Dibandingkan dengan angka",
+        "5": "Dibandingkan & dipakai untuk memutuskan"
+      },
+      "evidence": "Perbandingan biaya vs manfaat bila pernah dibuat.",
+      "probe": "Manfaat per periode dibanding biayanya, bagaimana hitungannya?",
+      "critical": false
+    }
+  ],
+  "critical_ids": [
+    "S1b",
+    "S2a",
+    "S2b",
+    "S7a",
+    "S7b",
+    "D1d",
+    "D2a",
+    "D2b",
+    "D2c",
+    "D7a",
+    "D7b",
+    "D7c",
+    "D7d"
+  ],
+  "critical_note": "critical_ids = butir data relevan & kualitas, pemilik data, izin penggunaan, dan human review/fallback (sesuai mode). Bila lemah/unknown → agregat TIDAK menyetujui deploy; jadikan prasyarat. Mengubah rute rekomendasi, bukan angka skor.",
+  "legacy": {
+    "note": "Bank lama (key_questions_client.md 8, key_questions_lengkap.md 32, SOP_Kesiapan_Digitalisasi.md, riset_validasi_kesiapan.md) = mode LEGACY: 'tidak tahu' diperlakukan sebagai skor rendah/netral dan klaim 'TERVALIDASI RISET' merujuk triangulasi literatur, BUKAN validasi empiris. Angka skor historis TIDAK diubah. Sesi baru memakai pertanyaan_v3.json + PLAYBOOK_KONSULTAN.md.",
+    "known_biases": [
+      "kasir/omzet sebagai penanda kesiapan (dihapus di v3)",
+      "pilihan jawaban ganda (satu soal dua fokus)",
+      "rekomendasi otomatis mengarah ke AI",
+      "kesediaan membeli dinilai sebagai kesiapan (dihapus di v3)",
+      "jumlah orang/perangkat sebagai penanda kesiapan (dihapus di v3)"
+    ]
+  },
+  "references": [
+    {
+      "id": "nist-airmf-map",
+      "use": "Konteks, tujuan, dan pemetaan termasuk pertimbangan alternatif non-AI sebelum mengadopsi AI.",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/map/"
+    },
+    {
+      "id": "nist-airmf-measure",
+      "use": "Evaluasi sesuai penggunaan: ukur manfaat & risiko terhadap tujuan yang dinyatakan.",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/measure/"
+    },
+    {
+      "id": "nist-airmf-manage",
+      "use": "Kelola: lanjut/tunda sesuai manfaat & risiko, termasuk opsi berhenti/rollback.",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/manage/"
+    },
+    {
+      "id": "oecd-sme-ai",
+      "use": "Hambatan adopsi AI pada usaha kecil: data, keterampilan, infrastruktur, pembiayaan.",
+      "url": "https://www.oecd.org/en/publications/ai-adoption-by-small-and-medium-sized-enterprises_426399c1-en.html"
+    }
+  ],
+  "scoring_notes": [
+    "Unknown atau tidak punya pengalaman relevan = null, bukan 1 atau 3.",
+    "Pilih anchor tertinggi yang seluruh syaratnya didukung jawaban; konflik bukti memicu klarifikasi.",
+    "Skala menilai kemampuan sesuai kebutuhan proses, bukan kecanggihan alat, jumlah orang, atau kesediaan membeli.",
+    "Kesiapan, bukti, nilai bisnis dan risiko dilaporkan terpisah.",
+    "Bobot dan gerbang adalah heuristik internal; belum merupakan instrumen tervalidasi empiris."
+  ],
+  "bank_revision": "2026-10-04-preproduction-3"
+}

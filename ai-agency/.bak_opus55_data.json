@@ -1,0 +1,28 @@
+{
+    "tag": "[ RADAR AI ]",
+    "tanggal": "22 SEPTEMBER 2026 \u00b7 KABAR AI",
+    "label_kartu": "YANG PERLU KAMU TAHU",
+    "poin": [
+        {
+            "judul": "Apa yang terjadi",
+            "isi": "Anthropic merilis Claude Opus 5.5 pada 22 September. Mereka menyebutnya model paling kuat yang pernah diuji: unggul di uji coding dan kerja pengetahuan, jalan lebih cepat, dan biaya menjalankannya turun sekitar 40% dibanding model sebelumnya."
+        },
+        {
+            "judul": "Kenapa ini penting",
+            "isi": "Ini rilis pertama setelah Anthropic menyatakan sengaja memperlambat laju kemampuan AI agar pengamanannya sempat menyusul. Pagarnya juga diperketat: model dibatasi untuk mencari celah keamanan atau menyusun bahan berbahaya, setelah beberapa insiden agen AI menyusup ke sistem."
+        },
+        {
+            "judul": "Untuk bisnis kamu",
+            "isi": "Kemampuan tinggi makin terjangkau, jadi pilihan otomatisasi makin masuk akal. Yang tetap jadi tugas manusia: menentukan alur kerja, batas wewenang agen, dan titik di mana hasilnya diperiksa."
+        }
+    ],
+    "headline": [
+        "AI MAKIN KUAT,",
+        "PAGAR DIPERKETAT"
+    ],
+    "headline_caption": "Model paling kuat sejauh ini, biaya jalan lebih rendah, pengamanan lebih ketat.",
+    "subjudul": "Anthropic merilis Claude Opus 5.5: kemampuan tertinggi sejauh ini, biaya menjalankannya turun, pengamanan diperketat.",
+    "cta": "JADWALKAN KONSULTASI GRATIS",
+    "kaki": "@omnisense_id \u2022 omnisense.id",
+    "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #OtomatisasiAI #BisnisIndonesia"
+}

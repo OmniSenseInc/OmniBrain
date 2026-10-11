@@ -1,0 +1,28 @@
+{
+  "tag": "[ AI RADAR ]",
+  "tanggal": "SEPTEMBER 19, 2026 · AI BRIEF",
+  "label_kartu": "WHAT YOU NEED TO KNOW",
+  "poin": [
+    {
+      "judul": "What happened",
+      "isi": "Salesforce released seven AI agents with clear jobs: customer service, IT and HR, sales, and supply chain. One sales agent works a pipeline for weeks at a time."
+    },
+    {
+      "judul": "Why it matters",
+      "isi": "Agents no longer just answer questions. One gets a single goal, plans its own steps, and knows when to ask a human to approve."
+    },
+    {
+      "judul": "For your business",
+      "isi": "Start from work that already has a clear process, not from the tool. One agent, one job, and hard limits on what it decides alone."
+    }
+  ],
+  "headline": [
+    "AI AGENTS ARE GETTING",
+    "JOBS, NOT PROMPTS"
+  ],
+  "headline_caption": "Salesforce: AI agents with real jobs, from customer service to supply chain",
+  "subjudul": "Pick one task with a clear process, write down its steps, then mark where the agent may run alone and where you must approve.",
+  "cta": "BOOK A FREE CONSULTATION",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgents #AIforBusiness #ArtificialIntelligence #IndonesiaBusiness"
+}

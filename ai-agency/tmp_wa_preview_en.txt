@@ -1,0 +1,19 @@
+[ENGLISH VERSION — same news, English poster]
+
+Anthropic just released Claude Opus 5.5, and two things stand out.
+
+First, capability. They call it their strongest model yet: it leads on coding and knowledge-work tests, runs faster, and costs about 40% less to run than the previous model.
+
+Second, and rarely discussed: this is the first release since Anthropic said it would deliberately slow the pace of capability gains so safety work can catch up. Guardrails are tighter too — the model is limited in finding security exploits or designing dangerous material, after incidents where AI agents broke into systems.
+
+What that means for your business:
+• Top-end capability keeps getting cheaper, so automation plans are worth recalculating.
+• Smarter models, but decisions stay with people: the workflow, the agent's limits, and where results get checked.
+• Before choosing a tool, ask: where are the guardrails, and who reviews the output?
+
+DM / open profile → continue to WhatsApp. First consultation is free, no obligation.
+
+#OmniSense #AIAgents #AIforBusiness #Automation #OmniSenseID
+
+Balas 'post' untuk publish versi ID ke Instagram, 'batal' untuk tolak.
+MEDIA:/home/ubuntu/ai-agency/konten_berita_en.png

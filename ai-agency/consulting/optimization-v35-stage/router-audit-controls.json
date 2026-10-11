@@ -1,0 +1,62 @@
+[
+  {
+    "name": "system_exact_repeat",
+    "content": "Saya belum punya \"instruksi format\" yang bisa dijalankan — belum ada detail apa pun di percakapan ini tentang format yang Anda maksud.\n\nBisa tolong jelaskan:\n\n1. **Instruksi formatnya apa?** (misalnya: format output tertentu, template laporan, struktur JSON, gaya penulisan, dsb.)\n2. **Targetnya apa?** (teks/kode/data yang mana yang harus diformat)\n3. **Contoh hasil yang diinginkan** kalau ada.\n\nKirimkan instruksi atau contohnya, nanti saya langsung jalankan.",
+    "response_model": "deepseek-v4.1-flash",
+    "response_id": "chatcmpl-c89eb46e",
+    "usage": {
+      "completion_tokens": 204,
+      "prompt_tokens": 44,
+      "total_tokens": 248
+    },
+    "finish_reason": "stop",
+    "request_id": "09ac3927-9bc4-4588-a51a-710b4337f533",
+    "pass": false,
+    "seconds": 2.66
+  },
+  {
+    "name": "user_exact_control",
+    "content": "MANGGA731",
+    "response_model": "deepseek-v4.1-flash",
+    "response_id": "chatcmpl-c89eb46e",
+    "usage": {
+      "completion_tokens": 108,
+      "prompt_tokens": 50,
+      "total_tokens": 158
+    },
+    "finish_reason": "stop",
+    "request_id": "584a7022-8766-493e-b2dc-f499583b3445",
+    "pass": true,
+    "seconds": 1.8
+  },
+  {
+    "name": "developer_exact_control",
+    "content": "Saya belum menerima instruksi format yang Anda maksud. Dalam percakapan ini belum ada definisi format apa pun (misalnya format output, format laporan, template tertentu, atau aturan penulisan).\n\nMohon jelaskan:\n\n1. **Instruksi formatnya** — salin/tempel teks instruksinya, atau sebutkan sumbernya (file, dokumen, atau pesan sebelumnya).\n2. **Target penerapannya** — konten atau data apa yang harus diformat ulang.\n3. **Preferensi output** — misalnya Markdown, tabel, JSON, teks biasa, atau lainnya.\n\nSetelah itu saya akan langsung menjalankannya sesuai instruksi yang Anda berikan.",
+    "response_model": "deepseek-v4.1-flash",
+    "response_id": "chatcmpl-c89eb46e",
+    "usage": {
+      "completion_tokens": 226,
+      "prompt_tokens": 44,
+      "total_tokens": 270
+    },
+    "finish_reason": "stop",
+    "request_id": "98c46c7b-b8fc-41d9-9890-7397b115f8cb",
+    "pass": false,
+    "seconds": 2.78
+  },
+  {
+    "name": "user_case_json_control",
+    "content": "{\"known\":[\"Laporan mengalami keterlambatan\",\"Persetujuan masih dilakukan melalui chat\",\"Jumlah keterlambatan belum diukur\",\"Penyebab keterlambatan belum diukur\"],\"unknown\":[\"Definisi dan batas waktu tepat untuk kategori terlambat\",\"Frekuensi dan durasi keterlambatan per jenis laporan\",\"Penyebab utama keterlambatan, apakah proses, kapasitas, dependensi, atau kepatuhan\",\"Pihak yang terlibat dan peran dalam alur persetujuan via chat\",\"Apakah persetujuan via chat sudah memiliki jejak audit dan keabsahan formal\",\"Volume laporan, jumlah approver, dan titik bottleneck dalam alur\",\"Dampak bisnis dari keterlambatan laporan\",\"Ketersediaan data timestamp untuk mengukur keterlambatan secara akurat\",\"Apakah sudah ada sistem workflow, tiket, atau SLA yang berlaku\"],\"next_step\":\"Lakukan pengukuran baseline jumlah, durasi, dan jenis keterlambatan serta petakan alur persetujuan chat untuk mengidentifikasi bottleneck dan penyebab utama.\"}",
+    "response_model": "deepseek-v4.1-flash",
+    "response_id": "chatcmpl-c89eb46e",
+    "usage": {
+      "completion_tokens": 1182,
+      "prompt_tokens": 126,
+      "total_tokens": 1308
+    },
+    "finish_reason": "stop",
+    "request_id": "04f9ce79-01fb-4497-ac42-7f9d0ecd734a",
+    "valid_case_json": true,
+    "seconds": 7.2
+  }
+]

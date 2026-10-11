@@ -1,0 +1,28 @@
+{
+    "tag": "[ RADAR AI ]",
+    "tanggal": "1 OKTOBER 2026 · KABAR AI",
+    "label_kartu": "YANG PERLU KAMU TAHU",
+    "poin": [
+        {
+            "judul": "Apa yang terjadi",
+            "isi": "Google mengumumkan Gemini 4 Argon pada 30 September. Model ini dibuat untuk pekerjaan panjang dan rumit: coding, pekerjaan hukum dan keuangan, serta pertahanan siber. Untuk sementara hanya dibuka untuk tim keamanan siber terpilih."
+        },
+        {
+            "judul": "Kenapa ini penting",
+            "isi": "Rilis model paling kuat kini berjalan bertahap dan hati-hati. Artinya, model terbaru belum tentu langsung bisa dipakai bisnis biasa — dan angka di brosur baru terbukti pada uji internal, bukan di pekerjaan nyata."
+        },
+        {
+            "judul": "Untuk bisnis kamu",
+            "isi": "Jangan kejar model paling baru. Pilih yang sudah stabil, cocok dengan pekerjaan harian, dan biayanya masuk. Yang menentukan hasil bukan nama modelnya, tapi cara ia dipakai."
+        }
+    ],
+    "headline": [
+        "MODEL PALING KUAT,",
+        "AKSES MASIH TERBATAS"
+    ],
+    "headline_caption": "Gemini 4 Argon: makin kuat, tapi dibuka bertahap.",
+    "subjudul": "Google merilis Gemini 4 Argon (30 Sep) untuk pekerjaan panjang — baru untuk tim keamanan siber terpilih.",
+    "cta": "JADWALKAN KONSULTASI GRATIS",
+    "kaki": "@omnisense_id • omnisense.id",
+    "hashtag": "#OmniSense #AIAgent #ModelAI #KonsultanAI #OmniSenseID"
+}

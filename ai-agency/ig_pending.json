@@ -1,0 +1,15 @@
+{
+  "status": "published",
+  "key": "anthropic-dynamic-workflows-1000-agen",
+  "image": "/home/ubuntu/ai-agency/konten_berita_id.png",
+  "image_name": "konten_berita_id.png",
+  "caption": "Ada satu perubahan besar yang jarang jadi berita utama, padahal ini soal cara kita bekerja.\n\nMulai 9 Oktober, Claude (buatan Anthropic) bisa memimpin sampai 1.000 agen AI dalam satu tugas. Satu \"agen utama\" menyusun rencana, membagi pekerjaan ke banyak agen (maksimal 64 bekerja bersamaan), lalu menggabungkan hasilnya — semuanya berjalan sendiri di latar belakang.\n\nUji mereka: pada 70 masalah yang disembunyikan di dalam kode sebesar 116.000 baris, satu agen biasa hanya menemukan 14–27. Dengan banyak agen yang bekerja berlapis, hasilnya konsisten 66 dari 70 — tiga kali berturut-turut.\n\nKenapa ini penting:\n• Pekerjaan besar — memeriksa, merapikan, dan mengaudit banyak hal sekaligus — kini bisa selesai dalam jam, bukan minggu.\n• Agen utama tidak lagi jadi penyumbat: yang mengatur pembagian kerja adalah program, bukan satu orang.\n• Catatan jujurnya: makin banyak agen, makin banyak biaya. Anthropic sendiri menyarankan mulai dari tugas yang kecil.\n\nUntuk bisnis kamu:\nBayangkan punya satu orang yang bisa mendelegasikan pekerjaan ke ratusan tangan — asal tahu mana yang boleh disentuh, berapa anggarannya, dan bagaimana hasilnya diperiksa. Di situ bedanya antara \"punya AI\" dan \"memakai AI yang benar-benar menghemat waktu\".\n\nKalau kamu ingin tahu bagian mana dari bisnis kamu yang paling pas dikerjakan agen AI — dan mana yang lebih baik tetap di tangan manusia — kami bantu petakan dari nol.\n\nDM / buka profil → lanjut chat ke WhatsApp. Konsultasi awal gratis, tanpa komitmen.\n\nFoto: Dario Amodei at TechCrunch Disrupt 2023 01 (CC BY 2.0) — Wikimedia Commons",
+  "hashtags": "#OmniSense #AIAgent #AIuntukBisnis #KonsultanAI #OmniSenseID",
+  "note": "Anthropic: dynamic workflows di Claude Managed Agents (public beta 9 Okt 2026) — 1 run sampai 1.000 agen (maks 64 bersamaan); uji internal 66/70 bug vs 14-27 agen tunggal; $0,08/session-hour",
+  "created_at": "2026-10-09T20:56:25+00:00",
+  "created_by": "cron",
+  "queued_count": 42,
+  "published_at": "2026-10-09T21:30:56+00:00",
+  "media_id": "18105707438196000",
+  "permalink": "https://www.instagram.com/p/DeSeqTFkqZl/"
+}

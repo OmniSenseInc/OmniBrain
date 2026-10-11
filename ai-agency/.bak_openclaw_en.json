@@ -1,0 +1,28 @@
+{
+    "tag": "[ OMNISENSE RADAR ]",
+    "tanggal": "OCTOBER 1, 2026 · AI NEWS",
+    "label_kartu": "WHAT YOU NEED TO KNOW",
+    "poin": [
+        {
+            "judul": "What happened",
+            "isi": "OpenClaw Enterprise shipped on Sep 29 as an open platform (MIT license) for governing AI agents that keep working over time. The project began inside OpenAI, was donated to the OpenClaw Foundation, and is now built with Red Hat and Nvidia."
+        },
+        {
+            "judul": "Why it matters",
+            "isi": "The hard question about agents is no longer how smart they are, but whether a company dares let them touch production systems, credentials and data. That control layer can now run on your own servers, free, without locking you to one vendor."
+        },
+        {
+            "judul": "For your business",
+            "isi": "Decide up front: which data agents may open, which actions they may take on their own, and who reviews the work. One caveat: the platform is still early, so use it for internal pilots first."
+        }
+    ],
+    "headline": [
+        "AI AGENTS FINALLY GET",
+        "A CONTROL ROOM OF YOUR OWN"
+    ],
+    "headline_caption": "OpenClaw Enterprise: agent control now sits with the company.",
+    "subjudul": "An open platform for running AI agents on your own infrastructure (Sep 29): permissions, boundaries and audit trails in one place.",
+    "cta": "BOOK A FREE CONSULTATION",
+    "kaki": "@omnisense_id • omnisense.id",
+    "hashtag": "#OmniSense #AIAgents #Automation #AIConsultant #OmniSenseID"
+}

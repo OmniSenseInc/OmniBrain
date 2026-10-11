@@ -1,0 +1,16 @@
+OpenAI baru saja memotong harga modelnya sampai separuh.
+
+GPT-6 Sol dan Luna dirilis 22 September. Untuk pemakaian lewat API, biayanya turun setengah dari seri sebelumnya: Sol dari 4 jadi 2 dolar per juta token input, Luna dari 0,20 jadi 0,10 dolar. Ditambah lagi, input yang tersimpan di cache dapat diskon 90%.
+
+Satu catatan penting supaya tidak salah baca: yang turun drastis itu biayanya, bukan kepintarannya. OpenAI mengklaim Sol membuat kesalahan fakta sekitar separuh lebih sedikit dari pendahulunya, tetapi penilai independen mencatat kemampuannya belum melonjak dari generasi sebelumnya.
+
+Artinya untuk bisnis kamu:
+• Pekerjaan bervolume tinggi — meringkas dokumen, menarik data dari berkas, menjawab pertanyaan berulang — kini masuk hitungan biaya yang jauh lebih ramah.
+• Rencana otomatisasi yang dulu terasa mahal layak dihitung ulang bulan ini, bukan tahun depan.
+• Mulai dari satu alur kerja yang paling sering diulang. Ukur hasilnya dulu, baru diperluas.
+
+Kalau kamu ingin tahu alur kerja mana di bisnismu yang paling layak dibantu AI sekarang — dan berapa kira-kira biayanya setelah harga baru ini — kami siap duduk bersama.
+
+DM / buka profil → lanjut chat ke WhatsApp. Konsultasi awal gratis, tanpa kewajiban lanjut.
+
+#OmniSense #AIAgent #AIuntukBisnis #OtomatisasiAI #BisnisIndonesia

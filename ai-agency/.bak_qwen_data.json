@@ -1,0 +1,28 @@
+{
+  "tag": "[ RADAR AI ]",
+  "tanggal": "20 SEPTEMBER 2026 · KABAR AI",
+  "label_kartu": "YANG PERLU KAMU TAHU",
+  "poin": [
+    {
+      "judul": "Apa yang terjadi",
+      "isi": "Alibaba merilis Qwen3.8-Omni-Flash: model yang menerima teks, gambar, audio, dan video sekaligus, lalu memakai alat sendiri untuk mengedit video atau meringkas film. Harganya 0,15 dolar per juta token masukan dan 0,47 dolar keluaran."
+    },
+    {
+      "judul": "Kenapa ini penting",
+      "isi": "Sebagai pembanding, Gemini 3.8 Flash mematok 0,75 dan 3,75 dolar per juta token. Tapi pada uji tugas agen dan video, Qwen masih di bawah Gemini — ini soal harga, bukan soal menang di semua hal."
+    },
+    {
+      "judul": "Untuk bisnis kamu",
+      "isi": "Mulai dari satu pekerjaan yang paling sering muncul: membaca dokumen, merekam panggilan, atau memeriksa rekaman. Uji dua model di pekerjaan itu, bandingkan hasil dan biayanya, baru pilih."
+    }
+  ],
+  "headline": [
+    "MODEL AI MAKIN MURAH,",
+    "TAPI MANA YANG TEPAT?"
+  ],
+  "headline_caption": "Alibaba rilis Qwen3.8-Omni-Flash: model serba bisa untuk agen dengan harga sekitar seperlima Gemini 3.8 Flash",
+  "subjudul": "Harga turun bukan alasan memilih yang termurah — yang penting cocok dengan pekerjaanmu.",
+  "cta": "JADWALKAN KONSULTASI GRATIS",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #KecerdasanBuatan #BisnisIndonesia"
+}

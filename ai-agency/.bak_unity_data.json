@@ -1,0 +1,28 @@
+{
+  "tag": "[ RADAR AI ]",
+  "tanggal": "20 SEPTEMBER 2026 · KABAR AI",
+  "label_kartu": "YANG PERLU KAMU TAHU",
+  "poin": [
+    {
+      "judul": "Apa yang terjadi",
+      "isi": "Unity merilis plugin resmi untuk Claude Code dan OpenAI Codex. Isinya \"skill\" yang ditulis dan dirawat langsung oleh tim Unity — versi Codex hadir dengan 31 skill, dari antarmuka dan grafis 2D sampai audio, fisika, dan pembelian di dalam aplikasi."
+    },
+    {
+      "judul": "Kenapa ini penting",
+      "isi": "Menurut Unity, agen AI umumnya mencontek tutorial lama dari forum. Kodenya bisa saja jalan, tapi sering tidak bekerja seperti seharusnya. Dengan skill resmi, agen mulai dari panduan yang benar dan selalu diperbarui."
+    },
+    {
+      "judul": "Untuk bisnis kamu",
+      "isi": "Agen AI bukan sulap. Mulai dari satu alur kerja, tulis panduan yang jelas untuk agen itu, lalu uji hasilnya sebelum dipakai sehari-hari."
+    }
+  ],
+  "headline": [
+    "AGEN AI BERHENTI MENEBAK,",
+    "KINI DIBERI PANDUAN RESMI"
+  ],
+  "headline_caption": "Unity rilis plugin resmi untuk Claude Code dan OpenAI Codex: agen AI kini bekerja dari panduan yang dirawat vendor, bukan tutorial lama",
+  "subjudul": "Hasil agen AI ditentukan oleh arahan yang kamu berikan — bukan keberuntungan.",
+  "cta": "JADWALKAN KONSULTASI GRATIS",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #KecerdasanBuatan #BisnisIndonesia"
+}

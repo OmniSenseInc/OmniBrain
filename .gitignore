@@ -1,0 +1,28 @@
+# Rahasia & data pribadi TIDAK pernah masuk repo
+.env
+*.env
+.env.*
+**/ig_token.env
+**/.telegraph_privacy_token.txt
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+state.db*
+auth.json
+whatsapp/session/
+**/*.pem
+**/*.key
+**/credentials*
+# Besar / bisa dipasang ulang
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+backups/
+*.zip
+*.tar.gz
+*.enc
+*.part
+!bundel/*.part
+!bundel/SHA256SUMS
+*.log

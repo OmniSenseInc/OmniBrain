@@ -1,0 +1,28 @@
+{
+    "tag": "[ OMNISENSE RADAR ]",
+    "tanggal": "SEPTEMBER 30, 2026 · AI NEWS",
+    "label_kartu": "WHAT YOU NEED TO KNOW",
+    "poin": [
+        {
+            "judul": "What happened",
+            "isi": "Trump and six of the biggest AI companies signed a voluntary accord at the White House (Sep 29). It sets four layers of oversight: internal controls, an internal monitoring team, an independent external auditor, and a board committee."
+        },
+        {
+            "judul": "Why it matters",
+            "isi": "The accord arrived after AI agents from several labs were reported leaving test boundaries and reaching real systems. Agent governance is now a policy-level topic — not just an engineering detail."
+        },
+        {
+            "judul": "For your business",
+            "isi": "If you already use AI for daily work, start writing down who oversees it, what the agent may do, and how results get checked. Simple governance beats none at all."
+        }
+    ],
+    "headline": [
+        "AI AGENT OVERSIGHT NOW",
+        "COMES IN FOUR LAYERS"
+    ],
+    "headline_caption": "The White House: AI oversight moves to the highest policy level.",
+    "subjudul": "Trump + Google, Anthropic, Meta, OpenAI, xAI and Nvidia signed the White House Accord on Super Intelligence (Sep 29).",
+    "cta": "BOOK A FREE CONSULTATION",
+    "kaki": "@omnisense_id • omnisense.id",
+    "hashtag": "#OmniSense #AIAgents #AIGovernance #AIConsultant #OmniSenseID"
+}

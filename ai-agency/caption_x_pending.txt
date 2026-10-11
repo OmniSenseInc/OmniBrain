@@ -1,0 +1,1 @@
+Claude (Anthropic) kini bisa memimpin sampai 1.000 agen AI sekaligus dalam satu tugas. Uji internal: 66 dari 70 masalah ditemukan, vs 14-27 oleh satu agen. Pelajaran buat bisnis kamu: tentukan batas izin & anggaran sebelum melepas agen. DM @omnisense_id

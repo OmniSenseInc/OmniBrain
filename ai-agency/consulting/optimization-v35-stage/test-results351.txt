@@ -1,0 +1,15 @@
+..................................................................................Executing <Task pending name='Task-2' coro=<RealPluginTests.test_discovered_plugin_real_ingress_and_tool_free_fallback() running at /home/ubuntu/ai-agency/consulting/optimization-v35-stage/consulting/test_consultation_gateway.py:250> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at /home/ubuntu/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/tasks.py:709> cb=[_run_until_complete_cb() at /home/ubuntu/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/base_events.py:181] created at /home/ubuntu/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/runners.py:100> took 0.369 seconds
+Omni consultation using deterministic reply (RuntimeError)
+Omni consultation using deterministic reply (RuntimeError)
+Omni consultation using deterministic reply (RuntimeError)
+Omni consultation using deterministic reply (RuntimeError)
+Omni consultation using deterministic reply (RuntimeError)
+Omni consultation using deterministic reply (RuntimeError)
+Omni consultation using deterministic reply (RuntimeError)
+Omni consultation using deterministic reply (RuntimeError)
+Omni consultation using deterministic reply (RuntimeError)
+..........................
+----------------------------------------------------------------------
+Ran 108 tests in 4.781s
+
+OK

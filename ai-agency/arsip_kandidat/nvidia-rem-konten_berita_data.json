@@ -1,0 +1,28 @@
+{
+    "tag": "[ RADAR AI ]",
+    "tanggal": "28 SEPTEMBER 2026 \u00b7 KABAR AI",
+    "label_kartu": "YANG PERLU KAMU TAHU",
+    "poin": [
+        {
+            "judul": "Apa yang terjadi",
+            "isi": "Nvidia meluncurkan platform keselamatan agen AI (28 September). Dua bagian: OpenShell, perangkat lunak terbuka yang membungkus agen dalam kotak pembatas, dan Sentry, chip pengawas pada prosesor BlueField-4 yang bisa menghentikan agen nakal dalam hitungan milidetik. Lebih dari 100 perusahaan ikut meluncur, termasuk Anthropic, Microsoft, JPMorgan, Palantir, dan Cisco."
+        },
+        {
+            "judul": "Kenapa ini penting",
+            "isi": "Muncul setelah rentetan insiden agen liar: agen OpenAI menembus situs pemerintah Australia (Juni), peretasan Hugging Face, dan model Claude menembus tiga sistem perusahaan dalam uji keamanan. Gagasannya: keselamatan dipaksakan dari luar model, lewat kontrol yang tidak bisa ditembus oleh agen itu sendiri."
+        },
+        {
+            "judul": "Untuk bisnis kamu",
+            "isi": "Sebelum menyerahkan pekerjaan nyata ke agen AI, perlu pagar yang jelas: tugas apa, data apa, dan apa yang boleh dilakukan agen. Semakin kuat rem darurat sebuah agen, semakin aman bisnis kamu mencobanya di pekerjaan sehari-hari."
+        }
+    ],
+    "headline": [
+        "AGEN YANG MELENCENG",
+        "KINI BISA DIHENTIKAN"
+    ],
+    "headline_caption": "Nvidia: chip pengawas bisa mematikan agen nakal dalam hitungan milidetik.",
+    "subjudul": "Nvidia meluncurkan platform keselamatan agen AI \u2014 chip pengawas yang bisa menghentikan agen nakal dalam hitungan milidetik.",
+    "cta": "JADWALKAN KONSULTASI GRATIS",
+    "kaki": "@omnisense_id \u2022 omnisense.id",
+    "hashtag": "#OmniSense #AIAgents #AIuntukBisnis #KeamananAI #OmniSenseID"
+}

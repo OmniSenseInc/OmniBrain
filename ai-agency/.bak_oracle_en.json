@@ -1,0 +1,28 @@
+{
+    "tag": "[ OMNISENSE RADAR ]",
+    "tanggal": "OCTOBER 5, 2026 · AI NEWS",
+    "label_kartu": "WHAT YOU NEED TO KNOW",
+    "poin": [
+        {
+            "judul": "What happened",
+            "isi": "Oracle introduced Fusion Claw (September 29), a layer that lets AI agents do real work inside core business systems: financial reconciliation, staffing plans, and supply chains."
+        },
+        {
+            "judul": "Why it matters",
+            "isi": "What sets it apart is not the model but clear boundaries: goals, permissions, risk thresholds, and who approves. Every step is recorded and auditable."
+        },
+        {
+            "judul": "For your business",
+            "isi": "A useful agent is one that knows its limits. Start with the single task that eats the most time, with clear rules and approvals from day one."
+        }
+    ],
+    "headline": [
+        "AGENTS MOVE INTO CORE SYSTEMS,",
+        "CONTROL STAYS IN YOUR HANDS"
+    ],
+    "headline_caption": "Fusion Claw: agents do real work, within clear limits.",
+    "subjudul": "Oracle Fusion Claw (Sep 29): agents do real work in core business systems — with firm permission boundaries.",
+    "cta": "BOOK A FREE CONSULTATION",
+    "kaki": "@omnisense_id • omnisense.id",
+    "hashtag": "#OmniSense #AIAgents #AIConsultant #AgenticAI #OmniSenseID"
+}

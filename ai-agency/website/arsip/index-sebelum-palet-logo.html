@@ -1,0 +1,2337 @@
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OmniSense — Ukur Kesiapan AI Bisnis Anda</title>
+<meta name="description" content="OmniSense menilai kesiapan digitalisasi dan AI bisnis Anda lewat 8 dimensi berbobot, lalu menyusun rencana prioritas yang bisa dijalankan. Penilaian awal gratis." />
+<meta property="og:title" content="OmniSense — Ukur Kesiapan AI Bisnis Anda" />
+<meta property="og:description" content="Penilaian kesiapan 8 dimensi, gratis. Hasilnya: skor, kategori, dan rencana prioritas 30/60/90 hari." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://omnisense.id/" />
+<meta property="og:site_name" content="OmniSense" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:image" content="https://omnisense.id/assets/og-omnisense.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="OmniSense - penilaian kesiapan digitalisasi dan AI lewat 8 dimensi berbobot." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://omnisense.id/assets/og-omnisense.png" />
+<link rel="canonical" href="https://omnisense.id/" />
+<meta name="theme-color" content="#081726" />
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/apple-touch-icon-192.png" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* ============================================================
+   OmniSense — Tema A "Obsidian Instrument" (terkunci)
+   obsidian + satu aksen teal untuk data & state saja.
+   ============================================================ */
+:root{
+  --obsidian:#09090B;
+  --obsidian-2:#0C0C0E;
+  --panel:#121215;
+  --line:#27272A;
+  --line-2:#3F3F46;
+  --track:#34343C;
+  --white:#FFFFFF;
+  --ink:#F4F4F5;
+  --slate:#94A3B8;
+  --slate-dim:#64748B;   /* non-text only (4.2:1) */
+  --signal:#14B8A6;
+  --signal-deep:#0F766E;
+  --navh:64px;
+  --maxw:1240px;
+  --gutter:clamp(20px,4vw,56px);
+  --r-s:8px;
+  --r-m:14px;
+  --r-l:20px;
+  --font-sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--obsidian);color:var(--ink);
+  font-family:var(--font-sans);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,canvas{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:-0.02em;line-height:1.12;text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:rgba(20,184,166,.28);color:#fff}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
+.mono{font-family:var(--font-mono);font-variant-ligatures:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--signal);color:#04211E;padding:10px 16px;font-weight:600}
+.skip:focus{left:0}
+.only-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- grain ---------- */
+.grain{
+  position:fixed;inset:0;z-index:120;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.vignette{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(125% 105% at 50% 36%,rgba(9,9,11,0) 40%,rgba(9,9,11,.6) 76%,rgba(9,9,11,.94) 100%);
+}
+
+/* ---------- nav ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;height:var(--navh);
+  background:rgba(9,9,11,.72);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .4s ease,background .4s ease;
+}
+.nav.is-stuck{border-bottom-color:var(--line);background:rgba(9,9,11,.88)}
+.nav-in{height:100%;display:flex;align-items:center;gap:clamp(14px,3vw,40px)}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto;font-weight:600;font-size:17px;letter-spacing:-0.01em}
+.brand img{width:26px;height:26px;flex:0 0 auto}
+.nav-links{display:flex;align-items:center;gap:clamp(14px,2.2vw,28px);margin-left:auto}
+.nav-link{
+  position:relative;display:flex;align-items:baseline;gap:5px;padding:6px 0;
+  font-size:14px;font-weight:500;color:var(--slate);transition:color .25s ease;
+}
+.nav-link:hover{color:var(--white)}
+.nav-link::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--signal);
+  transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.nav-link:hover::after,.nav-link.is-active::after{transform:scaleX(1)}
+.nav-link.is-active{color:var(--white)}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:999px;
+  border:1px solid var(--line-2);background:var(--panel);color:var(--ink);
+  font-weight:600;font-size:14.5px;
+  transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease,background .25s ease;
+}
+.btn:hover{transform:translateY(-1px);border-color:var(--signal);background:var(--obsidian-2)}
+.btn-primary{background:var(--signal);color:#04211E;border-color:var(--signal)}
+.btn-primary:hover{background:#0FA79A;border-color:#0FA79A}
+.btn svg{width:15px;height:15px;flex:0 0 auto}
+.nav-cta{padding:9px 16px;font-size:13.5px}
+.progress{position:absolute;left:0;bottom:-1px;height:1.5px;width:0;background:var(--signal);opacity:.9}
+
+/* ---------- peta bagian (sticky) ---------- */
+.ixbar{
+  position:sticky;top:var(--navh);z-index:60;
+  background:rgba(12,12,14,.88);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.ix-in{display:flex;align-items:center;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none}
+.ix-in::-webkit-scrollbar{display:none}
+.ix{
+  display:flex;align-items:center;gap:7px;white-space:nowrap;scroll-snap-align:start;
+  padding:12px 11px 12px 0;margin-right:5px;font-size:12.5px;font-weight:500;color:var(--slate);
+  border-bottom:1.5px solid transparent;transition:color .25s ease,border-color .25s ease;
+}
+.ix:hover{color:var(--white)}
+.ix .n{width:6px;height:6px;border-radius:50%;background:var(--line-2);opacity:1;transition:background .25s ease}
+.ix.is-active .n{background:var(--signal)}
+.ix.is-active{color:var(--white);border-bottom-color:var(--signal)}
+.ix.is-active .n,.ix.is-active .c{color:var(--signal);opacity:1}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding-top:calc(var(--navh) + clamp(46px,7vw,92px));padding-bottom:clamp(34px,5vw,56px)}
+#field{position:absolute;inset:0;z-index:0;width:100%;height:100%}
+.wm{
+  position:absolute;z-index:0;left:50%;bottom:-.04em;transform:translateX(-50%);
+  font-weight:900;font-size:clamp(84px,21vw,300px);letter-spacing:-0.045em;line-height:.8;
+  color:rgba(244,244,245,.055);white-space:nowrap;user-select:none;pointer-events:none;
+  -webkit-text-stroke:1px rgba(20,184,166,.09);
+}
+.hero-in{position:relative;z-index:2}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border-radius:999px;
+  border:1px solid var(--line-2);background:rgba(18,18,21,.6);
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);
+}
+.eyebrow .pip{width:6px;height:6px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(20,184,166,.16)}
+h1{font-size:clamp(38px,7vw,82px);font-weight:800;letter-spacing:-0.035em;margin-top:22px}
+h1 .accent{color:var(--signal)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:clamp(30px,4.6vw,68px);align-items:center;margin-top:clamp(24px,3.6vw,40px)}
+.lede{font-size:clamp(16px,1.6vw,18.5px);color:var(--slate);max-width:56ch}
+.hero-act{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
+.hint{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;color:var(--slate)}
+.hint .ln{width:22px;height:1px;background:var(--line-2)}
+.metastrip{
+  position:relative;z-index:2;margin-top:clamp(30px,4.4vw,56px);
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.metastrip .m{position:relative;padding:18px 0 18px 22px;border-left:1px solid var(--line)}
+.metastrip .m:first-child{border-left:0;padding-left:0}
+.metastrip .k{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.metastrip .v{font-size:15.5px;font-weight:600;margin-top:6px}
+.metastrip .v em{font-style:normal;color:var(--signal)}
+
+/* panel skor */
+.panel{
+  position:relative;padding:clamp(20px,2.4vw,28px);border:1px solid var(--line-2);border-radius:var(--r-l);
+  background:linear-gradient(180deg,rgba(18,18,21,.94),rgba(12,12,14,.94));
+  box-shadow:0 40px 80px -50px rgba(0,0,0,.9);
+}
+.panel::before{
+  content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(70% 60% at 22% 0%,rgba(20,184,166,.12),transparent 70%);
+}
+.panel-head{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.panel-head .t{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+.pill{
+  padding:4px 9px;border-radius:999px;white-space:nowrap;
+  border:1px solid rgba(20,184,166,.35);background:rgba(20,184,166,.08);color:var(--signal);
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+}
+.gauge-wrap{position:relative;display:flex;align-items:center;gap:clamp(16px,2.4vw,26px);margin-top:22px}
+.gauge{position:relative;flex:0 0 auto;width:132px;height:132px}
+.gauge svg{transform:rotate(-90deg)}
+.gauge .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.gauge .num b{font-size:34px;font-weight:800;letter-spacing:-0.03em;line-height:1}
+.gauge .num span{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--slate)}
+.band-name{font-size:19px;font-weight:700;letter-spacing:-0.02em}
+.band-note{font-size:14px;color:var(--slate);margin-top:6px;max-width:34ch}
+.dims{position:relative;margin-top:24px;border-top:1px solid var(--line)}
+.drow{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+.drow .nm{flex:1 1 auto;min-width:0;font-size:13.5px;color:var(--slate);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.drow .bar{position:relative;flex:0 0 88px;height:5px;border-radius:999px;background:var(--track);overflow:hidden}
+.drow .bar i{position:absolute;inset:0 auto 0 0;width:0;background:var(--signal);border-radius:999px}
+.drow .pc{flex:0 0 34px;text-align:right;font-family:var(--font-mono);font-size:12px;color:var(--ink)}
+.panel-foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:12px;color:var(--slate);line-height:1.7}
+
+/* ---------- marquee ---------- */
+.marquee{position:relative;z-index:2;overflow:hidden;background:var(--obsidian-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mq-track{display:flex;width:max-content;animation:mq 44s linear infinite}
+.mq-track span{
+  padding:13px 26px;white-space:nowrap;
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);
+}
+.mq-track span::after{content:"·";margin-left:26px;color:var(--signal);opacity:.55}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- seksi ---------- */
+section{position:relative}
+.sec{padding-block:clamp(62px,8.4vw,116px)}
+.sec + .sec{border-top:1px solid var(--line)}
+.shead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(20px,4vw,58px);align-items:end}
+h2{font-size:clamp(27px,4.2vw,50px);font-weight:800;letter-spacing:-0.035em;margin-top:16px}
+h2 .accent{color:var(--signal)}
+.shead p{font-size:16.5px;color:var(--slate);max-width:52ch}
+.shead-note{margin-top:14px;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+
+/* langkah */
+.steps{margin-top:clamp(34px,4.4vw,60px);border-top:1px solid var(--line)}
+.step{
+  position:relative;overflow:hidden;display:grid;grid-template-columns:auto minmax(0,1fr);
+  gap:clamp(16px,3vw,42px);padding:clamp(24px,3.2vw,42px) 0;border-bottom:1px solid var(--line);
+}
+.step .marker{display:flex;align-items:flex-start;gap:10px;padding-top:4px}
+.step .marker i{width:7px;height:7px;margin-top:8px;border-radius:50%;background:var(--line-2);transition:background .4s ease,box-shadow .4s ease}
+.step.in .marker i{background:var(--signal);box-shadow:0 0 0 4px rgba(20,184,166,.13)}
+.step .tag{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);white-space:nowrap}
+.step h3{position:relative;font-size:clamp(20px,2.4vw,28px);font-weight:700;margin-bottom:12px}
+.step p{font-size:16px;color:var(--slate);max-width:62ch}
+.step .out{
+  display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding:6px 12px;border-radius:999px;
+  border:1px solid var(--line-2);background:rgba(12,12,14,.7);
+  font-family:var(--font-mono);font-size:12px;color:var(--slate);
+}
+.step .out b{color:var(--signal);font-weight:500}
+
+/* tangga kategori */
+.ladder{margin-top:clamp(32px,4.2vw,56px)}
+.scale{position:relative;height:76px;margin-bottom:6px}
+.scale .seg{position:absolute;top:34px;height:9px;border-radius:2px;background:var(--obsidian-2);border:1px solid var(--line);transition:background .5s ease,border-color .5s ease}
+.scale .seg.on{background:rgba(20,184,166,.18);border-color:rgba(20,184,166,.42)}
+.scale .tick{position:absolute;top:50px;transform:translateX(-50%);font-family:var(--font-mono);font-size:12px;color:var(--slate)}
+.mark{position:absolute;top:0;left:0;width:2px;height:52px;background:var(--signal);transition:left 1.1s cubic-bezier(.2,.7,.2,1)}
+.mark::after{content:"";position:absolute;left:-3px;top:-4px;width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px rgba(20,184,166,.16)}
+.mark b{
+  position:absolute;left:50%;top:-2px;transform:translateX(-50%);white-space:nowrap;
+  padding:2px 6px;border-radius:4px;background:var(--obsidian);
+  font-family:var(--font-mono);font-size:12px;color:var(--signal);
+}
+.bands{border-top:1px solid var(--line)}
+.band{
+  display:grid;grid-template-columns:minmax(84px,auto) minmax(150px,.9fr) minmax(0,1.5fr) minmax(0,1.25fr);
+  gap:clamp(12px,2.2vw,28px);align-items:baseline;
+  padding:18px 0 18px 16px;border-bottom:1px solid var(--line);border-left:2px solid transparent;
+}
+.band.is-eg{border-left-color:var(--signal);background:linear-gradient(90deg,rgba(20,184,166,.055),transparent 62%)}
+.band .rg{font-family:var(--font-mono);font-size:12.5px;color:var(--slate)}
+.band .nm{font-size:16.5px;font-weight:700;letter-spacing:-0.01em}
+.band.is-eg .nm{color:var(--signal)}
+.band .mn{font-size:14.5px;color:var(--slate)}
+.band .rk{font-size:13.5px;color:var(--slate)}
+
+/* kartu dimensi */
+.dimgrid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;
+  margin-top:clamp(32px,4.2vw,56px);background:var(--line);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;
+}
+.dcard{position:relative;display:flex;flex-direction:column;gap:12px;padding:clamp(20px,2.6vw,30px);background:var(--obsidian);transition:background .35s ease}
+.dcard:hover{background:var(--obsidian-2)}
+.dcard::after{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--signal);
+  transform:scaleY(0);transform-origin:top;transition:transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.dcard:hover::after{transform:scaleY(1)}
+.dcard .top{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.dcard .no{font-family:var(--font-mono);font-size:12px;color:var(--signal);letter-spacing:.06em}
+.dcard .wt{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+.dcard h3{font-size:clamp(17px,1.9vw,20px);font-weight:700;letter-spacing:-0.02em}
+.dcard p{font-size:14.5px;color:var(--slate);line-height:1.6}
+.dcard .wbar{position:relative;height:4px;margin-top:auto;border-radius:999px;background:var(--track);overflow:hidden}
+.dcard .wbar i{position:absolute;inset:0 auto 0 0;width:0;background:var(--signal);border-radius:999px;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+
+/* kartu output */
+.outgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.8vw,20px);margin-top:clamp(32px,4.2vw,56px)}
+.ocard{
+  position:relative;display:flex;flex-direction:column;gap:10px;overflow:hidden;
+  padding:clamp(18px,2.2vw,26px);border:1px solid var(--line);border-radius:var(--r-m);background:var(--panel);
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease;
+}
+.ocard:hover{transform:translateY(-3px);border-color:var(--line-2)}
+.ocard .no{font-family:var(--font-mono);font-size:12px;color:var(--signal)}
+.ocard h3{font-size:17px;font-weight:700;letter-spacing:-0.02em}
+.ocard p{font-size:14px;color:var(--slate);line-height:1.6}
+.ocard .meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+.ocard .meta span{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+
+/* kamus */
+.chips{display:flex;gap:9px;margin-top:clamp(28px,3.8vw,46px);padding:4px 0 12px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  scroll-snap-align:start;white-space:nowrap;padding:9px 16px;border-radius:999px;
+  border:1px solid var(--line-2);background:var(--panel);color:var(--slate);
+  font-size:13.5px;font-weight:500;
+  transition:color .25s ease,border-color .25s ease,background .25s ease;
+}
+.chip:hover{color:var(--white);border-color:var(--slate-dim)}
+.chip[aria-selected="true"]{color:var(--signal);border-color:rgba(20,184,166,.45);background:rgba(20,184,166,.08)}
+.kpanel{
+  display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(18px,3vw,44px);
+  padding:clamp(22px,3vw,38px);border:1px solid var(--line);border-radius:var(--r-m);background:var(--panel);
+}
+.kpanel[hidden]{display:none}
+.kpanel .kl{margin-bottom:10px;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+.kpanel .kt{font-size:clamp(21px,2.5vw,29px);font-weight:700;letter-spacing:-0.025em}
+.kpanel .kd{font-size:16px;color:var(--slate);max-width:56ch}
+.kpanel .kx{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:14.5px;color:var(--slate)}
+.kpanel .kx b{color:var(--signal);font-weight:600}
+.fade-in{animation:fadeUp .45s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* hasil */
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,22px);margin-top:clamp(32px,4.2vw,56px)}
+.case{
+  position:relative;display:flex;flex-direction:column;gap:16px;overflow:hidden;
+  padding:clamp(20px,2.6vw,32px);border:1px solid var(--line);border-radius:var(--r-m);background:var(--panel);
+}
+.case::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(60% 50% at 100% 0%,rgba(20,184,166,.07),transparent 70%);
+}
+.case .ctop{position:relative;display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.case .no{font-family:var(--font-mono);font-size:12px;color:var(--signal)}
+.case .kind{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+.case h3{position:relative;font-size:clamp(21px,2.3vw,27px);font-weight:700;letter-spacing:-0.025em}
+.case dl{position:relative;display:grid;gap:12px;margin:0}
+.case dl > div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:baseline}
+.case dt{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+.case dd{margin:0;font-size:15px;color:var(--slate)}
+.case .spec{position:relative;display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+.case .spec span{
+  padding:5px 10px;border-radius:6px;border:1px solid var(--line-2);background:rgba(9,9,11,.6);
+  font-family:var(--font-mono);font-size:12px;color:var(--slate);
+}
+.case .spec span b{color:var(--signal);font-weight:500}
+
+/* CTA */
+.cta{position:relative;overflow:hidden;background:var(--obsidian-2);border-top:1px solid var(--line)}
+.cta .glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(62% 90% at 50% 100%,rgba(20,184,166,.14),transparent 70%)}
+.cta-in{position:relative;z-index:2;padding-block:clamp(62px,8.4vw,116px);text-align:center}
+.cta h2{margin-top:18px}
+.cta p{margin:18px auto 0;color:var(--slate);max-width:56ch}
+.cta-act{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+.cta-num{
+  display:block;margin-top:clamp(28px,4vw,44px);
+  font-family:var(--font-mono);font-size:clamp(24px,5vw,60px);font-weight:500;letter-spacing:-0.02em;
+  color:rgba(244,244,245,.06);-webkit-text-stroke:1.4px rgba(20,184,166,.6);
+  text-decoration:none;width:fit-content;margin-inline:auto;
+}
+.cta-num:hover{-webkit-text-stroke-color:var(--signal)}
+.cta-num:focus-visible{outline:2px solid var(--signal);outline-offset:6px}
+.cta-note{margin-top:14px;font-family:var(--font-mono);font-size:12px;color:var(--slate)}
+
+/* footer */
+.foot{position:relative;overflow:hidden;background:var(--obsidian);border-top:1px solid var(--line)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr) minmax(0,.85fr);gap:clamp(24px,4vw,56px);padding-block:clamp(42px,5.6vw,70px)}
+.foot h4{margin-bottom:16px;font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:19px;letter-spacing:-0.01em}
+.foot-brand img{width:28px;height:28px}
+.foot-grid p{margin-top:14px;font-size:14.5px;color:var(--slate);max-width:38ch}
+.foot li + li{margin-top:10px}
+.foot li a{font-size:14.5px;color:var(--slate);transition:color .25s ease}
+.foot li a:hover{color:var(--white)}
+  .foot li span{margin-right:8px;font-family:var(--font-mono);font-size:12px;color:var(--slate)}
+.foot-bar{
+  position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;
+  padding-block:20px;border-top:1px solid var(--line);
+  font-family:var(--font-mono);font-size:12px;color:var(--slate);
+}
+.foot-wm{
+  margin:0;font-weight:900;font-size:clamp(56px,15vw,224px);letter-spacing:-0.05em;line-height:.78;
+  color:rgba(244,244,245,.05);-webkit-text-stroke:1px rgba(20,184,166,.08);
+  transform:translateY(.14em);white-space:nowrap;user-select:none;pointer-events:none;
+}
+
+/* rail kanan */
+.ticks{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:7px}
+.ticks .tk{width:14px;height:1px;background:var(--line-2);transition:background .3s ease,width .3s ease}
+.ticks .tk.on{width:22px;background:var(--signal)}
+.ticks .tl{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-dim)}
+.ticks .pc{margin-top:2px;font-family:var(--font-mono);font-size:12px;color:var(--slate)}
+
+/* gerak */
+.tweaks{
+  position:fixed;right:18px;bottom:18px;z-index:110;display:flex;align-items:center;gap:10px;
+  padding:7px 8px 7px 14px;border:1px solid var(--line-2);border-radius:999px;background:rgba(18,18,21,.9);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+.tweaks .lb{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+.tg{
+  padding:6px 12px;border-radius:999px;border:1px solid var(--line-2);color:var(--slate);
+  font-family:var(--font-mono);font-size:12px;
+  transition:color .25s ease,border-color .25s ease,background .25s ease;
+}
+.tg[aria-pressed="true"]{color:var(--signal);border-color:rgba(20,184,166,.45);background:rgba(20,184,166,.08)}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(22px);will-change:opacity,transform}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .stagger > *{opacity:0;transform:translateY(16px)}
+.js .stagger.in > *{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.js .stagger.in > *:nth-child(1){transition-delay:0ms}
+.js .stagger.in > *:nth-child(2){transition-delay:70ms}
+.js .stagger.in > *:nth-child(3){transition-delay:140ms}
+.js .stagger.in > *:nth-child(4){transition-delay:210ms}
+.js .stagger.in > *:nth-child(5){transition-delay:280ms}
+.js .stagger.in > *:nth-child(6){transition-delay:350ms}
+.js .stagger.in > *:nth-child(7){transition-delay:420ms}
+.js .stagger.in > *:nth-child(8){transition-delay:490ms}
+
+@media (prefers-reduced-motion:reduce){
+  .mq-track{animation:none}
+  .js .reveal,.js .stagger > *{opacity:1 !important;transform:none !important}
+  .drow .bar i,.dcard .wbar i,.mark{transition:none}
+  .fade-in{animation:none}
+}
+.no-motion .mq-track{animation:none}
+.no-motion .reveal,.no-motion .stagger > *{opacity:1;transform:none;transition:none}
+.no-motion .mark,.no-motion .drow .bar i,.no-motion .dcard .wbar i{transition:none}
+.no-motion .fade-in{animation:none}
+
+/* responsif */
+section[id],.ixbar{scroll-margin-top:calc(var(--navh) + 52px)}
+@media (max-width:1080px){
+  .outgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .shead{grid-template-columns:1fr;gap:18px}
+  .band{grid-template-columns:minmax(76px,auto) minmax(0,1fr);row-gap:6px}
+  .band .mn,.band .rk{grid-column:2}
+  .kpanel{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .dimgrid{grid-template-columns:1fr}
+  .cases{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:32px}
+  .ticks{display:none}
+  .nav-links{display:none}
+  .nav-cta{margin-left:auto}
+}
+@media (max-width:620px){
+  :root{--navh:58px}
+  .outgrid{grid-template-columns:1fr}
+  .metastrip{grid-template-columns:1fr}
+  .metastrip .m{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .metastrip .m:first-child{border-top:0}
+  .tweaks{right:12px;bottom:12px;padding-left:11px}
+  .tweaks .lb{display:none}
+  .case dl > div{grid-template-columns:1fr;gap:4px}
+}
+
+/* ============================================================
+   LAPISAN TONE — 'Navy Lembut' (dipilih pemilik, 2026-09-23)
+   Dulu kandidat B di tone/b-navy.css + tone/00-nyaman.css.
+   Isinya dipindah ke sini apa adanya; berkas kandidat diarsipkan
+   di pratinjau/arsip-tema/tone/. Urutan setelah blok tema di atas
+   = lapisan ini yang menang.
+   ============================================================ */
+/* ============================================================
+   00 — Lapisan tenang (dipakai bersama ketiga kandidat tone).
+   Tujuannya membuang penanda yang bikin halaman ini terbaca
+   sebagai "template AI": huruf besar berspasi lebar di semua
+   label mikro, pendar neon, kanvas titik, penggaris gulir,
+   dan watermark raksasa. Semua efek masih ada di DOM, cuma
+   tidak lagi berteriak.
+   ============================================================ */
+
+/* ---- label mikro: kalimat biasa, bukan huruf besar berspasi ---- */
+.eyebrow,
+.metastrip .k,
+.dcard .wt,
+.case dt,
+.case .kind,
+.ocard .meta span,
+.ocard .meta b,
+.shead-note,
+.band .rk,
+.band .mn,
+.panel-head .t,
+.hint,
+.cta-note,
+.case .spec span,
+.step .out b,
+.brand-tag {
+  text-transform: none;
+  letter-spacing: .005em;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ---- pendar neon dimatikan; titik jadi cincin kecil, sejalan dengan logo ---- */
+.eyebrow .pip { box-shadow: none; background: none; border: 1px solid var(--signal); width: 7px; height: 7px; border-radius: 50%; opacity: .9; }
+.btn-primary { box-shadow: none; }
+.step.in .marker i,
+.step .marker i { box-shadow: none; }
+.cta .glow,
+.cta-in::after { display: none; }
+.hero-card { box-shadow: 0 24px 60px -40px rgba(0,0,0,.9); }
+
+/* ---- v4: elemen "paling AI" dihidupkan kembali (lihat blok motion di bawah) ---- */
+.wm { opacity: .022; }
+.foot-wm { opacity: .035; }
+
+/* ---- CTA di nav tidak boleh lebih berteriak daripada judul hero ---- */
+.nav-cta { padding: 9px 15px; font-size: 13.5px; }
+
+/* ---- kontrol gerak: dari tombol melayang jadi satu baris kecil di footer ---- */
+.tweaks-in { display: inline-flex; align-items: center; gap: 6px; }
+.tweaks-in .lb { font-size: 12px; letter-spacing: .02em; text-transform: none; color: var(--slate); font-family: var(--font-sans); }
+.tweaks-in .tg {
+  border: 0; background: none; padding: 0; cursor: pointer;
+  color: var(--slate); font-family: var(--font-sans); font-size: 12px; font-weight: 500;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.tweaks-in .tg:hover { color: var(--ink); }
+
+/* ---- ikon di dalam tombol: sedikit lebih besar supaya tidak jadi bintik ---- */
+.btn svg { width: 15px; height: 15px; stroke-width: 1.9; }
+
+/* ---- garis pembanding bobot: 1 garis = 100% ---- */
+.wbar i, .dcard .wbar i { background: var(--signal); }
+
+/* ---- kartu: garis lebih lembut, tidak kotak-kotak kaku ---- */
+.dcard, .ocard, .case { border-color: var(--line); }
+
+/* ---- angka tetap mono supaya sejajar, tapi seukuran teks ---- */
+.no, .cta-num, .gauge .num b, .metric b, .drow .bar {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- garis bobot: track penuh harus kelihatan, kalau tidak bar-nya cuma garis pendek ---- */
+:root {
+  --track: rgba(255, 255, 255, .10);
+  --tickline: rgba(255, 255, 255, .34);
+}
+/* bar lebar (kartu dimensi): skala tiap 10% supaya 5/10/15/20 bisa dibaca */
+.wbar, .dcard .wbar {
+  background:
+    repeating-linear-gradient(90deg, var(--tickline) 0 1px, transparent 1px 10%),
+    var(--track);
+}
+/* bar sempit di kartu skor (88px, skala 0-100): cukup tiap 25% */
+.drow .bar {
+  background:
+    repeating-linear-gradient(90deg, var(--tickline) 0 1px, transparent 1px 25%),
+    var(--track);
+}
+.dcard .wt { font-size: 13.5px; color: var(--slate); }
+.dcard .no { letter-spacing: .04em; }
+
+/* ---- grid dimensi: buang "tabel" 1px antar sel, beri jarak supaya label bobot tidak menempel kartu sebelah ---- */
+.dimgrid {
+  gap: clamp(22px, 2.6vw, 38px);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.dcard .wt b { color: var(--ink); font-weight: 600; }
+
+/* ============================================================
+   Tone B — "Navy Lembut"
+   Rasa: marka sendiri yang dibesarkan. Logo kami = busur monoline
+   bersudut bulat dengan celah, plus titik di tengah. Karena itu:
+   permukaan utama navy (tempat logo paling enak dilihat), motif
+   busur bercelah dipakai sebagai ornamen, huruf judul memakai
+   Outfit (ujung huruf membulat, sejalan dengan ujung logo),
+   sudut kartu membulat, dan teal cuma dipakai sebagai tanda.
+   ============================================================ */
+
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
+
+  --obsidian: #081726;                  /* biru malam, bukan hitam */
+  --panel: rgba(255,255,255,.035);
+  --panel-2: rgba(255,255,255,.06);
+  --line: rgba(255,255,255,.10);
+  --line-2: rgba(255,255,255,.16);
+  --ink: #F2F6FA;
+  --slate: #B6C7D8;
+  --slate-dim: #90A6BC;
+  --signal: #14B8A6;
+  --track: rgba(255,255,255,.16);
+
+  --r-s: 10px; --r-m: 14px; --r-l: 20px; --r-pill: 999px;
+}
+
+body { background: var(--obsidian); }
+
+/* --- judul: geometris membulat, sedang saja --- */
+h1, h2, h3, .brand span {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+}
+h1 { font-size: clamp(36px, 4.8vw, 62px); line-height: 1.07; font-weight: 600; }
+h2 { font-size: clamp(28px, 3.4vw, 42px); line-height: 1.14; }
+h3 { font-size: 20px; line-height: 1.28; }
+.accent { color: var(--signal); font-weight: 600; }
+
+/* --- motif busur dari logo: dipusatkan pada kartu skor, jadi satu sistem
+       dengan cincin skor. Kartu duduk di dalam busur, bukan menabraknya. --- */
+.hero-grid { position: relative; }
+.hero-grid::before,
+.hero-grid::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 76.5%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(8deg);
+  border-radius: 50%;
+  pointer-events: none;
+  border: 2px solid rgba(20,184,166,.34);
+  -webkit-mask: conic-gradient(from -28deg, #000 0 62%, transparent 62% 100%);
+          mask: conic-gradient(from -28deg, #000 0 62%, transparent 62% 100%);
+}
+.hero-grid::before { width: min(62vw, 760px); aspect-ratio: 1; }
+.hero-grid::after {
+  width: min(72vw, 890px); aspect-ratio: 1;
+  transform: translate(-50%, -50%) rotate(-22deg);
+  border-width: 1px; border-color: rgba(255,255,255,.18);
+  -webkit-mask: conic-gradient(from 132deg, #000 0 48%, transparent 48% 100%);
+          mask: conic-gradient(from 132deg, #000 0 48%, transparent 48% 100%);
+}
+.hero-grid > * { position: relative; z-index: 1; }
+
+/* --- teks: kontras dinaikkan supaya 12–13px tetap terbaca di navy --- */
+.lede { font-size: 18.5px; line-height: 1.62; color: #C6D6E6; }
+.shead p, .dcard p, .ocard p, .case p, .foot-grid p { line-height: 1.62; }
+.shead-note { font-size: 13.5px; color: var(--slate); }
+.hint, .cta-note, .case .spec span, .metastrip .k, .dcard .wt, .case dt { font-size: 13px; color: var(--slate); }
+
+/* --- kartu & panel: membulat, isi tembus cahaya navy --- */
+.dcard, .ocard, .case, .panel, .hero-card {
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--r-l);
+}
+.dcard { padding: 22px 20px 20px; }
+.dcard:hover, .ocard:hover, .case:hover { background: rgba(255,255,255,.055); }
+.dcard .no, .ocard .no, .case .no { color: var(--signal); font-family: var(--font-display); font-weight: 600; }
+.hero-card { border-radius: 22px; }
+
+/* --- garis bobot: rel lebih terang supaya panjang bar terbaca --- */
+.dcard .wbar, .wbar { height: 5px; }
+.gauge .track, .gauge svg .track { stroke: rgba(255,255,255,.14); }
+.gauge .num b { font-family: var(--font-display); }
+
+/* --- tombol: pil, teal pekat, tanpa pendar --- */
+.btn { border-radius: var(--r-pill); font-weight: 500; padding-inline: 22px; }
+.btn-primary { background: var(--signal); color: #06201D; }
+.btn-primary:hover { background: #17C7B3; }
+.btn:not(.btn-primary) { border: 1px solid rgba(255,255,255,.30); color: var(--ink); background: rgba(255,255,255,.03); }
+.chip { border-radius: var(--r-pill); }
+.chip[aria-selected="true"] { background: var(--signal); color: #06201D; border-color: transparent; }
+
+/* --- strip indeks & panel: lembut, bukan kotak keras --- */
+.ixbar { background: rgba(8,23,38,.92); border-bottom: 1px solid var(--line); }
+.ix .n { color: var(--signal); }
+.ix.is-active { color: var(--ink); }
+.ix.is-active::after { background: var(--signal); height: 2px; }
+.band .seg { border-radius: var(--r-s); }
+
+/* ============================================================
+   PENYELESAIAN PERMUKAAN (2026-09-23)
+   Sisa warna literal tema lama (rgba(9,9,11,…), rgba(12,12,14,…),
+   rgba(18,18,21,…)) masih dipakai langsung di beberapa rule. Di atas
+   navy warna itu terbaca sebagai tambalan hitam — paling kelihatan di
+   header, jadi disamakan ke keluarga navy di sini.
+   ============================================================ */
+:root {
+  --obsidian-2: #0A1D30;              /* bagian berselang: CTA, segmen tangga, hover */
+  --pill-bg: rgba(255,255,255,.05);   /* kapsul kecil di atas navy */
+}
+.nav { background: rgba(8,23,38,.72); }
+.nav.is-stuck { background: rgba(8,23,38,.9); }
+.eyebrow,
+.step .out,
+.case .spec span { background: var(--pill-bg); }
+.vignette {
+  background: radial-gradient(125% 105% at 50% 36%,
+    rgba(4,12,20,0) 40%, rgba(4,12,20,.55) 76%, rgba(4,12,20,.9) 100%);
+}
+
+
+/* ============================================================
+   v4 — motion dari eksplor motionsites (ronde 2), ditanam langsung
+   1. cakram skor di panel hero (Canvas 2D) menggantikan medan titik
+   2. rail tick + penanda posisi berdenyut di kanan
+   3. strip bergulir berhenti saat disapa
+   Isi, teks, dan struktur halaman tidak diubah.
+   ============================================================ */
+
+/* --- 1. cakram skor di dalam cincin panel hero --- */
+.gauge svg .track { stroke: rgba(255,255,255,.16); }
+#scoreDisc { position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+.gauge .num { z-index:1; pointer-events:none; }
+.gauge .num b { font-variant-numeric: tabular-nums; }
+
+/* --- 2. rail tick: penanda posisi berdenyut di ujung tick yang menyala --- */
+.ticks .tklead {
+  width:7px; height:7px; border-radius:50%; background:var(--signal);
+  box-shadow:0 0 0 0 rgba(20,184,166,.55);
+  animation: tklead 1.4s ease-out infinite;
+  will-change: transform;
+}
+@keyframes tklead {
+  0%   { box-shadow: 0 0 0 0 rgba(20,184,166,.5) }
+  70%  { box-shadow: 0 0 0 7px rgba(20,184,166,0) }
+  100% { box-shadow: 0 0 0 0 rgba(20,184,166,0) }
+}
+@media (prefers-reduced-motion: reduce){ .ticks .tklead { animation:none; box-shadow:none } }
+.no-motion .ticks .tklead { animation:none; box-shadow:none }
+
+/* --- 3. strip bergulir: berhenti saat disapa (kursor atau tap) --- */
+.marquee { display:block; }
+.marquee.paused .mq-track { animation-play-state: paused; }
+@media (hover: hover) and (pointer: fine){
+  .marquee:hover .mq-track { animation-play-state: paused; }
+}
+/* hormati preferensi sistem: jalur bergulir berhenti, isi tetap terbaca */
+@media (prefers-reduced-motion: reduce){
+  .marquee .mq-track { animation: none !important; transform: none !important; }
+}
+.no-motion .marquee .mq-track { animation: none !important; transform: none !important; }
+
+/* ---------- tab penilaian langsung ---------- */
+.pen{margin-top:clamp(30px,4vw,54px);border:1px solid var(--line);border-radius:var(--r-l);background:var(--panel);overflow:hidden}
+.pen-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px clamp(16px,2.4vw,26px);border-bottom:1px solid var(--line);background:var(--obsidian-2)}
+.pen-prog{display:flex;align-items:center;gap:14px;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
+.pen-bar{display:block;width:132px;height:3px;border-radius:2px;background:var(--track);overflow:hidden}
+.pen-bar i{display:block;height:100%;width:0;background:var(--signal);transition:width .4s cubic-bezier(.2,.7,.2,1)}
+.pen-reset{font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);padding:6px 2px;border-bottom:1px solid transparent;transition:color .25s ease,border-color .25s ease}
+.pen-reset:hover{color:var(--white);border-bottom-color:var(--signal)}
+.pen-list{counter-reset:q}
+.pen-q{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(14px,2.6vw,30px);padding:clamp(20px,2.6vw,30px) clamp(16px,2.4vw,26px);border-bottom:1px solid var(--line)}
+.pen-q:last-child{border-bottom:0}
+.pen-q.jawab{background:rgba(20,184,166,.035)}
+.pen-no{font-family:var(--font-mono);font-size:12px;color:var(--signal);letter-spacing:.08em;padding-top:3px}
+.pen-qt{font-size:17px;font-weight:600;letter-spacing:-0.01em;line-height:1.45;max-width:52ch}
+.pen-qd{margin-top:7px;font-size:14px;color:var(--slate);max-width:56ch}
+.pen-qd b{color:var(--ink);font-weight:600}
+.pen-dim{margin-top:9px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate-dim)}
+.pen-opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pen-opt{display:flex;align-items:center;gap:9px;padding:9px 15px;border:1px solid var(--line-2);border-radius:999px;background:var(--obsidian-2);color:var(--slate);font-size:13.5px;font-weight:500;text-align:left;transition:color .2s ease,border-color .2s ease,background .2s ease}
+.pen-opt:hover{color:var(--white);border-color:var(--slate)}
+.pen-opt .pen-n{display:grid;place-items:center;width:19px;height:19px;flex:0 0 auto;border-radius:50%;border:1px solid var(--line-2);font-family:var(--font-mono);font-size:11px;line-height:1;color:var(--slate)}
+.pen-opt[aria-checked="true"]{background:rgba(20,184,166,.14);border-color:var(--signal);color:var(--white)}
+.pen-opt[aria-checked="true"] .pen-n{background:var(--signal);border-color:var(--signal);color:#06201D}
+.pen-key{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:11px}
+.pen-key>span{font-size:12px;color:var(--slate);letter-spacing:.02em}
+.pen-kbtn{padding:4px 11px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--slate);font-size:12px;font-weight:500;transition:color .2s ease,border-color .2s ease,background .2s ease}
+.pen-kbtn:hover{color:var(--white);border-color:var(--slate)}
+.pen-kbtn[aria-pressed="true"]{background:rgba(20,184,166,.12);border-color:var(--signal);color:var(--white)}
+.pen-cek{margin-top:18px;padding:15px 17px;border:1px solid var(--line-2);border-left:3px solid var(--signal);border-radius:var(--r-s);background:rgba(20,184,166,.05)}
+.pen-cek h4{margin:0 0 7px;font-size:13.5px;font-weight:600;color:var(--white);letter-spacing:.01em}
+.pen-cek ul{margin:0;padding-left:17px;display:grid;gap:7px}
+.pen-cek li{font-size:13.5px;line-height:1.5;color:var(--slate)}
+.pen-cek b{color:var(--ink);font-weight:600}
+.pen-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:clamp(18px,2.4vw,26px);border-top:1px solid var(--line);background:var(--obsidian-2)}
+.pen-hint{font-size:13.5px;color:var(--slate)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn[disabled]:hover{background:var(--signal);border-color:var(--signal)}
+.pen-hasil{margin-top:clamp(22px,3vw,36px);border:1px solid var(--line);border-radius:var(--r-l);background:var(--panel);overflow:hidden}
+.pen-hasil[hidden]{display:none}
+.ph-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3.4vw,48px);align-items:center;padding:clamp(22px,3.2vw,40px);border-bottom:1px solid var(--line)}
+.cetak-kop{display:none;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#555}
+.cetak-kop b{display:block;font-family:var(--font-sans);font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#111;text-transform:none;margin-bottom:3px}
+.ph-disc{position:relative;width:168px;height:168px}
+.ph-disc canvas{width:168px;height:168px}
+.ph-num{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-mono);font-size:40px;font-weight:600;letter-spacing:-0.03em}
+.ph-num span{font-size:17px;color:var(--slate);margin-left:2px}
+.ph-band{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal)}
+.ph-band .pip{width:7px;height:7px;border-radius:50%;border:1px solid var(--signal);display:block}
+.ph-h3{margin-top:12px;font-size:clamp(23px,3vw,34px);font-weight:800;letter-spacing:-0.03em}
+.ph-arti{margin-top:12px;font-size:16px;color:var(--slate);max-width:56ch}
+.ph-langkah{margin-top:16px;padding:14px 16px;border-left:2px solid var(--signal);background:var(--obsidian-2);font-size:15px}
+.ph-langkah b{display:block;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:6px;font-weight:400}
+.ph-mid{padding:clamp(22px,3.2vw,40px);border-bottom:1px solid var(--line)}
+.ph-lab{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:18px}
+.pen-rows{display:grid}
+.pen-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 16px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.pen-row:last-child{border-bottom:0}
+.pen-row .rn{font-size:14.5px;font-weight:500;min-width:0}
+.pen-row .rv{font-family:var(--font-mono);font-size:12.5px;color:var(--slate);font-variant-numeric:tabular-nums}
+.pen-row .rb{grid-column:1/-1;height:5px;border-radius:999px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.09) 0 1px,transparent 1px 25%),var(--track);overflow:hidden}
+.pen-row .rb i{display:block;height:100%;width:0;background:var(--slate-dim);border-radius:999px;transition:width .7s cubic-bezier(.2,.7,.2,1)}
+.pen-row .rw{grid-column:1/-1;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;color:var(--slate-dim)}
+.pen-row.low .rb i{background:var(--signal)}
+.pen-row.low .rv{color:var(--signal)}
+.pen-gap{padding:clamp(22px,3.2vw,40px);border-bottom:1px solid var(--line);display:grid;gap:18px}
+.pen-gcard{border:1px solid var(--line);border-radius:var(--r-m);padding:18px 20px;background:var(--obsidian-2)}
+.pen-gcard .gt{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal)}
+.pen-gcard h4{margin-top:9px;font-size:17px;font-weight:700}
+.pen-gcard p{margin-top:8px;font-size:15px;color:var(--slate)}
+.ph-aksi{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:clamp(22px,3.2vw,40px)}
+.ph-note{font-size:13px;color:var(--slate);max-width:44ch}
+.ph-limit{flex:0 0 100%;margin:0;font-size:13px;line-height:1.5;color:var(--slate);border-left:2px solid var(--signal);padding-left:11px;max-width:64ch}
+.ph-cetak{border:1px solid var(--line-2);border-radius:999px;padding:11px 18px;font-size:13.5px;font-weight:500;color:var(--slate);transition:color .2s ease,border-color .2s ease}
+.ph-cetak:hover{color:var(--white);border-color:var(--slate)}
+.ph-nojs{border:1px solid var(--line);border-radius:var(--r-m);padding:20px;margin-top:26px;background:var(--panel);font-size:15px;color:var(--slate)}
+@media (max-width:720px){
+  .ph-top{grid-template-columns:minmax(0,1fr);justify-items:start}
+  .pen-q{grid-template-columns:minmax(0,1fr)}
+  .pen-no{padding-top:0}
+  .pen-opt{width:100%;border-radius:var(--r-m)}
+}
+@media print{
+  .nav,.ixbar,.pen,.ph-aksi,.hero,.cta,.marquee,.tweaks,.ticks,.foot,.skip,
+  .sec:not(#penilaian){display:none!important}
+  /* header bagian penilaian ikut disembunyikan: yang dicetak hanya HASIL */
+  #penilaian .shead{display:none!important}
+  .pen-hasil{border:0;border-radius:0}
+  .pen-hasil,.ph-top,.ph-mid,.ph-gap,.ph-disc,.ph-num,.ph-band,.ph-aksi{background:#fff!important;color:#111!important}
+  #phCanvas{display:none!important}          /* cakram kanvas tidak tercetak rapi */
+  .cetak-kop{display:block!important}
+  .cetak-kop{border-bottom:1px solid #999;padding-bottom:8px;margin-bottom:14px}
+  .ph-num{color:#111!important}
+  .ph-num span{color:#555!important}
+  .ph-top{border:0}
+  .ph-band{color:#0F766E!important}
+  /* kartu hasil: latar gelap -> putih, aksen tetap terbaca */
+  .ph-langkah,.pen-gcard{border:1px solid #bbb;background:#fff!important;color:#111!important}
+  .ph-langkah{border-left:3px solid #0F766E}
+  .ph-langkah b,.pen-gcard .gt{color:#0F766E!important}
+  .pen-gcard p,.pen-row .rv,.pen-row .rw{color:#444!important}
+  .pen-row{border-bottom:1px solid #ddd}
+  .pen-row .rb{background:#e5e7eb!important}
+  .pen-row .rb i{background:#0F766E!important}
+  .pen-row.low .rv{color:#0F766E!important}
+  .ph-rows .row,.ph-aksi,.ph-note,.ph-limit{color:#111}
+  .pen-hasil *{box-shadow:none!important;text-shadow:none!important}
+  body{background:#fff;color:#000}
+  @page{margin:14mm}
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "OmniSense",
+  "url": "https://omnisense.id/",
+  "logo": "https://omnisense.id/assets/logo-mark-white-256.png",
+  "image": "https://omnisense.id/assets/og-omnisense.png",
+  "description": "Konsultan AI untuk bisnis di Indonesia. Penilaian kesiapan digitalisasi dan AI lewat 8 dimensi berbobot, gratis, lalu rencana prioritas 30/60/90 hari.",
+  "areaServed": { "@type": "Country", "name": "Indonesia" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Jakarta", "addressCountry": "ID" },
+  "telephone": "+6288809640700",
+  "sameAs": ["https://instagram.com/omnisense_id"],
+  "knowsAbout": ["kesiapan digitalisasi", "adopsi AI", "otomasi proses bisnis", "POS F&B"],
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "Penilaian kesiapan digitalisasi & AI (8 dimensi)",
+    "description": "Penilaian mandiri di situs: 8 pertanyaan, skor 0-100, kategori, dua celah utama, dan langkah berikutnya. Gratis.",
+    "price": "0",
+    "priceCurrency": "IDR",
+    "url": "https://omnisense.id/#penilaian"
+  }
+}
+</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip" href="#main">Lewati ke isi</a>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="OmniSense, kembali ke atas">
+      <img src="assets/logo-mark-white-256.png" alt="" width="26" height="26" />
+      <span>omnisense</span>
+    </a>
+    <nav class="nav-links" aria-label="Bagian halaman">
+      <a class="nav-link" href="#proses">Cara Kerja</a>
+      <a class="nav-link" href="#dimensi">Dimensi</a>
+      <a class="nav-link" href="#penilaian">Penilaian</a>
+      <a class="nav-link" href="#output">Yang Anda terima</a>
+      <a class="nav-link" href="#hasil">Studi kasus</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="https://wa.me/6288809640700?text=Halo%20OmniSense%2C%20saya%20ingin%20penilaian%20kesiapan%20gratis" target="_blank" rel="noopener">
+      Konsultasi Gratis
+    </a>
+    <span class="progress" id="prog" aria-hidden="true"></span>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="wm" id="wm" aria-hidden="true">OMNISENSE</div>
+
+  <div class="wrap hero-in">
+    <span class="eyebrow reveal"><span class="pip"></span>Konsultan AI · Indonesia</span>
+    <h1 class="reveal">Seberapa siap bisnis Anda<br />memakai <span class="accent">AI</span>?</h1>
+
+    <div class="hero-grid">
+      <div>
+        <p class="lede reveal">Kami menilai kesiapan digitalisasi dan AI dari delapan dimensi berbobot, lalu menyusun rencana prioritas yang bisa dijalankan. Penilaian awalnya gratis.</p>
+        <div class="hero-act reveal">
+          <a class="btn btn-primary" href="#penilaian">
+            <!-- ikon clipboard-check: tabler-icons (MIT) --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 14l2 2l4 -4" /></svg>
+            Isi penilaian sekarang
+          </a>
+          <a class="btn" href="#kategori">Lihat kategorinya</a>
+        </div>
+        <p class="hint reveal" style="margin-top:18px"><span class="ln"></span>Percakapan awal lewat WhatsApp · skor keluar di tempat</p>
+      </div>
+
+      <div class="panel reveal" id="panel">
+        <div class="panel-head">
+          <span class="t">Contoh hasil penilaian</span>
+          <span class="pill">UMKM · F&amp;B</span>
+        </div>
+        <div class="gauge-wrap">
+          <div class="gauge">
+            <svg width="132" height="132" viewBox="0 0 132 132" aria-hidden="true">
+              <circle cx="66" cy="66" r="58" fill="none" stroke="#34343C" stroke-width="8" />
+              <circle id="gaugeArc" cx="66" cy="66" r="58" fill="none" stroke="#14B8A6" stroke-width="8"
+                      stroke-linecap="round" stroke-dasharray="364.42" stroke-dashoffset="364.42" />
+            </svg>
+            <canvas id="scoreDisc" aria-hidden="true"></canvas>
+            <div class="num"><b id="gaugeNum">0</b><span>SKOR</span></div>
+          </div>
+          <div>
+            <div class="band-name">Kategori: <span id="bandName">Layak Lanjut</span></div>
+            <p class="band-note">Layak mulai dari satu proses, sambil membenahi celah yang menahan.</p>
+          </div>
+        </div>
+        <div class="dims" id="dimRows">
+          <div class="drow"><span class="nm">Kesiapan Data</span><span class="bar"><i data-w="82"></i></span><span class="pc">82</span></div>
+          <div class="drow"><span class="nm">Infrastruktur &amp; Teknologi</span><span class="bar"><i data-w="74"></i></span><span class="pc">74</span></div>
+          <div class="drow"><span class="nm">Digitalisasi Proses</span><span class="bar"><i data-w="61"></i></span><span class="pc">61</span></div>
+          <div class="drow"><span class="nm">Anggaran &amp; Finansial</span><span class="bar"><i data-w="48"></i></span><span class="pc">48</span></div>
+        </div>
+        <p class="panel-foot">Skala 0–100 · contoh 4 dari 8 dimensi · skor akhir dihitung berbobot</p>
+      </div>
+    </div>
+
+    <div class="metastrip stagger">
+      <div class="m"><div class="k">Dimensi</div><div class="v"><em>8</em> berbobot, 5 kategori skor</div></div>
+      <div class="m"><div class="k">Yang Anda terima</div><div class="v"><em>6</em> dokumen hasil</div></div>
+      <div class="m"><div class="k">Rencana</div><div class="v">Bertahap <em>30/60/90</em> hari</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span>Penilaian 8 dimensi</span><span>Skor 0 sampai 100</span><span>Roadmap 30/60/90 hari</span><span>POS &amp; kasir web</span><span>Asisten WhatsApp</span><span>Migrasi data</span><span>Agen AI untuk operasional</span>
+    <span>Penilaian 8 dimensi</span><span>Skor 0 sampai 100</span><span>Roadmap 30/60/90 hari</span><span>POS &amp; kasir web</span><span>Asisten WhatsApp</span><span>Migrasi data</span><span>Agen AI untuk operasional</span>
+  </div>
+</div>
+
+<!-- ================= PETA BAGIAN ================= -->
+<div class="ixbar">
+  <div class="wrap ix-in" id="ixItems" role="navigation" aria-label="Peta bagian">
+    <a class="ix" href="#proses"><span class="n" aria-hidden="true"></span>Cara kerja</a>
+    <a class="ix" href="#kategori"><span class="n" aria-hidden="true"></span>Kategori</a>
+    <a class="ix" href="#dimensi"><span class="n" aria-hidden="true"></span>Dimensi</a>
+    <a class="ix" href="#penilaian"><span class="n" aria-hidden="true"></span>Coba penilaian</a>
+    <a class="ix" href="#output"><span class="n" aria-hidden="true"></span>Yang Anda terima</a>
+    <a class="ix" href="#kamus"><span class="n" aria-hidden="true"></span>Kamus</a>
+    <a class="ix" href="#hasil"><span class="n" aria-hidden="true"></span>Studi kasus</a>
+    <a class="ix" href="#kontak"><span class="n" aria-hidden="true"></span>Kontak</a>
+  </div>
+</div>
+
+<!-- ================= CARA KERJA ================= -->
+<section class="sec" id="proses">
+  <div class="wrap">
+    <div class="shead">
+      <div class="reveal">
+        <h2>Empat langkah, dari percakapan sampai rencana</h2>
+      </div>
+      <div class="reveal">
+        <p>Setiap langkah punya keluaran yang bisa Anda pegang. Tidak ada presentasi panjang, tidak ada penawaran sebelum masalahnya jelas.</p>
+        <p class="shead-note">Langkah 1&ndash;4: gratis &rarr; 8 dimensi &rarr; skor + kategori &rarr; roadmap + estimasi</p>
+      </div>
+    </div>
+
+    <div class="steps stagger" id="steps">
+      <article class="step">
+        <div class="marker"><i></i><span class="tag">Langkah 01</span></div>
+        <div>
+          <h3>Percakapan awal</h3>
+          <p>Kami tanya soal cara kerja harian: siapa yang mencatat, di mana datanya berhenti, dan bagian mana yang paling menyita waktu. Lewat WhatsApp, tanpa perlu menyiapkan bahan.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="marker"><i></i><span class="tag">Langkah 02</span></div>
+        <div>
+          <h3>Penilaian delapan dimensi</h3>
+          <p>Pertanyaan berbobot dengan bukti operasional: sistem yang sudah dipakai, kualitas data, kesiapan tim, sampai anggaran yang tersedia.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="marker"><i></i><span class="tag">Langkah 03</span></div>
+        <div>
+          <h3>Skor dan celah terbesar</h3>
+          <p>Hasilnya satu skor 0 sampai 100 persen, kategori kesiapan, dan dimensi terendah yang paling menahan langkah berikutnya.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="marker"><i></i><span class="tag">Langkah 04</span></div>
+        <div>
+          <h3>Rencana prioritas bertahap</h3>
+          <p>Kami susun urutan pekerjaan 30, 60, dan 90 hari, lengkap dengan lingkup dan perkiraan biaya tiap tahap supaya bisa dinilai sendiri.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KATEGORI ================= -->
+<section class="sec" id="kategori">
+  <div class="wrap">
+    <div class="shead">
+      <div class="reveal">
+        <h2>Skor 0 sampai 100, satu keputusan</h2>
+      </div>
+      <div class="reveal">
+        <p>Angka skor tidak berguna kalau tidak menentukan langkah berikutnya. Karena itu setiap rentang skor punya kategori dan rekomendasi yang berbeda, termasuk rekomendasi untuk menunda dulu.</p>
+        <p class="shead-note">Contoh: skor 68 masuk kategori Layak Lanjut</p>
+      </div>
+    </div>
+
+    <div class="ladder reveal" id="ladder">
+      <div class="scale" aria-hidden="true">
+        <span class="seg" style="left:0%;width:20%"></span>
+        <span class="seg" style="left:20%;width:20%"></span>
+        <span class="seg" style="left:40%;width:20%"></span>
+        <span class="seg on" style="left:60%;width:20%"></span>
+        <span class="seg" style="left:80%;width:20%"></span>
+        <span class="tick" style="left:0%">0</span>
+        <span class="tick" style="left:20%">20</span>
+        <span class="tick" style="left:40%">40</span>
+        <span class="tick" style="left:60%">60</span>
+        <span class="tick" style="left:80%">80</span>
+        <span class="tick" style="left:100%">100</span>
+        <div class="mark" id="bandMark" style="left:0%"><b>68%</b></div>
+      </div>
+
+      <ol class="bands stagger">
+        <li class="band">
+          <span class="rg">80–100</span><span class="nm">Siap Penuh</span>
+          <span class="mn">Fondasi lengkap, siap implementasi luas</span>
+          <span class="rk">Lanjut proof-of-concept besar, lalu penerapan bertahap</span>
+        </li>
+        <li class="band is-eg">
+          <span class="rg">60–79</span><span class="nm">Layak Lanjut</span>
+          <span class="mn">Layak mulai, ada celah yang bisa diatasi</span>
+          <span class="rk">Pilot satu proses, celah dibenahi paralel</span>
+        </li>
+        <li class="band">
+          <span class="rg">40–59</span><span class="nm">Konvensional</span>
+          <span class="mn">Digitalisasi dasar belum merata</span>
+          <span class="rk">Rapikan fondasi dulu, AI sebagai tahap lanjutan</span>
+        </li>
+        <li class="band">
+          <span class="rg">20–39</span><span class="nm">Awal</span>
+          <span class="mn">Masih banyak manual, data belum terpusat</span>
+          <span class="rk">Audit data dan digitalisasi bertahap</span>
+        </li>
+        <li class="band">
+          <span class="rg">&lt;20</span><span class="nm">Sangat Awal</span>
+          <span class="mn">Fondasi belum ada</span>
+          <span class="rk">Edukasi dan pendampingan dasar lebih dulu</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DIMENSI ================= -->
+<section class="sec" id="dimensi">
+  <div class="wrap">
+    <div class="shead">
+      <div class="reveal">
+        <h2>Delapan dimensi, bobot yang berbeda</h2>
+      </div>
+      <div class="reveal">
+        <p>Bobot menentukan seberapa besar tiap dimensi menggeser skor akhir. Data kami beri bobot terbesar karena di situlah proyek AI paling sering gagal, bukan di modelnya.</p>
+        <p class="shead-note">Nomor 01–08 = urutan bobot, dari yang paling besar. Tiap pertanyaan dinilai 1 sampai 5 lalu dirata-ratakan, dan garis penuh di tiap kartu berarti bobot 100%.</p>
+      </div>
+    </div>
+
+    <div class="dimgrid stagger" id="dimGrid">
+      <article class="dcard">
+        <div class="top"><span class="no">01</span><span class="wt">Bobot <b>20%</b></span></div>
+        <h3>Kesiapan Data</h3>
+        <p>Seberapa digital, lengkap, dan terpusat data operasional Anda hari ini.</p>
+        <span class="wbar"><i data-w="20"></i></span>
+      </article>
+      <article class="dcard">
+        <div class="top"><span class="no">02</span><span class="wt">Bobot <b>15%</b></span></div>
+        <h3>Infrastruktur &amp; Teknologi</h3>
+        <p>Sistem inti yang sudah dipakai, tingkat integrasi antar sistem, dan koneksi.</p>
+        <span class="wbar"><i data-w="15"></i></span>
+      </article>
+      <article class="dcard">
+        <div class="top"><span class="no">03</span><span class="wt">Bobot <b>15%</b></span></div>
+        <h3>Digitalisasi Proses</h3>
+        <p>Bagian mana dari alur kerja yang masih diketik ulang dan belum terdokumentasi.</p>
+        <span class="wbar"><i data-w="15"></i></span>
+      </article>
+      <article class="dcard">
+        <div class="top"><span class="no">04</span><span class="wt">Bobot <b>15%</b></span></div>
+        <h3>SDM &amp; Keterampilan</h3>
+        <p>Literasi digital tim, dan siapa yang akan merawat solusinya setelah serah terima.</p>
+        <span class="wbar"><i data-w="15"></i></span>
+      </article>
+      <article class="dcard">
+        <div class="top"><span class="no">05</span><span class="wt">Bobot <b>10%</b></span></div>
+        <h3>Strategi &amp; Kepemimpinan</h3>
+        <p>Arah digitalisasi dari pemimpin, dan siapa yang mendorongnya di dalam tim.</p>
+        <span class="wbar"><i data-w="10"></i></span>
+      </article>
+      <article class="dcard">
+        <div class="top"><span class="no">06</span><span class="wt">Bobot <b>10%</b></span></div>
+        <h3>Organisasi &amp; Budaya</h3>
+        <p>Keterbukaan tim terhadap cara kerja baru dan pengalaman memakai alat digital.</p>
+        <span class="wbar"><i data-w="10"></i></span>
+      </article>
+      <article class="dcard">
+        <div class="top"><span class="no">07</span><span class="wt">Bobot <b>10%</b></span></div>
+        <h3>Tata Kelola &amp; Keamanan</h3>
+        <p>Pengelolaan data pelanggan, kontrol akses, dan kesiapan terhadap UU PDP.</p>
+        <span class="wbar"><i data-w="10"></i></span>
+      </article>
+      <article class="dcard">
+        <div class="top"><span class="no">08</span><span class="wt">Bobot <b>5%</b></span></div>
+        <h3>Anggaran &amp; Finansial</h3>
+        <p>Ada tidaknya anggaran khusus, dan kesiapan menanggung biaya bulanan.</p>
+        <span class="wbar"><i data-w="5"></i></span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COBA PENILAIAN ================= -->
+  <section class="sec" id="penilaian">
+    <div class="wrap">
+      <div class="shead">
+        <div class="reveal">
+          <span class="eyebrow"><span class="pip"></span>Penilaian langsung</span>
+          <h2>Delapan pertanyaan, <span class="accent">skor bisnis Anda</span></h2>
+        </div>
+        <div class="reveal">
+          <p>Jawab apa adanya, bukan yang Anda harapkan. Skornya keluar di tempat, dan seluruh perhitungan berjalan di perangkat Anda sendiri &mdash; tidak ada jawaban yang dikirim ke kami.</p>
+          <p class="shead-note">1&ndash;2 menit &middot; tanpa daftar &middot; tanpa biaya</p>
+        </div>
+      </div>
+
+      <noscript>
+        <div class="ph-nojs">Tab penilaian ini butuh JavaScript aktif. Kalau tidak memungkinkan,
+        sampaikan saja kondisi usaha Anda lewat WhatsApp, dan tim kami yang menghitungkannya bersama Anda.</div>
+      </noscript>
+
+      <div class="pen" id="pen">
+        <div class="pen-head">
+          <span class="pen-prog"><span id="penCount">Terjawab 0 dari 8</span>
+            <span class="pen-bar" aria-hidden="true"><i id="penBar"></i></span></span>
+          <button class="pen-reset" type="button" id="penReset">Ulangi dari awal</button>
+        </div>
+        <ol class="pen-list" id="penList"><li class="pen-q" data-kode="D1"><span class="pen-no">01</span><div><p class="pen-qt" id="penqt-D1">Untuk 1-3 tahun ke depan, arah bisnis Anda sudah jelas dan tertulis?</p><p class="pen-qd">Pilih yang paling jujur menggambarkan keadaan hari ini, bukan yang Anda inginkan.</p><p class="pen-dim">Strategi & Kepemimpinan &middot; bobot 10%</p><div class="pen-opts" role="radiogroup" aria-labelledby="penqt-D1"><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="1" data-teks="Belum ada arah yang jelas" tabindex="0"><span class="pen-n">1</span><span>Belum ada arah yang jelas</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="2" data-teks="Ada di kepala saya saja" tabindex="-1"><span class="pen-n">2</span><span>Ada di kepala saya saja</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="3" data-teks="Sudah saya ceritakan ke tim, belum tertulis" tabindex="-1"><span class="pen-n">3</span><span>Sudah saya ceritakan ke tim, belum tertulis</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="4" data-teks="Tertulis, tapi belum ada target angkanya" tabindex="-1"><span class="pen-n">4</span><span>Tertulis, tapi belum ada target angkanya</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="5" data-teks="Tertulis, ada target angka, dan tim tahu" tabindex="-1"><span class="pen-n">5</span><span>Tertulis, ada target angka, dan tim tahu</span></button></div></div></li><li class="pen-q" data-kode="D2"><span class="pen-no">02</span><div><p class="pen-qt" id="penqt-D2">Kalau saya minta untung bersih bulan lalu, berapa lama Anda bisa menyebutkan angkanya?</p><p class="pen-qd">Ini dimensi paling menentukan. Di sinilah proyek AI paling sering gagal, bukan di teknologinya.</p><p class="pen-dim">Kesiapan Data &middot; bobot 20%</p><div class="pen-opts" role="radiogroup" aria-labelledby="penqt-D2"><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="1" data-teks="Tidak tahu angkanya" tabindex="0"><span class="pen-n">1</span><span>Tidak tahu angkanya</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="2" data-teks="Perlu dihitung manual dulu, hitungan hari" tabindex="-1"><span class="pen-n">2</span><span>Perlu dihitung manual dulu, hitungan hari</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="3" data-teks="Bisa, tapi menunggu orang tertentu" tabindex="-1"><span class="pen-n">3</span><span>Bisa, tapi menunggu orang tertentu</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="4" data-teks="Bisa, perlu saya buka beberapa catatan" tabindex="-1"><span class="pen-n">4</span><span>Bisa, perlu saya buka beberapa catatan</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="5" data-teks="Bisa saya sebutkan saat ini juga, akurat" tabindex="-1"><span class="pen-n">5</span><span>Bisa saya sebutkan saat ini juga, akurat</span></button></div></div></li><li class="pen-q" data-kode="D3"><span class="pen-no">03</span><div><p class="pen-qt" id="penqt-D3">Alat yang dipakai sehari-hari (kasir, stok, catatan penjualan) sudah berupa sistem, atau masih HP dan buku?</p><p class="pen-qd">Sistem di sini artinya aplikasi yang menyimpan data sendiri, bukan sekadar chat atau Excel lepas.</p><p class="pen-dim">Infrastruktur & Teknologi &middot; bobot 15%</p><div class="pen-opts" role="radiogroup" aria-labelledby="penqt-D3"><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="1" data-teks="Buku dan ingatan" tabindex="0"><span class="pen-n">1</span><span>Buku dan ingatan</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="2" data-teks="HP pribadi dan catatan lepas" tabindex="-1"><span class="pen-n">2</span><span>HP pribadi dan catatan lepas</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="3" data-teks="Sudah ada aplikasi, tapi hanya sebagian bagian" tabindex="-1"><span class="pen-n">3</span><span>Sudah ada aplikasi, tapi hanya sebagian bagian</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="4" data-teks="Sudah ada sistem inti, tapi masih ada input ulang" tabindex="-1"><span class="pen-n">4</span><span>Sudah ada sistem inti, tapi masih ada input ulang</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="5" data-teks="Sistem inti jalan dan terhubung otomatis" tabindex="-1"><span class="pen-n">5</span><span>Sistem inti jalan dan terhubung otomatis</span></button></div></div></li><li class="pen-q" data-kode="D4"><span class="pen-no">04</span><div><p class="pen-qt" id="penqt-D4">Kalau orang yang paling hafal jalan bisnis Anda cuti mendadak, pelayanan tetap normal?</p><p class="pen-qd">Ketergantungan pada satu orang adalah hal pertama yang biasanya bisa dibantu agen AI.</p><p class="pen-dim">Digitalisasi Proses &middot; bobot 15%</p><div class="pen-opts" role="radiogroup" aria-labelledby="penqt-D4"><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="1" data-teks="Bisnis langsung kacau" tabindex="0"><span class="pen-n">1</span><span>Bisnis langsung kacau</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="2" data-teks="Banyak yang macet" tabindex="-1"><span class="pen-n">2</span><span>Banyak yang macet</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="3" data-teks="Jalan, tapi banyak yang terlewat" tabindex="-1"><span class="pen-n">3</span><span>Jalan, tapi banyak yang terlewat</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="4" data-teks="Jalan normal, tapi jadi lebih lambat" tabindex="-1"><span class="pen-n">4</span><span>Jalan normal, tapi jadi lebih lambat</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="5" data-teks="Normal, karena semuanya sudah terdokumentasi" tabindex="-1"><span class="pen-n">5</span><span>Normal, karena semuanya sudah terdokumentasi</span></button></div></div></li><li class="pen-q" data-kode="D5"><span class="pen-no">05</span><div><p class="pen-qt" id="penqt-D5">Terakhir kali Anda mengenalkan cara atau alat baru ke tim, bagaimana reaksinya?</p><p class="pen-qd">Jawab dengan kejadian nyata yang terakhir, bukan perkiraan.</p><p class="pen-dim">Organisasi & Budaya &middot; bobot 10%</p><div class="pen-opts" role="radiogroup" aria-labelledby="penqt-D5"><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="1" data-teks="Ada penolakan, akhirnya tidak jadi" tabindex="0"><span class="pen-n">1</span><span>Ada penolakan, akhirnya tidak jadi</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="2" data-teks="Dipakai sebentar lalu ditinggalkan" tabindex="-1"><span class="pen-n">2</span><span>Dipakai sebentar lalu ditinggalkan</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="3" data-teks="Netral, jalan apa adanya" tabindex="-1"><span class="pen-n">3</span><span>Netral, jalan apa adanya</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="4" data-teks="Diterima, perlu waktu menyesuaikan" tabindex="-1"><span class="pen-n">4</span><span>Diterima, perlu waktu menyesuaikan</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="5" data-teks="Cepat terbiasa dan mereka malah minta tambahan" tabindex="-1"><span class="pen-n">5</span><span>Cepat terbiasa dan mereka malah minta tambahan</span></button></div></div></li><li class="pen-q" data-kode="D6"><span class="pen-no">06</span><div><p class="pen-qt" id="penqt-D6">Dari seluruh tim, siapa yang siap belajar lebih dulu kalau ada sistem baru?</p><p class="pen-qd">Kesediaan belajar lebih menentukan hasil akhir daripada keterampilan hari ini.</p><p class="pen-dim">SDM & Keterampilan &middot; bobot 15%</p><div class="pen-opts" role="radiogroup" aria-labelledby="penqt-D6"><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="1" data-teks="Tidak ada, saya sendiri juga berat" tabindex="0"><span class="pen-n">1</span><span>Tidak ada, saya sendiri juga berat</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="2" data-teks="Hanya saya sebagai pemilik" tabindex="-1"><span class="pen-n">2</span><span>Hanya saya sebagai pemilik</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="3" data-teks="Ada satu orang, tapi masih ragu" tabindex="-1"><span class="pen-n">3</span><span>Ada satu orang, tapi masih ragu</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="4" data-teks="Ada beberapa orang yang mau belajar" tabindex="-1"><span class="pen-n">4</span><span>Ada beberapa orang yang mau belajar</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="5" data-teks="Ada orang yang jelas mau, dan pernah berhasil belajar alat baru" tabindex="-1"><span class="pen-n">5</span><span>Ada orang yang jelas mau, dan pernah berhasil belajar alat baru</span></button></div></div></li><li class="pen-q" data-kode="D7"><span class="pen-no">07</span><div><p class="pen-qt" id="penqt-D7">Kalau HP atau komputer yang menyimpan data usaha hilang besok, data Anda masih aman?</p><p class="pen-qd">Termasuk data pelanggan dan keuangan. Aturan perlindungan data pribadi di Indonesia menuntut ini.</p><p class="pen-dim">Tata Kelola, Keamanan & Kepatuhan &middot; bobot 10%</p><div class="pen-opts" role="radiogroup" aria-labelledby="penqt-D7"><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="1" data-teks="Hilang ikut perangkatnya" tabindex="0"><span class="pen-n">1</span><span>Hilang ikut perangkatnya</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="2" data-teks="Ada salinan, tapi tidak teratur" tabindex="-1"><span class="pen-n">2</span><span>Ada salinan, tapi tidak teratur</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="3" data-teks="Ada salinan sesekali, tidak ada jadwal" tabindex="-1"><span class="pen-n">3</span><span>Ada salinan sesekali, tidak ada jadwal</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="4" data-teks="Ada salinan rutin, belum otomatis" tabindex="-1"><span class="pen-n">4</span><span>Ada salinan rutin, belum otomatis</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="5" data-teks="Tersalin otomatis dan ada yang bisa akses terbatas" tabindex="-1"><span class="pen-n">5</span><span>Tersalin otomatis dan ada yang bisa akses terbatas</span></button></div></div></li><li class="pen-q" data-kode="D8"><span class="pen-no">08</span><div><p class="pen-qt" id="penqt-D8">Ada anggaran bulanan yang memang disiapkan untuk teknologi?</p><p class="pen-qd">Angka nominalnya tidak perlu disebut di sini. Tim kami yang akan membahasnya bersama Anda.</p><p class="pen-dim">Anggaran & Finansial &middot; bobot 5%</p><div class="pen-opts" role="radiogroup" aria-labelledby="penqt-D8"><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="1" data-teks="Belum ada sama sekali" tabindex="0"><span class="pen-n">1</span><span>Belum ada sama sekali</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="2" data-teks="Ada, tapi hanya kalau mendesak" tabindex="-1"><span class="pen-n">2</span><span>Ada, tapi hanya kalau mendesak</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="3" data-teks="Ada, tapi tidak menentu jumlahnya" tabindex="-1"><span class="pen-n">3</span><span>Ada, tapi tidak menentu jumlahnya</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="4" data-teks="Ada, tapi baru untuk sekali jalan" tabindex="-1"><span class="pen-n">4</span><span>Ada, tapi baru untuk sekali jalan</span></button><button type="button" class="pen-opt" role="radio" aria-checked="false" data-nilai="5" data-teks="Ada, rutin tiap bulan dan berkelanjutan" tabindex="-1"><span class="pen-n">5</span><span>Ada, rutin tiap bulan dan berkelanjutan</span></button></div></div></li></ol>
+        <div class="pen-cek" id="penCek" hidden aria-live="polite"></div>
+        <div class="pen-actions">
+          <button class="btn btn-primary" type="button" id="penHitung" disabled>Lihat skor saya</button>
+          <span class="pen-hint" id="penHint">Masih ada 8 pertanyaan yang belum dijawab.</span>
+        </div>
+      </div>
+
+      <div class="pen-hasil" id="penHasil" hidden aria-live="polite">
+        <div class="cetak-kop" aria-hidden="true"><b>OmniSense</b>Penilaian kesiapan digitalisasi &amp; AI &middot; 8 dimensi berbobot &middot; omnisense.id &middot; WhatsApp 0888 0964 0700</div>
+        <div class="ph-top">
+          <div class="ph-disc">
+            <canvas id="phCanvas" width="168" height="168" role="img"
+              aria-label="Cakram skor kesiapan"></canvas>
+            <div class="ph-num" id="phNum">0<span>/100</span></div>
+          </div>
+          <div>
+            <span class="ph-band"><span class="pip"></span><span id="phBand">&mdash;</span></span>
+            <p class="ph-h3">Hasil penilaian Anda</p>
+            <p class="ph-arti" id="phArtis">&mdash;</p>
+            <div class="ph-langkah"><b>Langkah berikutnya</b><span id="phLangkah">&mdash;</span></div>
+          </div>
+        </div>
+        <div class="ph-mid">
+          <p class="ph-lab">Delapan dimensi, urut dari yang paling lemah</p>
+          <div id="phRows"></div>
+        </div>
+        <div class="ph-gap" id="phGap"></div>
+        <div class="ph-aksi">
+          <a class="btn btn-primary" id="phWa" href="https://wa.me/6288809640700" target="_blank" rel="noopener">Kirim hasil ke tim OmniSense</a>
+          <button class="ph-cetak" type="button" onclick="window.print()">Cetak / simpan PDF</button>
+          <a class="ph-cetak" href="https://wa.me/6288809640700?text=Halo%20OmniSense%2C%20saya%20sudah%20mengisi%20penilaian%20di%20situs.%20Saya%20ingin%20versi%20lengkap%2032%20pertanyaan%20untuk%20laporan%20yang%20lebih%20dalam." target="_blank" rel="noopener">Minta versi lengkap (32 pertanyaan)</a>
+          <p class="ph-note">Hasil ini titik awal diskusi, bukan penilaian mutu bisnis Anda. Yang paling berguna justru membahas celah yang paling mahal.</p>
+          <p class="ph-limit" id="phLimit" hidden></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUTPUT ================= -->
+<section class="sec" id="output">
+  <div class="wrap">
+    <div class="shead">
+      <div class="reveal">
+        <h2>Enam hal yang Anda terima</h2>
+      </div>
+      <div class="reveal">
+        <p>Hasil penilaian datang sebagai dokumen yang bisa dibaca tim Anda, bukan cuma angka di layar. Skor rendah bukan penilaian atas usaha Anda, melainkan peta urutan kerja.</p>
+        <p class="shead-note">Assessment tidak menjamin proyek langsung berhasil</p>
+      </div>
+    </div>
+
+    <div class="outgrid stagger" id="outGrid">
+      <article class="ocard">
+        <h3>Ringkasan eksekutif</h3>
+        <p>Skor total dalam persen dan kategori kesiapan, satu halaman untuk pemilik.</p>
+        <div class="meta"><span>Dokumen</span><span>1 halaman</span></div>
+      </article>
+      <article class="ocard">
+        <h3>Peta delapan dimensi</h3>
+        <p>Kekuatan dan kelemahan tiap dimensi dalam satu tampilan visual.</p>
+        <div class="meta"><span>Visual</span><span>8 dimensi</span></div>
+      </article>
+      <article class="ocard">
+        <h3>Analisis celah</h3>
+        <p>Dimensi dengan skor terendah, dan mengapa itu menahan langkah berikutnya.</p>
+        <div class="meta"><span>Analisis</span><span>Prioritas</span></div>
+      </article>
+      <article class="ocard">
+        <h3>Roadmap 30/60/90 hari</h3>
+        <p>Urutan pekerjaan per tahap, supaya bisa dijalankan sambil operasional jalan.</p>
+        <div class="meta"><span>Rencana</span><span>3 tahap</span></div>
+      </article>
+      <article class="ocard">
+        <h3>Lingkup dan perkiraan biaya</h3>
+        <p>Gambaran rupiah dan lingkup tiap tahap, sesuai kategori skor Anda.</p>
+        <div class="meta"><span>Estimasi</span><span>Per tahap</span></div>
+      </article>
+      <article class="ocard">
+        <h3>Catatan asumsi</h3>
+        <p>Data apa yang kami lihat langsung, dan bagian mana yang masih berupa asumsi.</p>
+        <div class="meta"><span>Transparansi</span><span>Terbuka</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KAMUS ================= -->
+<section class="sec" id="kamus">
+  <div class="wrap">
+    <div class="shead">
+      <div class="reveal">
+        <h2>Istilah yang sering ditanya, dijelaskan biasa</h2>
+      </div>
+      <div class="reveal">
+        <p>Pilih satu istilah. Semuanya ditulis untuk pemilik usaha, bukan untuk tim teknis.</p>
+      </div>
+    </div>
+
+    <div class="chips" id="tabs" role="tablist" aria-label="Istilah">
+      <button class="chip" role="tab" aria-selected="true" aria-controls="k1" id="t1">Agen AI</button>
+      <button class="chip" role="tab" aria-selected="false" aria-controls="k2" id="t2">Otomatisasi</button>
+      <button class="chip" role="tab" aria-selected="false" aria-controls="k3" id="t3">POS</button>
+      <button class="chip" role="tab" aria-selected="false" aria-controls="k4" id="t4">Data terpusat</button>
+      <button class="chip" role="tab" aria-selected="false" aria-controls="k5" id="t5">Prediksi</button>
+      <button class="chip" role="tab" aria-selected="false" aria-controls="k6" id="t6">Chatbot atau agen</button>
+    </div>
+
+    <div id="kpanels">
+      <div class="kpanel" id="k1" role="tabpanel" aria-labelledby="t1" tabindex="0">
+        <div>
+          <p class="kl">Istilah</p>
+          <h3 class="kt">Agen AI</h3>
+        </div>
+        <div>
+          <p class="kd">Program yang menyelesaikan pekerjaan, bukan cuma menjawab pertanyaan. Agen AI membaca data Anda, menjalankan langkah berurutan, menyusun hasilnya, lalu berhenti untuk minta konfirmasi.</p>
+          <p class="kx">Contoh: <b>asisten yang menyusun laporan penjualan harian dan mengirimkannya ke WhatsApp pemilik setiap pagi.</b></p>
+        </div>
+      </div>
+      <div class="kpanel" id="k2" role="tabpanel" aria-labelledby="t2" tabindex="0" hidden>
+        <div>
+          <p class="kl">Istilah</p>
+          <h3 class="kt">Otomatisasi</h3>
+        </div>
+        <div>
+          <p class="kd">Pekerjaan berulang yang dikerjakan mesin dengan aturan yang Anda tentukan sekali. Rekap penjualan, pengingat stok, pengiriman laporan ke grup, tanpa diingat-ingat lagi tiap hari.</p>
+          <p class="kx">Batasnya: <b>otomatisasi menjalankan aturan yang sudah jelas, bukan mengambil keputusan untuk Anda.</b></p>
+        </div>
+      </div>
+      <div class="kpanel" id="k3" role="tabpanel" aria-labelledby="t3" tabindex="0" hidden>
+        <div>
+          <p class="kl">Istilah</p>
+          <h3 class="kt">POS</h3>
+        </div>
+        <div>
+          <p class="kd">Point of sale, tempat transaksi dicatat. Kalau POS-nya berbasis web, angka penjualan langsung menjadi laporan dan tidak perlu disalin ulang ke buku atau spreadsheet.</p>
+          <p class="kx">Kenapa penting: <b>ini sumber data paling dasar sebelum pekerjaan lain bisa diotomatiskan.</b></p>
+        </div>
+      </div>
+      <div class="kpanel" id="k4" role="tabpanel" aria-labelledby="t4" tabindex="0" hidden>
+        <div>
+          <p class="kl">Istilah</p>
+          <h3 class="kt">Data terpusat</h3>
+        </div>
+        <div>
+          <p class="kd">Semua angka bisnis ada di satu tempat dan bisa ditelusuri kembali sampai transaksi asalnya. Tidak tersebar di kertas, chat, dan berkas yang disimpan masing-masing orang.</p>
+          <p class="kx">Tandanya: <b>dua orang membaca laporan yang sama dan angkanya cocok.</b></p>
+        </div>
+      </div>
+      <div class="kpanel" id="k5" role="tabpanel" aria-labelledby="t5" tabindex="0" hidden>
+        <div>
+          <p class="kl">Istilah</p>
+          <h3 class="kt">Prediksi</h3>
+        </div>
+        <div>
+          <p class="kd">Perkiraan yang dihitung dari pola yang sudah terjadi, misalnya jam ramai atau bahan yang akan habis. Berguna hanya kalau datanya sudah rapi dan konsisten.</p>
+          <p class="kx">Syaratnya: <b>riwayat transaksi yang lengkap lebih dulu, baru perkiraan bisa dipercaya.</b></p>
+        </div>
+      </div>
+      <div class="kpanel" id="k6" role="tabpanel" aria-labelledby="t6" tabindex="0" hidden>
+        <div>
+          <p class="kl">Istilah</p>
+          <h3 class="kt">Chatbot atau agen</h3>
+        </div>
+        <div>
+          <p class="kd">Chatbot menjawab pertanyaan yang sama berulang kali. Agen AI mengurangi pekerjaan yang harus dikerjakan orang. Keduanya punya tempat, tapi hasilnya berbeda.</p>
+          <p class="kx">Urutannya: <b>mulai dari yang paling sering dikerjakan, biasanya bukan yang paling terlihat keren.</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HASIL ================= -->
+<section class="sec" id="hasil">
+  <div class="wrap">
+    <div class="shead">
+      <div class="reveal">
+        <h2>Dua sistem yang sudah kami bangun</h2>
+      </div>
+      <div class="reveal">
+        <p>Satu produk sendiri untuk kafe, satu proyek klien di bidang logistik. Keduanya berangkat dari masalah operasional yang sama: catatan manual dan laporan yang terlambat.</p>
+      </div>
+    </div>
+
+    <div class="cases stagger" id="cases">
+      <article class="case">
+        <div class="ctop"><span class="no">01</span><span class="kind">Produk OmniSense · F&amp;B</span></div>
+        <h3>FNBSense</h3>
+        <dl>
+          <div><dt>Masalah</dt><dd>Pemilik kafe mencatat penjualan di buku, lalu menghitung ulang setiap malam.</dd></div>
+          <div><dt>Yang dibangun</dt><dd>POS web untuk kasir, laporan harian, dan asisten WhatsApp yang mengirim ringkasan ke pemilik.</dd></div>
+          <div><dt>Hasil</dt><dd>Laporan tersusun sendiri di dalam sistem, tanpa hitung ulang manual.</dd></div>
+        </dl>
+        <div class="spec">
+          <span>POS web</span><span>Laporan harian otomatis</span><span>Asisten WhatsApp</span><span>Dibuat untuk kafe &amp; outlet F&amp;B</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="ctop"><span class="no">02</span><span class="kind">Proyek klien · Logistik</span></div>
+        <h3>LogiSense</h3>
+        <dl>
+          <div><dt>Masalah</dt><dd>Klien kami di bidang logistik mencatat pengiriman secara manual, sehingga laporan keuangan dan posisi armada tersusun terlambat.</dd></div>
+          <div><dt>Yang dibangun</dt><dd>Empat belas modul agen dan dashboard, layanan mikro Python, migrasi data dari berkas lama, dan bot WhatsApp untuk pemilik.</dd></div>
+          <div><dt>Hasil</dt><dd>Saat serah terima, operasional harian, keuangan, dan posisi armada sudah terlihat dalam satu dashboard.</dd></div>
+        </dl>
+        <div class="spec">
+          <span><b>12</b> armada</span><span><b>395</b> pengiriman diimpor</span><span><b>14</b> modul agen</span><span><b>80</b> endpoint</span><span><b>5</b> container berjalan normal</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAK ================= -->
+<section class="cta" id="kontak">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap cta-in">
+    <span class="eyebrow reveal"><span class="pip"></span>Mulai</span>
+    <h2 class="reveal">Ukur dulu, baru putuskan</h2>
+    <p class="reveal">Penilaian awal gratis dan tanpa kewajiban lanjut. Kalau hasilnya menunjukkan fondasi Anda belum siap, kami akan bilang apa adanya.</p>
+    <div class="cta-act reveal">
+      <a class="btn btn-primary" href="https://wa.me/6288809640700?text=Halo%20OmniSense%2C%20saya%20ingin%20penilaian%20kesiapan%20gratis" target="_blank" rel="noopener">
+        <!-- ikon WhatsApp: tabler-icons (MIT) --><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M18.497 4.409a10 10 0 0 1 -10.36 16.828l-.223 -.098l-4.759 .849l-.11 .011a1 1 0 0 1 -.11 0l-.102 -.013l-.108 -.024l-.105 -.037l-.099 -.047l-.093 -.058l-.014 -.011l-.012 -.007l-.086 -.073l-.077 -.08l-.067 -.088l-.056 -.094l-.034 -.07l-.04 -.108l-.028 -.128l-.012 -.102a1 1 0 0 1 0 -.125l.012 -.1l.024 -.11l.045 -.122l1.433 -3.304l-.009 -.014a10 10 0 0 1 1.549 -12.454l.215 -.203a10 10 0 0 1 13.226 -.217m-8.997 3.09a1.5 1.5 0 0 0 -1.5 1.5v1a6 6 0 0 0 6 6h1a1.5 1.5 0 0 0 0 -3h-1l-.144 .007a1.5 1.5 0 0 0 -1.128 .697l-.042 .074l-.022 -.007a4.01 4.01 0 0 1 -2.435 -2.435l-.008 -.023l.075 -.041a1.5 1.5 0 0 0 .704 -1.272v-1a1.5 1.5 0 0 0 -1.5 -1.5"/></svg>
+        Chat lewat WhatsApp
+      </a>
+      <a class="btn" href="#proses">Baca cara kerjanya</a>
+    </div>
+    <a class="cta-num reveal" href="tel:+6288809640700">0888 0964 0700</a>
+    <p class="cta-note reveal">Balasan pada jam kerja · Jakarta</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">
+        <img src="assets/logo-mark-white-256.png" alt="" width="28" height="28" />
+        <span>omnisense</span>
+      </div>
+      <p>Konsultan AI untuk usaha yang ingin mulai dari data, bukan dari tebakan.</p>
+    </div>
+    <div>
+      <h4>Bagian</h4>
+      <ul>
+        <li><a href="#proses">Cara kerja</a></li>
+        <li><a href="#kategori">Kategori skor</a></li>
+        <li><a href="#dimensi">Delapan dimensi</a></li>
+        <li><a href="#output">Output penilaian</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Lainnya</h4>
+      <ul>
+        <li><a href="#kamus">Kamus istilah</a></li>
+        <li><a href="#hasil">Hasil proyek</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li><span>IG</span><a href="https://instagram.com/omnisense_id" target="_blank" rel="noopener">@omnisense_id</a></li>
+        <li><span>PR</span><a href="privacy.html">Kebijakan Privasi</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="foot-bar">
+      <span>© 2026 OmniSense</span>
+      <a href="https://wa.me/6288809640700?text=Halo%20OmniSense%2C%20saya%20ingin%20penilaian%20kesiapan%20gratis" target="_blank" rel="noopener">0888 0964 0700</a>
+      <span>Jakarta, Indonesia</span>
+      <span class="tweaks-in">
+        <span class="lb">Gerak</span>
+        <button class="tg" id="motionBtn" type="button" aria-pressed="true">Nyala</button>
+      </span>
+    </div>
+  </div>
+  <p class="foot-wm" aria-hidden="true">OMNISENSE</p>
+</footer>
+
+<!-- rail kanan -->
+<div class="ticks" id="ticks" aria-hidden="true"></div>
+
+<script>
+(function(){
+  "use strict";
+  var doc = document;
+  var root = doc.documentElement;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var motion = !reduced;
+
+  /* ---------- util ---------- */
+  function $(s, c){ return (c||doc).querySelector(s); }
+  function $$(s, c){ return Array.prototype.slice.call((c||doc).querySelectorAll(s)); }
+  function cssVar(n, fb){ var v = getComputedStyle(root).getPropertyValue(n).trim(); return v || fb; }
+  var SIG = cssVar('--signal', '#14B8A6');
+  var FINAL_SCORE = 68;
+  var ARC_C = 364.42;
+  var ARC_OFF = ARC_C * (1 - FINAL_SCORE/100);
+
+  /* ---------- elemen ---------- */
+  var nav = $('#nav'), prog = $('#prog'), ticks = $('#ticks'), motionBtn = $('#motionBtn');
+  var arc = $('#gaugeArc'), gaugeNum = $('#gaugeNum'), panel = $('#panel'), dimRows = $('#dimRows');
+  var dimGrid = $('#dimGrid'), ladder = $('#ladder'), bandMark = $('#bandMark');
+  var steps = $$('#steps .step');
+
+  /* ---------- 1. cakram skor (menggantikan medan titik) ---------- */
+  var cv = $('#scoreDisc'), ctx = cv.getContext('2d');
+  var W = 132, H = 132, DPR = 1, raf = null, heroVisible = true, tabVisible = !doc.hidden;
+  var discSweep = 0, discT0 = 0, discDone = false;
+  var LINE = 'rgba(255,255,255,.16)', NTICK = 44, DOTS = [], di;
+  for (di = 0; di < 64; di++){
+    DOTS.push({
+      a: Math.random() * Math.PI * 2, r: 48 * (0.60 + Math.random() * 0.36),
+      s: 0.00035 + Math.random() * 0.0009, o: 0.22 + Math.random() * 0.5, sz: 0.5 + Math.random() * 0.9
+    });
+  }
+
+  function sizeCanvas(){
+    var r = cv.getBoundingClientRect();
+    W = r.width || 132; H = r.height || 132;
+    DPR = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = Math.max(1, Math.round(W * DPR));
+    cv.height = Math.max(1, Math.round(H * DPR));
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  function drawDisc(t){
+    var R = Math.min(W, H) / 2, i;
+    ctx.clearRect(0, 0, W, H);
+    ctx.save(); ctx.translate(W / 2, H / 2);
+    /* jarum radial berputar — latar, opasitas rendah */
+    ctx.strokeStyle = LINE;
+    for (i = 0; i < NTICK; i++){
+      var a = i / NTICK * Math.PI * 2 + t * 0.00005;
+      var inner = R * 0.46, outer = R * (0.74 + 0.1 * Math.sin(t * 0.00035 + i));
+      ctx.globalAlpha = 0.12 + 0.3 * Math.abs(Math.sin(t * 0.00028 + i * 0.5));
+      ctx.lineWidth = 1.1; ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(Math.cos(a) * inner, Math.sin(a) * inner);
+      ctx.lineTo(Math.cos(a) * outer, Math.sin(a) * outer);
+      ctx.stroke();
+    }
+    /* cincin: track + busur teal yang membaca skor 0 -> 68 */
+    ctx.globalAlpha = 1; ctx.lineWidth = 8; ctx.lineCap = 'butt';
+    ctx.strokeStyle = LINE;
+    ctx.beginPath(); ctx.arc(0, 0, R * 0.92, 0, Math.PI * 2); ctx.stroke();
+    ctx.strokeStyle = SIG; ctx.lineWidth = 8; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.arc(0, 0, R * 0.92, -Math.PI / 2, -Math.PI / 2 + discSweep * 0.68 * Math.PI * 2); ctx.stroke();
+    /* cincin dalam + titik orbit */
+    ctx.globalAlpha = .35; ctx.strokeStyle = SIG; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.arc(0, 0, R * 0.36, 0, Math.PI * 2); ctx.stroke();
+    for (i = 0; i < DOTS.length; i++){
+      var o = DOTS[i]; o.a += o.s * 16;
+      var x = Math.cos(o.a) * o.r, y = Math.sin(o.a) * o.r * 0.66;
+      ctx.globalAlpha = o.o; ctx.fillStyle = (i % 7 === 0) ? SIG : '#FFFFFF';
+      ctx.beginPath(); ctx.arc(x, y, o.sz, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.restore(); ctx.globalAlpha = 1;
+  }
+
+  function loop(ts){
+    raf = null;
+    if (!motion || !heroVisible || !tabVisible) return;
+    if (discSweep < 1){
+      discSweep = Math.min(1, (ts - discT0) / 1400);
+      discSweep = 1 - Math.pow(1 - discSweep, 3);
+      if (discSweep >= 1){ discSweep = 1; discDone = true; gaugeNum.textContent = String(FINAL_SCORE); }
+      else gaugeNum.textContent = String(Math.round(discSweep * FINAL_SCORE));
+    }
+    drawDisc(ts);
+    raf = requestAnimationFrame(loop);
+  }
+  function discFinal(){
+    discSweep = 1; discDone = true; discT0 = performance.now();
+    gaugeNum.textContent = String(FINAL_SCORE);
+    arc.style.transition = 'none'; arc.style.strokeDashoffset = String(ARC_OFF);
+    sizeCanvas(); drawDisc(performance.now());
+  }
+  function canvasStart(){
+    cv.style.display = ''; sizeCanvas();
+    /* ukur langsung: bendera heroVisible bisa basi kalau observer tak melihat perubahan */
+    var hr = $('#top').getBoundingClientRect();
+    heroVisible = hr.bottom > 0 && hr.top < window.innerHeight;
+    if (discSweep === 0) discT0 = performance.now();
+    if (reduced) return;            /* reduced-motion: busur tetap digambar, hanya tidak berputar */
+    if (!raf) raf = requestAnimationFrame(loop);
+  }
+  function canvasStop(){
+    if (raf){ cancelAnimationFrame(raf); raf = null; }
+    /* keluar layar saat busur belum penuh: selesaikan, jangan bekukan setengah jalan */
+    if (!discDone) discFinal();
+    ctx.clearRect(0, 0, W, H);
+    cv.style.display = 'none';
+  }
+  /* gerak mati -> animasi berhenti, gambar terakhir tetap ada */
+  function discSettle(){ canvasStop(); cv.style.display = ''; sizeCanvas(); discFinal(); }
+
+  /* ---------- 2. spotlight kursor ---------- */
+  var spot = null, spotRaf = null, sx = 0, sy = 0, tx = 0, ty = 0;
+  var finePointer = window.matchMedia('(pointer: fine)').matches;
+  function spotBuild(){
+    if (!finePointer || reduced || spot) return;
+    spot = doc.createElement('div');
+    spot.setAttribute('aria-hidden', 'true');
+    spot.style.cssText = 'position:fixed;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;' +
+      'border-radius:50%;pointer-events:none;z-index:0;opacity:0;' +
+      'background:radial-gradient(circle,rgba(20,184,166,.075),rgba(20,184,166,.02) 45%,transparent 70%)';
+    doc.body.appendChild(spot);
+    window.addEventListener('pointermove', function(e){ tx = e.clientX; ty = e.clientY; }, { passive: true });
+  }
+  function spotLoop(){
+    spotRaf = null;
+    if (!spot || !motion) return;
+    sx += (tx - sx) * .09;
+    sy += (ty - sy) * .09;
+    spot.style.transform = 'translate3d(' + sx + 'px,' + sy + 'px,0)';
+    spot.style.opacity = (tx > -100 ? '1' : '0');
+    spotRaf = requestAnimationFrame(spotLoop);
+  }
+  function spotStart(){
+    if (!spot) spotBuild();
+    if (!spot) return;
+    spot.style.display = '';
+    if (!spotRaf) spotRaf = requestAnimationFrame(spotLoop);
+  }
+  function spotStop(){
+    if (spotRaf){ cancelAnimationFrame(spotRaf); spotRaf = null; }
+    if (spot){ spot.style.display = 'none'; }
+  }
+
+  /* ---------- 3. gauge + bar dimensi ---------- */
+  function countUp(){
+    var t0 = null, dur = 1250;
+    function step(ts){
+      if (t0 === null) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur);
+      var e = 1 - Math.pow(1 - p, 3);
+      gaugeNum.textContent = Math.round(e * FINAL_SCORE);
+      if (p < 1) requestAnimationFrame(step);
+      else gaugeNum.textContent = String(FINAL_SCORE);
+    }
+    requestAnimationFrame(step);
+  }
+  function gaugeRun(){
+    arc.style.transition = 'stroke-dashoffset 1.5s cubic-bezier(.2,.7,.2,1)';
+    arc.style.strokeDashoffset = String(ARC_OFF);
+    $$('.drow .bar i', dimRows).forEach(function(el, i){
+      setTimeout(function(){ el.style.width = el.dataset.w + '%'; }, 90 * i);
+    });
+  }
+  function gaugeFinal(){
+    arc.style.transition = 'none';
+    arc.style.strokeDashoffset = String(ARC_OFF);
+    gaugeNum.textContent = String(FINAL_SCORE);
+    $$('.drow .bar i', dimRows).forEach(function(el){ el.style.width = el.dataset.w + '%'; });
+  }
+
+  /* ---------- 4. kartu dimensi + tangga kategori ---------- */
+  function weightsRun(){ $$('.dcard .wbar i', dimGrid).forEach(function(el){ el.style.width = el.dataset.w + '%'; }); }
+  function weightsReset(){ $$('.dcard .wbar i', dimGrid).forEach(function(el){ el.style.width = '0%'; }); }
+  function markRun(){ bandMark.style.transition = ''; bandMark.style.left = FINAL_SCORE + '%'; }
+  function markReset(){ bandMark.style.transition = 'none'; bandMark.style.left = '0%'; }
+
+  /* ---------- 5. reveal + stagger ---------- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: .12 });
+
+  var ioGauge = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ gaugeRun(); ioGauge.unobserve(e.target); } });
+  }, { threshold: .3 });
+
+  var ioWeights = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ weightsRun(); ioWeights.unobserve(e.target); } });
+  }, { threshold: .2 });
+
+  var ioMark = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ markRun(); ioMark.unobserve(e.target); } });
+  }, { threshold: .3 });
+
+  var ioStep = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var idx = steps.indexOf(e.target);
+      for (var i = 0; i <= idx; i++) steps[i].classList.add('in');
+      ioStep.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -30% 0px', threshold: 0 });
+
+  function observeAll(){
+    $$('.reveal:not(.in),.stagger:not(.in)').forEach(function(el){ io.observe(el); });
+    if (panel) ioGauge.observe(panel);
+    if (dimGrid) ioWeights.observe(dimGrid);
+    if (ladder) ioMark.observe(ladder);
+    steps.forEach(function(s){ ioStep.observe(s); });
+  }
+
+  /* ---------- 6. rail kanan + progres + scrollspy ---------- */
+  var TICKS = 14;
+  for (var t = 0; t < TICKS; t++){
+    var tk = doc.createElement('span');
+    tk.className = 'tk';
+    ticks.appendChild(tk);
+  }
+  var tlEl = doc.createElement('span');
+  tlEl.className = 'tl';
+  tlEl.textContent = 'Posisi';
+  ticks.appendChild(tlEl);
+  var pcEl = doc.createElement('span');
+  pcEl.className = 'pc';
+  pcEl.textContent = '0%';
+  ticks.appendChild(pcEl);
+  var tickEls = $$('.tk', ticks);
+  var leadEl = doc.createElement('span');
+  leadEl.className = 'tklead';
+  ticks.appendChild(leadEl);
+  var TK_STEP = 8; /* 1px tick + 7px gap */
+
+  var spyIds = ['top', 'proses', 'kategori', 'dimensi', 'penilaian', 'output', 'kamus', 'hasil', 'kontak'];
+  var spySet = {};
+  var navLinks = $$('.nav-link');
+  var ixLinks = $$('.ix');
+
+  var ioSpy = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ spySet[e.target.id] = e.isIntersecting; });
+    var active = null;
+    for (var i = 0; i < spyIds.length; i++){ if (spySet[spyIds[i]]){ active = spyIds[i]; break; } }
+    if (!active) return;
+    navLinks.forEach(function(a){ a.classList.toggle('is-active', a.getAttribute('href') === '#' + active); });
+    ixLinks.forEach(function(a){ a.classList.toggle('is-active', a.getAttribute('href') === '#' + active); });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  spyIds.forEach(function(id){ var el = doc.getElementById(id); if (el) ioSpy.observe(el); });
+
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    var max = Math.max(1, doc.documentElement.scrollHeight - window.innerHeight);
+    var p = Math.max(0, Math.min(1, y / max));
+    prog.style.width = (p * 100) + '%';
+    nav.classList.toggle('is-stuck', y > 12);
+    var lit = Math.round(p * TICKS);
+    tickEls.forEach(function(el, i){ el.classList.toggle('on', i < lit); });
+    pcEl.textContent = Math.round(p * 100) + '%';
+    /* penanda "kamu di sini": satu titik berdenyut di ujung tick yang menyala */
+    var nTk = tickEls.length, frac = p * nTk, ly;
+    if (frac <= 0) ly = 0;
+    else if (frac >= nTk) ly = nTk * TK_STEP;
+    else ly = frac * TK_STEP - 4;
+    leadEl.style.transform = 'translateY(' + ly + 'px)';
+  }
+  var scrollPending = false;
+  window.addEventListener('scroll', function(){
+    if (scrollPending) return;
+    scrollPending = true;
+    requestAnimationFrame(function(){ scrollPending = false; onScroll(); });
+  }, { passive: true });
+  window.addEventListener('resize', function(){ if (motion && !reduced) sizeCanvas(); }, { passive: true });
+
+  /* ---------- 6b. strip bergulir: berhenti saat disapa (tap di HP) ---------- */
+  var mq = $('.marquee');
+  if (mq){
+    mq.addEventListener('pointerdown', function(){ mq.classList.add('paused'); });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function(ev){
+      mq.addEventListener(ev, function(){ mq.classList.remove('paused'); });
+    });
+  }
+
+  /* ---------- 7. kamus: chip + panel ---------- */
+  var chips = $$('#tabs .chip');
+  var kpanels = $$('#kpanels .kpanel');
+  function selectTab(i){
+    chips.forEach(function(c, j){
+      var on = i === j;
+      c.setAttribute('aria-selected', on ? 'true' : 'false');
+      kpanels[j].hidden = !on;
+      if (on){
+        kpanels[j].classList.remove('fade-in');
+        void kpanels[j].offsetWidth;
+        kpanels[j].classList.add('fade-in');
+      }
+    });
+  }
+  chips.forEach(function(c, i){
+    c.addEventListener('click', function(){ selectTab(i); });
+    c.addEventListener('keydown', function(e){
+      var n = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = (i + 1) % chips.length;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = (i - 1 + chips.length) % chips.length;
+      if (n === null) return;
+      e.preventDefault();
+      selectTab(n);
+      chips[n].focus();
+    });
+  });
+
+  /* ---------- 8. kontrol gerak ---------- */
+  function toFinal(){
+    $$('.reveal,.stagger').forEach(function(el){ el.classList.add('in'); });
+    steps.forEach(function(s){ s.classList.add('in'); });
+    gaugeFinal();
+    weightsRun();
+    markRun();
+  }
+  function resetAnim(){
+    $$('.reveal,.stagger').forEach(function(el){ el.classList.remove('in'); });
+    steps.forEach(function(s){ s.classList.remove('in'); });
+    arc.style.transition = 'none';
+    arc.style.strokeDashoffset = String(ARC_C);
+    gaugeNum.textContent = '0';
+    discSweep = 0; discDone = false;
+    $$('.drow .bar i', dimRows).forEach(function(el){ el.style.width = '0%'; });
+    weightsReset();
+    markReset();
+  }
+  function applyMotion(on){
+    motion = on;
+    root.classList.toggle('no-motion', !on);
+    motionBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    motionBtn.textContent = on ? 'Nyala' : 'Mati';
+    ticks.style.display = on ? '' : 'none';
+    if (on){
+      resetAnim();
+      canvasStart();
+      spotStart();
+      onScroll();
+      requestAnimationFrame(function(){ observeAll(); });
+    } else {
+      toFinal();
+      discSettle();
+      spotStop();
+    }
+  }
+  motionBtn.addEventListener('click', function(){ applyMotion(!motion); });
+
+  /* ---------- 9. init ---------- */
+  var hero = $('#top');
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      heroVisible = e.isIntersecting;
+      if (!heroVisible && !discDone) discFinal();
+      if (motion && !reduced){ if (heroVisible && !raf) raf = requestAnimationFrame(loop); }
+    });
+  }, { threshold: 0 }).observe(hero);
+
+  doc.addEventListener('visibilitychange', function(){
+    tabVisible = !doc.hidden;
+    if (motion && !reduced && tabVisible && heroVisible && !raf) raf = requestAnimationFrame(loop);
+  });
+
+  try {
+    onScroll();
+    if (reduced){
+      applyMotion(false);
+    } else {
+      observeAll();
+      canvasStart();
+      spotStart();
+      requestAnimationFrame(function(){ spotLoopStart(); });
+    }
+  } catch (err) {
+    /* kalau init gagal, halaman tetap harus terbaca */
+    toFinal();
+    canvasStop();
+    spotStop();
+    if (window.console && console.error) console.error('OmniSense init gagal:', err);
+  }
+  function spotLoopStart(){ if (motion && spot && !spotRaf) spotRaf = requestAnimationFrame(spotLoop); }
+  window.OmniSense = { applyMotion: applyMotion, selectTab: selectTab, gauge: function(){ return gaugeNum.textContent; }, disc: function(){ return discSweep; } };
+})();
+</script>
+<script>
+/* data tab penilaian — sumber: tab-penilaian/pertanyaan.json */
+window.__PENILAIAN__ = {"versi":"1.1","diperbarui":"2026-09-30","catatan":"Satu sumber kebenaran untuk tab penilaian. Bobot, rumus, dan band WAJIB sama dengan /home/ubuntu/ai-agency/kalkulator_kesiapan.py. Kalau salah satu diubah, jalankan tab-penilaian/uji_paritas.js.","rumus":"skor_dimensi = nilai (1-5). skor_total = jumlah(nilai x bobot). persen = skor_total/5*100.","urutan_nilai":"WAJIB urut kode D1..D8. Ini urutan yang sama dengan DIMENSI di kalkulator_kesiapan.py (mode inti). Jangan diubah tanpa mengubah kalkulator.","format_pesan":{"catatan":"Pesan WhatsApp yang dikirim pengunjung dari situs. Dua bagian: baris mesin (dibaca bot) dan ringkasan manusia. Bot memakai baris mesin untuk menghitung ulang.","penanda":"[PENILAIAN-SITUS v1]","contoh":"[PENILAIAN-SITUS v1]\nD1=4 D2=3 D3=5 D4=3 D5=2 D6=3 D7=3 D8=2\nskor_situs=65.0 band=Layak Lanjut\nkeyakinan=D2:ragu,D5:yakin,D8:tidak_tahu\n\nHalo OmniSense, saya baru mengisi penilaian kesiapan di situs.\nSkor saya 65.0% — Layak Lanjut.\nJawaban saya:\n- Strategi & Kepemimpinan: 4/5 (Tertulis, tapi belum ada target angkanya)\n..."},"keyakinan":[{"kode":"yakin","label":"Yakin","arti":"Saya tahu pasti keadaannya."},{"kode":"ragu","label":"Ragu","arti":"Saya kira-kira saja jawabannya."},{"kode":"tidak_tahu","label":"Belum tahu","arti":"Saya belum pernah mengeceknya."}],"aturan_konsistensi":{"catatan":"Pemeriksaan silang di situs, jalan di perangkat pengunjung. Hanya memuat pasangan yang hampir mustahil terjadi bersama, supaya peringatan palsu tetap sedikit. Kalau satu aturan terpicu, skor tetap dihitung tetapi ditandai perlu ditinjau, dan bot WA wajib menanyakan buktinya lebih dulu.","aturan":[{"kode":"R1","jika":{"D2":[4,5],"D3":[1,2]},"pesan":"Anda menjawab angka keuangan bisa keluar dari catatan Anda, tetapi alat sehari-hari masih buku atau HP pribadi. Selama sumbernya masih catatan manual, angka seperti itu belum bisa diandalkan saat ditanya mendadak."},{"kode":"R3","jika":{"D5":[4,5],"D6":[1,2]},"pesan":"Anda menjawab tim sudah menerima cara baru, tetapi belum ada orang yang siap menjalankannya. Beban belajarnya masih menumpuk di pemilik. Keduanya sulit terjadi bersamaan."},{"kode":"R4","jika":{"D7":[4,5],"D3":[1,2]},"pesan":"Anda menjawab data sudah punya salinan berkala, tetapi belum ada sistem yang dipakai sehari-hari. Salinan berkala biasanya baru bisa jalan kalau ada sistem yang mencatat lebih dulu."}]},"skala":[{"n":1,"label":"Belum ada","arti":"Belum dilakukan sama sekali, atau masih di kepala orang."},{"n":2,"label":"Masih manual","arti":"Sudah dilakukan, tapi dengan kertas, buku, atau HP pribadi."},{"n":3,"label":"Sebagian digital","arti":"Sebagian sudah pakai alat digital, tapi belum menyatu."},{"n":4,"label":"Jalan, belum rapi","arti":"Sudah jalan rutin, tapi belum seragam atau belum terukur."},{"n":5,"label":"Jalan & terukur","arti":"Sudah jalan, terdokumentasi, dan bisa dilihat angkanya kapan saja."}],"dimensi":[{"kode":"D1","nama":"Strategi & Kepemimpinan","bobot":0.1,"pertanyaan":"Untuk 1-3 tahun ke depan, arah bisnis Anda sudah jelas dan tertulis?","petunjuk":"Pilih yang paling jujur menggambarkan keadaan hari ini, bukan yang Anda inginkan.","pilihan":[{"n":1,"teks":"Belum ada arah yang jelas"},{"n":2,"teks":"Ada di kepala saya saja"},{"n":3,"teks":"Sudah saya ceritakan ke tim, belum tertulis"},{"n":4,"teks":"Tertulis, tapi belum ada target angkanya"},{"n":5,"teks":"Tertulis, ada target angka, dan tim tahu"}]},{"kode":"D2","nama":"Kesiapan Data","bobot":0.2,"pertanyaan":"Kalau saya minta untung bersih bulan lalu, berapa lama Anda bisa menyebutkan angkanya?","petunjuk":"Ini dimensi paling menentukan. Di sinilah proyek AI paling sering gagal, bukan di teknologinya.","pilihan":[{"n":1,"teks":"Tidak tahu angkanya"},{"n":2,"teks":"Perlu dihitung manual dulu, hitungan hari"},{"n":3,"teks":"Bisa, tapi menunggu orang tertentu"},{"n":4,"teks":"Bisa, perlu saya buka beberapa catatan"},{"n":5,"teks":"Bisa saya sebutkan saat ini juga, akurat"}]},{"kode":"D3","nama":"Infrastruktur & Teknologi","bobot":0.15,"pertanyaan":"Alat yang dipakai sehari-hari (kasir, stok, catatan penjualan) sudah berupa sistem, atau masih HP dan buku?","petunjuk":"Sistem di sini artinya aplikasi yang menyimpan data sendiri, bukan sekadar chat atau Excel lepas.","pilihan":[{"n":1,"teks":"Buku dan ingatan"},{"n":2,"teks":"HP pribadi dan catatan lepas"},{"n":3,"teks":"Sudah ada aplikasi, tapi hanya sebagian bagian"},{"n":4,"teks":"Sudah ada sistem inti, tapi masih ada input ulang"},{"n":5,"teks":"Sistem inti jalan dan terhubung otomatis"}]},{"kode":"D4","nama":"Digitalisasi Proses","bobot":0.15,"pertanyaan":"Kalau orang yang paling hafal jalan bisnis Anda cuti mendadak, pelayanan tetap normal?","petunjuk":"Ketergantungan pada satu orang adalah hal pertama yang biasanya bisa dibantu agen AI.","pilihan":[{"n":1,"teks":"Bisnis langsung kacau"},{"n":2,"teks":"Banyak yang macet"},{"n":3,"teks":"Jalan, tapi banyak yang terlewat"},{"n":4,"teks":"Jalan normal, tapi jadi lebih lambat"},{"n":5,"teks":"Normal, karena semuanya sudah terdokumentasi"}]},{"kode":"D5","nama":"Organisasi & Budaya","bobot":0.1,"pertanyaan":"Terakhir kali Anda mengenalkan cara atau alat baru ke tim, bagaimana reaksinya?","petunjuk":"Jawab dengan kejadian nyata yang terakhir, bukan perkiraan.","pilihan":[{"n":1,"teks":"Ada penolakan, akhirnya tidak jadi"},{"n":2,"teks":"Dipakai sebentar lalu ditinggalkan"},{"n":3,"teks":"Netral, jalan apa adanya"},{"n":4,"teks":"Diterima, perlu waktu menyesuaikan"},{"n":5,"teks":"Cepat terbiasa dan mereka malah minta tambahan"}]},{"kode":"D6","nama":"SDM & Keterampilan","bobot":0.15,"pertanyaan":"Dari seluruh tim, siapa yang siap belajar lebih dulu kalau ada sistem baru?","petunjuk":"Kesediaan belajar lebih menentukan hasil akhir daripada keterampilan hari ini.","pilihan":[{"n":1,"teks":"Tidak ada, saya sendiri juga berat"},{"n":2,"teks":"Hanya saya sebagai pemilik"},{"n":3,"teks":"Ada satu orang, tapi masih ragu"},{"n":4,"teks":"Ada beberapa orang yang mau belajar"},{"n":5,"teks":"Ada orang yang jelas mau, dan pernah berhasil belajar alat baru"}]},{"kode":"D7","nama":"Tata Kelola, Keamanan & Kepatuhan","bobot":0.1,"pertanyaan":"Kalau HP atau komputer yang menyimpan data usaha hilang besok, data Anda masih aman?","petunjuk":"Termasuk data pelanggan dan keuangan. Aturan perlindungan data pribadi di Indonesia menuntut ini.","pilihan":[{"n":1,"teks":"Hilang ikut perangkatnya"},{"n":2,"teks":"Ada salinan, tapi tidak teratur"},{"n":3,"teks":"Ada salinan sesekali, tidak ada jadwal"},{"n":4,"teks":"Ada salinan rutin, belum otomatis"},{"n":5,"teks":"Tersalin otomatis dan ada yang bisa akses terbatas"}]},{"kode":"D8","nama":"Anggaran & Finansial","bobot":0.05,"pertanyaan":"Ada anggaran bulanan yang memang disiapkan untuk teknologi?","petunjuk":"Angka nominalnya tidak perlu disebut di sini. Tim kami yang akan membahasnya bersama Anda.","pilihan":[{"n":1,"teks":"Belum ada sama sekali"},{"n":2,"teks":"Ada, tapi hanya kalau mendesak"},{"n":3,"teks":"Ada, tapi tidak menentu jumlahnya"},{"n":4,"teks":"Ada, tapi baru untuk sekali jalan"},{"n":5,"teks":"Ada, rutin tiap bulan dan berkelanjutan"}]}],"band":[{"min":80,"kode":"SIAP_PENUH","nama":"Siap Penuh","arti":"Fondasi Anda sudah lengkap. Yang dibutuhkan tinggal pelaksanaan bertahap.","langkah":"Lanjut proof-of-concept besar, lalu penerapan bertahap."},{"min":60,"kode":"LAYAK_LANJUT","nama":"Layak Lanjut","arti":"Anda layak mulai sekarang. Ada celah, tapi bisa dibenahi sambil jalan.","langkah":"Pilot satu proses dulu, celah dibenahi paralel."},{"min":40,"kode":"KONVENSIONAL","nama":"Konvensional","arti":"Digitalisasi dasarnya belum merata, jadi AI belum jadi langkah pertama.","langkah":"Rapikan fondasi dulu, AI sebagai tahap lanjutan."},{"min":20,"kode":"AWAL","nama":"Awal","arti":"Masih banyak yang manual dan data belum terpusat.","langkah":"Audit data dan digitalisasi bertahap."},{"min":0,"kode":"SANGAT_AWAL","nama":"Sangat Awal","arti":"Fondasinya belum ada. Ini bukan kegagalan, ini titik awal yang jelas.","langkah":"Edukasi dan pendampingan dasar lebih dulu."}],"rekomendasi_dimensi":[{"kode":"D1","nama":"Strategi & Kepemimpinan","rendah":"Tuliskan dulu satu target bisnis yang ada angkanya untuk 12 bulan ke depan, lalu bagikan ke tim. Satu halaman cukup.","sedang":"Tambahkan target angka pada arah bisnis yang sudah ada, dan tetapkan siapa yang mengawal proyek digital ini.","tinggi":"Arah bisnis Anda sudah jelas. Langkah berikutnya adalah memilih satu masalah bisnis yang paling mahal untuk dijadikan pilot."},{"kode":"D2","nama":"Kesiapan Data","rendah":"Mulai dari satu hal: catat penjualan harian di satu tempat yang sama setiap hari. Tanpa ini, hasil AI tidak bisa dipercaya.","sedang":"Satukan catatan yang sekarang tersebar, lalu pastikan angkanya bisa keluar tanpa menunggu orang tertentu.","tinggi":"Data Anda sudah bisa diandalkan. Ini modal terbesar Anda untuk memakai AI."},{"kode":"D3","nama":"Infrastruktur & Teknologi","rendah":"Pilih satu sistem inti (misalnya kasir atau stok) dan pakai konsisten. Satu sistem yang dipakai lebih baik daripada lima yang mangkrak.","sedang":"Kurangi input ulang antar alat. Bagian yang paling sering diketik dua kali adalah kandidat pertama untuk dihubungkan.","tinggi":"Sistem inti Anda sudah jalan. Sekarang yang bernilai adalah menghubungkannya ke alat lain agar tidak ada input ulang."},{"kode":"D4","nama":"Digitalisasi Proses","rendah":"Tuliskan langkah kerja untuk satu peran saja (misalnya kasir atau dapur). Satu halaman cukup, dan itu sudah mengurangi ketergantungan pada satu orang.","sedang":"Dokumentasikan bagian yang paling makan waktu, lalu ukur berapa jam per minggu yang terpakai di situ.","tinggi":"Proses Anda sudah berjalan tanpa bergantung pada satu orang. Ini syarat utama sebelum agen AI dipasang."},{"kode":"D5","nama":"Organisasi & Budaya","rendah":"Mulai dari satu orang yang paling terbuka, jadikan dia yang pertama mencoba. Perubahan yang berhasil lebih meyakinkan daripada penjelasan.","sedang":"Beri waktu khusus untuk mencoba alat baru, dan dampingi yang kesulitan alih-alih memaksa.","tinggi":"Tim Anda terbuka terhadap cara baru. Manfaatkan itu dengan pilot kecil yang hasilnya bisa mereka lihat sendiri."},{"kode":"D6","nama":"SDM & Keterampilan","rendah":"Tunjuk satu orang sebagai penanggung jawab digital, dan beri waktu belajar. Solusi sebagus apa pun akan mati tanpa satu orang yang merawatnya.","sedang":"Buat jadwal belajar singkat dan rutin. Keterampilan digital tumbuh dari kebiasaan, bukan dari pelatihan sekali.","tinggi":"Anda punya orang yang siap merawat solusinya. Itu yang membuat proyek tidak berhenti setelah serah terima."},{"kode":"D7","nama":"Tata Kelola, Keamanan & Kepatuhan","rendah":"Nyalakan salinan otomatis untuk data usaha Anda minggu ini. Ini langkah termurah dengan risiko terbesar kalau dilewatkan.","sedang":"Tetapkan siapa saja yang boleh mengakses data pelanggan dan keuangan, lalu pisahkan akunnya.","tinggi":"Data Anda terlindungi dan aksesnya terbatas. Ini modal penting sebelum data diolah lebih jauh."},{"kode":"D8","nama":"Anggaran & Finansial","rendah":"Belum perlu anggaran besar. Cukup sisihkan angka kecil yang tetap setiap bulan, karena solusi digital butuh biaya berjalan.","sedang":"Pisahkan biaya teknologi dari pengeluaran mendadak, supaya keputusannya tidak selalu ditunda.","tinggi":"Anggaran Anda sudah berkelanjutan. Ini yang membedakan proyek yang bertahan dari proyek yang berhenti di tengah."}]};
+</script>
+<script>
+/* ================= tab penilaian langsung =================
+   Mandiri: tidak menyentuh IIFE gerak di atas. Semua perhitungan
+   berjalan di perangkat pengunjung; tidak ada data yang dikirim keluar. */
+(function(){
+  var D = window.__PENILAIAN__;
+  if (!D) return;
+  var root = document.documentElement;
+  var $ = function(s, c){ return (c || document).querySelector(s); };
+  var list = $('#penList');
+  if (!list) return;
+
+  var JAWAB = {};
+  var YAKIN = {};
+  var KUNCI = 'omnisense_penilaian_v1';
+  var KUNCI_Y = 'omnisense_penilaian_keyakinan_v1';
+  var N = D.dimensi.length;
+  var motionOn = !root.classList.contains('no-motion') &&
+    !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  function band(p){
+    /* Bulatkan ke 1 desimal dulu: tanpa ini skor tepat di ambang (mis. 60,0)
+       bisa tersimpan sebagai 59.99999999999999 dan salah jatuh ke band bawah. */
+    p = Math.round(p * 10 + 1e-9) / 10;
+    for (var i = 0; i < D.band.length; i++){ if (p >= D.band[i].min) return D.band[i]; }
+    return D.band[D.band.length - 1];
+  }
+  function hitung(){
+    var total = 0, per = [];
+    D.dimensi.forEach(function(d){
+      var v = JAWAB[d.kode] || 0;
+      var t = v * d.bobot;
+      total += t;
+      per.push({ kode: d.kode, nama: d.nama, nilai: v, bobot: d.bobot, tertimbang: t });
+    });
+    /* Bulatkan ke 1 desimal: ini angka yang ditampilkan & dikirim ke bot,
+       jadi harus sama persis dengan kalkulator_kesiapan.py. */
+    var persen = Math.round(((total / 5) * 100) * 10 + 1e-9) / 10;
+    return { persen: persen, band: band(persen), per: per };
+  }
+  function tingkat(n){ return n <= 2 ? 'rendah' : (n === 3 ? 'sedang' : 'tinggi'); }
+
+  /* ---------- bangun daftar pertanyaan (dilewati kalau sudah ada di HTML) ---------- */
+  if (!list.querySelector('.pen-q')) D.dimensi.forEach(function(d, i){
+    var li = document.createElement('li');
+    li.className = 'pen-q';
+    li.setAttribute('data-kode', d.kode);
+
+    var no = document.createElement('span');
+    no.className = 'pen-no';
+    no.textContent = ('0' + (i + 1)).slice(-2);
+
+    var box = document.createElement('div');
+
+    var qt = document.createElement('p');
+    qt.className = 'pen-qt';
+    qt.id = 'penqt-' + d.kode;
+    qt.textContent = d.pertanyaan;
+
+    var qd = document.createElement('p');
+    qd.className = 'pen-qd';
+    qd.textContent = d.petunjuk;
+
+    var dm = document.createElement('p');
+    dm.className = 'pen-dim';
+    dm.textContent = d.nama + ' \u00b7 bobot ' + Math.round(d.bobot * 100) + '%';
+
+    var opts = document.createElement('div');
+    opts.className = 'pen-opts';
+    opts.setAttribute('role', 'radiogroup');
+    opts.setAttribute('aria-labelledby', qt.id);
+
+    d.pilihan.forEach(function(p, j){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pen-opt';
+      b.setAttribute('role', 'radio');
+      b.setAttribute('aria-checked', 'false');
+      b.setAttribute('data-nilai', p.n);
+      b.setAttribute('data-teks', p.teks);
+      b.tabIndex = j === 0 ? 0 : -1;
+      b.innerHTML = '<span class="n">' + p.n + '</span><span>' + p.teks + '</span>';
+      opts.appendChild(b);
+    });
+
+    box.appendChild(qt); box.appendChild(qd); box.appendChild(dm); box.appendChild(opts);
+    li.appendChild(no); li.appendChild(box);
+    list.appendChild(li);
+  });
+
+  /* ---------- pasang pendengar pada semua pilihan (termasuk markup di HTML) ---------- */
+  var JML_OPTS = 5;
+  list.querySelectorAll('.pen-q').forEach(function(li){
+    var kode = li.getAttribute('data-kode');
+    var grup = li.querySelector('.pen-opts');
+    if (!grup || !kode) return;
+    grup.setAttribute('role', 'radiogroup');
+    var qt = li.querySelector('.pen-qt');
+    if (qt){ if (!qt.id) qt.id = 'penqt-' + kode; grup.setAttribute('aria-labelledby', qt.id); }
+    Array.prototype.forEach.call(grup.querySelectorAll('.pen-opt'), function(b, j){
+      if (!b.getAttribute('data-nilai') || !b.getAttribute('data-teks')) return;
+      b.addEventListener('click', function(){ pilih(kode, +b.getAttribute('data-nilai'), b, grup); });
+      b.addEventListener('keydown', function(e){
+        var tombol = Array.prototype.slice.call(grup.querySelectorAll('.pen-opt'));
+        var idx = tombol.indexOf(b);
+        var n = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = (idx + 1) % tombol.length;
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = (idx - 1 + tombol.length) % tombol.length;
+        if (n === null) return;
+        e.preventDefault();
+        tombol[n].focus();
+      });
+    });
+  });
+
+  var optsAll = function(){ return list.querySelectorAll('.pen-opts'); };
+
+  /* ---------- pemeriksaan konsistensi (jalan di perangkat pengunjung) ---------- */
+  var ATURAN = (D.aturan_konsistensi && D.aturan_konsistensi.aturan) || [];
+
+  function cekKonsistensi(){
+    return ATURAN.filter(function(a){
+      return Object.keys(a.jika).every(function(k){
+        var v = JAWAB[k];
+        return v && a.jika[k].indexOf(v) !== -1;
+      });
+    });
+  }
+
+  function gambarCek(){
+    var kotak = $('#penCek');
+    if (!kotak) return;
+    var kena = cekKonsistensi();
+    if (!kena.length){ kotak.hidden = true; kotak.innerHTML = ''; return; }
+    kotak.hidden = false;
+    var jumlahTeks = kena.length === 1 ? 'satu' : kena.length;
+    kotak.innerHTML = '<h4>Ada ' + jumlahTeks + ' hal yang perlu ditinjau</h4><ul>' +
+      kena.map(function(a){
+        /* Tampilkan NAMA dimensi, bukan kode D1..D8 yang membingungkan pengunjung. */
+        var dims = Object.keys(a.jika).map(function(k){
+          var d = D.dimensi.filter(function(x){ return x.kode === k; })[0];
+          return d ? d.nama : k;
+        }).join(' &middot; ');
+        return '<li><b>' + dims + '</b> &mdash; ' + a.pesan + '</li>';
+      }).join('') +
+      '</ul>';
+  }
+
+  /* ---------- pilihan keyakinan per dimensi ---------- */
+  var KEY = D.keyakinan || [];
+  list.querySelectorAll('.pen-q').forEach(function(li){
+    var kode = li.getAttribute('data-kode');
+    var box = li.querySelector('div');
+    if (!kode || !box || box.querySelector('.pen-key')) return;
+    var bar = document.createElement('div');
+    bar.className = 'pen-key';
+    var lab = document.createElement('span');
+    lab.textContent = 'Seberapa yakin?';
+    bar.appendChild(lab);
+    KEY.forEach(function(k){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pen-kbtn';
+      b.setAttribute('data-yakin', k.kode);
+      b.setAttribute('aria-pressed', 'false');
+      b.title = k.arti;
+      b.textContent = k.label;
+      b.addEventListener('click', function(){
+        if (YAKIN[kode] === k.kode){ delete YAKIN[kode]; }
+        else { YAKIN[kode] = k.kode; }
+        Array.prototype.forEach.call(bar.querySelectorAll('.pen-kbtn'), function(x){
+          x.setAttribute('aria-pressed', x.getAttribute('data-yakin') === YAKIN[kode] ? 'true' : 'false');
+        });
+        simpan();
+        gambarCek();
+      });
+      bar.appendChild(b);
+    });
+    box.appendChild(bar);
+  });
+
+  var btnHitung = $('#penHitung');
+  var btnReset = $('#penReset');
+  var hint = $('#penHint');
+  var count = $('#penCount');
+  var bar = $('#penBar');
+
+  function simpan(){
+    try { localStorage.setItem(KUNCI, JSON.stringify(JAWAB)); } catch(e){}
+    try { localStorage.setItem(KUNCI_Y, JSON.stringify(YAKIN)); } catch(e){}
+  }
+  function muat(){
+    try {
+      var s = localStorage.getItem(KUNCI);
+      if (!s) return;
+      var o = JSON.parse(s);
+      Object.keys(o).forEach(function(k){
+        var li = list.querySelector('[data-kode="' + k + '"]');
+        if (!li) return;
+        var b = li.querySelector('.pen-opt[data-nilai="' + o[k] + '"]');
+        if (b) pilih(k, o[k], b, li.querySelector('.pen-opts'), true);
+      });
+      var sy = localStorage.getItem(KUNCI_Y);
+      if (sy){
+        YAKIN = JSON.parse(sy) || {};
+        Object.keys(YAKIN).forEach(function(k){
+          var li = list.querySelector('[data-kode="' + k + '"]');
+          if (!li) return;
+          Array.prototype.forEach.call(li.querySelectorAll('.pen-kbtn'), function(x){
+            x.setAttribute('aria-pressed', x.getAttribute('data-yakin') === YAKIN[k] ? 'true' : 'false');
+          });
+        });
+      }
+    } catch(e){}
+  }
+
+  function pilih(kode, nilai, tombol, grup, diam){
+    JAWAB[kode] = nilai;
+    Array.prototype.forEach.call(grup.querySelectorAll('.pen-opt'), function(b){
+      var on = b === tombol;
+      b.setAttribute('aria-checked', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+    });
+    var li = tombol.closest('.pen-q');
+    if (li) li.classList.add('jawab');
+    if (!diam) simpan();
+    perbarui();
+  }
+
+  function perbarui(){
+    var jml = Object.keys(JAWAB).length;
+    count.textContent = 'Terjawab ' + jml + ' dari ' + N;
+    bar.style.width = (jml / N * 100) + '%';
+    var sisa = N - jml;
+    btnHitung.disabled = sisa > 0;
+    hint.textContent = sisa > 0
+      ? ('Masih ada ' + sisa + ' pertanyaan yang belum dijawab.')
+      : 'Siap. Skor dihitung di perangkat Anda.';
+    gambarCek();
+    if (sisa === 0 && hasilTampil) tampilkanHasil();
+  }
+
+  /* ---------- cakram skor ---------- */
+  var ARC = 0.75;                 /* 270 derajat, sama seperti cakram hero */
+  var OFF = Math.PI * (1 - ARC) / 2 + Math.PI / 2;
+  var cv, ctx, dpr, sweep = 0, target = 0, raf = null;
+
+  function siapkanCanvas(){
+    cv = $('#phCanvas');
+    if (!cv) return false;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var sisi = cv.clientWidth || 168;
+    cv.width = sisi * dpr; cv.height = sisi * dpr;
+    ctx = cv.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return true;
+  }
+  function gambar(pct){
+    if (!ctx) return;
+    var sisi = cv.clientWidth || 168;
+    var cx = sisi / 2, cy = sisi / 2, r = sisi / 2 - 9, lw = 7;
+    ctx.clearRect(0, 0, sisi, sisi);
+    ctx.lineWidth = lw; ctx.lineCap = 'round';
+    ctx.strokeStyle = getComputedStyle(root).getPropertyValue('--track').trim() || '#34343C';
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, OFF, OFF + Math.PI * 2 * ARC);
+    ctx.stroke();
+    if (pct > 0){
+      ctx.strokeStyle = getComputedStyle(root).getPropertyValue('--signal').trim() || '#14B8A6';
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, OFF, OFF + Math.PI * 2 * ARC * (pct / 100));
+      ctx.stroke();
+    }
+  }
+  function angka(pct){
+    var el = $('#phNum');
+    if (el) el.innerHTML = Math.round(pct) + '<span>/100</span>';
+  }
+  function diamDi(pct){ sweep = pct; gambar(pct); angka(pct); }
+  function jalankan(pct){
+    target = pct;
+    if (!motionOn){ diamDi(pct); return; }
+    var t0 = null, dari = 0;
+    function langkah(ts){
+      if (t0 === null) t0 = ts;
+      var p = Math.min(1, (ts - t0) / 900);
+      var e = 1 - Math.pow(1 - p, 3);
+      sweep = dari + (target - dari) * e;
+      gambar(sweep); angka(sweep);
+      if (p < 1) raf = requestAnimationFrame(langkah); else raf = null;
+    }
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(langkah);
+  }
+
+  /* ---------- hasil ---------- */
+  var hasilTampil = false;
+
+  function tampilkanHasil(){
+    var r = hitung();
+    var kotak = $('#penHasil');
+    if (!kotak) return;
+    kotak.hidden = false;
+    hasilTampil = true;
+
+    $('#phBand').textContent = r.band.nama;
+    $('#phArtis').textContent = r.band.arti;
+    $('#phLangkah').textContent = r.band.langkah;
+
+    var naik = r.per.slice().sort(function(a, b){ return a.nilai - b.nilai; });
+    var lemah = naik.slice(0, 2);
+
+    var rows = $('#phRows');
+    rows.innerHTML = '';
+    r.per.slice().sort(function(a, b){ return a.nilai - b.nilai; }).forEach(function(d){
+      var rendah = d.nilai <= 2;
+      var row = document.createElement('div');
+      row.className = 'pen-row' + (rendah ? ' low' : '');
+      row.innerHTML =
+        '<span class="rn">' + d.nama + '</span>' +
+        '<span class="rv">' + d.nilai + '/5</span>' +
+        '<span class="rb"><i data-w="' + (d.nilai / 5 * 100) + '"></i></span>' +
+        '<span class="rw">bobot ' + Math.round(d.bobot * 100) + '% \u00b7 sumbang ' + d.tertimbang.toFixed(2) + ' poin</span>';
+      rows.appendChild(row);
+    });
+
+    var gap = $('#phGap');
+    gap.innerHTML = '';
+    lemah.forEach(function(d){
+      var meta = D.rekomendasi_dimensi.filter(function(x){ return x.kode === d.kode; })[0];
+      if (!meta) return;
+      var card = document.createElement('div');
+      card.className = 'pen-gcard';
+      card.innerHTML =
+        '<span class="gt">Celah utama \u00b7 ' + d.nama + ' \u00b7 ' + d.nilai + '/5</span>' +
+        '<h4>Langkah pertama</h4>' +
+        '<p>' + meta[tingkat(d.nilai)] + '</p>';
+      gap.appendChild(card);
+    });
+
+    var kuat = naik[naik.length - 1];
+    var kuatMeta = D.rekomendasi_dimensi.filter(function(x){ return x.kode === kuat.kode; })[0];
+    if (kuatMeta){
+      var k = document.createElement('div');
+      k.className = 'pen-gcard';
+      k.innerHTML =
+        '<span class="gt">Kekuatan \u00b7 ' + kuat.nama + ' \u00b7 ' + kuat.nilai + '/5</span>' +
+        '<h4>Yang sudah bagus</h4><p>' + kuatMeta[tingkat(kuat.nilai)] + '</p>';
+      gap.appendChild(k);
+    }
+
+    /* ringkasan untuk WhatsApp: baris mesin + skor + pilihan jawaban per dimensi */
+    var barisMesin = r.per.map(function(d){ return d.kode + '=' + d.nilai; }).join(' ');
+    var yakinTxt = Object.keys(YAKIN).map(function(k){ return k + ':' + YAKIN[k]; }).join(',');
+    var baris = r.per.map(function(d){
+      var li = list.querySelector('[data-kode="' + d.kode + '"]');
+      var b = li && li.querySelector('.pen-opt[data-nilai="' + d.nilai + '"]');
+      var teks = b ? b.getAttribute('data-teks') : '';
+      var y = YAKIN[d.kode] ? ' [' + YAKIN[d.kode] + ']' : '';
+      return '- ' + d.nama + ': ' + d.nilai + '/5 (' + teks + ')' + y;
+    }).join('\n');
+    var kena = cekKonsistensi();
+    var tandaCek = kena.length
+      ? '\ncatatan_situs=' + kena.map(function(a){ return a.kode; }).join(',') + ' (perlu ditinjau)'
+      : '';
+    var pesan = '[PENILAIAN-SITUS v1]\n' +
+      barisMesin + '\n' +
+      'skor_situs=' + r.persen.toFixed(1) + ' band=' + r.band.nama + '\n' +
+      (yakinTxt ? 'keyakinan=' + yakinTxt + '\n' : '') +
+      tandaCek + '\n\n' +
+      'Halo OmniSense, saya baru mengisi penilaian kesiapan di situs.\n' +
+      'Skor saya ' + r.persen.toFixed(1) + '% \u2014 ' + r.band.nama + '.\n' +
+      'Jawaban saya:\n' + baris + '\n' +
+      'Saya ingin membahas laporan lengkapnya.';
+    var wa = $('#phWa');
+    if (wa) wa.href = 'https://wa.me/6288809640700?text=' + encodeURIComponent(pesan);
+
+    /* catatan keterbatasan hasil */
+    var lim = $('#phLimit');
+    if (lim){
+      var ragu = Object.keys(YAKIN).filter(function(k){ return YAKIN[k] !== 'yakin'; });
+      var pesanLim = [];
+      if (kena.length) pesanLim.push('Ada ' + (kena.length === 1 ? 'satu' : kena.length) + ' hal yang saling bertentangan. Skornya tetap kami hitung, tetapi tim akan menanyakan buktinya lebih dulu.');
+      if (ragu.length) pesanLim.push(ragu.length + ' jawaban Anda ditandai belum pasti, jadi skor ini masih bisa bergeser setelah dibahas bersama.');
+      lim.hidden = pesanLim.length === 0;
+      lim.textContent = pesanLim.join(' ');
+    }
+
+    if (!siapkanCanvas()) return;
+    jalankan(r.persen);
+
+    requestAnimationFrame(function(){
+      Array.prototype.forEach.call(rows.querySelectorAll('.rb i'), function(el){
+        el.style.width = el.getAttribute('data-w') + '%';
+      });
+    });
+
+    try {
+      kotak.setAttribute('tabindex', '-1');
+      kotak.focus({ preventScroll: true });
+      kotak.scrollIntoView({ behavior: motionOn ? 'smooth' : 'auto', block: 'start' });
+    } catch(e){}
+  }
+
+  btnHitung.addEventListener('click', tampilkanHasil);
+  btnReset.addEventListener('click', function(){
+    JAWAB = {};
+    YAKIN = {};
+    try { localStorage.removeItem(KUNCI); localStorage.removeItem(KUNCI_Y); } catch(e){}
+    Array.prototype.forEach.call(list.querySelectorAll('.pen-q'), function(li){ li.classList.remove('jawab'); });
+    Array.prototype.forEach.call(list.querySelectorAll('.pen-opt'), function(b){
+      b.setAttribute('aria-checked', 'false');
+      b.tabIndex = b.getAttribute('data-nilai') === '1' ? 0 : -1;
+    });
+    Array.prototype.forEach.call(list.querySelectorAll('.pen-kbtn'), function(b){
+      b.setAttribute('aria-pressed', 'false');
+    });
+    gambarCek();
+    var kotak = $('#penHasil');
+    if (kotak) kotak.hidden = true;
+    hasilTampil = false; diamDi(0);
+    perbarui();
+    list.scrollIntoView({ behavior: motionOn ? 'smooth' : 'auto', block: 'start' });
+  });
+
+  /* hormati tombol gerak situs */
+  if (window.OmniSense && typeof window.OmniSense.applyMotion === 'function'){
+    var asli = window.OmniSense.applyMotion;
+    window.OmniSense.applyMotion = function(on){
+      asli(on);
+      motionOn = !!on;
+      if (!on && hasilTampil) diamDi(hitung().persen);
+    };
+  }
+
+  window.addEventListener('resize', function(){ if (ctx) gambar(sweep); });
+
+  diamDi(0);
+  perbarui();
+  muat();
+
+  window.OmniSensePenilaian = {
+    jawab: function(kode, nilai){
+      var li = list.querySelector('[data-kode="' + kode + '"]');
+      var b = li && li.querySelector('.pen-opt[data-nilai="' + nilai + '"]');
+      if (b) pilih(kode, nilai, b, li.querySelector('.pen-opts'));
+    },
+    keyakinan: function(kode, kodeYakin){
+      var li = list.querySelector('[data-kode="' + kode + '"]');
+      var b = li && li.querySelector('.pen-kbtn[data-yakin="' + kodeYakin + '"]');
+      if (b) b.click();
+    },
+    hitung: hitung,
+    tampilkan: tampilkanHasil,
+    skor: function(){ return hitung().persen; },
+    band: function(){ return hitung().band.nama; },
+    cek: cekKonsistensi,
+    pesan: function(){ return ($('#phWa') || {}).href || ''; }
+  };
+})();
+</script>
+</body>
+</html>

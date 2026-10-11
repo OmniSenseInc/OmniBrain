@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# folder kerja internal, bukan bagian situs
+Disallow: /pratinjau/
+Disallow: /arsip/
+Disallow: /tab-penilaian/
+
+Sitemap: https://omnisense.id/sitemap.xml

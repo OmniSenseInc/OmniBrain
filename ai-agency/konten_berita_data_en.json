@@ -1,0 +1,28 @@
+{
+    "tag": "[ OMNISENSE RADAR ]",
+    "tanggal": "OCTOBER 5, 2026 · AI NEWS",
+    "label_kartu": "WHAT YOU NEED TO KNOW",
+    "poin": [
+        {
+            "judul": "What happened",
+            "isi": "Cohere launched North 2 (Oct 5), an enterprise agent platform. Agents now keep memory across sessions, can be reused across teams, and their spend can be capped per person and per agent."
+        },
+        {
+            "judul": "Why it matters",
+            "isi": "The three things that used to be a trade-off — secure, smart, or controllable — now come together. North 2 runs in the cloud, on your own servers, or fully air-gapped."
+        },
+        {
+            "judul": "For your business",
+            "isi": "Healthy agent adoption is about control: start with a clear task, cap the cost from day one, and keep approval for important decisions in human hands."
+        }
+    ],
+    "headline": [
+        "AI AGENTS NOW COME WITH",
+        "BUDGETS, PERMISSIONS, MEMORY"
+    ],
+    "headline_caption": "Cohere North 2: enterprise AI agents with spending caps, permissions, and cross-session memory.",
+    "subjudul": "Cohere North 2 (Oct 5): per-agent spending caps, cross-session memory, runs on your own servers.",
+    "cta": "BOOK A FREE CONSULTATION",
+    "kaki": "@omnisense_id • omnisense.id",
+    "hashtag": "#OmniSense #AIAgents #AIConsultant #AgenticAI #OmniSenseID"
+}

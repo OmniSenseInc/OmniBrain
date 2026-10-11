@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOTION ADOPT — hasil riset motionsites.ai untuk OmniSense</title>
+<style>
+  :root{
+    --obsidian:#09090B; --obsidian-2:#0C0C0E; --panel:#121215;
+    --line:#27272A; --line-2:#3F3F46; --track:#34343C;
+    --white:#FFFFFF; --ink:#F4F4F5; --slate:#94A3B8;
+    --signal:#14B8A6; --signal-deep:#0F766E;
+    --maxw:1120px; --gutter:clamp(20px,4vw,56px);
+    --font-sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--obsidian);color:var(--ink);
+    font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--signal)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+  header.top{padding:56px 0 8px}
+  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+  h1{font-size:clamp(28px,4.4vw,44px);line-height:1.1;margin:14px 0 10px;letter-spacing:-.02em}
+  .lead{color:var(--slate);max-width:70ch;margin:0 0 8px}
+  .src{font-family:var(--font-mono);font-size:12px;color:var(--slate);border-top:1px solid var(--line);padding-top:14px;margin-top:26px}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(20px,2.6vw,28px);margin:0 0 6px;letter-spacing:-.01em}
+  h2 .n{font-family:var(--font-mono);font-size:13px;color:var(--signal);margin-right:10px;vertical-align:2px}
+  .sub{color:var(--slate);max-width:78ch;margin:0 0 22px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:860px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px}
+  .card h3{margin:0 0 4px;font-size:17px;letter-spacing:-.01em}
+  .card .why{color:var(--slate);font-size:14.5px;margin:0 0 14px}
+  .tag{display:inline-block;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--slate);border:1px solid var(--line-2);border-radius:999px;padding:2px 9px;margin:0 6px 12px 0}
+  .tag.ok{color:var(--signal);border-color:var(--signal-deep)}
+  .demo{background:var(--obsidian-2);border:1px solid var(--line);border-radius:10px;padding:14px;margin:0 0 12px;overflow:hidden}
+  .note{font-family:var(--font-mono);font-size:12px;color:var(--slate);margin:0}
+  .bars{display:grid;gap:8px;margin:6px 0 2px}
+  .brow{display:grid;grid-template-columns:112px 1fr 46px;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12px;color:var(--slate)}
+  .btr{height:8px;border-radius:999px;background:var(--track);overflow:hidden}
+  .bf{display:block;height:100%;width:0;background:var(--signal);border-radius:999px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+  .bval{text-align:right;color:var(--ink)}
+  .lgauge{display:flex;align-items:center;gap:14px;margin:4px 0 10px}
+  .lscale{position:relative;height:10px;border-radius:999px;background:var(--track);flex:1}
+  .lseg{position:absolute;top:0;bottom:0;width:1px;background:var(--obsidian)}
+  .lmark{position:absolute;top:-5px;width:3px;height:20px;border-radius:2px;background:var(--signal);
+    left:0;transition:left 1.1s cubic-bezier(.2,.8,.2,1)}
+  .lnum{font-family:var(--font-mono);font-size:22px;color:var(--white);min-width:64px}
+  .spin{display:grid;place-items:center;height:150px}
+  .spin svg{animation:sp 26s linear infinite}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  .beat{display:flex;align-items:center;gap:12px;margin:6px 0 2px}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--signal);animation:bt 1.4s ease-in-out infinite}
+  @keyframes bt{0%,100%{transform:scale(.6);opacity:.35}50%{transform:scale(1);opacity:1}}
+  .bpm{font-family:var(--font-mono);font-size:22px;color:var(--white)}
+  ul.plain{margin:8px 0 0;padding-left:18px;color:var(--slate)}
+  ul.plain li{margin:5px 0}
+  .kill{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--track);border-radius:10px;padding:14px 16px;margin:0 0 10px}
+  .kill b{color:var(--white)}
+  .kill span{color:var(--slate);font-size:14.5px}
+  footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--slate);font-family:var(--font-mono);font-size:12px}
+  @media (prefers-reduced-motion:reduce){
+    .spin svg,.dot{animation:none}
+    .bf,.lmark{transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Riset motion · motionsites.ai · 30 Sep 2026</div>
+  <h1>Animasi yang layak diadopsi ke web OmniSense</h1>
+  <p class="lead">Katalog publik motionsites.ai dibaca ulang: 541 item (185 gratis, 356 berbayar, 417 punya
+  preview publik). Metodenya metadata + preview publik saja — tidak ada prompt berbayar yang diambil.
+  Dari situ dipilih animasi yang bisa dibangun dengan CSS + Canvas 2D tanpa WebGL dan tanpa video,
+  lalu semuanya didemokan hidup di halaman ini.</p>
+  <p class="src">Cakupan katalog: hero 403 · mobile 40 · features 38 · cta 9 · footer 7 · about 7.
+  Kategori terbesar Landing Page 60, Hero 57, SaaS 47, Hero Section 33, Agency 17.
+  Artinya: nilai katalog ini ada di hero + cara kerja, bukan di halaman kompleks.</p>
+</header>
+
+<section>
+  <h2><span class="n">01</span>Rel tick bergerak — motif alat ukur</h2>
+  <p class="sub">Pola yang paling sering muncul di template "obsidian/monochrome editorial": deretan garis
+  tick yang mengisi mengikuti progres. Untuk OmniSense ini bukan hiasan — ini motif alat ukur,
+  hal yang persis dijual OmniSense. Di halaman ini tick-nya mengisi sepanjang gulir.</p>
+  <div class="demo">
+    <div style="display:flex;align-items:flex-end;gap:3px;height:46px" id="ticks"></div>
+    <p class="note" style="margin-top:10px">tick terisi <span id="tickpct">000</span>% · turunan dari scrollY</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">02</span>Bar bobot + tangga skor</h2>
+  <p class="sub">Dua template data-viz (Quantum Core, Heart Health Dashboard) memakai angka yang
+  bergerak dan meter yang mengisi. Di OmniSense angka itu sudah ada artinya: bobot 8 dimensi
+  dan skor 0–100. Ini yang menggerakkan klaim produk, bukan hiasan.</p>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag ok">canvas-free · CSS transition</span>
+      <h3>Bar bobot mengisi saat masuk layar</h3>
+      <p class="why">Lebar dari <code>data-w</code>, diskalakan ke bobot terbesar. Angka berhitung naik.</p>
+      <div class="demo">
+        <div class="bars" id="wbars">
+          <div class="brow"><span>Data</span><span class="btr"><i class="bf" data-w="20"></i></span><span class="bval" data-v="20">0%</span></div>
+          <div class="brow"><span>Infrastruktur</span><span class="btr"><i class="bf" data-w="15"></i></span><span class="bval" data-v="15">0%</span></div>
+          <div class="brow"><span>Digitalisasi</span><span class="btr"><i class="bf" data-w="15"></i></span><span class="bval" data-v="15">0%</span></div>
+          <div class="brow"><span>SDM</span><span class="btr"><i class="bf" data-w="15"></i></span><span class="bval" data-v="15">0%</span></div>
+          <div class="brow"><span>Strategi</span><span class="btr"><i class="bf" data-w="10"></i></span><span class="bval" data-v="10">0%</span></div>
+          <div class="brow"><span>Organisasi</span><span class="btr"><i class="bf" data-w="10"></i></span><span class="bval" data-v="10">0%</span></div>
+          <div class="brow"><span>Tata kelola</span><span class="btr"><i class="bf" data-w="10"></i></span><span class="bval" data-v="10">0%</span></div>
+          <div class="brow"><span>Anggaran</span><span class="btr"><i class="bf" data-w="5"></i></span><span class="bval" data-v="5">0%</span></div>
+        </div>
+      </div>
+      <p class="note">reduced-motion → bar & angka langsung final</p>
+    </div>
+    <div class="card">
+      <span class="tag ok">CSS-only · 1 penanda</span>
+      <h3>Tangga kategori skor</h3>
+      <p class="why">Skala 0–100 lima segmen, penanda teal meluncur ke posisi skor. Menjelaskan
+      "68 itu kategori apa" tanpa satu kata pun.</p>
+      <div class="demo">
+        <div class="lgauge">
+          <span class="lnum" id="lnum">0</span>
+          <span class="lscale" id="lscale">
+            <i class="lseg" style="left:20%"></i><i class="lseg" style="left:40%"></i>
+            <i class="lseg" style="left:60%"></i><i class="lseg" style="left:80%"></i>
+            <i class="lmark" id="lmark"></i>
+          </span>
+        </div>
+        <p class="note">Sangat Awal · Awal · Konvensional · Layak Lanjut · Siap Penuh</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">03</span>Canvas 2D yang layak — dan yang harus ditolak</h2>
+  <p class="sub">Dua pola dari katalog yang benar-benar baru untuk OmniSense: cakram radial yang berputar
+  (Intelligent Operations) dan denyut berirama (Heart Health Dashboard). Keduanya Canvas 2D murni,
+  tidak butuh WebGL.</p>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag ok">Canvas 2D · ringan</span>
+      <h3>Cakram radial berputar</h3>
+      <p class="why">Jarum radial + titik orbit, dipakai sebagai latar panel skor. Menggantikan
+      "orb 3D" yang berat: kesan hidup, biaya nol.</p>
+      <div class="demo spin">
+        <canvas id="disc" width="600" height="600" style="width:210px;height:210px"></canvas>
+      </div>
+      <p class="note">berhenti saat tab tidak aktif · DPR ≤ 2</p>
+    </div>
+    <div class="card">
+      <span class="tag ok">CSS keyframes · 2 keyframe</span>
+      <h3>Denyut indikator status</h3>
+      <p class="why">Dipakai untuk menandai bagian yang sedang aktif saat gulir. Satu denyut,
+      bukan animasi mengambang di seluruh halaman.</p>
+      <div class="demo">
+        <div class="beat"><span class="dot"></span><span class="bpm">AKTIF</span></div>
+        <p class="note">opasitas + scale 1,4 s · mati di reduced-motion</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">04</span>Yang saya tolak dari katalog ini</h2>
+  <p class="sub">Katalognya sendiri menunjukkan jebakannya. Yang paling sering dipakai justru yang
+  paling mahal di jaringan seluler, dan yang paling generik secara visual.</p>
+  <div class="kill"><b>Video background</b> <span>— 8 judul menyebutnya; berkas preview-nya sendiri
+  2–11 MB untuk beberapa detik. Target OmniSense adalah pemilik usaha di HP.</span></div>
+  <div class="kill"><b>Objek 3D / WebGL</b> <span>— 22 judul (blob morph, kubus titik, kepala poligonal).
+  Menjelaskan nol tentang layanan pengukuran, dan menghabiskan baterai.</span></div>
+  <div class="kill"><b>Marquee di hero</b> <span>— teks di dalamnya tidak terbaca di layar HP.
+  Tetap hanya boleh sebagai strip tipis di bawah hero.</span></div>
+  <div class="kill"><b>Spektrum neon / gradien aurora</b> <span>— penanda paling jelas "situs AI generik".
+  Bertabrakan dengan satu aksen teal yang sudah dikunci.</span></div>
+</section>
+
+<section>
+  <h2><span class="n">05</span>Rekomendasi urutan pemasangan</h2>
+  <p class="sub">Kalau diteruskan ke index.html, urutannya begini — dari yang paling murah dan paling
+  menjelaskan produk.</p>
+  <ul class="plain">
+    <li><b style="color:var(--white)">1. Bar bobot sudah ada</b> — tinggal ditambah angka berhitung naik (count-up), biaya paling kecil, dampak paling besar.</li>
+    <li><b style="color:var(--white)">2. Cakram radial Canvas 2D</b> sebagai latar panel skor hero — menggantikan medan titik canvas lama yang menurut catatan tone justru penanda "template AI".</li>
+    <li><b style="color:var(--white)">3. Denyut status</b> di titik langkah / item indeks yang sedang aktif.</li>
+    <li><b style="color:var(--white)">4. Rel tick</b> tetap seperti sekarang; jangan ditambah animasi kedua di elemen yang sama.</li>
+    <li><b style="color:var(--white)">5. Jangan tambah</b> video, WebGL, spektrum neon, atau marquee di hero — semuanya sudah ditolak dengan alasan di bagian 04.</li>
+  </ul>
+</section>
+
+<footer>
+  Sumber: katalog publik motionsites.ai (metadata + preview publik, 541 item) · preview mentah ada di
+  /tmp/ms_prev2/ · halaman ini satu berkas, tanpa dependensi, tema Obsidian Instrument.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- 01 rel tick mengikuti gulir ---------- */
+  var ticks = document.getElementById('ticks'), tickpct = document.getElementById('tickpct');
+  var N = 96, els = [];
+  for (var i = 0; i < N; i++){
+    var t = document.createElement('i');
+    var tall = i % 8 === 0;
+    t.style.cssText = 'flex:0 0 auto;width:2px;height:' + (tall ? 26 : 14) + 'px;border-radius:1px;background:var(--track);transition:background .25s linear';
+    ticks.appendChild(t); els.push(t);
+  }
+  var ticking = false;
+  function paintTicks(){
+    ticking = false;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    var lit = Math.round(p * N);
+    for (var i = 0; i < N; i++) els[i].style.background = i < lit ? 'var(--signal)' : 'var(--track)';
+    tickpct.textContent = String(Math.round(p * 100)).padStart(3, '0');
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking){ ticking = true; requestAnimationFrame(paintTicks); }
+  }, { passive: true });
+  window.addEventListener('resize', paintTicks);
+  paintTicks();
+
+  /* ---------- 02 bar + angka + tangga ---------- */
+  function countUp(el, target, dur){
+    if (reduce){ el.textContent = target + '%'; return; }
+    var t0 = null;
+    function step(ts){
+      if (t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / dur);
+      var e = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(target * e) + '%';
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function finalBars(){
+    document.querySelectorAll('#wbars .bf').forEach(function(f){
+      f.style.transition = 'none';
+      f.style.width = (parseFloat(f.dataset.w) / 20 * 100) + '%';
+      void f.offsetWidth;
+      f.style.transition = '';
+    });
+    document.querySelectorAll('#wbars .bval').forEach(function(v){ v.textContent = v.dataset.v + '%'; });
+  }
+  function runBars(){
+    document.querySelectorAll('#wbars .bf').forEach(function(f, i){
+      var w = (parseFloat(f.dataset.w) / 20 * 100) + '%';
+      if (reduce){ f.style.width = w; return; }
+      f.style.transition = 'none'; f.style.width = '0%'; void f.offsetWidth; f.style.transition = '';
+      setTimeout(function(){ f.style.width = w; }, i * 70);
+    });
+    document.querySelectorAll('#wbars .bval').forEach(function(v, i){
+      if (reduce){ v.textContent = v.dataset.v + '%'; return; }
+      v.textContent = '0%';
+      setTimeout(function(){ countUp(v, parseFloat(v.dataset.v), 900); }, i * 70);
+    });
+  }
+  function finalLadder(){
+    var lm = document.getElementById('lmark');
+    lm.style.transition = 'none'; lm.style.left = '68%'; void lm.offsetWidth; lm.style.transition = '';
+    document.getElementById('lnum').textContent = '68';
+  }
+  function runLadder(){
+    if (reduce){ finalLadder(); return; }
+    var lm = document.getElementById('lmark');
+    lm.style.transition = 'none'; lm.style.left = '0%'; void lm.offsetWidth; lm.style.transition = '';
+    setTimeout(function(){ lm.style.left = '68%'; }, 120);
+    countUp(document.getElementById('lnum'), 68, 1100);
+  }
+
+  var seen = {};
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting || seen[en.target.id]) return;
+      seen[en.target.id] = 1;
+      if (en.target.id === 'wbars') runBars();
+      if (en.target.id === 'lscale') runLadder();
+    });
+  }, { threshold: .4 });
+  io.observe(document.getElementById('wbars'));
+  io.observe(document.getElementById('lscale'));
+  if (reduce){ finalBars(); finalLadder(); }
+
+  /* ---------- 03 cakram radial Canvas 2D ---------- */
+  var cvs = document.getElementById('disc'), cx = cvs.getContext('2d');
+  var W = 600, H = 600, R = 260, dpr = Math.min(2, window.devicePixelRatio || 1);
+  cvs.width = W * dpr; cvs.height = H * dpr; cx.scale(dpr, dpr);
+  var CS = getComputedStyle(document.documentElement);
+  var SIG = CS.getPropertyValue('--signal').trim() || '#14B8A6';
+  var LINE = CS.getPropertyValue('--line-2').trim() || '#3F3F46';
+  var dots = [];
+  for (var d = 0; d < 90; d++) dots.push({ a: Math.random() * Math.PI * 2, r: R * (0.55 + Math.random() * 0.42), s: 0.0008 + Math.random() * 0.0022, o: 0.25 + Math.random() * 0.6, sz: 1 + Math.random() * 2.2 });
+  var raf = null, t0 = performance.now();
+  function draw(ts){
+    var t = ts - t0;
+    cx.clearRect(0, 0, W, H);
+    cx.save(); cx.translate(W / 2, H / 2);
+    // 36 jarum radial
+    cx.strokeStyle = LINE;
+    for (var i = 0; i < 36; i++){
+      var a = i / 36 * Math.PI * 2 + t * 0.00006;
+      var inner = R * 0.42, outer = R * (0.72 + 0.12 * Math.sin(t * 0.0004 + i));
+      cx.globalAlpha = 0.18 + 0.5 * Math.abs(Math.sin(t * 0.0003 + i * 0.5));
+      cx.lineWidth = 1.4; cx.lineCap = 'round';
+      cx.beginPath();
+      cx.moveTo(Math.cos(a) * inner, Math.sin(a) * inner);
+      cx.lineTo(Math.cos(a) * outer, Math.sin(a) * outer);
+      cx.stroke();
+    }
+    // 2 busur cincin
+    cx.globalAlpha = .9; cx.strokeStyle = SIG; cx.lineWidth = 2.4; cx.lineCap = 'round';
+    cx.beginPath(); cx.arc(0, 0, R * 0.88, -Math.PI / 2, -Math.PI / 2 + (0.68 * Math.PI * 2)); cx.stroke();
+    cx.globalAlpha = .35; cx.lineWidth = 1.2;
+    cx.beginPath(); cx.arc(0, 0, R * 0.34, 0, Math.PI * 2); cx.stroke();
+    // titik orbit
+    for (var k = 0; k < dots.length; k++){
+      var o = dots[k]; o.a += o.s * 16;
+      var x = Math.cos(o.a) * o.r, y = Math.sin(o.a) * o.r * 0.62;
+      cx.globalAlpha = o.o; cx.fillStyle = k % 7 === 0 ? SIG : '#FFFFFF';
+      cx.beginPath(); cx.arc(x, y, o.sz, 0, Math.PI * 2); cx.fill();
+    }
+    cx.restore();
+    if (raf !== null) raf = requestAnimationFrame(draw);
+  }
+  function start(){ if (raf === null && !reduce){ t0 = performance.now(); raf = requestAnimationFrame(draw); } }
+  function stop(){ if (raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+  if (reduce){ draw(performance.now()); stop(); } else { start(); }
+})();
+</script>
+</body>
+</html>

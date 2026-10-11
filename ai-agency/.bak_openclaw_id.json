@@ -1,0 +1,28 @@
+{
+    "tag": "[ RADAR AI ]",
+    "tanggal": "1 OKTOBER 2026 · KABAR AI",
+    "label_kartu": "YANG PERLU KAMU TAHU",
+    "poin": [
+        {
+            "judul": "Apa yang terjadi",
+            "isi": "OpenClaw Enterprise dirilis 29 Sep sebagai platform terbuka (lisensi MIT) untuk mengatur agen AI yang bekerja terus-menerus. Proyeknya lahir di OpenAI, lalu disumbangkan ke OpenClaw Foundation dan dikembangkan bersama Red Hat serta Nvidia."
+        },
+        {
+            "judul": "Kenapa ini penting",
+            "isi": "Hambatan terbesar agen bukan lagi kepintarannya, tapi apakah perusahaan berani membiarkannya menyentuh sistem, kredensial, dan data. Lapisan kendali itu kini bisa dipasang di server sendiri, gratis, tanpa mengunci ke satu penyedia."
+        },
+        {
+            "judul": "Untuk bisnis kamu",
+            "isi": "Tentukan lebih dulu: data apa yang boleh dibuka, tindakan apa yang boleh dijalankan sendiri, dan siapa yang meninjau. Catatan penting: versinya masih awal, jadi pakai untuk uji coba internal dulu."
+        }
+    ],
+    "headline": [
+        "AGEN AI AKHIRNYA PUNYA",
+        "RUANG KENDALI SENDIRI"
+    ],
+    "headline_caption": "OpenClaw Enterprise: kendali agen kini di tangan perusahaan.",
+    "subjudul": "Platform terbuka untuk menjalankan agen AI di infrastruktur sendiri (29 Sep): izin, batas, dan jejak audit dalam satu tempat.",
+    "cta": "JADWALKAN KONSULTASI GRATIS",
+    "kaki": "@omnisense_id • omnisense.id",
+    "hashtag": "#OmniSense #AIAgent #OtomatisasiAI #KonsultanAI #OmniSenseID"
+}

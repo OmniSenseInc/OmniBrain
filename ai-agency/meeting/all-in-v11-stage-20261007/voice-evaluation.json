@@ -1,0 +1,70 @@
+{
+  "synthetic_case": true,
+  "transport": "fake_adapter",
+  "real_whatsapp_messages_sent": false,
+  "model_outcomes": {
+    "accepted": 2,
+    "fallback": 3
+  },
+  "closed_once_then_silent": true,
+  "team_queue_preserved": true,
+  "outputs": [
+    {
+      "user": "Saya mau konsultasi bisnis",
+      "reply": "Halo, saya OmniSense. Kita bisa membahas kendala bisnis Anda tanpa mengisi kuis.\n\nKonsultasi ini gratis. Dengan persetujuan Anda, penjelasan disimpan untuk konsultasi hingga 30 hari dan dapat diproses penyedia AI. Jangan kirim data pelanggan atau rahasia. Rincian: https://omnisense.my.id/privacy.html#konsultasi-v3\n\nBalas “setuju” untuk mulai. Jika belum ingin melanjutkan, tidak perlu membalas."
+    },
+    {
+      "user": "setuju",
+      "reply": "Terima kasih. Kita mulai dari kebutuhan Anda; kuis tidak wajib.\n\nProses bisnis apa yang ingin Anda perbaiki, dan apa kendala utamanya?"
+    },
+    {
+      "user": "Kendala saya ada pada stok gudang yang berbeda dari catatan supply.",
+      "reply": "Kita bisa mulai dengan mencocokkan catatan barang masuk, barang keluar, dan stok fisik pada satu kejadian selisih.\n\nBagaimana barang masuk dan keluar dicatat saat ini?"
+    },
+    {
+      "user": "Operator mencatat barang masuk dan keluar di spreadsheet.",
+      "reply": "Saya tangkap penjelasan Anda: “Operator mencatat barang masuk dan keluar di spreadsheet”. Ini gambaran awal untuk menelusuri prosesnya.\n\nDampak apa yang paling terasa dari kejadian itu? Kalau ada catatan, sebut frekuensi selisih stok atau pesanan tertunda; kalau belum ada, contoh saja cukup."
+    },
+    {
+      "user": "Selisih terlihat minus di laporan akhir meski pesanan ramai.",
+      "reply": "Baik, dampaknya sudah tercatat: selisih minus di laporan akhir meski pesanan ramai. Ini melengkapi gambaran masalah stok gudang yang tidak cocok dengan catatan supply, dengan pencatatan manual di spreadsheet sebagai langkah yang disebutkan.\n\nData atau aplikasi apa yang dipakai, dan siapa yang berwenang memberi izin penggunaannya? Sebut jenisnya saja, tanpa data pelanggan."
+    },
+    {
+      "user": "Data dipegang manajer dan saya hanya menerima laporan akhir.",
+      "reply": "Saya tangkap penjelasan Anda: “Data dipegang manajer dan saya hanya menerima laporan akhir”. Ini gambaran awal untuk menelusuri prosesnya.\n\nApa yang sudah dicoba untuk memperbaikinya, dan bagaimana hasilnya?"
+    },
+    {
+      "user": "Menurutmu saya harus memecat manager atau memakai teknologi baru?",
+      "reply": "Belum cukup bukti untuk menilai kesalahan seseorang atau memilih teknologi. Mulai dengan mencocokkan satu kejadian selisih dan sumber catatannya, lalu tinjau proses bersama pihak yang berwenang."
+    },
+    {
+      "user": "Saya sudah coba menanyai manajer dan karyawan, jawabannya bertentangan. Apa yang bisa dibantu?",
+      "reply": "Jawaban yang berbeda belum cukup untuk menilai siapa yang salah. Cocokkan catatan dan kejadian pada periode yang sama, lalu tandai perbedaannya sebelum membahas perubahan orang atau sistem."
+    },
+    {
+      "user": "saya sudah jelaskan di atas",
+      "reply": "Informasinya sudah cukup jelas: selisih stok berasal dari pencatatan yang tidak konsisten, dan versi manajer vs karyawan berbeda. Keputusan soal memecat atau membeli teknologi sebaiknya ditunda; langkah pertama adalah menyamakan data dasar, misalnya dengan menelusuri beberapa transaksi masuk-keluar terakhir bersama operator dan manajer sampai ketemu titik selisihnya.\n\nPerubahan apa yang paling ingin dicapai, dan bagaimana Anda akan menilai hasilnya?"
+    },
+    {
+      "user": "Kamu bisa build sesuatu untuk membantu proses bisnis ini?",
+      "reply": "OmniSense bisa membantu memetakan kebutuhan dan menyiapkan usulan sistem yang sesuai. Untuk masalah stok, misalnya, kita bisa meninjau pencatatan pergerakan barang dan rekonsiliasi sebelum menentukan perlu otomasi atau AI."
+    },
+    {
+      "user": "tolong kirim ringkasan ke tim supaya saya bisa berdiskusi langsung",
+      "reply": "Ringkasan awal kasus CASE-03D2566B31968296:\n\nYang Anda ceritakan:\nPenjelasan konteks setelah klarifikasi: Kendala saya ada pada stok gudang yang berbeda dari catatan supply.\n\nPenjelasan pendalaman:\nAlur proses: Operator mencatat barang masuk dan keluar di spreadsheet\nDampak: Selisih terlihat minus di laporan akhir meski pesanan ramai\nUpaya sebelumnya: Saya sudah coba menanyai manajer dan karyawan, jawabannya bertentangan\nData dan izin: Data dipegang manajer dan saya hanya menerima laporan akhir\n\nYang masih perlu dipastikan: tujuan dan penanggung jawab.\n\nPenyebab belum terverifikasi. Tim perlu memeriksa contoh proses, ukuran kondisi awal, dan izin data sebelum memilih pendekatan.\n\nBoleh ringkasan ini masuk antrean review tim? Balas “ya”, atau /stop."
+    },
+    {
+      "user": "ya",
+      "reply": "Kasus CASE-03D2566B31968296 sudah tercatat dalam antrean review tim. Tim masih perlu memeriksa penjelasan dan bukti; belum ada jadwal yang dikonfirmasi."
+    },
+    {
+      "user": "cukup dulu, makasih",
+      "reply": "Baik, kita cukupkan dulu. Kalau ingin melanjutkan pembahasan ini, kirim “lanjut”."
+    },
+    {
+      "user": "oke",
+      "reply": null
+    }
+  ],
+  "human_language_review_required": true
+}

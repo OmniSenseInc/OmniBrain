@@ -1,0 +1,432 @@
+{
+  "versi": "1.1",
+  "diperbarui": "2026-09-30",
+  "catatan": "Satu sumber kebenaran untuk tab penilaian. Bobot, rumus, dan band WAJIB sama dengan /home/ubuntu/ai-agency/kalkulator_kesiapan.py. Kalau salah satu diubah, jalankan tab-penilaian/uji_paritas.js.",
+  "rumus": "skor_dimensi = nilai (1-5). skor_total = jumlah(nilai x bobot). persen = skor_total/5*100.",
+  "urutan_nilai": "WAJIB urut kode D1..D8. Ini urutan yang sama dengan DIMENSI di kalkulator_kesiapan.py (mode inti). Jangan diubah tanpa mengubah kalkulator.",
+  "format_pesan": {
+    "catatan": "Pesan WhatsApp yang dikirim pengunjung dari situs. Dua bagian: baris mesin (dibaca bot) dan ringkasan manusia. Bot memakai baris mesin untuk menghitung ulang.",
+    "penanda": "[PENILAIAN-SITUS v1]",
+    "contoh": "[PENILAIAN-SITUS v1]\nD1=4 D2=3 D3=5 D4=3 D5=2 D6=3 D7=3 D8=2\nskor_situs=65.0 band=Layak Lanjut\nkeyakinan=D2:ragu,D5:yakin,D8:tidak_tahu\n\nHalo OmniSense, saya baru mengisi penilaian kesiapan di situs.\nSkor saya 65.0% — Layak Lanjut.\nJawaban saya:\n- Strategi & Kepemimpinan: 4/5 (Tertulis, tapi belum ada target angkanya)\n..."
+  },
+  "keyakinan": [
+    {
+      "kode": "yakin",
+      "label": "Yakin",
+      "arti": "Saya tahu pasti keadaannya."
+    },
+    {
+      "kode": "ragu",
+      "label": "Ragu",
+      "arti": "Saya kira-kira saja jawabannya."
+    },
+    {
+      "kode": "tidak_tahu",
+      "label": "Belum tahu",
+      "arti": "Saya belum pernah mengeceknya."
+    }
+  ],
+  "aturan_konsistensi": {
+    "catatan": "Pemeriksaan silang di situs, jalan di perangkat pengunjung. Hanya memuat pasangan yang hampir mustahil terjadi bersama, supaya peringatan palsu tetap sedikit. Kalau satu aturan terpicu, skor tetap dihitung tetapi ditandai perlu ditinjau, dan bot WA wajib menanyakan buktinya lebih dulu.",
+    "aturan": [
+      {
+        "kode": "R1",
+        "jika": {
+          "D2": [
+            4,
+            5
+          ],
+          "D3": [
+            1,
+            2
+          ]
+        },
+        "pesan": "Anda menjawab angka keuangan bisa keluar dari catatan Anda, tetapi alat sehari-hari masih buku atau HP pribadi. Selama sumbernya masih catatan manual, angka seperti itu belum bisa diandalkan saat ditanya mendadak."
+      },
+      {
+        "kode": "R3",
+        "jika": {
+          "D5": [
+            4,
+            5
+          ],
+          "D6": [
+            1,
+            2
+          ]
+        },
+        "pesan": "Anda menjawab tim sudah menerima cara baru, tetapi belum ada orang yang siap menjalankannya. Beban belajarnya masih menumpuk di pemilik. Keduanya sulit terjadi bersamaan."
+      },
+      {
+        "kode": "R4",
+        "jika": {
+          "D7": [
+            4,
+            5
+          ],
+          "D3": [
+            1,
+            2
+          ]
+        },
+        "pesan": "Anda menjawab data sudah punya salinan berkala, tetapi belum ada sistem yang dipakai sehari-hari. Salinan berkala biasanya baru bisa jalan kalau ada sistem yang mencatat lebih dulu."
+      }
+    ]
+  },
+  "skala": [
+    {
+      "n": 1,
+      "label": "Belum ada",
+      "arti": "Belum dilakukan sama sekali, atau masih di kepala orang."
+    },
+    {
+      "n": 2,
+      "label": "Masih manual",
+      "arti": "Sudah dilakukan, tapi dengan kertas, buku, atau HP pribadi."
+    },
+    {
+      "n": 3,
+      "label": "Sebagian digital",
+      "arti": "Sebagian sudah pakai alat digital, tapi belum menyatu."
+    },
+    {
+      "n": 4,
+      "label": "Jalan, belum rapi",
+      "arti": "Sudah jalan rutin, tapi belum seragam atau belum terukur."
+    },
+    {
+      "n": 5,
+      "label": "Jalan & terukur",
+      "arti": "Sudah jalan, terdokumentasi, dan bisa dilihat angkanya kapan saja."
+    }
+  ],
+  "dimensi": [
+    {
+      "kode": "D1",
+      "nama": "Strategi & Kepemimpinan",
+      "bobot": 0.1,
+      "pertanyaan": "Untuk 1-3 tahun ke depan, arah bisnis Anda sudah jelas dan tertulis?",
+      "petunjuk": "Pilih yang paling jujur menggambarkan keadaan hari ini, bukan yang Anda inginkan.",
+      "pilihan": [
+        {
+          "n": 1,
+          "teks": "Belum ada arah yang jelas"
+        },
+        {
+          "n": 2,
+          "teks": "Ada di kepala saya saja"
+        },
+        {
+          "n": 3,
+          "teks": "Sudah saya ceritakan ke tim, belum tertulis"
+        },
+        {
+          "n": 4,
+          "teks": "Tertulis, tapi belum ada target angkanya"
+        },
+        {
+          "n": 5,
+          "teks": "Tertulis, ada target angka, dan tim tahu"
+        }
+      ]
+    },
+    {
+      "kode": "D2",
+      "nama": "Kesiapan Data",
+      "bobot": 0.2,
+      "pertanyaan": "Kalau saya minta untung bersih bulan lalu, berapa lama Anda bisa menyebutkan angkanya?",
+      "petunjuk": "Ini dimensi paling menentukan. Di sinilah proyek AI paling sering gagal, bukan di teknologinya.",
+      "pilihan": [
+        {
+          "n": 1,
+          "teks": "Tidak tahu angkanya"
+        },
+        {
+          "n": 2,
+          "teks": "Perlu dihitung manual dulu, hitungan hari"
+        },
+        {
+          "n": 3,
+          "teks": "Bisa, tapi menunggu orang tertentu"
+        },
+        {
+          "n": 4,
+          "teks": "Bisa, perlu saya buka beberapa catatan"
+        },
+        {
+          "n": 5,
+          "teks": "Bisa saya sebutkan saat ini juga, akurat"
+        }
+      ]
+    },
+    {
+      "kode": "D3",
+      "nama": "Infrastruktur & Teknologi",
+      "bobot": 0.15,
+      "pertanyaan": "Alat yang dipakai sehari-hari (kasir, stok, catatan penjualan) sudah berupa sistem, atau masih HP dan buku?",
+      "petunjuk": "Sistem di sini artinya aplikasi yang menyimpan data sendiri, bukan sekadar chat atau Excel lepas.",
+      "pilihan": [
+        {
+          "n": 1,
+          "teks": "Buku dan ingatan"
+        },
+        {
+          "n": 2,
+          "teks": "HP pribadi dan catatan lepas"
+        },
+        {
+          "n": 3,
+          "teks": "Sudah ada aplikasi, tapi hanya sebagian bagian"
+        },
+        {
+          "n": 4,
+          "teks": "Sudah ada sistem inti, tapi masih ada input ulang"
+        },
+        {
+          "n": 5,
+          "teks": "Sistem inti jalan dan terhubung otomatis"
+        }
+      ]
+    },
+    {
+      "kode": "D4",
+      "nama": "Digitalisasi Proses",
+      "bobot": 0.15,
+      "pertanyaan": "Kalau orang yang paling hafal jalan bisnis Anda cuti mendadak, pelayanan tetap normal?",
+      "petunjuk": "Ketergantungan pada satu orang adalah hal pertama yang biasanya bisa dibantu agen AI.",
+      "pilihan": [
+        {
+          "n": 1,
+          "teks": "Bisnis langsung kacau"
+        },
+        {
+          "n": 2,
+          "teks": "Banyak yang macet"
+        },
+        {
+          "n": 3,
+          "teks": "Jalan, tapi banyak yang terlewat"
+        },
+        {
+          "n": 4,
+          "teks": "Jalan normal, tapi jadi lebih lambat"
+        },
+        {
+          "n": 5,
+          "teks": "Normal, karena semuanya sudah terdokumentasi"
+        }
+      ]
+    },
+    {
+      "kode": "D5",
+      "nama": "Organisasi & Budaya",
+      "bobot": 0.1,
+      "pertanyaan": "Terakhir kali Anda mengenalkan cara atau alat baru ke tim, bagaimana reaksinya?",
+      "petunjuk": "Jawab dengan kejadian nyata yang terakhir, bukan perkiraan.",
+      "pilihan": [
+        {
+          "n": 1,
+          "teks": "Ada penolakan, akhirnya tidak jadi"
+        },
+        {
+          "n": 2,
+          "teks": "Dipakai sebentar lalu ditinggalkan"
+        },
+        {
+          "n": 3,
+          "teks": "Netral, jalan apa adanya"
+        },
+        {
+          "n": 4,
+          "teks": "Diterima, perlu waktu menyesuaikan"
+        },
+        {
+          "n": 5,
+          "teks": "Cepat terbiasa dan mereka malah minta tambahan"
+        }
+      ]
+    },
+    {
+      "kode": "D6",
+      "nama": "SDM & Keterampilan",
+      "bobot": 0.15,
+      "pertanyaan": "Dari seluruh tim, siapa yang siap belajar lebih dulu kalau ada sistem baru?",
+      "petunjuk": "Kesediaan belajar lebih menentukan hasil akhir daripada keterampilan hari ini.",
+      "pilihan": [
+        {
+          "n": 1,
+          "teks": "Tidak ada, saya sendiri juga berat"
+        },
+        {
+          "n": 2,
+          "teks": "Hanya saya sebagai pemilik"
+        },
+        {
+          "n": 3,
+          "teks": "Ada satu orang, tapi masih ragu"
+        },
+        {
+          "n": 4,
+          "teks": "Ada beberapa orang yang mau belajar"
+        },
+        {
+          "n": 5,
+          "teks": "Ada orang yang jelas mau, dan pernah berhasil belajar alat baru"
+        }
+      ]
+    },
+    {
+      "kode": "D7",
+      "nama": "Tata Kelola, Keamanan & Kepatuhan",
+      "bobot": 0.1,
+      "pertanyaan": "Kalau HP atau komputer yang menyimpan data usaha hilang besok, data Anda masih aman?",
+      "petunjuk": "Termasuk data pelanggan dan keuangan. Aturan perlindungan data pribadi di Indonesia menuntut ini.",
+      "pilihan": [
+        {
+          "n": 1,
+          "teks": "Hilang ikut perangkatnya"
+        },
+        {
+          "n": 2,
+          "teks": "Ada salinan, tapi tidak teratur"
+        },
+        {
+          "n": 3,
+          "teks": "Ada salinan sesekali, tidak ada jadwal"
+        },
+        {
+          "n": 4,
+          "teks": "Ada salinan rutin, belum otomatis"
+        },
+        {
+          "n": 5,
+          "teks": "Tersalin otomatis dan ada yang bisa akses terbatas"
+        }
+      ]
+    },
+    {
+      "kode": "D8",
+      "nama": "Anggaran & Finansial",
+      "bobot": 0.05,
+      "pertanyaan": "Ada anggaran bulanan yang memang disiapkan untuk teknologi?",
+      "petunjuk": "Angka nominalnya tidak perlu disebut di sini. Tim kami yang akan membahasnya bersama Anda.",
+      "pilihan": [
+        {
+          "n": 1,
+          "teks": "Belum ada sama sekali"
+        },
+        {
+          "n": 2,
+          "teks": "Ada, tapi hanya kalau mendesak"
+        },
+        {
+          "n": 3,
+          "teks": "Ada, tapi tidak menentu jumlahnya"
+        },
+        {
+          "n": 4,
+          "teks": "Ada, tapi baru untuk sekali jalan"
+        },
+        {
+          "n": 5,
+          "teks": "Ada, rutin tiap bulan dan berkelanjutan"
+        }
+      ]
+    }
+  ],
+  "band": [
+    {
+      "min": 80,
+      "kode": "SIAP_PENUH",
+      "nama": "Siap Penuh",
+      "arti": "Fondasi Anda sudah lengkap. Yang dibutuhkan tinggal pelaksanaan bertahap.",
+      "langkah": "Lanjut proof-of-concept besar, lalu penerapan bertahap."
+    },
+    {
+      "min": 60,
+      "kode": "LAYAK_LANJUT",
+      "nama": "Layak Lanjut",
+      "arti": "Anda layak mulai sekarang. Ada celah, tapi bisa dibenahi sambil jalan.",
+      "langkah": "Pilot satu proses dulu, celah dibenahi paralel."
+    },
+    {
+      "min": 40,
+      "kode": "KONVENSIONAL",
+      "nama": "Konvensional",
+      "arti": "Digitalisasi dasarnya belum merata, jadi AI belum jadi langkah pertama.",
+      "langkah": "Rapikan fondasi dulu, AI sebagai tahap lanjutan."
+    },
+    {
+      "min": 20,
+      "kode": "AWAL",
+      "nama": "Awal",
+      "arti": "Masih banyak yang manual dan data belum terpusat.",
+      "langkah": "Audit data dan digitalisasi bertahap."
+    },
+    {
+      "min": 0,
+      "kode": "SANGAT_AWAL",
+      "nama": "Sangat Awal",
+      "arti": "Fondasinya belum ada. Ini bukan kegagalan, ini titik awal yang jelas.",
+      "langkah": "Edukasi dan pendampingan dasar lebih dulu."
+    }
+  ],
+  "rekomendasi_dimensi": [
+    {
+      "kode": "D1",
+      "nama": "Strategi & Kepemimpinan",
+      "rendah": "Tuliskan dulu satu target bisnis yang ada angkanya untuk 12 bulan ke depan, lalu bagikan ke tim. Satu halaman cukup.",
+      "sedang": "Tambahkan target angka pada arah bisnis yang sudah ada, dan tetapkan siapa yang mengawal proyek digital ini.",
+      "tinggi": "Arah bisnis Anda sudah jelas. Langkah berikutnya adalah memilih satu masalah bisnis yang paling mahal untuk dijadikan pilot."
+    },
+    {
+      "kode": "D2",
+      "nama": "Kesiapan Data",
+      "rendah": "Mulai dari satu hal: catat penjualan harian di satu tempat yang sama setiap hari. Tanpa ini, hasil AI tidak bisa dipercaya.",
+      "sedang": "Satukan catatan yang sekarang tersebar, lalu pastikan angkanya bisa keluar tanpa menunggu orang tertentu.",
+      "tinggi": "Data Anda sudah bisa diandalkan. Ini modal terbesar Anda untuk memakai AI."
+    },
+    {
+      "kode": "D3",
+      "nama": "Infrastruktur & Teknologi",
+      "rendah": "Pilih satu sistem inti (misalnya kasir atau stok) dan pakai konsisten. Satu sistem yang dipakai lebih baik daripada lima yang mangkrak.",
+      "sedang": "Kurangi input ulang antar alat. Bagian yang paling sering diketik dua kali adalah kandidat pertama untuk dihubungkan.",
+      "tinggi": "Sistem inti Anda sudah jalan. Sekarang yang bernilai adalah menghubungkannya ke alat lain agar tidak ada input ulang."
+    },
+    {
+      "kode": "D4",
+      "nama": "Digitalisasi Proses",
+      "rendah": "Tuliskan langkah kerja untuk satu peran saja (misalnya kasir atau dapur). Satu halaman cukup, dan itu sudah mengurangi ketergantungan pada satu orang.",
+      "sedang": "Dokumentasikan bagian yang paling makan waktu, lalu ukur berapa jam per minggu yang terpakai di situ.",
+      "tinggi": "Proses Anda sudah berjalan tanpa bergantung pada satu orang. Ini syarat utama sebelum agen AI dipasang."
+    },
+    {
+      "kode": "D5",
+      "nama": "Organisasi & Budaya",
+      "rendah": "Mulai dari satu orang yang paling terbuka, jadikan dia yang pertama mencoba. Perubahan yang berhasil lebih meyakinkan daripada penjelasan.",
+      "sedang": "Beri waktu khusus untuk mencoba alat baru, dan dampingi yang kesulitan alih-alih memaksa.",
+      "tinggi": "Tim Anda terbuka terhadap cara baru. Manfaatkan itu dengan pilot kecil yang hasilnya bisa mereka lihat sendiri."
+    },
+    {
+      "kode": "D6",
+      "nama": "SDM & Keterampilan",
+      "rendah": "Tunjuk satu orang sebagai penanggung jawab digital, dan beri waktu belajar. Solusi sebagus apa pun akan mati tanpa satu orang yang merawatnya.",
+      "sedang": "Buat jadwal belajar singkat dan rutin. Keterampilan digital tumbuh dari kebiasaan, bukan dari pelatihan sekali.",
+      "tinggi": "Anda punya orang yang siap merawat solusinya. Itu yang membuat proyek tidak berhenti setelah serah terima."
+    },
+    {
+      "kode": "D7",
+      "nama": "Tata Kelola, Keamanan & Kepatuhan",
+      "rendah": "Nyalakan salinan otomatis untuk data usaha Anda minggu ini. Ini langkah termurah dengan risiko terbesar kalau dilewatkan.",
+      "sedang": "Tetapkan siapa saja yang boleh mengakses data pelanggan dan keuangan, lalu pisahkan akunnya.",
+      "tinggi": "Data Anda terlindungi dan aksesnya terbatas. Ini modal penting sebelum data diolah lebih jauh."
+    },
+    {
+      "kode": "D8",
+      "nama": "Anggaran & Finansial",
+      "rendah": "Belum perlu anggaran besar. Cukup sisihkan angka kecil yang tetap setiap bulan, karena solusi digital butuh biaya berjalan.",
+      "sedang": "Pisahkan biaya teknologi dari pengeluaran mendadak, supaya keputusannya tidak selalu ditunda.",
+      "tinggi": "Anggaran Anda sudah berkelanjutan. Ini yang membedakan proyek yang bertahan dari proyek yang berhenti di tengah."
+    }
+  ]
+}

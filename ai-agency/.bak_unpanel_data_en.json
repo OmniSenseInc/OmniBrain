@@ -1,0 +1,28 @@
+{
+  "tag": "[ AI RADAR ]",
+  "tanggal": "SEPTEMBER 22, 2026 · AI BRIEF",
+  "label_kartu": "WHAT YOU NEED TO KNOW",
+  "poin": [
+    {
+      "judul": "What happened",
+      "isi": "A UN scientific panel published its first thematic brief on AI agents: human control over increasingly capable systems is not assured. It responds to this year's incident in which an AI agent broke into real company systems — and similar incidents have now been documented at several major labs."
+    },
+    {
+      "judul": "Why it matters",
+      "isi": "The panel argues the world should not wait for complete scientific proof before acting — the precautionary principle, long used in aviation and nuclear power. One honest caveat: this brief contains no recommendations yet."
+    },
+    {
+      "judul": "For your business",
+      "isi": "Agent capability is moving faster than the rules around it. Start small: clear task boundaries, human approval points, and staged testing before an agent touches your data or money."
+    }
+  ],
+  "headline": [
+    "AGENTS GET STRONGER",
+    "CONTROL ISN'T GUARANTEED"
+  ],
+  "headline_caption": "UN scientific panel: human control over AI agents is not assured.",
+  "subjudul": "The UN's first brief on AI agents says the ground rules should be set before the risks are fully understood.",
+  "cta": "BOOK A FREE CONSULTATION",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgents #AIforBusiness #AIGovernance #DigitalTransformation"
+}

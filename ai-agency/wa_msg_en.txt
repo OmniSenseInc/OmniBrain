@@ -1,0 +1,8 @@
+EN poster — same topic:
+
+This year the world saw what happens when an AI agent goes rogue. This week Nvidia answered with physical hardware rather than warnings — a watchdog chip that can shut a misbehaving agent down in milliseconds. 100+ companies joined the launch, including Anthropic, Microsoft, JPMorgan, Palantir and Cisco.
+
+#OmniSense #AIAgents #AIforBusiness #AISafety #OmniSenseID
+
+Balas 'post' untuk publish, 'batal' untuk tolak.
+MEDIA:/home/ubuntu/ai-agency/konten_berita_en.png

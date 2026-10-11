@@ -1,0 +1,28 @@
+{
+    "tag": "[ RADAR AI ]",
+    "tanggal": "30 SEPTEMBER 2026 · KABAR AI",
+    "label_kartu": "YANG PERLU KAMU TAHU",
+    "poin": [
+        {
+            "judul": "Apa yang terjadi",
+            "isi": "Microsoft membuka pratinjau Work IQ (30 Sep): lapisan pemahaman yang membuat Copilot dan agen berpijak pada data bisnis nyata dari Dynamics 365 dan Power Platform — bukan hanya email dan dokumen."
+        },
+        {
+            "judul": "Kenapa ini penting",
+            "isi": "Agen jadi mengerti istilah, proses, dan aturan di dalam bisnis kamu, lalu bertindak di dalam izin yang sudah ada. Setiap agen berada di bawah pengawasan Microsoft Agent 365."
+        },
+        {
+            "judul": "Untuk bisnis kamu",
+            "isi": "Sebelum menambah agen, rapikan dulu data dan istilah kunci bisnis kamu. Agen yang pintar di atas data yang berantakan tetap menghasilkan jawaban yang salah."
+        }
+    ],
+    "headline": [
+        "AGEN BARU BERGUNA KALAU PAHAM",
+        "DATA DAN PROSES BISNIS KAMU"
+    ],
+    "headline_caption": "Microsoft: satu pemahaman bisnis yang sama untuk semua agen.",
+    "subjudul": "Microsoft membuka pratinjau Work IQ (30 Sep) — agen membaca data Dynamics 365 & Power Platform, dengan tata kelola lewat Agent 365.",
+    "cta": "JADWALKAN KONSULTASI GRATIS",
+    "kaki": "@omnisense_id • omnisense.id",
+    "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #KonsultanAI #OmniSenseID"
+}

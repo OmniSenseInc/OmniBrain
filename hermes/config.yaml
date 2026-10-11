@@ -1,0 +1,769 @@
+model:
+  default: kenari/deepseek-v4-1-flash
+  provider: custom
+  base_url: http://localhost:20128/v1
+  api_mode: chat_completions
+  api_key: ${HERMES_CUSTOM_LOCALHOST_20128_API_KEY}
+database:
+  journal_mode: wal
+runtime:
+  nofile_soft_limit: 4096
+agent:
+  max_turns: 150
+  api_max_retries: 6
+  reasoning_overrides:
+    glm-5.3-flash: low
+  verbose: false
+  reasoning_effort: medium
+  personalities: {}
+terminal:
+  backend: local
+  cwd: .
+  timeout: 180
+  home_mode: auto
+  container_cpu: 1
+  container_memory: 5120
+  container_disk: 51200
+  container_persistent: true
+  docker_mount_cwd_to_workspace: false
+  lifetime_seconds: 300
+web:
+  backend: brave-free
+browser:
+  inactivity_timeout: 120
+  extension_control:
+    enabled: false
+  cloud_provider: camofox
+tool_loop_guardrails:
+  warnings_enabled: true
+  hard_stop_enabled: false
+  warn_after:
+    exact_failure: 2
+    same_tool_failure: 3
+    idempotent_no_progress: 2
+  hard_stop_after:
+    exact_failure: 5
+    same_tool_failure: 8
+    idempotent_no_progress: 5
+compression:
+  enabled: true
+  checkpoint_required: false
+  progress_notices: false
+  threshold: 0.5
+  target_ratio: 0.2
+  protect_last_n: 20
+  min_tail_user_messages: 1
+  max_attempts: 3
+  proactive_prune_tokens: 0
+  proactive_prune_min_result_chars: 8000
+  proactive_prune_min_reclaim_tokens: 4096
+  protect_first_n: 3
+  codex_gpt55_autoraise: true
+  codex_app_server_auto: native
+  codex_responses_native: false
+  codex_responses_compact_threshold: 200000
+  idle_compact_after_seconds: 0
+prompt_caching:
+  cache_ttl: 5m
+display:
+  compact: false
+  busy_input_mode: interrupt
+  bell_on_complete: false
+  show_reasoning: false
+  background_process_notifications: concise
+  streaming: true
+  skin: default
+  interim_assistant_messages: true
+  platforms:
+    whatsapp:
+      streaming: false
+      interim_assistant_messages: false
+  tool_progress: all
+  cleanup_progress: false
+  long_running_notifications: true
+  busy_ack_detail: true
+stt:
+  enabled: true
+  language: en
+  local:
+    model: base
+  openai:
+    model: whisper-1
+    language: ''
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 2200
+  user_char_limit: 1375
+  nudge_interval: 10
+delegation:
+  max_iterations: 250
+skills:
+  creation_nudge_interval: 15
+command_allowlist:
+  - delete in root path
+plugins:
+  enabled:
+    - omnisense-consultation
+    - platforms/whatsapp
+  disabled: []
+  entries:
+    omnisense-consultation:
+      allow_tool_override: false
+kanban:
+  review_dispatch: true
+code_execution:
+  timeout: 300
+  max_tool_calls: 50
+streaming:
+  enabled: false
+onboarding:
+  seen:
+    tool_progress_prompt: true
+    busy_input_prompt: true
+telemetry:
+  shared_metrics:
+    enabled: false
+updates:
+  pre_update_backup: false
+  backup_keep: 5
+  non_interactive_local_changes: stash
+computer_use:
+  backend: cua
+_config_version: 41
+session_reset:
+  mode: none
+  idle_minutes: 1440
+  at_hour: 4
+group_sessions_per_user: true
+platform_toolsets:
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - context_engine
+    - cronjob
+    - delegation
+    - file
+    - memory
+    - session_search
+    - skills
+    - terminal
+    - todo
+    - vision
+    - web
+  telegram:
+    - hermes-telegram
+  discord:
+    - hermes-discord
+  whatsapp:
+    - hermes-whatsapp
+  slack:
+    - hermes-slack
+  signal:
+    - hermes-signal
+  homeassistant:
+    - hermes-homeassistant
+  qqbot:
+    - hermes-qqbot
+  yuanbao:
+    - hermes-yuanbao
+  teams:
+    - hermes-teams
+  google_chat:
+    - hermes-google_chat
+known_plugin_toolsets:
+  cli:
+    - a2a
+    - spotify
+known_builtin_toolsets:
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - context_engine
+    - cronjob
+    - delegation
+    - discord
+    - discord_admin
+    - file
+    - homeassistant
+    - image_gen
+    - memory
+    - session_search
+    - skills
+    - spotify
+    - stt
+    - terminal
+    - todo
+    - tts
+    - video
+    - video_gen
+    - vision
+    - web
+    - x_search
+    - yuanbao
+platforms:
+  whatsapp:
+    enabled: true
+    home_channel:
+      platform: whatsapp
+      chat_id: 120363411213386519@g.us
+      name: '120363411213386519'
+      user_id: 212562343899232@lid
+    extra:
+      dm_policy: pairing
+      unauthorized_dm_behavior: ignore
+      group_policy: allowlist
+      group_allow_from:
+        - 120363411213386519@g.us
+custom_providers:
+  - name: Api.b.ai
+    base_url: https://api.b.ai/v1
+    key_env: HERMES_CUSTOM_API_B_AI_API_KEY
+    model: deepseek-v4.1-flash
+    api_mode: chat_completions
+    models:
+      minimax-m3: {}
+      minimax-m2.7: {}
+      glm-5.1: {}
+      glm-5.2: {}
+      gpt-6.1-sol: {}
+      gpt-6-astra: {}
+      gpt-6-sol: {}
+      gpt-6-luna: {}
+      gpt-5.6-sol: {}
+      gpt-5.6-terra: {}
+      gpt-5.6-luna: {}
+      gpt-5.5: {}
+      gpt-5.5-instant: {}
+      gpt-5.4: {}
+      gpt-5.2: {}
+      gpt-5.4-pro: {}
+      gpt-5.4-mini: {}
+      gpt-5-mini: {}
+      gpt-5.4-nano: {}
+      gpt-5-nano: {}
+      gpt-image-2: {}
+      claude-opus-5.5: {}
+      claude-sonnet-5.5: {}
+      claude-haiku-5.5: {}
+      claude-fable-5.1: {}
+      claude-fable-5: {}
+      claude-opus-5: {}
+      claude-opus-4.8: {}
+      claude-opus-4.7: {}
+      claude-opus-4.6: {}
+      claude-opus-4.5: {}
+      claude-sonnet-5: {}
+      claude-sonnet-4.6: {}
+      claude-sonnet-4.5: {}
+      claude-haiku-4.5: {}
+      gemini-3.8-flash: {}
+      gemini-3.6-flash: {}
+      gemini-3.5-flash-lite: {}
+      gemini-3.5-flash: {}
+      gemini-3.1-pro: {}
+      gemini-3-flash: {}
+      hy4-preview: {}
+      mimo-v2.6-pro: {}
+      glm-5.3-flash: {}
+      glm-5.3-flashx: {}
+      kimi-k3: {}
+      glm-5.3: {}
+      mimo-v2.6-flash: {}
+      mimo-v2.5-pro: {}
+      mimo-v2.5: {}
+      kimi-k2.8-preview: {}
+      kimi-k2.6: {}
+      hy3: {}
+      qwen3.8-flash: {}
+      qwen3.8-max: {}
+      qwen3.8-27b: {}
+      jev-1.13.0: {}
+      deepseek-v4.1-flash: {}
+      deepseek-v4-pro: {}
+      jev-latest: {}
+    models_discovered: true
+  - name: Api.vikey.ai
+    base_url: https://api.vikey.ai/v1
+    key_env: HERMES_CUSTOM_API_VIKEY_AI_API_KEY
+    model: deepseek/deepseek-v4.1-flash
+    api_mode: chat_completions
+    models:
+      anthropic/claude-sonnet-4.6: {}
+      anthropic/claude-opus-4.6: {}
+      anthropic/claude-opus-4.8: {}
+      anthropic/claude-opus-4.7: {}
+      openai/gpt-5.6-terra: {}
+      openai/gpt-5.6-sol: {}
+      vikey/qwen3.8-27b-uncensored: {}
+      deepseek/deepseek-v4-flash: {}
+      anthropic/claude-opus-5: {}
+      anthropic/claude-sonnet-5: {}
+      anthropic/claude-fable-5: {}
+      deepseek/deepseek-v4-pro: {}
+      moonshot/kimi-k3: {}
+      moonshot/kimi-k2.7-code: {}
+      zai/glm-5.3: {}
+      glm/glm-5.3-flash: {}
+      qwen/qwen3.8-max: {}
+      minimax/minimax-m3: {}
+      openai/gpt-5.6-luna: {}
+      gemini/gemini-3.7-flash-high: {}
+      anthropic/claude-fable-5.1: {}
+      qwen/qwen3.6-plus-uncensored: {}
+      openai/gpt-6-astra: {}
+      gemini/gemini-3.8-flash: {}
+      deepseek/deepseek-v4.1-flash: {}
+      openai/gpt-6-luna: {}
+      openai/gpt-6-sol: {}
+      anthropic/claude-opus-5.5: {}
+      anthropic/claude-sonnet-5.5: {}
+      openai/gpt-6.1-sol: {}
+      xiaomi/mimo-v2.6-pro: {}
+      anthropic/haiku-5.5: {}
+    models_discovered: true
+  - name: Api.pgsgrove.com
+    base_url: https://api.pgsgrove.com/v1
+    key_env: HERMES_CUSTOM_API_PGSGROVE_COM_API_KEY
+    model: deepseek-v4-flash-0731
+    api_mode: chat_completions
+    models:
+      mimo-v2.6-pro: {}
+      mimo-v2.6-flash: {}
+      glm-5.2: {}
+      glm-5.2-turbo: {}
+      glm-5.3: {}
+      glm-5.3-flash: {}
+      deepseek-v4.1-flash: {}
+      deepseek-v4.1-flash-turbo: {}
+      deepseek-v4-flash-0731: {}
+      deepseek-v4-flash-0731-turbo: {}
+      deepseek-v4-flash: {}
+      deepseek-v4-flash-turbo: {}
+      deepseek-v4-pro: {}
+      deepseek-v4-pro-turbo: {}
+      deepseek-v4-pro-0813: {}
+      deepseek-v4-pro-0813-turbo: {}
+      qwen-3.8-27b: {}
+      gemma-4-31b: {}
+      gemma-4-31b-turbo: {}
+      kimi-k2.6: {}
+      kimi-k2.6-turbo: {}
+      kimi-k3: {}
+      nemotron-3-super: {}
+      nemotron-3-super-turbo: {}
+      minimax-m3: {}
+      kokoro-82m: {}
+      embeddinggemma-300m: {}
+      nemotron-3-ultra: {}
+      nemotron-3-ultra-turbo: {}
+    models_discovered: true
+  - name: Kenari.id
+    base_url: https://kenari.id/v1
+    key_env: HERMES_CUSTOM_KENARI_ID_API_KEY
+    model: deepseek-v4-1-flash
+    api_mode: chat_completions
+    models:
+      agnes-2-0-flash:free: {}
+      agnes-2-5-flash:free: {}
+      agnes-3-0-flash:free: {}
+      claude-fable-5: {}
+      claude-haiku-5-5: {}
+      claude-opus-4-7: {}
+      claude-opus-4-8: {}
+      claude-opus-5: {}
+      claude-opus-5-5: {}
+      claude-sonnet-4-6: {}
+      claude-sonnet-5: {}
+      claude-sonnet-5-5: {}
+      deepseek-v4-1-flash: {}
+      deepseek-v4-flash: {}
+      deepseek-v4-pro: {}
+      gemini-3-1-flash-lite: {}
+      gemini-3-1-flash-tts: {}
+      gemini-3-1-pro: {}
+      gemini-3-6-flash: {}
+      gemini-3-7-flash: {}
+      gemini-3-8-flash: {}
+      gemini-omni-flash: {}
+      gemma-4-31b-it: {}
+      glm-4-7-flash:free: {}
+      glm-5-2: {}
+      glm-5-3: {}
+      glm-5-3-flash: {}
+      gpt-5-4: {}
+      gpt-5-4-mini: {}
+      gpt-5-5: {}
+      gpt-5-6-luna: {}
+      gpt-5-6-sol: {}
+      gpt-5-6-terra: {}
+      gpt-6-1-sol: {}
+      gpt-6-astra: {}
+      gpt-6-luna: {}
+      gpt-6-sol: {}
+      gpt-image-2: {}
+      gpt-image-2-5-flare: {}
+      gpt-image-2-5-sunburst: {}
+      gpt-oss-120b: {}
+      gpt-oss-20b: {}
+      grok-4-5: {}
+      grok-4-6: {}
+      grok-4-7: {}
+      grok-imagine-image: {}
+      grok-imagine-image-2-0: {}
+      grok-imagine-image-quality: {}
+      hunyuan-image-alpha: {}
+      hunyuan-image-v2.0: {}
+      hunyuan-image-v3.0: {}
+      hunyuan-image-v3.0-art: {}
+      hunyuan-video-art: {}
+      hy3: {}
+      hy3:free: {}
+      hy4-preview: {}
+      kimi-k2-6: {}
+      kimi-k2-7-code: {}
+      kimi-k3: {}
+      kling-v3: {}
+      kling-video-v3: {}
+      kokoro-tts: {}
+      laguna-s-2-1:free: {}
+      laguna-xs-2-1:free: {}
+      mimo-v2-5: {}
+      mimo-v2-5-pro: {}
+      mimo-v2-5-tts: {}
+      mimo-v2-6-flash: {}
+      mimo-v2-6-flash:free: {}
+      mimo-v2-6-pro: {}
+      minimax-m2-7: {}
+      minimax-m2-7-highspeed: {}
+      minimax-m3: {}
+      minimax-speech-2-8-hd: {}
+      minimax-speech-2-8-turbo: {}
+      muse-spark-1-2: {}
+      muse-spark-1-2-contributor: {}
+      muse-spark-1-3: {}
+      muse-spark-1-3-contributor: {}
+      muse-spark-1-3-contributor:free: {}
+      nano-banana: {}
+      nano-banana-2: {}
+      nano-banana-2-1: {}
+      nano-banana-2-lite: {}
+      nano-banana-pro: {}
+      nemotron-3-super-120b-a12b: {}
+      nemotron-3-super-120b-a12b:free: {}
+      nemotron-3-ultra-550b-a55b: {}
+      nemotron-3-ultra-550b-a55b:free: {}
+      north-mini-code:free: {}
+      qwen3-7-plus: {}
+      qwen3-8-27b:free: {}
+      qwen3-8-flash: {}
+      qwen3-8-max: {}
+      seedance-2.0: {}
+      seedance-2.0-fast: {}
+      seedance-2.5: {}
+      space-bunny-alpha:free: {}
+      step-3-7-flash: {}
+      step-5-preview:free: {}
+      veo-3.1-lite: {}
+      whisper-large-v3-turbo: {}
+    models_discovered: true
+  - name: Router.bynara.id
+    base_url: https://router.bynara.id/v1
+    key_env: HERMES_CUSTOM_ROUTER_BYNARA_ID_API_KEY
+    model: mimo-v2.6-flash-free
+    api_mode: chat_completions
+    models:
+      agnes-2.5-flash: {}
+      agnes-3-flash: {}
+      agnes-video-v2.0: {}
+      claude-fable-5.1: {}
+      claude-haiku-5.5: {}
+      claude-opus-4.8: {}
+      claude-opus-5: {}
+      claude-opus-5.5: {}
+      claude-sonnet-5: {}
+      claude-sonnet-5.5: {}
+      deepseek-v4-flash-alibaba: {}
+      deepseek-v4-flash-vision-exp: {}
+      deepseek-v4.1-flash: {}
+      exo-stealh: {}
+      gemini-3.1-pro-high: {}
+      gemini-3.8-flash-high: {}
+      glm-5.2: {}
+      glm-5.3: {}
+      glm-5.3-flash: {}
+      gpt-5.6-luna: {}
+      gpt-5.6-sol: {}
+      gpt-5.6-terra: {}
+      gpt-6-astra: {}
+      gpt-6-luna: {}
+      gpt-6-sol: {}
+      gpt-6.1-sol: {}
+      jev: {}
+      kimi-k2.7-code: {}
+      kimi-k3: {}
+      laguna-s-2.1: {}
+      mimo-v2.5: {}
+      mimo-v2.6-flash: {}
+      mimo-v2.6-flash-free: {}
+      mimo-v2.6-pro: {}
+      minimax-m3: {}
+      muse-spark-1.2: {}
+      muse-spark-1.2-contributor: {}
+      muse-spark-1.3: {}
+      muse-spark-1.3-contributor: {}
+      muse-spark-1.3-contributor-free: {}
+      nemotron-3-ultra-free: {}
+      nemotron-3.5-lightning-free: {}
+      qwen3.8-27b: {}
+      qwen3.8-flash: {}
+      qwen3.8-max: {}
+      qwen3.8-max-alibaba: {}
+      step-5-preview: {}
+      stepfun-3.7-flash: {}
+      deepseek-v4-flash: {}
+      deepseek-v4-pro: {}
+      mimo-v2.5-pro: {}
+    models_discovered: true
+  - name: Api.commandcode.ai
+    base_url: https://api.commandcode.ai/provider/v1
+    key_env: HERMES_CUSTOM_API_COMMANDCODE_AI_API_KEY
+    model: deepseek/deepseek-v4.1-flash-fast
+    api_mode: chat_completions
+    models:
+      claude-sonnet-5-5: {}
+      claude-sonnet-5: {}
+      claude-sonnet-4-6: {}
+      claude-fable-5-1: {}
+      claude-fable-5: {}
+      claude-opus-5-5: {}
+      claude-opus-5: {}
+      claude-opus-4-8: {}
+      claude-opus-4-7: {}
+      claude-haiku-5-5: {}
+      claude-haiku-4-5-20251001: {}
+      gpt-6-astra: {}
+      gpt-6.1-sol: {}
+      gpt-6-sol: {}
+      gpt-6-luna: {}
+      gpt-5.6-sol: {}
+      gpt-5.6-terra: {}
+      gpt-5.6-luna: {}
+      gpt-5.5: {}
+      gpt-5.4: {}
+      gpt-5.3-codex: {}
+      gpt-5.4-mini: {}
+      deepseek/deepseek-v4-pro: {}
+      deepseek/deepseek-v4-flash: {}
+      deepseek/deepseek-v4-flash-vision-exp: {}
+      deepseek/deepseek-v4-flash-fast: {}
+      deepseek/deepseek-v4.1-flash: {}
+      deepseek/deepseek-v4.1-flash-fast: {}
+      moonshotai/Kimi-K3: {}
+      moonshotai/Kimi-K2.7-Code: {}
+      moonshotai/Kimi-K2.7-Code-Highspeed: {}
+      moonshotai/Kimi-K2.6: {}
+      moonshotai/Kimi-K2.5: {}
+      z-ai/glm-5.3-flash: {}
+      z-ai/glm-5.3-flashx: {}
+      zai-org/GLM-5.3: {}
+      zai-org/GLM-5.2: {}
+      zai-org/GLM-5.2-Fast: {}
+      zai-org/GLM-5.1: {}
+      zai-org/GLM-5: {}
+      MiniMaxAI/MiniMax-M3: {}
+      MiniMaxAI/MiniMax-M2.7: {}
+      MiniMaxAI/MiniMax-M2.5: {}
+      xiaomi/mimo-v2.6-pro: {}
+      xiaomi/mimo-v2.6-pro-ultraspeed: {}
+      xiaomi/mimo-v2.6-flash: {}
+      xiaomi/mimo-v2.5-pro: {}
+      xiaomi/mimo-v2.5: {}
+      Qwen/Qwen3.8-Omni-Flash: {}
+      Qwen/Qwen3.8-Max-0902: {}
+      Qwen/Qwen3.8-Max: {}
+      Qwen/Qwen3.8-27B: {}
+      Qwen/Qwen3.8-Flash: {}
+      Qwen/Qwen3.7-Max: {}
+      Qwen/Qwen3.7-Plus: {}
+      Qwen/Qwen3.7-Flash: {}
+      Qwen/Qwen3.6-Max-Preview: {}
+      Qwen/Qwen3.6-Plus: {}
+      meituan/LongCat-2.0: {}
+      stepfun/Step-5-Preview: {}
+      stepfun/Step-3.7-Flash: {}
+      stepfun/Step-3.5-Flash: {}
+      tencent/hy3-paid: {}
+      tencent/hy4-preview: {}
+      google/gemini-3.8-flash: {}
+      google/gemini-3.7-flash: {}
+      google/gemini-3.6-flash: {}
+      google/gemini-3.5-flash: {}
+      google/gemini-3.5-flash-lite: {}
+      google/gemini-3.1-flash-lite: {}
+      sakana/fugu-ultra: {}
+      nvidia/nemotron-3-ultra-550b-a55b: {}
+      thinkingmachines/inkling: {}
+      thinkingmachines/inkling-small: {}
+      stealth/glyph-cluster:free: {}
+      poolside/laguna-s-2.1-free: {}
+      inclusionai/ling-3.0-flash-sante:free: {}
+      inclusionai/ling-3.1-flash:free: {}
+      meta/muse-spark-1.1: {}
+      meta/muse-spark-1.2: {}
+      meta/muse-spark-1.2-contributor: {}
+      meta/muse-spark-1.3: {}
+      meta/muse-spark-1.3-contributor: {}
+      xai/grok-4.5: {}
+      xai/grok-4.6: {}
+      xai/grok-4.7: {}
+      mistral/mistral-large-4: {}
+    models_discovered: true
+  - name: Local (localhost:20128)
+    base_url: http://localhost:20128/v1
+    key_env: HERMES_CUSTOM_LOCALHOST_20128_API_KEY
+    model: kenari/deepseek-v4-1-flash
+    api_mode: chat_completions
+    models:
+      kenari/agnes-2-5-flash:free: {}
+      kenari/agnes-3-0-flash:free: {}
+      kenari/claude-fable-5: {}
+      kenari/claude-haiku-5-5: {}
+      kenari/claude-opus-4-7: {}
+      kenari/claude-opus-4-8: {}
+      kenari/claude-opus-5: {}
+      kenari/claude-opus-5-5: {}
+      kenari/claude-sonnet-4-6: {}
+      kenari/claude-sonnet-5: {}
+      kenari/claude-sonnet-5-5: {}
+      kenari/deepseek-v4-1-flash: {}
+      kenari/deepseek-v4-flash: {}
+      kenari/deepseek-v4-pro: {}
+      kenari/gemini-3-1-flash-lite: {}
+      kenari/gemini-3-1-flash-tts: {}
+      kenari/gemini-3-1-pro: {}
+      kenari/gemini-3-6-flash: {}
+      kenari/gemini-3-7-flash: {}
+      kenari/gemini-3-8-flash: {}
+      kenari/gemini-omni-flash: {}
+      kenari/gemma-4-31b-it: {}
+      kenari/glm-5-2: {}
+      kenari/glm-5-3: {}
+      kenari/glm-5-3-flash: {}
+      kenari/gpt-5-4: {}
+      kenari/gpt-5-4-mini: {}
+      kenari/gpt-5-5: {}
+      kenari/gpt-5-6-luna: {}
+      kenari/gpt-5-6-sol: {}
+      kenari/gpt-5-6-terra: {}
+      kenari/gpt-6-1-sol: {}
+      kenari/gpt-6-astra: {}
+      kenari/gpt-6-luna: {}
+      kenari/gpt-6-sol: {}
+      kenari/gpt-image-2: {}
+      kenari/gpt-image-2-5-flare: {}
+      kenari/gpt-image-2-5-sunburst: {}
+      kenari/gpt-oss-120b: {}
+      kenari/gpt-oss-20b: {}
+      kenari/grok-4-5: {}
+      kenari/grok-4-6: {}
+      kenari/grok-4-7: {}
+      kenari/grok-imagine-image: {}
+      kenari/grok-imagine-image-2-0: {}
+      kenari/grok-imagine-image-quality: {}
+      kenari/hunyuan-image-alpha: {}
+      kenari/hunyuan-image-v2.0: {}
+      kenari/hunyuan-image-v3.0: {}
+      kenari/hunyuan-image-v3.0-art: {}
+      kenari/hunyuan-video-art: {}
+      kenari/hy3: {}
+      kenari/hy3:free: {}
+      kenari/hy4-preview: {}
+      kenari/kimi-k2-6: {}
+      kenari/kimi-k2-7-code: {}
+      kenari/kimi-k3: {}
+      kenari/kling-v3: {}
+      kenari/kling-video-v3: {}
+      kenari/kokoro-tts: {}
+      kenari/laguna-s-2-1:free: {}
+      kenari/laguna-xs-2-1:free: {}
+      kenari/mimo-v2-5: {}
+      kenari/mimo-v2-5-pro: {}
+      kenari/mimo-v2-5-tts: {}
+      kenari/mimo-v2-6-flash: {}
+      kenari/mimo-v2-6-flash:free: {}
+      kenari/mimo-v2-6-pro: {}
+      kenari/minimax-m2-7: {}
+      kenari/minimax-m2-7-highspeed: {}
+      kenari/minimax-m3: {}
+      kenari/minimax-speech-2-8-hd: {}
+      kenari/minimax-speech-2-8-turbo: {}
+      kenari/muse-spark-1-2: {}
+      kenari/muse-spark-1-2-contributor: {}
+      kenari/muse-spark-1-3: {}
+      kenari/muse-spark-1-3-contributor: {}
+      kenari/muse-spark-1-3-contributor:free: {}
+      kenari/nano-banana: {}
+      kenari/nano-banana-2: {}
+      kenari/nano-banana-2-1: {}
+      kenari/nano-banana-2-lite: {}
+      kenari/nano-banana-pro: {}
+      kenari/nemotron-3-super-120b-a12b: {}
+      kenari/nemotron-3-super-120b-a12b:free: {}
+      kenari/nemotron-3-ultra-550b-a55b: {}
+      kenari/nemotron-3-ultra-550b-a55b:free: {}
+      kenari/north-mini-code:free: {}
+      kenari/qwen3-7-plus: {}
+      kenari/qwen3-8-flash: {}
+      kenari/qwen3-8-max: {}
+      kenari/seedance-2.0: {}
+      kenari/seedance-2.0-fast: {}
+      kenari/seedance-2.5: {}
+      kenari/step-3-7-flash: {}
+      kenari/step-5-preview:free: {}
+      kenari/veo-3.1-lite: {}
+      kenari/whisper-large-v3-turbo: {}
+      kenari/kenari/deepseek-v4-1-flash: {}
+    models_discovered: true
+
+# ── Security ──────────────────────────────────────────────────────────
+# Secret redaction is ON by default — strings that look like API keys,
+# tokens, and passwords are masked in tool output, logs, and chat
+# responses before the model or user ever sees them. Set redact_secrets
+# to false to disable (e.g. when developing the redactor itself).
+# tirith pre-exec scanning is enabled by default when the tirith binary
+# is available. Configure via security.tirith_* keys or env vars
+# (TIRITH_ENABLED, TIRITH_BIN, TIRITH_TIMEOUT, TIRITH_FAIL_OPEN).
+#
+# security:
+#   redact_secrets: true
+#   tirith_enabled: true
+#   tirith_path: "tirith"
+#   tirith_timeout: 5
+#   tirith_fail_open: true
+
+# ── Fallback Model ────────────────────────────────────────────────────
+# Automatic provider failover when primary is unavailable.
+# Uncomment and configure to enable. Triggers on rate limits (429),
+# overload (529), service errors (503), or connection failures.
+#
+# Supported providers:
+#   openrouter   (OPENROUTER_API_KEY)  — routes to any model
+#   openai-codex (OAuth — hermes auth) — OpenAI Codex
+#   nous         (OAuth — hermes auth) — Nous Portal
+#   zai          (ZAI_API_KEY)         — Z.AI / GLM
+#   kimi-coding  (KIMI_API_KEY)        — Kimi / Moonshot
+#   kimi-coding-cn (KIMI_CN_API_KEY)   — Kimi / Moonshot (China)
+#   minimax      (MINIMAX_API_KEY)     — MiniMax
+#   minimax-cn   (MINIMAX_CN_API_KEY)  — MiniMax (China)
+#   bedrock      (AWS IAM / boto3)     — AWS Bedrock (Converse API)
+#
+# For custom OpenAI-compatible endpoints, add base_url and key_env.
+#
+# fallback_model:
+#   provider: openrouter
+#   model: anthropic/claude-sonnet-4

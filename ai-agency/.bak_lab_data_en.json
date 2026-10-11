@@ -1,0 +1,28 @@
+{
+  "tag": "[ AI RADAR ]",
+  "tanggal": "SEPTEMBER 22, 2026 · AI BRIEF",
+  "label_kartu": "WHAT YOU NEED TO KNOW",
+  "poin": [
+    {
+      "judul": "What happened",
+      "isi": "Anthropic is building its own biology lab in the San Francisco area. The plan: Claude guides robots through drug experiments with minimal human involvement. Two supporting tools have already shipped, Claude Science and a hardware standard for controlling lab equipment."
+    },
+    {
+      "judul": "Why it matters",
+      "isi": "Until now AI helped on screen: writing, analyzing, planning. This is agents stepping into physical work, running test steps, measuring, then repeating them in a real lab. Anthropic says the biggest opportunity sits in diseases that still have no treatment."
+    },
+    {
+      "judul": "For your business",
+      "isi": "The same pattern is coming to everyday work: agents handle the repetitive technical steps, people keep the decisions. What to prepare now: a clear workflow and human checkpoints."
+    }
+  ],
+  "headline": [
+    "AI AGENTS ENTER",
+    "THE REAL LAB"
+  ],
+  "headline_caption": "Claude guides robots through drug experiments in Anthropic's own lab.",
+  "subjudul": "Anthropic is building its own biology lab: AI agents run the experiments, humans stay in charge.",
+  "cta": "BOOK A FREE CONSULTATION",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgents #AIforBusiness #Automation #OmniSenseID"
+}

@@ -1,0 +1,27 @@
+{
+  "version": "approved-site-20261005-security-v3",
+  "files": {
+    "assets/apple-touch-icon-180.png": "b999d529f9366996afa8034d1c79224fd014c555cb6b807342e6fe0d7c5eae37",
+    "assets/architect-motion.js": "6de20607d0e8f931dee3818893cb3d8145e8b9e5dd5f76e51fc379024d391609",
+    "assets/architect-rig.js": "63dda7f42ac42d80dafb4fbf714d9b91618429b6905d45247cb39a7ab3b602f5",
+    "assets/architect.css": "11c4bd79cd86f6bec233e069e334be9a89896aa8025b87fcfdb258f47ce47546",
+    "assets/architect.webp": "5fa05129432c58be12265bd338182c2d8ac35b9c977a499b6f575a54d08a094a",
+    "assets/favicon-32.png": "8929f05852172a4decd8cadc51f972c07f3ec6ca1246a97ed9d16796beee55f3",
+    "assets/favicon.ico": "7d389c25f3c4d1b66902df6c4453d1fe1a77dc9c5571323194416ffd53876984",
+    "assets/fonts/inter-400.woff2": "16a099ef7b2aa7e287579821ca842cff23fec38348aa2d80326cff9d1c1dc2dc",
+    "assets/fonts/inter-500.woff2": "a67b1b0ae6f9d438df12b5fc5ad5c182a1b0e235272265dbe881634f838cadfc",
+    "assets/fonts/inter-600.woff2": "51e1a045cc604ba2728633b7c92ddc2a68481fdee6bf16b0517236d1df8a80d1",
+    "assets/fonts/inter-700.woff2": "6c4a45d6ce6a220f28388d2ac4bc45088b94efe8ce0582827e833a897d06e7ed",
+    "assets/fonts/inter-800.woff2": "3cf5cdc4d93669b0d94f548a367cabc5d8bf2732ee3b5f589f50e0a22e01f1d4",
+    "assets/fonts/inter-900.woff2": "f72261271dcf8719815389381496aa56116875c37a94b052ac59c2fcd0e425c6",
+    "assets/konsultasi-ui-v35.js": "54205838079387505417f8a09ff4f0468e903bc85e94463c6891ddda939fa59d",
+    "assets/konsultasi-v3-data.js": "f021b97515f34ceaff4ac9c0e67a0ac54de7a65b84c1548527c25ad4e7bba82f",
+    "assets/konsultasi-v3.js": "1f18ef615940ec57c2b6d8c492d5c66d85f894b8718cadd8c697ff76b279ccf2",
+    "assets/logo-mark-white-256.png": "5728ff1be5576bbe4e0eb6865bfee552e2f1a6fcb62dd97782a1832242b5f7f3",
+    "index.html": "6006561f4d5c1b7a1c9f84bf33fb69b5fdc693d25f088bfc795a29e4d2b95b97",
+    "konsultasi-v3.html": "c079bd4467dc1900e5cf87db83f511855ee1aeeb51c0642d023af1ba44907d7a",
+    "privacy.html": "4f2235b7d2994a8f3e1d8876ecbc539405e67d0402397dd246aa92c6801f8315",
+    "robots.txt": "b4810e2715f8168e7c2bc41a78304eb3f1eac75416d15c91b8c495528ac4709c",
+    "sitemap.xml": "3967c3d8319d7d48f848416e431a7ef6cbebde8413605bf11062c843cccead56"
+  }
+}

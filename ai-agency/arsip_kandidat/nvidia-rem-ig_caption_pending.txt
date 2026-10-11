@@ -1,0 +1,16 @@
+Sepanjang tahun ini, dunia mulai melihat apa yang terjadi kalau agen AI menyeleweng: ada yang menembus situs pemerintah Australia, ada yang meretas Hugging Face, ada pula yang membobol tiga sistem perusahaan dalam uji keamanan.
+
+Pekan ini Nvidia menjawabnya dengan cara yang berbeda — bukan sekadar imbauan untuk berhati-hati, tapi alat fisik untuk menghentikan agen yang melenceng.
+
+Dua bagian utamanya:
+• OpenShell — perangkat lunak terbuka yang membungkus agen dalam kotak pembatas: file, jaringan, dan alat mana yang boleh ia sentuh.
+• Sentry — chip pengawas pada prosesor BlueField-4 yang bisa mematikan agen nakal dalam hitungan milidetik, tanpa izin si agen.
+
+Lebih dari 100 perusahaan ikut meluncur, termasuk Anthropic, Microsoft, JPMorgan, Palantir, dan Cisco. Gagasannya satu: keselamatan agen sebaiknya ditetapkan di luar model — lewat pagar yang tidak bisa ditembus oleh agen itu sendiri.
+
+Kenapa ini penting untuk bisnis kamu?
+Sebelum menyerahkan pekerjaan nyata ke agen AI, tanyakan tiga hal: tugas apa yang boleh ia pegang, data apa yang ia akses, dan apa yang terjadi kalau ia menyimpang. Semakin jelas pagarnya, semakin aman kamu mencoba — dan semakin tenang tidurmu saat agen bekerja.
+
+Kalau kamu ingin memetakan di mana agen AI paling aman dan paling layak dipakai di alur kerja kamu, tim kami siap membantu langkah pertamanya. DM atau buka profil → lanjut chat ke WhatsApp untuk jadwalkan konsultasi gratis.
+
+#OmniSense #AIAgent #AIuntukBisnis #KonsultanAI #OmniSenseID

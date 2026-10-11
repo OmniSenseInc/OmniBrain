@@ -1,0 +1,28 @@
+{
+  "tag": "[ RADAR AI ]",
+  "tanggal": "21 SEPTEMBER 2026 · KABAR AI",
+  "label_kartu": "YANG PERLU KAMU TAHU",
+  "poin": [
+    {
+      "judul": "Apa yang terjadi",
+      "isi": "Google membuka kode AX (lisensi Apache-2.0) — pengatur tugas untuk agen AI. Kamu menulis satu berkas perintah, lalu sistem menyiapkan kotak terisolasi, menyambungkan repositori, dan menjalankan tugasnya. Cara pakainya sengaja dibuat mirip Kubernetes; hari ini proyeknya naik ke halaman depan Hacker News, dengan sekitar 3.000 bintang di repositori Google."
+    },
+    {
+      "judul": "Kenapa ini penting",
+      "isi": "Ada empat bagian yang bisa kamu atur: kotak terisolasi dengan batas CPU dan memori; ruang kerja yang sudah tersambung ke repositori, server MCP, dan paket skill; gerbang jaringan dengan daftar alamat yang boleh diakses; serta model mana yang dipakai. Agen juga bisa dijeda lalu dilanjutkan, dan kamu bisa masuk untuk melihat apa yang sedang dikerjakannya. Catatan jujur: Google menyebut konsepnya masih berubah dan bisa ada perubahan besar sebelum versi stabil."
+    },
+    {
+      "judul": "Untuk bisnis kamu",
+      "isi": "Ini menjawab dua pertanyaan yang selalu muncul sebelum agen masuk ke pekerjaan nyata: apa saja yang boleh diakses, dan siapa yang bisa mengawasi. Karena kodenya terbuka dan bisa dijalankan di infrastruktur sendiri, agen tidak lagi jadi kotak hitam yang harus dipercaya begitu saja."
+    }
+  ],
+  "headline": [
+    "AGEN AI KINI PUNYA",
+    "MESINNYA SENDIRI"
+  ],
+  "headline_caption": "Google membuka AX: cara menjalankan agen AI secara rapi, terisolasi, dan bisa diawasi",
+  "subjudul": "Google membuka AX — agen berjalan di kotak terisolasi, jaringan dibatasi daftar izin, mesinnya kamu tentukan.",
+  "cta": "JADWALKAN KONSULTASI GRATIS",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #KecerdasanBuatan #BisnisIndonesia"
+}

@@ -1,0 +1,16 @@
+Selama ini AI bekerja di layar. Menulis, menganalisis, menyusun rencana.
+
+Pekan ini batas itu bergeser. Anthropic membangun laboratorium biologi sendiri di kawasan San Francisco, dan Claude memandu robot menjalankan eksperimen obat di dalamnya. Bukan simulasi komputer, tapi percobaan sungguhan di meja lab.
+
+Dua alat pendukungnya sudah dilepas lebih dulu: Claude Science, ruang kerja AI untuk peneliti, dan standar perangkat keras supaya peralatan lab bisa dikendalikan langsung oleh AI. Pengawasan manusia tetap ada, kata mereka.
+
+Yang menarik untuk dicatat:
+• Sasaran utamanya penyakit yang sampai kini belum punya obat, termasuk desain antibodi rumit yang sulit dikerjakan manual.
+• Polanya makin jelas: agen mengerjakan langkah teknis yang berulang, manusia memegang keputusan.
+• Ini bukan soal menggantikan orang, tapi memindahkan tenaga ke bagian yang benar-benar butuh pertimbangan.
+
+Pertanyaan untuk bisnis kamu: langkah rutin mana yang sebenarnya bisa dijalankan agen, dan di titik mana kamu perlu memeriksa hasilnya?
+
+Kalau belum yakin harus mulai dari mana, DM / buka profil → lanjut chat ke WhatsApp. Kami bantu petakan dulu, gratis.
+
+#OmniSense #AIAgent #AIuntukBisnis #OtomatisasiAI #BisnisIndonesia

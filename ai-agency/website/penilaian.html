@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Penilaian Kesiapan AI — OmniSense</title>
+<meta name="description" content="Penilaian kesiapan digitalisasi & AI untuk bisnis Anda: 15 pertanyaan di 8 dimensi berbobot. Isi sendiri, jawab dengan tulisan Anda sendiri, skor keluar di tempat." />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://omnisense.id/penilaian.html" />
+<meta name="theme-color" content="#080808" />
+<meta property="og:title" content="Penilaian Kesiapan AI — OmniSense" />
+<meta property="og:description" content="15 pertanyaan, 8 dimensi berbobot. Jawab dengan kata-kata Anda sendiri — skor dan celah utama keluar di tempat." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://omnisense.id/penilaian.html" />
+<meta property="og:site_name" content="OmniSense" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:image" content="https://omnisense.id/assets/og-omnisense.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png" />
+<link rel="stylesheet" href="assets/penilaian.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip" href="#main">Lewati ke isi</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="OmniSense, kembali ke beranda">
+      <img src="assets/logo-mark-white-256.png" alt="" width="26" height="26" />
+      <span>omnisense</span>
+    </a>
+    <nav class="nav-links" aria-label="Navigasi">
+      <a class="nav-link" href="index.html">Beranda</a>
+      <a class="nav-link" href="index.html#dimensi">Dimensi</a>
+      <a class="nav-link" href="index.html#faq">Pertanyaan</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <!-- ================= KEPALA ================= -->
+    <div class="top">
+      <span class="eyebrow"><span class="pip"></span>Penilaian mandiri</span>
+      <h1>Ukur kesiapan bisnis Anda, <span class="accent">isi sendiri</span></h1>
+      <p class="lede">
+        Lima belas pertanyaan di delapan dimensi berbobot. Anda boleh menjawab lewat pilihan yang tersedia,
+        atau menuliskan keadaan Anda dengan kata-kata sendiri &mdash; keduanya bisa dibaca.
+        Skor dihitung di perangkat Anda, dan tidak ada jawaban yang terkirim ke mana pun sampai Anda menekan tombol kirim.
+      </p>
+      <div class="meta">
+        <span class="chip"><b>15</b> pertanyaan</span>
+        <span class="chip"><b>8</b> dimensi berbobot</span>
+        <span class="chip">sekitar <b>5&ndash;7</b> menit</span>
+        <span class="chip">tanpa biaya</span>
+      </div>
+    </div>
+
+    <noscript>
+      <div class="card"><div class="card-body">
+        Halaman ini butuh JavaScript aktif untuk menghitung skornya. Kalau tidak memungkinkan,
+        sampaikan saja kondisi usaha Anda lewat WhatsApp 0888 0964 0700 &mdash; tim kami yang menghitungkannya bersama Anda.
+      </div></div>
+    </noscript>
+
+    <!-- ================= IDENTITAS ================= -->
+    <section class="card" id="kartu-identitas" aria-labelledby="judul-identitas">
+      <div class="card-head">
+        <h2 id="judul-identitas">Sebelum mulai</h2>
+        <p>Dua hal ini wajib: nama bisnis dan nomor yang bisa dihubungi. Sisanya boleh dikosongkan.
+           Nomor dipakai tim kami untuk menghubungi Anda soal hasilnya &mdash; boleh nomor bisnis maupun WhatsApp pribadi.</p>
+      </div>
+      <div class="card-body">
+        <div class="grid2">
+          <div class="field">
+            <label for="inBisnis">Nama bisnis <span class="req" aria-hidden="true">*</span></label>
+            <input id="inBisnis" name="bisnis" type="text" autocomplete="organization"
+                   placeholder="Contoh: Kopi Senja, Bandung" aria-describedby="errBisnis" />
+            <p class="err" id="errBisnis" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="inKontak">Nomor telepon / WhatsApp <span class="req" aria-hidden="true">*</span></label>
+            <input id="inKontak" name="kontak" type="tel" inputmode="tel" autocomplete="tel"
+                   placeholder="Contoh: 0812 3456 7890" aria-describedby="errKontak ketKontak" />
+            <p class="err" id="errKontak" role="alert"></p>
+            <p class="ket" id="ketKontak">Boleh nomor bisnis atau WhatsApp pribadi. Format 08xx, +62, atau 62.</p>
+          </div>
+          <div class="field">
+            <label for="inNama">Nama Anda <span class="ket" style="display:inline">(opsional)</span></label>
+            <input id="inNama" name="nama" type="text" autocomplete="name" placeholder="Nama pengisi" />
+          </div>
+          <div class="field">
+            <label for="inJenis">Jenis usaha <span class="ket" style="display:inline">(opsional)</span></label>
+            <input id="inJenis" name="jenis" type="text" placeholder="Contoh: kafe, retail, jasa logistik" />
+          </div>
+        </div>
+        <p class="form-note">
+          Data ini hanya tersimpan di perangkat Anda sampai Anda mengirimnya. Kami tidak memasang pelacak,
+          dan tidak ada isian yang dikirim otomatis ke server mana pun.
+        </p>
+        <div class="form-act">
+          <button class="btn btn-primary" type="button" id="btnMulai">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l9 -9" /></svg>
+            Mulai sesi penilaian
+          </button>
+          <span class="hint" id="hintMulai">Isi dua kolom bertanda * untuk membuka pertanyaannya.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SESI PERTANYAAN ================= -->
+    <section class="card" id="kartu-sesi" hidden aria-labelledby="judul-sesi">
+      <div class="card-head">
+        <h2 id="judul-sesi">Sesi penilaian Anda</h2>
+        <p>Sesi ini berjalan di perangkat Anda. Anda bisa menutup halaman dan melanjutkannya nanti selama
+           belum menghapus data peramban.</p>
+      </div>
+
+      <div class="prog">
+        <span class="prog-l">
+          <span id="penCount">Terjawab 0 dari 15</span>
+          <span class="prog-bar" aria-hidden="true"><i id="penBar"></i></span>
+        </span>
+        <span class="sesi-id" id="sesiId">&mdash;</span>
+        <button class="link-btn" type="button" id="btnReset">Ulangi dari awal</button>
+      </div>
+
+      <ol class="q-list" id="qList"></ol>
+
+      <div class="cek" id="penCek" hidden aria-live="polite"></div>
+
+      <div class="aksi">
+        <button class="btn btn-primary" type="button" id="btnHitung" disabled>Lihat skor saya</button>
+        <span class="hint" id="hintHitung">Masih ada 15 pertanyaan yang belum dijawab.</span>
+      </div>
+    </section>
+
+    <!-- ================= HASIL ================= -->
+    <section class="card hasil" id="penHasil" hidden aria-live="polite">
+      <div class="hasil-top">
+        <div class="disc">
+          <canvas id="phCanvas" width="164" height="164" role="img" aria-label="Cakram skor kesiapan"></canvas>
+          <div class="disc-num" id="phNum">0<span>/100</span></div>
+        </div>
+        <div>
+          <span class="band"><span class="pip"></span><span id="phBand">&mdash;</span></span>
+          <h2 id="phJudul">Hasil penilaian Anda</h2>
+          <p class="arti" id="phArtis">&mdash;</p>
+          <div class="langkah"><b>Langkah berikutnya</b><span id="phLangkah">&mdash;</span></div>
+        </div>
+      </div>
+
+      <div class="hasil-mid">
+        <p class="lab">Delapan dimensi, urut dari yang paling lemah</p>
+        <div class="rows" id="phRows"></div>
+      </div>
+
+      <div class="gap" id="phGap"></div>
+
+      <div class="hasil-aksi">
+        <a class="btn btn-primary" id="phWa" href="https://wa.me/6288809640700" target="_blank" rel="noopener">Kirim hasil ke tim OmniSense</a>
+        <button class="link-btn" type="button" id="btnSalin">Salin ringkasan</button>
+        <button class="link-btn" type="button" onclick="window.print()">Cetak / simpan PDF</button>
+        <p class="note">Hasil ini titik awal diskusi, bukan penilaian mutu bisnis Anda. Yang paling berguna justru membahas celah yang paling mahal.</p>
+        <p class="limit" id="phLimit" hidden></p>
+        <p class="ringkas" id="phRingkas"></p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>OmniSense &middot; konsultan digitalisasi &amp; AI untuk bisnis Indonesia</span>
+    <span>
+      <a href="index.html">Beranda</a> &middot;
+      <a href="privacy.html">Privasi</a> &middot;
+      <a href="https://wa.me/6288809640700" target="_blank" rel="noopener">WhatsApp 0888 0964 0700</a>
+    </span>
+  </div>
+</footer>
+
+<script src="assets/penilaian-data.js"></script>
+<script>
+/* ============================================================
+   Sesi penilaian mandiri.
+   - 15 pertanyaan, 8 dimensi berbobot.
+   - Jawaban boleh dipilih, boleh ditulis sendiri (dibaca kata kunci).
+   - Semua hitungan jalan di perangkat pengunjung.
+   Rumus WAJIB sama dengan kalkulator_kesiapan.py mode SITUS.
+   ============================================================ */
+(function(){
+  var D = window.__PENILAIAN_SITUS__;
+  if (!D) return;
+
+  var $ = function(s, c){ return (c || document).querySelector(s); };
+  var list = $('#qList');
+  if (!list) return;
+
+  var JAWAB = {};          /* kode -> nilai 1..5 */
+  var TULIS = {};          /* kode -> teks bebas yang diketik pengunjung */
+  var SUMBER = {};         /* kode -> 'pilih' | 'tulis' */
+  var YAKIN = {};          /* kode -> 'yakin' | 'ragu' | 'tidak_tahu' */
+  var IDENT = { bisnis:'', kontak:'', nama:'', jenis:'' };
+  var SESI = '';
+
+  var K_JAWAB  = 'omnisense_situs_jawab_v2';
+  var K_TULIS  = 'omnisense_situs_tulis_v2';
+  var K_YAKIN  = 'omnisense_situs_yakin_v2';
+  var K_IDENT  = 'omnisense_situs_ident_v2';
+  var K_SESI   = 'omnisense_situs_sesi_v2';
+
+  var SOAL = D.soal;
+  var N = SOAL.length;
+  var hasilTampil = false;
+
+  /* ---------- utilitas ---------- */
+  function norm(s){
+    return (s || '').toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+  function band(p){
+    p = Math.round(p * 10 + 1e-9) / 10;
+    for (var i = 0; i < D.band.length; i++){ if (p >= D.band[i].min) return D.band[i]; }
+    return D.band[D.band.length - 1];
+  }
+
+  /* ---------- mesin baca tulisan bebas ----------
+     Empat aturan supaya bacaan tidak salah tafsir:
+
+     1. Frasa terpanjang dipakai lebih dulu, dan tiap kata hanya boleh dipakai
+        satu frasa. Tanpa ini, kata "tertulis" (nilai 5) ikut cocok di dalam
+        "belum tertulis" (nilai 3), dan orang yang jujur diberi nilai tinggi.
+     2. Frasa yang sudah mengandung kata sangkal di awal ("belum tertulis",
+        "tidak ada") dihitung apa adanya — bukan dianggap tersangkal lagi.
+     3. Kata sangkal di depan frasa bernilai 3-5 ("belum punya rencana
+        tertulis") menurunkan klaim itu jadi bukti keadaan awal.
+     4. Kalau bukti teratas seri atau tidak ada, hasilnya null — tidak menebak. */
+  var NEGASI = ['belum', 'tidak', 'bukan', 'tanpa', 'nggak', 'gak', 'kagak',
+                'engga', 'enggak'];
+
+  function normalKata(s){
+    var x = norm(s)
+      .replace(/\b(belom|blm|blum)\b/g, 'belum')
+      .replace(/\b(nggak|gak|kagak|engga|enggak|ga|gk)\b/g, 'tidak')
+      .replace(/\btdk\b/g, 'tidak')
+      .replace(/\btak\b/g, 'tidak');
+    /* singkatan umum orang Indonesia */
+    x = x.replace(/\btidak (tau|tw|tao)\b/g, 'tidak tahu')
+         .replace(/\bbelum (tau|tw)\b/g, 'belum tahu');
+    /* buang kata pengisi supaya "banyak yang terlewat" tetap cocok
+       dengan kata kunci "banyak terlewat". Jangan buang kata yang
+       mengubah arti (mis. "aja", "saja", "kalau", "tidak"). */
+    x = x.replace(/\b(yang|yg|itu|tuh|sih|deh|mah|kok|loh|dong|nih)\b/g, ' ');
+    /* "pun" sering muncul sebagai partikel ("itu pun saya sendiri") dan
+       memecah frasa kunci. Dibuang supaya "satu orang pun saya sendiri"
+       tetap cocok dengan "satu orang saya sendiri". */
+    x = x.replace(/\bpun\b/g, ' ');
+    return x.replace(/\s+/g, ' ').trim();
+  }
+
+  function bacaKunci(soal, teks){
+    var kata = normalKata(teks).split(' ').filter(function(w){ return w; });
+    if (kata.length < 2) return { nilai:null, alasan:'kosong', bukti:[] };
+    var t = ' ' + kata.join(' ') + ' ';
+
+    /* posisi kata yang kena sangkalan dari kata sebelumnya */
+    var kena = {};
+    kata.forEach(function(w, i){
+      if (NEGASI.indexOf(w) === -1) return;
+      for (var j = i + 1; j <= i + 3 && j < kata.length; j++){
+        if (NEGASI.indexOf(kata[j]) !== -1) continue;
+        kena[j] = true;
+      }
+    });
+
+    var skor = { '1':0, '2':0, '3':0, '4':0, '5':0 };
+    var bukti = { '1':[], '2':[], '3':[], '4':[], '5':[] };
+    /* kumpulkan frasa semua nilai, terpanjang lebih dulu */
+    var frasa = [];
+    [1,2,3,4,5].forEach(function(n){
+      (soal.k[String(n)] || []).forEach(function(fr){
+        var f = normalKata(fr);
+        if (f) frasa.push({ n:n, f:f, jml:f.split(' ').length });
+      });
+    });
+    frasa.sort(function(a, b){ return b.jml - a.jml; });
+
+    var terpakai = {};
+    frasa.forEach(function(o){
+      var pola = ' ' + o.f + ' ';
+      var dari = 0;
+      while (true){
+        var idx = t.indexOf(pola, dari);
+        if (idx === -1) break;
+        dari = idx + 1;
+
+        var awal = t.slice(0, idx).split(' ').filter(function(w){ return w; }).length;
+        var akhir = awal + o.jml - 1;
+        var tabrakan = false;
+        for (var k = awal; k <= akhir; k++){ if (terpakai[k]) { tabrakan = true; break; } }
+        if (tabrakan) continue;
+        for (var k2 = awal; k2 <= akhir; k2++) terpakai[k2] = true;
+
+        /* frasa yang memang dibuka kata sangkal: hitung apa adanya */
+        var bukaSangkal = NEGASI.indexOf(o.f.split(' ')[0]) !== -1;
+        var tersangkal = !bukaSangkal && (kena[awal] || kena[awal + 1]);
+
+        if (tersangkal && o.n >= 3){
+          /* klaim maju yang disangkal -> bukti keadaan awal */
+          skor['1'] += o.jml;
+          var tanda = '(bukan) ' + o.f;
+          if (bukti['1'].indexOf(tanda) === -1) bukti['1'].push(tanda);
+        } else {
+          skor[String(o.n)] += o.jml;
+          if (bukti[String(o.n)].indexOf(o.f) === -1) bukti[String(o.n)].push(o.f);
+        }
+      }
+    });
+
+    var urut = [1,2,3,4,5].slice().sort(function(a, b){ return skor[b] - skor[a]; });
+    var atas = urut[0], kedua = urut[1];
+    if (skor[atas] === 0) return { nilai:null, alasan:'tidak_ada_bukti', bukti:[] };
+    if (skor[atas] === skor[kedua]) return { nilai:null, alasan:'seri', bukti:[atas, kedua] };
+    return { nilai:atas, alasan:'terbaca', bukti:bukti[atas], kedua:kedua, skor:skor };
+  }
+
+  /* ---------- cadangan: kemiripan kata dengan teks pilihan ----------
+     Kalau daftar kata kunci tidak menemukan bukti (null), bandingkan tulisan
+     pengunjung dengan teks tiap pilihan memakai irisan kata bermakna
+     (Jaccard). Dipakai HANYA sebagai cadangan, dan hanya kalau pemenangnya
+     unggul jelas — kalau dua pilihan hampir sama miripnya, kita tidak menebak.
+     Ini yang membuat orang bisa menulis dengan kalimatnya sendiri, bukan
+     harus memakai kata yang persis sama dengan pilihan. */
+  var STOPWORD = ['yang','dan','atau','di','ke','dari','untuk','dengan','pada',
+    'ada','itu','ini','saya','kami','kita','anda','mereka','dia','tidak',
+    'bisa','sudah','masih','juga','akan','kalau','jika','karena','supaya',
+    'agar','oleh','dalam','adalah','saja','lebih','paling','sangat','cukup',
+    'belum','hanya','cuma','punya','tapi','tetapi','namun','saat','waktu',
+    'setiap','semua','banyak','orang','nya','lah','kah'];
+
+  function kataPenting(s){
+    return normalKata(s).split(' ')
+      .filter(function(w){ return w.length > 2 && STOPWORD.indexOf(w) === -1; })
+      .map(function(w){ return w.replace(/(nya|kah|lah|pun)$/, ''); })
+      .filter(function(w){ return w.length > 2; });
+  }
+
+  function mirip(a, b){
+    var ka = kataPenting(a), kb = kataPenting(b);
+    if (!ka.length || !kb.length) return 0;
+    var himp = {};
+    kb.forEach(function(w){ himp[w] = true; });
+    var sama = 0;
+    ka.forEach(function(w){ if (himp[w]) sama++; });
+    /* dibagi jumlah kata pilihan (bukan gabungan): pengunjung biasanya
+       menulis lebih panjang daripada teks pilihan yang ringkas */
+    return sama / kb.length;
+  }
+
+  function bacaMirip(soal, teks){
+    var nilai = [1,2,3,4,5].map(function(n){
+      var opsi = soal.o[n - 1] || '';
+      return { n:n, m:mirip(teks, opsi) };
+    }).sort(function(a, b){ return b.m - a.m; });
+    var atas = nilai[0], kedua = nilai[1];
+    if (atas.m < 0.34) return null;
+    if (atas.m - kedua.m < 0.15) return null;   /* terlalu rapat -> jangan menebak */
+    return { nilai:atas.n, alasan:'mirip', m:atas.m };
+  }
+
+  /* ---------- penguat: naikkan ke 5 kalau frasa tingkat-5 benar-benar ada ----------
+     Masalah nyata: frasa tingkat rendah sering menyerobot tingkat tinggi.
+     Contoh "ada panduan tertulis lengkap" terbaca 3 karena "ada panduan"
+     (tingkat 4/3) lebih dulu cocok, padahal kata "lengkap" hanya muncul di
+     pilihan tingkat 5.
+
+     Aturan: kalau SEMUA kata sebuah frasa tingkat-5 muncul utuh di tulisan
+     pengunjung, naikkan ke 5. Sengaja ketat (semua kata, termasuk kata
+     penguat seperti "rutin", "lengkap", "otomatis") supaya "sangat semangat"
+     tidak naik hanya karena ada kata "semangat". */
+  function naikPenguat(soal, teks, nilai){
+    if (nilai >= 5) return nilai;
+    var kata = normalKata(teks).split(' ').filter(function(w){ return w; });
+    if (kata.length < 2) return nilai;
+    var ada = {};
+    kata.forEach(function(w){ ada[w] = true; });
+    var frasa5 = (soal.k && soal.k['5']) || [];
+    for (var i = 0; i < frasa5.length; i++){
+      var f = normalKata(frasa5[i]).split(' ').filter(function(w){ return w.length > 2; });
+      /* Butuh minimal 2 kata. Frasa satu kata seperti "lengkap" terlalu lemah:
+         "catatan lepas tidak lengkap" bisa naik ke 5 hanya karena ada kata
+         "lengkap", padahal artinya justru sebaliknya. */
+      if (f.length < 2) continue;
+      var semua = true;
+      for (var j = 0; j < f.length; j++){ if (!ada[f[j]]) { semua = false; break; } }
+      if (semua) return 5;
+    }
+    return nilai;
+  }
+
+  /* Gerbang utama pembacaan tulisan bebas.
+     1. Coba daftar kata kunci dulu (paling tepat kalau katanya cocok).
+     2. Kalau kosong/seri, coba kemiripan kata dengan teks pilihan.
+     3. Kalau masih ragu, kembalikan null supaya pengunjung diminta memilih
+        sendiri — lebih baik mengaku tidak paham daripada salah nilai. */
+  function bacaTeks(soal, teks){
+    var h = bacaKunci(soal, teks);
+    if (h && h.nilai){
+      var naik = naikPenguat(soal, teks, h.nilai);
+      if (naik !== h.nilai) return { nilai:naik, alasan:'penguat', bukti:h.bukti };
+      return h;
+    }
+    /* Kunci ragu (seri / tidak ada bukti). Kalau tulisan memuat SEMUA kata
+       sebuah frasa tingkat-5, itu bukti kuat -> 5. Ini yang menyelamatkan
+       kalimat seperti "sudah tertulis ada targetnya" yang tadinya seri
+       4 lawan 5. */
+    if (naikPenguat(soal, teks, 1) === 5) return { nilai:5, alasan:'penguat', bukti:[] };
+    var m = bacaMirip(soal, teks);
+    if (m) return { nilai:m.nilai, alasan:'mirip', bukti:[], m:m.m, kunci:h };
+    return h || { nilai:null, alasan:'kosong', bukti:[] };
+  }
+
+  /* ---------- bangun daftar pertanyaan ---------- */
+  SOAL.forEach(function(s, i){
+    var li = document.createElement('li');
+    li.className = 'q';
+    li.setAttribute('data-kode', s.kode);
+
+    var top = document.createElement('div');
+    top.className = 'q-top';
+    top.innerHTML = '<span class="q-no">' + ('0' + (i + 1)).slice(-2) + '</span>' +
+                    '<h3 class="q-t" id="qt-' + s.kode + '"></h3>';
+    top.querySelector('.q-t').textContent = s.t;
+
+    var qd = document.createElement('p');
+    qd.className = 'q-d';
+    qd.textContent = s.p;
+
+    var dm = document.createElement('p');
+    dm.className = 'q-dim';
+    var dim = D.dimensi.filter(function(x){ return x.kode === s.dim; })[0];
+    dm.textContent = s.nama + ' \u00b7 bobot ' + Math.round(dim.bobot * 100) + '%';
+
+    var opts = document.createElement('div');
+    opts.className = 'opts';
+    opts.setAttribute('role', 'radiogroup');
+    opts.setAttribute('aria-labelledby', 'qt-' + s.kode);
+    s.o.forEach(function(teks, j){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'opt';
+      b.setAttribute('role', 'radio');
+      b.setAttribute('aria-checked', 'false');
+      b.setAttribute('data-nilai', j + 1);
+      b.setAttribute('data-teks', teks);
+      b.tabIndex = j === 0 ? 0 : -1;
+      b.innerHTML = '<span class="n">' + (j + 1) + '</span><span>' + teks + '</span>';
+      opts.appendChild(b);
+    });
+
+    /* --- bagian tulis sendiri --- */
+    var tulis = document.createElement('div');
+    tulis.className = 'tulis';
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'tulis-toggle';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', 'tw-' + s.kode);
+    toggle.innerHTML = '<span aria-hidden="true">&#9998;</span><span>Atau tulis sendiri</span>';
+    var box = document.createElement('div');
+    box.className = 'tulis-box';
+    box.id = 'tw-' + s.kode;
+    box.hidden = true;
+    var ta = document.createElement('textarea');
+    ta.setAttribute('aria-label', 'Tulis jawaban Anda untuk pertanyaan nomor ' + (i + 1));
+    ta.placeholder = 'Tulis keadaan sebenarnya di tempat Anda. Contoh: "' + (s.o[2] || '') + '"';
+    var baca = document.createElement('p');
+    baca.className = 'baca kosong';
+    baca.setAttribute('aria-live', 'polite');
+    box.appendChild(ta); box.appendChild(baca);
+    tulis.appendChild(toggle); tulis.appendChild(box);
+
+    var box2 = document.createElement('div');
+    box2.appendChild(top); box2.appendChild(qd); box2.appendChild(dm);
+    box2.appendChild(opts); box2.appendChild(tulis);
+    li.appendChild(box2);
+    list.appendChild(li);
+
+    toggle.addEventListener('click', function(){
+      var buka = box.hidden;
+      box.hidden = !buka;
+      toggle.setAttribute('aria-expanded', buka ? 'true' : 'false');
+      if (buka) ta.focus();
+    });
+
+    ta.addEventListener('input', function(){
+      var teks = ta.value.trim();
+      if (teks.length < 3){ delete TULIS[s.kode]; if (SUMBER[s.kode] === 'tulis'){ delete JAWAB[s.kode]; delete SUMBER[s.kode]; } }
+      else {
+        TULIS[s.kode] = ta.value;
+        var h = bacaTeks(s, teks);
+        if (h.nilai){
+          JAWAB[s.kode] = h.nilai;
+          SUMBER[s.kode] = 'tulis';
+          setOpt(s.kode, h.nilai, opts, true);
+          li.classList.add('jawab');
+          baca.className = 'baca ok';
+          baca.innerHTML = '<b>Terbaca: ' + h.nilai + '/5</b> &mdash; ' + s.o[h.nilai - 1] +
+                           '. <span style="color:var(--slate-dim)">Klik pilihan di atas kalau bacaan ini keliru.</span>';
+        } else {
+          if (SUMBER[s.kode] === 'tulis'){ delete JAWAB[s.kode]; delete SUMBER[s.kode]; li.classList.remove('jawab'); }
+          setOpt(s.kode, 0, opts, true);
+          baca.className = 'baca ragu';
+          baca.innerHTML = h.alasan === 'seri'
+            ? '<b>Belum bisa dipastikan.</b> Tulisan Anda bisa dibaca sebagai dua keadaan berbeda. Pilih salah satu pilihan di atas, atau tambahkan keterangan.'
+            : '<b>Belum bisa dibaca.</b> Tambahkan sedikit keterangan (misalnya: sudah pakai aplikasi apa, siapa yang mencatat), atau pilih salah satu pilihan di atas.';
+        }
+      }
+      simpan(); perbarui();
+    });
+  });
+
+  function setOpt(kode, nilai, grup, diam){
+    Array.prototype.forEach.call(grup.querySelectorAll('.opt'), function(b){
+      var on = +b.getAttribute('data-nilai') === nilai;
+      b.setAttribute('aria-checked', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+    });
+    if (!diam) { /* tabindex grup lain tidak diubah */ }
+  }
+
+  /* ---------- pilih lewat tombol ---------- */
+  list.querySelectorAll('.q').forEach(function(li){
+    var kode = li.getAttribute('data-kode');
+    var grup = li.querySelector('.opts');
+    Array.prototype.forEach.call(grup.querySelectorAll('.opt'), function(b){
+      b.addEventListener('click', function(){
+        var nilai = +b.getAttribute('data-nilai');
+        JAWAB[kode] = nilai;
+        SUMBER[kode] = 'pilih';
+        setOpt(kode, nilai, grup);
+        li.classList.add('jawab');
+        /* tulisan lama tidak dibuang, tapi tidak lagi menentukan skor */
+        var baca = li.querySelector('.baca');
+        if (baca && TULIS[kode]){
+          baca.className = 'baca kosong';
+          baca.innerHTML = 'Tulisan Anda disimpan sebagai keterangan; yang dihitung sekarang pilihan di atas.';
+        }
+        simpan(); perbarui();
+      });
+      b.addEventListener('keydown', function(e){
+        var tombol = Array.prototype.slice.call(grup.querySelectorAll('.opt'));
+        var idx = tombol.indexOf(b), n = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = (idx + 1) % tombol.length;
+        if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   n = (idx - 1 + tombol.length) % tombol.length;
+        if (n === null) return;
+        e.preventDefault(); tombol[n].focus();
+      });
+    });
+  });
+
+  /* ---------- keyakinan ---------- */
+  list.querySelectorAll('.q').forEach(function(li){
+    var kode = li.getAttribute('data-kode');
+    var box = li.querySelector('.q-top').parentNode;
+    var bar = document.createElement('div');
+    bar.className = 'pen-key';
+    var lab = document.createElement('span');
+    lab.textContent = 'Seberapa yakin?';
+    bar.appendChild(lab);
+    (D.keyakinan || []).forEach(function(k){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pen-kbtn';
+      b.setAttribute('data-yakin', k.kode);
+      b.setAttribute('aria-pressed', 'false');
+      b.title = k.arti;
+      b.textContent = k.label;
+      b.addEventListener('click', function(){
+        if (YAKIN[kode] === k.kode) delete YAKIN[kode]; else YAKIN[kode] = k.kode;
+        Array.prototype.forEach.call(bar.querySelectorAll('.pen-kbtn'), function(x){
+          x.setAttribute('aria-pressed', x.getAttribute('data-yakin') === YAKIN[kode] ? 'true' : 'false');
+        });
+        simpan(); gambarCek();
+      });
+      bar.appendChild(b);
+    });
+    box.appendChild(bar);
+  });
+
+  /* ---------- aturan konsistensi ---------- */
+  var ATURAN = (D.aturan_konsistensi && D.aturan_konsistensi.aturan) || [];
+  function cekKonsistensi(){
+    return ATURAN.filter(function(a){
+      return Object.keys(a.jika).every(function(k){
+        var v = JAWAB[k];
+        return v && a.jika[k].indexOf(v) !== -1;
+      });
+    });
+  }
+  function gambarCek(){
+    var kotak = $('#penCek');
+    if (!kotak) return;
+    var kena = cekKonsistensi();
+    if (!kena.length){ kotak.hidden = true; kotak.innerHTML = ''; return; }
+    kotak.hidden = false;
+    kotak.innerHTML = '<h4>Ada ' + (kena.length === 1 ? 'satu' : kena.length) + ' hal yang perlu ditinjau</h4><ul>' +
+      kena.map(function(a){
+        var dims = Object.keys(a.jika).map(function(k){
+          var s = SOAL.filter(function(x){ return x.kode === k; })[0];
+          return s ? s.nama : k;
+        }).filter(function(v, i, arr){ return arr.indexOf(v) === i; }).join(' &middot; ');
+        return '<li><b>' + dims + '</b> &mdash; ' + a.pesan + '</li>';
+      }).join('') + '</ul>';
+  }
+
+  /* ---------- simpan & muat ---------- */
+  function simpan(){
+    try {
+      localStorage.setItem(K_JAWAB, JSON.stringify(JAWAB));
+      localStorage.setItem(K_TULIS, JSON.stringify(TULIS));
+      localStorage.setItem(K_YAKIN, JSON.stringify(YAKIN));
+      localStorage.setItem(K_IDENT, JSON.stringify(IDENT));
+      localStorage.setItem(K_SESI, SESI);
+    } catch(e){}
+  }
+  function muat(){
+    try {
+      var s = localStorage.getItem(K_JAWAB);
+      if (s){
+        var o = JSON.parse(s);
+        Object.keys(o).forEach(function(k){
+          var li = list.querySelector('[data-kode="' + k + '"]');
+          if (!li) return;
+          var grup = li.querySelector('.opts');
+          var b = li.querySelector('.opt[data-nilai="' + o[k] + '"]');
+          if (b){ JAWAB[k] = o[k]; SUMBER[k] = 'pilih'; setOpt(k, o[k], grup); li.classList.add('jawab'); }
+        });
+      }
+      var st = localStorage.getItem(K_TULIS);
+      if (st){
+        TULIS = JSON.parse(st) || {};
+        Object.keys(TULIS).forEach(function(k){
+          var li = list.querySelector('[data-kode="' + k + '"]');
+          if (!li) return;
+          var box = li.querySelector('.tulis-box');
+          var ta = box.querySelector('textarea');
+          ta.value = TULIS[k];
+          box.hidden = false;
+          var tg = li.querySelector('.tulis-toggle');
+          tg.setAttribute('aria-expanded', 'true');
+        });
+      }
+      var sy = localStorage.getItem(K_YAKIN);
+      if (sy){
+        YAKIN = JSON.parse(sy) || {};
+        Object.keys(YAKIN).forEach(function(k){
+          var li = list.querySelector('[data-kode="' + k + '"]');
+          if (!li) return;
+          Array.prototype.forEach.call(li.querySelectorAll('.pen-kbtn'), function(x){
+            x.setAttribute('aria-pressed', x.getAttribute('data-yakin') === YAKIN[k] ? 'true' : 'false');
+          });
+        });
+      }
+      var si = localStorage.getItem(K_IDENT);
+      if (si){
+        IDENT = JSON.parse(si) || IDENT;
+        $('#inBisnis').value = IDENT.bisnis || '';
+        $('#inKontak').value = IDENT.kontak || '';
+        $('#inNama').value   = IDENT.nama || '';
+        $('#inJenis').value  = IDENT.jenis || '';
+      }
+      SESI = localStorage.getItem(K_SESI) || '';
+    } catch(e){}
+  }
+
+  /* ---------- identitas ---------- */
+  function nomorBersih(v){
+    var d = (v || '').replace(/[^\d+]/g, '');
+    if (d.indexOf('+62') === 0) d = '0' + d.slice(3);
+    else if (d.indexOf('62') === 0 && d.length > 10) d = '0' + d.slice(2);
+    return d.replace(/\D/g, '');
+  }
+  function validKontak(v){
+    var d = nomorBersih(v);
+    return /^0\d{8,13}$/.test(d);
+  }
+  function waNomor(v){
+    var d = nomorBersih(v);
+    return '62' + d.replace(/^0/, '');
+  }
+
+  var btnMulai = $('#btnMulai'), hintMulai = $('#hintMulai');
+  var inBisnis = $('#inBisnis'), inKontak = $('#inKontak');
+
+  function cekIdent(){
+    var nb = inBisnis.value.trim(), nk = inKontak.value.trim();
+    var okB = nb.length >= 2, okK = validKontak(nk);
+    $('#errBisnis').textContent = (nk && !okB) ? 'Nama bisnis wajib diisi.' : '';
+    inBisnis.setAttribute('aria-invalid', (nk && !okB) ? 'true' : 'false');
+    $('#errKontak').textContent = (nb && !okK) ? 'Nomor belum dikenali. Contoh yang benar: 0812 3456 7890.' : '';
+    inKontak.setAttribute('aria-invalid', (nb && !okK) ? 'true' : 'false');
+    btnMulai.disabled = !(okB && okK);
+    hintMulai.textContent = (okB && okK)
+      ? 'Siap. Lima belas pertanyaan terbuka di bawah.'
+      : 'Isi dua kolom bertanda * untuk membuka pertanyaannya.';
+    return okB && okK;
+  }
+  [inBisnis, inKontak].forEach(function(el){ el.addEventListener('input', cekIdent); });
+
+  function buatSesi(){
+    var t = new Date();
+    var p = function(n){ return ('0' + n).slice(-2); };
+    var acak = Math.random().toString(16).slice(2, 6).toUpperCase();
+    return 'OS-' + t.getFullYear() + p(t.getMonth() + 1) + p(t.getDate()) + '-' + acak;
+  }
+
+  btnMulai.addEventListener('click', function(){
+    if (!cekIdent()) return;
+    IDENT = {
+      bisnis: inBisnis.value.trim(),
+      kontak: inKontak.value.trim(),
+      nama: $('#inNama').value.trim(),
+      jenis: $('#inJenis').value.trim()
+    };
+    if (!SESI) SESI = buatSesi();
+    $('#sesiId').textContent = 'Sesi ' + SESI;
+    $('#kartu-sesi').hidden = false;
+    $('#kartu-identitas').classList.add('terkirim');
+    simpan(); perbarui();
+    $('#kartu-sesi').scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+
+  /* ---------- hitung ---------- */
+  function hitung(){
+    var total = 0, per = [];
+    D.dimensi.forEach(function(d){
+      var nilai = d.soal.map(function(k){ return JAWAB[k] || 0; });
+      var isi = nilai.filter(function(v){ return v > 0; });
+      var skorDim = isi.length ? (isi.reduce(function(a,b){ return a+b; }, 0) / isi.length) : 0;
+      var t = skorDim * d.bobot;
+      total += t;
+      per.push({ kode:d.kode, nama:d.nama, bobot:d.bobot, nilai:Math.round(skorDim * 100) / 100, tertimbang:t,
+                 lengkap: isi.length === nilai.length, terisi: isi.length, jml: nilai.length });
+    });
+    var persen = Math.round(((total / 5) * 100) * 10 + 1e-9) / 10;
+    return { persen:persen, band:band(persen), per:per };
+  }
+  function tingkat(n){ return n <= 2 ? 'rendah' : (n < 4 ? 'sedang' : 'tinggi'); }
+
+  /* ---------- progres ---------- */
+  var btnHitung = $('#btnHitung'), hintHitung = $('#hintHitung');
+  var count = $('#penCount'), bar = $('#penBar');
+
+  function perbarui(){
+    var jml = SOAL.filter(function(s){ return JAWAB[s.kode] > 0; }).length;
+    if (count) count.textContent = 'Terjawab ' + jml + ' dari ' + N;
+    if (bar) bar.style.width = (jml / N * 100) + '%';
+    var sisa = N - jml;
+    if (btnHitung) btnHitung.disabled = sisa > 0;
+    if (hintHitung) hintHitung.textContent = sisa > 0
+      ? ('Masih ada ' + sisa + ' pertanyaan yang belum dijawab.')
+      : 'Siap. Skor dihitung di perangkat Anda.';
+    gambarCek();
+  }
+
+  /* ---------- cakram ---------- */
+  var ARC = 0.75, OFF = Math.PI * (1 - ARC) / 2 + Math.PI / 2;
+  var cv, ctx, sweep = 0, target = 0, raf = null;
+  var gerak = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  function siapkanCanvas(){
+    cv = $('#phCanvas'); if (!cv) return false;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var sisi = cv.clientWidth || 164;
+    cv.width = sisi * dpr; cv.height = sisi * dpr;
+    ctx = cv.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return true;
+  }
+  function gambar(pct){
+    if (!ctx) return;
+    var sisi = cv.clientWidth || 164;
+    var cx = sisi / 2, cy = sisi / 2, r = sisi / 2 - 9;
+    ctx.clearRect(0, 0, sisi, sisi);
+    ctx.lineWidth = 7; ctx.lineCap = 'round';
+    var cs = getComputedStyle(document.documentElement);
+    ctx.strokeStyle = (cs.getPropertyValue('--track') || '#2A2A2A').trim();
+    ctx.beginPath(); ctx.arc(cx, cy, r, OFF, OFF + Math.PI * 2 * ARC); ctx.stroke();
+    if (pct > 0){
+      ctx.strokeStyle = (cs.getPropertyValue('--signal') || '#14B8A4').trim();
+      ctx.beginPath(); ctx.arc(cx, cy, r, OFF, OFF + Math.PI * 2 * ARC * (pct / 100)); ctx.stroke();
+    }
+  }
+  function angka(pct){ var el = $('#phNum'); if (el) el.innerHTML = Math.round(pct) + '<span>/100</span>'; }
+  function diamDi(pct){ sweep = pct; gambar(pct); angka(pct); }
+  function jalankan(pct){
+    target = pct;
+    if (!gerak){ diamDi(pct); return; }
+    var t0 = null;
+    function langkah(ts){
+      if (t0 === null) t0 = ts;
+      var p = Math.min(1, (ts - t0) / 900);
+      sweep = target * (1 - Math.pow(1 - p, 3));
+      gambar(sweep); angka(sweep);
+      if (p < 1) raf = requestAnimationFrame(langkah); else raf = null;
+    }
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(langkah);
+  }
+
+  /* ---------- hasil ---------- */
+  function tampilkanHasil(){
+    if (!cekIdent()){ $('#kartu-identitas').scrollIntoView({ behavior:'smooth', block:'start' }); return; }
+    var r = hitung();
+    var kotak = $('#penHasil');
+    kotak.hidden = false;
+    hasilTampil = true;
+
+    $('#phBand').textContent = r.band.nama;
+    $('#phArtis').textContent = r.band.arti;
+    $('#phLangkah').textContent = r.band.langkah;
+
+    var naik = r.per.slice().sort(function(a,b){ return a.nilai - b.nilai; });
+
+    var rows = $('#phRows'); rows.innerHTML = '';
+    naik.forEach(function(d){
+      var rendah = d.nilai <= 2;
+      var row = document.createElement('div');
+      row.className = 'row' + (rendah ? ' low' : '');
+      row.innerHTML =
+        '<span class="rn">' + d.nama + '</span>' +
+        '<span class="rv">' + d.nilai.toFixed(2) + '/5</span>' +
+        '<span class="rb"><i data-w="' + (d.nilai / 5 * 100) + '"></i></span>' +
+        '<span class="rw">bobot ' + Math.round(d.bobot * 100) + '% \u00b7 sumbang ' + d.tertimbang.toFixed(2) +
+        ' poin \u00b7 ' + d.terisi + '/' + d.jml + ' soal terjawab</span>';
+      rows.appendChild(row);
+    });
+
+    var gap = $('#phGap'); gap.innerHTML = '';
+    naik.slice(0, 2).forEach(function(d){
+      var meta = D.rekomendasi_dimensi.filter(function(x){ return x.kode === d.kode; })[0];
+      if (!meta) return;
+      var card = document.createElement('div');
+      card.className = 'gcard';
+      card.innerHTML = '<span class="gt">Celah utama \u00b7 ' + d.nama + ' \u00b7 ' + d.nilai.toFixed(2) + '/5</span>' +
+        '<h4>Langkah pertama</h4><p>' + meta[tingkat(d.nilai)] + '</p>';
+      gap.appendChild(card);
+    });
+    var kuat = naik[naik.length - 1];
+    var kuatMeta = D.rekomendasi_dimensi.filter(function(x){ return x.kode === kuat.kode; })[0];
+    if (kuatMeta){
+      var k = document.createElement('div');
+      k.className = 'gcard';
+      k.innerHTML = '<span class="gt">Kekuatan \u00b7 ' + kuat.nama + ' \u00b7 ' + kuat.nilai.toFixed(2) + '/5</span>' +
+        '<h4>Yang sudah bagus</h4><p>' + kuatMeta[tingkat(kuat.nilai)] + '</p>';
+      gap.appendChild(k);
+    }
+
+    /* --- ringkasan --- */
+    var barisMesin = SOAL.map(function(s){ return s.kode + '=' + JAWAB[s.kode]; }).join(' ');
+    var yakinTxt = Object.keys(YAKIN).map(function(k){ return k + ':' + YAKIN[k]; }).join(',');
+    var kena = cekKonsistensi();
+    var tandaCek = kena.length ? '\ncatatan_situs=' + kena.map(function(a){ return a.kode; }).join(',') + ' (perlu ditinjau)' : '';
+    var tulisan = SOAL.filter(function(s){ return SUMBER[s.kode] === 'tulis' && TULIS[s.kode]; })
+      .map(function(s){ return '- ' + s.kode + ': "' + TULIS[s.kode].replace(/\s+/g, ' ').slice(0, 220) + '"'; }).join('\n');
+    var daftar = SOAL.map(function(s){
+      var li = list.querySelector('[data-kode="' + s.kode + '"]');
+      var b = li && li.querySelector('.opt[data-nilai="' + JAWAB[s.kode] + '"]');
+      var teks = b ? b.getAttribute('data-teks') : '';
+      var y = YAKIN[s.kode] ? ' [' + YAKIN[s.kode] + ']' : '';
+      return '- ' + s.nama + ': ' + JAWAB[s.kode] + '/5 (' + teks + ')' + y;
+    }).join('\n');
+
+    var pesan = '[PENILAIAN-SITUS v2]\n' +
+      'sesi=' + SESI + '\n' +
+      'bisnis=' + IDENT.bisnis + '\n' +
+      'kontak=' + IDENT.kontak + '\n' +
+      (IDENT.nama ? 'pengisi=' + IDENT.nama + '\n' : '') +
+      (IDENT.jenis ? 'jenis=' + IDENT.jenis + '\n' : '') +
+      barisMesin + '\n' +
+      'skor_situs=' + r.persen.toFixed(1) + ' band=' + r.band.nama + '\n' +
+      (yakinTxt ? 'keyakinan=' + yakinTxt + '\n' : '') +
+      tandaCek + '\n\n' +
+      'Halo OmniSense, saya baru mengisi penilaian kesiapan di situs.\n' +
+      'Bisnis: ' + IDENT.bisnis + '\n' +
+      'Nomor: ' + IDENT.kontak + '\n' +
+      'Skor saya ' + r.persen.toFixed(1) + '% \u2014 ' + r.band.nama + '.\n' +
+      'Jawaban saya:\n' + daftar +
+      (tulisan ? '\n\nCatatan yang saya tulis sendiri:\n' + tulisan : '') +
+      '\n\nSaya ingin membahas laporan lengkapnya.';
+
+    $('#phWa').href = 'https://wa.me/' + (D.wa || '6288809640700') + '?text=' + encodeURIComponent(pesan);
+    window.__PESAN_TERAKHIR__ = pesan;
+
+    var lim = $('#phLimit');
+    var ragu = Object.keys(YAKIN).filter(function(k){ return YAKIN[k] !== 'yakin'; });
+    var pesanLim = [];
+    if (kena.length) pesanLim.push('Ada ' + (kena.length === 1 ? 'satu' : kena.length) + ' hal yang saling bertentangan. Skornya tetap kami hitung, tetapi tim akan menanyakan buktinya lebih dulu.');
+    if (ragu.length) pesanLim.push(ragu.length + ' jawaban Anda ditandai belum pasti, jadi skor ini masih bisa bergeser setelah dibahas bersama.');
+    var kurang = r.per.filter(function(d){ return !d.lengkap; });
+    if (kurang.length) pesanLim.push(kurang.length + ' dimensi belum lengkap jawabannya, jadi angkanya dihitung dari yang terisi saja.');
+    lim.hidden = pesanLim.length === 0;
+    lim.textContent = pesanLim.join(' ');
+
+    var terkuat = naik[naik.length - 1], terlemah = naik[0];
+    $('#phRingkas').innerHTML =
+      '<b>Ringkas.</b> Kekuatan utama Anda ada di <b>' + terkuat.nama + '</b> (' + terkuat.nilai.toFixed(2) + '/5), ' +
+      'sedangkan yang paling menahan langkah berikutnya adalah <b>' + terlemah.nama + '</b> (' + terlemah.nilai.toFixed(2) + '/5). ' +
+      'Karena bobotnya ' + Math.round(terlemah.bobot * 100) + '%, memperbaiki bagian ini memberi kenaikan skor paling besar.';
+
+    if (!siapkanCanvas()) return;
+    jalankan(r.persen);
+    requestAnimationFrame(function(){
+      Array.prototype.forEach.call(rows.querySelectorAll('.rb i'), function(el){
+        el.style.width = el.getAttribute('data-w') + '%';
+      });
+    });
+    try { kotak.setAttribute('tabindex','-1'); kotak.focus({ preventScroll:true });
+          kotak.scrollIntoView({ behavior: gerak ? 'smooth' : 'auto', block:'start' }); } catch(e){}
+  }
+
+  btnHitung.addEventListener('click', tampilkanHasil);
+
+  $('#btnReset').addEventListener('click', function(){
+    JAWAB = {}; TULIS = {}; SUMBER = {}; YAKIN = {}; SESI = '';
+    IDENT = { bisnis:'', kontak:'', nama:'', jenis:'' };
+    try { [K_JAWAB,K_TULIS,K_YAKIN,K_IDENT,K_SESI].forEach(function(k){ localStorage.removeItem(k); }); } catch(e){}
+    if ($('#inBisnis')) $('#inBisnis').value = '';
+    if ($('#inKontak')) $('#inKontak').value = '';
+    if ($('#inNama'))   $('#inNama').value = '';
+    if ($('#inJenis'))  $('#inJenis').value = '';
+    list.querySelectorAll('.q').forEach(function(li){
+      li.classList.remove('jawab');
+      Array.prototype.forEach.call(li.querySelectorAll('.opt'), function(b){
+        b.setAttribute('aria-checked','false');
+        b.tabIndex = b.getAttribute('data-nilai') === '1' ? 0 : -1;
+      });
+      Array.prototype.forEach.call(li.querySelectorAll('.pen-kbtn'), function(b){ b.setAttribute('aria-pressed','false'); });
+      var ta = li.querySelector('textarea'); if (ta) ta.value = '';
+      var bc = li.querySelector('.baca'); if (bc){ bc.className = 'baca kosong'; bc.textContent = ''; }
+    });
+    gambarCek();
+    $('#penHasil').hidden = true;
+    hasilTampil = false; diamDi(0);
+    $('#sesiId').textContent = '&mdash;';
+    perbarui();
+    $('#kartu-sesi').hidden = true;
+    $('#kartu-identitas').scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+
+  $('#btnSalin').addEventListener('click', function(){
+    var b = this, teks = window.__PESAN_TERAKHIR__ || '';
+    var selesai = function(ok){ b.textContent = ok ? 'Tersalin' : 'Gagal menyalin'; setTimeout(function(){ b.textContent = 'Salin ringkasan'; }, 1800); };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(teks).then(function(){ selesai(true); }, function(){ selesai(false); });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = teks; document.body.appendChild(ta); ta.select();
+      try { selesai(document.execCommand('copy')); } catch(e){ selesai(false); }
+      document.body.removeChild(ta);
+    }
+  });
+
+  window.addEventListener('resize', function(){ if (ctx) gambar(sweep); });
+
+  /* ---------- mulai ---------- */
+  muat();
+  cekIdent();
+  if (SESI && $('#sesiId')) $('#sesiId').textContent = 'Sesi ' + SESI;
+  if (localStorage.getItem(K_SESI)) { $('#kartu-sesi').hidden = false; }
+  diamDi(0);
+  perbarui();
+
+  /* kait untuk pengujian otomatis */
+  window.OmniSenseSitus = {
+    jawab: function(kode, nilai){
+      var li = list.querySelector('[data-kode="' + kode + '"]');
+      var b = li && li.querySelector('.opt[data-nilai="' + nilai + '"]');
+      if (b) b.click();
+    },
+    tulis: function(kode, teks){
+      var li = list.querySelector('[data-kode="' + kode + '"]');
+      var ta = li && li.querySelector('textarea');
+      if (!ta) return;
+      var box = li.querySelector('.tulis-box');
+      if (box.hidden){ li.querySelector('.tulis-toggle').click(); }
+      ta.value = teks;
+      ta.dispatchEvent(new Event('input', { bubbles:true }));
+    },
+    identitas: function(bisnis, kontak, nama, jenis){
+      $('#inBisnis').value = bisnis || ''; $('#inKontak').value = kontak || '';
+      $('#inNama').value = nama || ''; $('#inJenis').value = jenis || '';
+      cekIdent();
+      if (cekIdent()) $('#btnMulai').click();
+    },
+    baca: function(kode, teks){
+      var s = SOAL.filter(function(x){ return x.kode === kode; })[0];
+      return s ? bacaTeks(s, teks) : null;
+    },
+    hitung: hitung,
+    tampilkan: tampilkanHasil,
+    skor: function(){ return hitung().persen; },
+    band: function(){ return hitung().band.nama; },
+    pesan: function(){ return window.__PESAN_TERAKHIR__ || ''; },
+    sesi: function(){ return SESI; }
+  };
+})();
+</script>
+</body>
+</html>

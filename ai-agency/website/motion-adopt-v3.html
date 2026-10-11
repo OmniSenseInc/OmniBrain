@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="id" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOTION ADOPT v3 — semua pola prototype 1 + hasil ronde 2, motion baru</title>
+<style>
+  :root{
+    --obsidian:#09090B; --obsidian-2:#0C0C0E; --panel:#121215;
+    --line:#27272A; --line-2:#3F3F46; --track:#34343C;
+    --white:#FFFFFF; --ink:#F4F4F5; --slate:#94A3B8;
+    --signal:#14B8A6; --signal-deep:#0F766E;
+    --maxw:1120px; --gutter:clamp(20px,4vw,56px);
+    --font-sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--obsidian);color:var(--ink);
+    font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--signal)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+  header.top{padding:44px 0 8px}
+  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+  h1{font-size:clamp(28px,4.4vw,44px);line-height:1.1;margin:14px 0 10px;letter-spacing:-.02em}
+  .lead{color:var(--slate);max-width:74ch;margin:0 0 8px}
+  .src{font-family:var(--font-mono);font-size:12px;color:var(--slate);border-top:1px solid var(--line);padding-top:14px;margin-top:26px;line-height:1.8}
+  .ctl{display:flex;align-items:center;gap:12px;margin-top:18px;font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-wrap:wrap}
+  #motionBtn{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink);background:var(--panel);border:1px solid var(--line-2);border-radius:999px;padding:6px 14px;cursor:pointer}
+  #motionBtn[aria-pressed="true"]{color:var(--signal);border-color:var(--signal-deep)}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(20px,2.6vw,28px);margin:0 0 6px;letter-spacing:-.01em}
+  h2 .n{font-family:var(--font-mono);font-size:13px;color:var(--signal);margin-right:10px;vertical-align:2px}
+  .sub{color:var(--slate);max-width:78ch;margin:0 0 22px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:860px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px}
+  .card h3{margin:0 0 4px;font-size:17px;letter-spacing:-.01em}
+  .card .why{color:var(--slate);font-size:14.5px;margin:0 0 14px}
+  .tag{display:inline-block;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--slate);border:1px solid var(--line-2);border-radius:999px;padding:2px 9px;margin:0 6px 12px 0}
+  .tag.ok{color:var(--signal);border-color:var(--signal-deep)}
+  .from{display:inline-block;font-family:var(--font-mono);font-size:11px;color:var(--slate);
+    border-left:2px solid var(--line-2);padding-left:7px;margin:0 0 12px}
+  .demo{background:var(--obsidian-2);border:1px solid var(--line);border-radius:10px;padding:14px;margin:0 0 12px;overflow:hidden}
+  .note{font-family:var(--font-mono);font-size:12px;color:var(--slate);margin:0;line-height:1.7}
+  table.dec{width:100%;border-collapse:collapse;font-size:14.5px}
+  table.dec th,table.dec td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.dec th{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+  table.dec td.s{color:var(--signal);font-family:var(--font-mono);font-size:12px;white-space:nowrap}
+  @media (max-width:640px){
+    table.dec{font-size:13.5px}
+    table.dec th,table.dec td{padding:8px 8px}
+    table.dec td.s{white-space:normal}
+  }
+  table.dec td.x{color:var(--slate);font-family:var(--font-mono);font-size:12px;white-space:nowrap}
+  @media (max-width:560px){
+    table.dec,table.dec tbody,table.dec tr,table.dec td{display:block;width:100%}
+    table.dec thead{display:none}
+    table.dec tr{border-bottom:1px solid var(--line);padding:12px 0}
+    table.dec td{border:0;padding:2px 0}
+    table.dec td.s{white-space:normal;margin-top:6px}
+  }
+
+  /* 01 rel tick */
+  .rail{position:relative;height:46px;display:flex;align-items:flex-end;gap:3px}
+  .rail i{flex:0 0 auto;width:2px;border-radius:1px;background:var(--track);transition:background .25s linear}
+  .rail .lead{position:absolute;bottom:-4px;width:11px;height:11px;border-radius:50%;background:var(--signal);
+    transform:translate(-50%,0);left:0;box-shadow:0 0 0 0 rgba(20,184,166,.55);animation:leadpulse 1.6s ease-out infinite}
+  @keyframes leadpulse{0%{box-shadow:0 0 0 0 rgba(20,184,166,.5)}70%{box-shadow:0 0 0 9px rgba(20,184,166,0)}100%{box-shadow:0 0 0 0 rgba(20,184,166,0)}}
+  .railhead{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-mono);font-size:12px;color:var(--slate);margin:0 0 8px}
+  .railhead b{color:var(--white);font-size:15px}
+
+  /* 02 bar + tangga */
+  .bars{display:grid;gap:8px;margin:6px 0 2px}
+  .brow{display:grid;grid-template-columns:104px 1fr 44px;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12px;color:var(--slate)}
+  .btr{height:8px;border-radius:999px;background:var(--track);overflow:hidden}
+  .bf{display:block;height:100%;width:0;background:var(--signal);border-radius:999px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+  .bval{text-align:right;color:var(--ink)}
+  .lgauge{display:flex;align-items:center;gap:14px;margin:4px 0 10px}
+  .lscale{position:relative;height:10px;border-radius:999px;background:var(--track);flex:1}
+  .lseg{position:absolute;top:0;bottom:0;width:1px;background:var(--obsidian)}
+  .lmark{position:absolute;top:-5px;width:3px;height:20px;border-radius:2px;background:var(--signal);
+    left:0;transition:left 1.1s cubic-bezier(.2,.8,.2,1)}
+  .lnum{font-family:var(--font-mono);font-size:22px;color:var(--white);min-width:58px}
+  .lcat{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;font-family:var(--font-mono);font-size:11px;
+    letter-spacing:.02em;color:var(--slate);margin:8px 0 0}
+  .lcat span{white-space:nowrap}
+  @media (max-width:520px){.lcat{font-size:10px;gap:2px 8px}}
+
+  /* 03 cakram */
+  .dial{display:grid;place-items:center;height:210px}
+  .dial-wrap{position:relative;width:210px;height:210px}
+  .dial canvas{position:absolute;inset:0;width:210px;height:210px}
+  .dial-num{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+  .dial-num b{display:block;font-family:var(--font-mono);font-size:44px;color:var(--white);line-height:1}
+  .dial-num span{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;color:var(--slate)}
+  .beat{display:flex;align-items:center;gap:12px;margin:6px 0 2px}
+  .beat .dot{width:10px;height:10px;border-radius:50%;background:var(--signal);animation:bt 1.4s ease-in-out infinite;flex:0 0 auto}
+  @keyframes bt{0%,100%{transform:scale(.6);opacity:.35}50%{transform:scale(1);opacity:1}}
+  .beat .lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+
+  /* 04 peta radial */
+  .map{position:relative;height:280px;margin:2px 0 0}
+  .map svg{position:absolute;inset:0;width:100%;height:100%}
+  .map .hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);
+    border:1px solid var(--line-2);border-radius:999px;padding:7px 12px;background:var(--obsidian-2);z-index:2;white-space:nowrap}
+  .map .node{position:absolute;transform:translate(-50%,-50%);z-index:3;
+    font-family:var(--font-mono);font-size:12px;color:var(--slate);
+    background:var(--obsidian-2);border:1px solid transparent;border-radius:999px;padding:3px 9px;
+    cursor:pointer;transition:color .35s ease,left .75s cubic-bezier(.2,.8,.2,1),top .75s cubic-bezier(.2,.8,.2,1),opacity .3s ease}
+  .map .node.on,.map .node:hover{color:var(--white);border-color:var(--signal-deep)}
+  .map.dimmed .node:not(.on){opacity:.32}
+  .map .ln{stroke:var(--track);stroke-width:1.4;transition:stroke .3s ease}
+  .map .ln.on{stroke:var(--signal)}
+
+  /* 05 strip */
+  .strip{overflow:hidden;background:var(--obsidian);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .strip-track{display:flex;width:max-content;animation:mq 30s linear infinite}
+  .strip-track span{padding:11px 22px;white-space:nowrap;font-family:var(--font-mono);font-size:12px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+  .strip-track span::after{content:"·";margin-left:22px;color:var(--signal);opacity:.55}
+  .strip.paused .strip-track,.strip:hover .strip-track{animation-play-state:paused}
+  @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  ul.plain{margin:8px 0 0;padding-left:18px;color:var(--slate)}
+  ul.plain li{margin:5px 0}
+  .kill{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--track);border-radius:10px;padding:14px 16px;margin:0 0 10px}
+  .kill b{color:var(--white)}
+  .kill span{color:var(--slate);font-size:14.5px}
+  footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--slate);font-family:var(--font-mono);font-size:12px;line-height:1.8}
+
+  @media (prefers-reduced-motion:reduce){
+    .strip-track,.rail .lead,.beat .dot{animation:none}
+    .bf,.lmark,.map .node{transition:none}
+  }
+  .no-motion .strip-track,.no-motion .rail .lead,.no-motion .beat .dot{animation:none}
+  .no-motion .bf,.no-motion .lmark,.no-motion .map .node{transition:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Riset motion · motionsites.ai · 30 Sep 2026 · versi 3 (gabungan)</div>
+  <h1>Semua pola prototype 1, dengan motion hasil ronde 2</h1>
+  <p class="lead">Versi ini menggabungkan seluruh isi <b>motion-adopt.html</b> (prototype 1) ke dalam hasil ronde 2:
+  rel tick, bar bobot, tangga skor, cakram radial, denyut status, peta radial, strip bergulir — semuanya hidup di
+  satu halaman dengan perlakuan motion yang baru. Dua pola yang di ronde 2 sempat saya buang (rel tick dan denyut)
+  dikembalikan sesuai permintaan, tapi denyut diberi pekerjaan nyata supaya tidak jadi hiasan:
+  ia jadi penanda "kamu di sini" di ujung rel tick.</p>
+  <p class="src">Katalog publik motionsites.ai · 541 item (185 gratis, 356 berbayar, 417 punya preview publik).
+  Cakupan: hero 403 · mobile 40 · features 38 · cta 9 · footer 7 · about 7. Kategori terbesar
+  Landing Page 60, Hero 57, SaaS 47, Hero Section 33, Agency 17 — nilai katalognya ada di hero + cara kerja.
+  Metode: metadata + preview publik saja, tidak ada prompt berbayar yang diambil.</p>
+  <div class="ctl">
+    <button id="motionBtn" type="button" aria-pressed="true">Gerak: Nyala</button>
+    <span>matikan untuk melihat keadaan akhir setiap animasi</span>
+  </div>
+</header>
+
+<section>
+  <h2><span class="n">01</span>Rel tick bergerak — motif alat ukur</h2>
+  <p class="sub">Dari prototype 1, dipertahankan apa adanya: deretan tick yang mengisi mengikuti gulir.
+  Untuk OmniSense ini bukan hiasan — ini motif alat ukur, hal yang persis dijual OmniSense.
+  Yang berubah hanya cara pasangnya: jumlah tick dihitung dari lebar wadah, jadi relnya tidak lagi
+  terpotong di layar sempit seperti di prototype 1.</p>
+  <div class="demo">
+    <div class="railhead"><span>Posisi gulir</span><b id="tickpct">000%</b></div>
+    <div class="rail" id="rail">
+      <span class="lead" id="railLead"></span>
+    </div>
+    <p class="note" style="margin-top:10px">tick terisi <span id="ticklit">0</span> dari <span id="tickN">0</span> ·
+    turunan dari scrollY · jumlah tick menyesuaikan lebar</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">02</span>Bar bobot + angka berhitung naik + tangga kategori</h2>
+  <p class="sub">Dari prototype 1, dengan motion baru: angkanya sekarang berhitung naik bersamaan dengan bar
+  yang mengisi, bukan hanya bar yang bergerak. Tangga skornya tetap CSS-only, penanda meluncur ke 68.</p>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag ok">canvas-free · CSS transition + rAF</span>
+      <h3>Bar bobot 8 dimensi</h3>
+      <p class="why">Lebar dari <code>data-w</code>, diskalakan ke bobot terbesar (20). Tiap baris diberi jeda
+      70 ms supaya terbaca sebagai urutan, bukan satu kedipan.</p>
+      <div class="demo">
+        <div class="bars" id="wbars">
+          <div class="brow"><span>Data</span><span class="btr"><i class="bf" data-w="20"></i></span><span class="bval" data-v="20">0%</span></div>
+          <div class="brow"><span>Infrastruktur</span><span class="btr"><i class="bf" data-w="15"></i></span><span class="bval" data-v="15">0%</span></div>
+          <div class="brow"><span>Digitalisasi</span><span class="btr"><i class="bf" data-w="15"></i></span><span class="bval" data-v="15">0%</span></div>
+          <div class="brow"><span>SDM</span><span class="btr"><i class="bf" data-w="15"></i></span><span class="bval" data-v="15">0%</span></div>
+          <div class="brow"><span>Strategi</span><span class="btr"><i class="bf" data-w="10"></i></span><span class="bval" data-v="10">0%</span></div>
+          <div class="brow"><span>Organisasi</span><span class="btr"><i class="bf" data-w="10"></i></span><span class="bval" data-v="10">0%</span></div>
+          <div class="brow"><span>Tata kelola</span><span class="btr"><i class="bf" data-w="10"></i></span><span class="bval" data-v="10">0%</span></div>
+          <div class="brow"><span>Anggaran</span><span class="btr"><i class="bf" data-w="5"></i></span><span class="bval" data-v="5">0%</span></div>
+        </div>
+      </div>
+      <p class="note">reduced-motion &amp; gerak-mati → bar + angka langsung ke nilai akhir</p>
+    </div>
+    <div class="card">
+      <span class="tag ok">CSS-only · 1 penanda</span>
+      <h3>Tangga kategori skor</h3>
+      <p class="why">Skala 0–100 lima segmen, penanda teal meluncur ke 68. Menjelaskan "68 itu kategori apa"
+      tanpa satu kata pun.</p>
+      <div class="demo">
+        <div class="lgauge">
+          <span class="lnum" id="lnum">0</span>
+          <span class="lscale" id="lscale">
+            <i class="lseg" style="left:20%"></i><i class="lseg" style="left:40%"></i>
+            <i class="lseg" style="left:60%"></i><i class="lseg" style="left:80%"></i>
+            <i class="lmark" id="lmark"></i>
+          </span>
+        </div>
+        <p class="lcat"><span>Sangat Awal</span><span>Awal</span><span>Konvensional</span><span>Layak Lanjut</span><span>Siap Penuh</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">03</span>Cakram radial — sekarang busurnya membaca skor</h2>
+  <p class="sub">Dari prototype 1 polanya ada, tapi busurnya hiasan: panjangnya tetap 68% dan tidak
+  berhubungan dengan apa pun. Di versi ini panjang busur <b>mengikuti skor</b> — 0→68 terisi sekali saat
+  masuk layar, dan angkanya naik bersamaan. Bentuknya jadi bisa dibaca sebagai angka sebelum angka muncul.
+  Jarum radial dan titik orbit tetap, turun jadi latar beropasitas rendah.</p>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag ok">Canvas 2D · DPR ≤ 2</span>
+      <div class="from">prototype 1 → ronde 2: busur jadi instrumen</div>
+      <h3>Cakram + busur skor</h3>
+      <p class="why">Latar panel skor hero. Menggantikan medan titik canvas lama.</p>
+      <div class="demo dial" id="discDemo">
+        <div class="dial-wrap">
+          <canvas id="disc" width="420" height="420"></canvas>
+          <div class="dial-num"><div><b id="discNum">0</b><span>SKOR</span></div></div>
+        </div>
+      </div>
+      <p class="note">berhenti saat tab tidak aktif &amp; saat keluar layar · meninggalkan viewport saat masuk
+      tidak lagi membekukan busur setengah jalan</p>
+    </div>
+    <div class="card">
+      <span class="tag ok">CSS keyframes · 1 keyframe</span>
+      <div class="from">prototype 1 — dikembalikan, tapi diberi pekerjaan</div>
+      <h3>Denyut indikator posisi</h3>
+      <p class="why">Di prototype 1 denyut ini menandai "bagian aktif" secara umum, dan di ronde 2 saya
+      buang karena tugasnya sudah diambil rel tick. Sekarang dikembalikan dengan jabatan jelas:
+      satu titik berdenyut di ujung tick yang menyala — penanda "kamu di sini" pada rel gulir.</p>
+      <div class="demo">
+        <div class="beat"><span class="dot"></span><span class="lbl">Menyusuri halaman</span></div>
+        <p class="note">opasitas + scale 1,4 s · denyut memudar sendiri lewat box-shadow, satu titik saja ·
+        mati di reduced-motion</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">04</span>Peta radial — dari template testimonial</h2>
+  <p class="sub">Pola baru ronde 2. Template "Radial Diagram" isinya testimonial dengan diagram radial:
+  satu lingkaran pusat, garis ke tiap label. Animasinya di template aslinya label yang bisa diseret — itu
+  tidak dibawa. Yang dibawa dua hal: <b>label masuk menguncup dari pusat</b> saat section terlihat, dan
+  <b>label duduk di atas garis konektornya</b> sehingga menyentuh satu cabang menyorot garis itu saja.</p>
+  <div class="card">
+    <span class="tag ok">SVG + CSS transition · tanpa library</span>
+    <h3>Enam cabang penilaian</h3>
+    <p class="why">Pusatnya "Penilaian kesiapan", cabangnya dimensi yang dinilai. Sentuh salah satu label
+    (atau tab ke sana) untuk menyorot garisnya. Cocok untuk bagian dimensi di index.html, menggantikan
+    daftar yang harus dibaca satu per satu.</p>
+    <div class="demo">
+      <div class="map" id="map">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" id="mapSvg"></svg>
+        <span class="hub">Penilaian kesiapan</span>
+        <button class="node" type="button" data-x="50" data-y="8"  data-i="0">Kesiapan Data</button>
+        <button class="node" type="button" data-x="88" data-y="30" data-i="1">Infrastruktur</button>
+        <button class="node" type="button" data-x="88" data-y="72" data-i="2">Digitalisasi Proses</button>
+        <button class="node" type="button" data-x="50" data-y="94" data-i="3">SDM</button>
+        <button class="node" type="button" data-x="12" data-y="72" data-i="4">Tata kelola</button>
+        <button class="node" type="button" data-x="12" data-y="30" data-i="5">Anggaran</button>
+      </div>
+    </div>
+    <p class="note">masuk: 6 label berjeda 90 ms, garis menyusul setelah labelnya mendarat ·
+    reduced-motion: langsung keadaan akhir</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">05</span>Strip bergulir yang berhenti saat disapa</h2>
+  <p class="sub">Marquee sudah ada di index.html dan sudah dibatasi sebagai strip tipis. Yang diambil dari
+  template Orbit Flora cuma satu perilaku: berhenti saat kursor di atasnya (dan saat disentuh di HP).
+  Efeknya kecil tapi terasa — pengunjung yang mau membaca tidak dilawan.</p>
+  <div class="demo" style="padding:0">
+    <div class="strip" id="strip">
+      <div class="strip-track" id="stripTrack"></div>
+    </div>
+  </div>
+  <p class="note">tahan kursor di atas strip (atau tap) → gulirannya berhenti, lepas → jalan lagi ·
+  reduced-motion: tidak bergulir sama sekali</p>
+</section>
+
+<section>
+  <h2><span class="n">06</span>Keputusan: yang dipakai, yang dikembalikan, yang dilepas</h2>
+  <p class="sub">Tujuh pola. Prototype 1 punya empat; ronde 2 menambah tiga dan sempat melepas satu.
+  Sesuai permintaan, yang dilepas dikembalikan — tapi hanya yang punya pekerjaan jelas.</p>
+  <table class="dec">
+    <thead><tr><th>Pola</th><th>Asal</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td><b>Rel tick mengikuti gulir</b><br><span class="note">jumlah tick kini dihitung dari lebar wadah</span></td><td class="note">prototype 1</td><td class="s">DIPAKAI</td></tr>
+      <tr><td><b>Bar bobot + angka berhitung naik</b><br><span class="note">angkanya naik bersamaan bar mengisi</span></td><td class="note">prototype 1 · Quantum Core, Data Storytelling</td><td class="s">DIPAKAI</td></tr>
+      <tr><td><b>Tangga kategori skor</b><br><span class="note">penanda meluncur ke 68, 5 segmen</span></td><td class="note">prototype 1 · Heart Health Dashboard</td><td class="s">DIPAKAI</td></tr>
+      <tr><td><b>Cakram radial + cincin terisi skor</b><br><span class="note">busurnya kini mengikuti skor, bukan hiasan</span></td><td class="note">prototype 1 · Intelligent Operations</td><td class="s">DIPAKAI (naik kelas)</td></tr>
+      <tr><td><b>Denyut indikator posisi</b><br><span class="note">dikembalikan — jadi penanda "kamu di sini" di ujung rel tick</span></td><td class="note">prototype 1 · Heart Health Dashboard</td><td class="s">DIKEMBALIKAN</td></tr>
+      <tr><td><b>Peta radial menguncup ke pusat</b><br><span class="note">enam cabang masuk dari tengah saat masuk layar</span></td><td class="note">ronde 2 · Radial Diagram</td><td class="s">DIPAKAI</td></tr>
+      <tr><td><b>Label menyorot garisnya sendiri</b><br><span class="note">sentuh satu cabang → garisnya menyala teal, sisanya meredup</span></td><td class="note">ronde 2 · Radial Diagram (drag-nya dibuang)</td><td class="s">DIPAKAI</td></tr>
+    </tbody>
+  </table>
+  <p class="note" style="margin-top:16px">Yang tetap dilepas: label yang bisa diseret (inti template Radial Diagram,
+  tapi tidak ada yang perlu dipindahkan di halaman OmniSense), orbit dekoratif Cordex &amp; Orbit Flora
+  (tanpa angka yang dibaca), dan seluruh daftar di bagian 07.</p>
+</section>
+
+<section>
+  <h2><span class="n">07</span>Yang tetap ditolak</h2>
+  <p class="sub">Tidak berubah dari kedua prototype. Katalognya sendiri menunjukkan jebakannya: yang paling
+  sering dipakai justru yang paling mahal di jaringan seluler, dan yang paling generik secara visual.</p>
+  <div class="kill"><b>Video background</b> <span>— 8 judul menyebutnya; berkas preview-nya sendiri 2–11 MB
+  untuk beberapa detik. Target OmniSense adalah pemilik usaha di HP dengan kuota.</span></div>
+  <div class="kill"><b>Objek 3D / WebGL</b> <span>— 22 judul (blob morph, kubus titik, kepala poligonal).
+  Menjelaskan nol tentang jasa pengukuran, dan menghabiskan baterai.</span></div>
+  <div class="kill"><b>Orbit dekoratif &amp; marquee di hero</b> <span>— orbit tanpa angka yang dibaca hanya
+  menambah gerak; marquee di hero tetap dilarang karena teksnya tidak terbaca di layar HP.</span></div>
+  <div class="kill"><b>Spektrum neon / gradien aurora</b> <span>— penanda paling jelas "situs AI generik".
+  Bertabrakan dengan satu aksen teal yang sudah dikunci.</span></div>
+  <div class="kill"><b>Label yang bisa diseret</b> <span>— inti template Radial Diagram, tapi di halaman
+  OmniSense tidak ada yang perlu dipindahkan; perilaku itu hanya mengundang main-main.</span></div>
+</section>
+
+<section>
+  <h2><span class="n">08</span>Urutan pemasangan ke index.html</h2>
+  <p class="sub">Dari yang paling murah dan paling menjelaskan produk. Semua langkah bisa dikerjakan tanpa
+  mengubah struktur halaman — kecuali nomor 2 yang menukar satu kanvas.</p>
+  <ul class="plain">
+    <li><b style="color:var(--white)">1. Angka berhitung naik di bar bobot</b> — biaya paling kecil, dampak paling besar, tidak ada elemen baru.</li>
+    <li><b style="color:var(--white)">2. Cakram radial menggantikan kanvas medan titik di hero</b> — satu kanvas ditukar, busur tealnya membaca skor 68.</li>
+    <li><b style="color:var(--white)">3. Peta radial enam cabang</b> di bagian dimensi — menggantikan daftar dimensi yang harus dibaca berurutan.</li>
+    <li><b style="color:var(--white)">4. Denyut di ujung rel tick</b> — penanda posisi; satu titik saja, jangan ditambah animasi kedua di elemen yang sama.</li>
+    <li><b style="color:var(--white)">5. Jeda saat disapa</b> pada strip bergulir yang sudah ada.</li>
+    <li><b style="color:var(--white)">6. Jangan tambah</b> video, WebGL, orbit dekoratif, spektrum neon, atau marquee di hero.</li>
+  </ul>
+</section>
+
+<footer>
+  Sumber: katalog publik motionsites.ai (metadata + preview publik, 541 item) · halaman ini satu berkas,
+  tanpa dependensi, tema Obsidian Instrument. index.html tidak diubah. Isi prototype 1 sudah seluruhnya
+  masuk ke halaman ini.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var doc = document, root = doc.documentElement;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var motion = !reduced;
+  var FINAL = 68;
+
+  function $(s){ return doc.querySelector(s); }
+  function $$(s){ return Array.prototype.slice.call(doc.querySelectorAll(s)); }
+  var SIG = (getComputedStyle(root).getPropertyValue('--signal').trim() || '#14B8A6');
+  var LINE = (getComputedStyle(root).getPropertyValue('--line-2').trim() || '#3F3F46');
+
+  /* ---------- 01 rel tick ---------- */
+  var rail = $('#rail'), lead = $('#railLead'), tickpct = $('#tickpct'),
+      ticklit = $('#ticklit'), tickN = $('#tickN');
+  var ticks = [], ticking = false;
+  function buildRail(){
+    var w = rail.clientWidth || 320;
+    var n = Math.max(24, Math.floor((w + 3) / 5));   // 2px tick + 3px gap
+    rail.innerHTML = '';
+    rail.appendChild(lead);
+    ticks = [];
+    for (var i = 0; i < n; i++){
+      var t = doc.createElement('i');
+      t.style.height = (i % 8 === 0 ? 26 : 14) + 'px';
+      rail.appendChild(t); ticks.push(t);
+    }
+    if (tickN) tickN.textContent = String(n);
+    paintRail();
+  }
+  function paintRail(){
+    ticking = false;
+    var max = doc.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    var lit = Math.round(p * ticks.length);
+    for (var i = 0; i < ticks.length; i++) ticks[i].style.background = i < lit ? SIG : '#34343C';
+    if (tickpct) tickpct.textContent = String(Math.round(p * 100)).padStart(3, '0') + '%';
+    if (ticklit) ticklit.textContent = String(lit);
+    if (lead){
+      var lw = rail.clientWidth, tw = ticks.length * 5 - 3;
+      lead.style.left = ((lw - tw) / 2 + p * tw) + 'px';
+    }
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking){ ticking = true; requestAnimationFrame(paintRail); }
+  }, { passive: true });
+  window.addEventListener('resize', buildRail);
+  buildRail();
+
+  /* ---------- count-up ---------- */
+  function countUp(el, target, dur, suffix){
+    suffix = suffix || '';
+    if (!motion){ el.textContent = target + suffix; return; }
+    var t0 = null;
+    function step(ts){
+      if (t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / dur);
+      var e = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(target * e) + suffix;
+      if (k < 1) requestAnimationFrame(step);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- 02 tangga skor ---------- */
+  var lmark = $('#lmark'), lnum = $('#lnum');
+  function ladderFinal(){
+    lmark.style.transition = 'none'; lmark.style.left = FINAL + '%'; void lmark.offsetWidth; lmark.style.transition = '';
+    lnum.textContent = String(FINAL);
+  }
+  function ladderRun(){
+    if (!motion){ ladderFinal(); return; }
+    lmark.style.transition = 'none'; lmark.style.left = '0%'; void lmark.offsetWidth; lmark.style.transition = '';
+    setTimeout(function(){ lmark.style.left = FINAL + '%'; }, 120);
+    countUp(lnum, FINAL, 1100);
+  }
+
+  /* ---------- 02 bar bobot ---------- */
+  function barsFinal(){
+    $$('#wbars .bf').forEach(function(f){
+      f.style.transition = 'none';
+      f.style.width = (parseFloat(f.dataset.w) / 20 * 100) + '%';
+      void f.offsetWidth; f.style.transition = '';
+    });
+    $$('#wbars .bval').forEach(function(v){ v.textContent = v.dataset.v + '%'; });
+  }
+  function barsRun(){
+    $$('#wbars .bf').forEach(function(f, i){
+      var w = (parseFloat(f.dataset.w) / 20 * 100) + '%';
+      f.style.transition = 'none'; f.style.width = '0%'; void f.offsetWidth; f.style.transition = '';
+      if (!motion){ f.style.width = w; return; }
+      setTimeout(function(){ f.style.width = w; }, i * 70);
+    });
+    $$('#wbars .bval').forEach(function(v, i){
+      v.textContent = '0%';
+      if (!motion){ v.textContent = v.dataset.v + '%'; return; }
+      setTimeout(function(){ countUp(v, parseFloat(v.dataset.v), 900, '%'); }, i * 70);
+    });
+  }
+
+  /* ---------- 03 cakram radial ---------- */
+  var disc = { start: function(){}, stop: function(){}, clear: function(){}, final: function(){} };
+  (function(){
+    var cvs = $('#disc');
+    if (!cvs) return;
+    var cx = cvs.getContext('2d');
+    var num = $('#discNum');
+    var W = 420, H = 420, R = 176;
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    cvs.width = W * dpr; cvs.height = H * dpr;
+    cx.scale(dpr, dpr);
+    var dots = [], i;
+    for (i = 0; i < 64; i++) dots.push({ a: Math.random() * Math.PI * 2, r: R * (0.6 + Math.random() * 0.36),
+      s: 0.0007 + Math.random() * 0.0018, o: 0.22 + Math.random() * 0.5, sz: 1 + Math.random() * 1.8 });
+    var raf = null, t0 = 0, sweep = 0, sweepT0 = 0, running = false, discVisible = true;
+
+    function frame(ts){
+      var t = ts - t0;
+      if (sweep < 1){
+        sweep = Math.min(1, (ts - sweepT0) / 1400);
+        sweep = 1 - Math.pow(1 - sweep, 3);
+        if (num) num.textContent = String(Math.round(sweep * FINAL));
+      }
+      cx.clearRect(0, 0, W, H);
+      cx.save(); cx.translate(W / 2, H / 2);
+      cx.strokeStyle = LINE;
+      for (i = 0; i < 44; i++){
+        var a = i / 44 * Math.PI * 2 + t * 0.00005;
+        var inner = R * 0.46, outer = R * (0.74 + 0.1 * Math.sin(t * 0.00035 + i));
+        cx.globalAlpha = 0.12 + 0.3 * Math.abs(Math.sin(t * 0.00028 + i * 0.5));
+        cx.lineWidth = 1.3; cx.lineCap = 'round';
+        cx.beginPath();
+        cx.moveTo(Math.cos(a) * inner, Math.sin(a) * inner);
+        cx.lineTo(Math.cos(a) * outer, Math.sin(a) * outer);
+        cx.stroke();
+      }
+      cx.globalAlpha = 1; cx.lineWidth = 9; cx.lineCap = 'butt';
+      cx.strokeStyle = '#34343C';
+      cx.beginPath(); cx.arc(0, 0, R * 0.92, 0, Math.PI * 2); cx.stroke();
+      cx.strokeStyle = SIG; cx.lineWidth = 9; cx.lineCap = 'round';
+      cx.beginPath(); cx.arc(0, 0, R * 0.92, -Math.PI / 2, -Math.PI / 2 + sweep * 0.68 * Math.PI * 2); cx.stroke();
+      cx.globalAlpha = .35; cx.strokeStyle = SIG; cx.lineWidth = 1.2;
+      cx.beginPath(); cx.arc(0, 0, R * 0.36, 0, Math.PI * 2); cx.stroke();
+      for (var k = 0; k < dots.length; k++){
+        var o = dots[k]; o.a += o.s * 16;
+        var x = Math.cos(o.a) * o.r, y = Math.sin(o.a) * o.r * 0.66;
+        cx.globalAlpha = o.o; cx.fillStyle = (k % 7 === 0) ? SIG : '#FFFFFF';
+        cx.beginPath(); cx.arc(x, y, o.sz, 0, Math.PI * 2); cx.fill();
+      }
+      cx.restore();
+      if (running) raf = requestAnimationFrame(frame);
+    }
+    disc.start = function(){
+      if (running || !discVisible) return;
+      running = true; t0 = performance.now();
+      sweepT0 = performance.now() - sweep * 1400;
+      raf = requestAnimationFrame(frame);
+    };
+    disc.stop = function(){
+      running = false; if (raf){ cancelAnimationFrame(raf); raf = null; }
+      if (sweep < 1) disc.final();
+    };
+    disc.clear = function(){ running = false; if (raf){ cancelAnimationFrame(raf); raf = null; } cx.clearRect(0, 0, W, H); };
+    disc.final = function(){
+      disc.clear(); sweep = 1; running = false;
+      if (num) num.textContent = String(FINAL);
+      frame(performance.now());
+    };
+    if (reduced) disc.final(); else disc.start();
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        discVisible = e.isIntersecting;
+        if (discVisible && motion && !reduced) disc.start(); else if (!discVisible) disc.stop();
+      });
+    }, { threshold: .1 }).observe($('#discDemo') || cvs);
+    doc.addEventListener('visibilitychange', function(){
+      if (doc.hidden) disc.stop();
+      else if (motion && !reduced && discVisible) disc.start();
+    });
+  })();
+
+  /* ---------- 04 peta radial ---------- */
+  var map = $('#map'), mapSvg = $('#mapSvg');
+  var nodes = $$('#map .node'), lns = [];
+  function buildLines(){
+    mapSvg.innerHTML = '';
+    lns = nodes.map(function(n){
+      var ln = doc.createElementNS('http://www.w3.org/2000/svg', 'line');
+      ln.setAttribute('x1', 50); ln.setAttribute('y1', 50);
+      ln.setAttribute('x2', n.dataset.x); ln.setAttribute('y2', n.dataset.y);
+      ln.setAttribute('class', 'ln');
+      mapSvg.appendChild(ln);
+      n.style.left = n.dataset.x + '%';
+      n.style.top = n.dataset.y + '%';
+      return ln;
+    });
+  }
+  function mapHighlight(i){
+    nodes.forEach(function(n, j){ n.classList.toggle('on', j === i); });
+    lns.forEach(function(l, j){ l.classList.toggle('on', j === i); });
+    map.classList.toggle('dimmed', i >= 0);
+  }
+  function mapFinal(){
+    map.classList.remove('dimmed');
+    nodes.forEach(function(n){
+      n.style.transition = 'none';
+      n.style.left = n.dataset.x + '%'; n.style.top = n.dataset.y + '%';
+      void n.offsetWidth; n.style.transition = '';
+    });
+    mapHighlight(-1);
+  }
+  function mapGather(){
+    nodes.forEach(function(n){ n.style.transition = 'none'; n.style.left = '50%'; n.style.top = '50%'; });
+    void map.offsetWidth;
+    nodes.forEach(function(n){ n.style.transition = ''; });
+  }
+  function mapRun(){
+    if (!motion){ mapFinal(); return; }
+    mapHighlight(-1);
+    mapGather();
+    nodes.forEach(function(n, i){
+      setTimeout(function(){ n.style.left = n.dataset.x + '%'; n.style.top = n.dataset.y + '%'; }, 90 * i);
+    });
+  }
+  if (map){
+    buildLines();
+    nodes.forEach(function(n, i){
+      var on = function(){ mapHighlight(i); };
+      n.addEventListener('mouseenter', on);
+      n.addEventListener('focus', on);
+      n.addEventListener('click', function(){ mapHighlight(i); });
+      n.addEventListener('blur', function(){ mapHighlight(-1); });
+    });
+    map.addEventListener('mouseleave', function(){ mapHighlight(-1); });
+    if (reduced) mapFinal(); else mapGather();
+  }
+
+  /* ---------- 05 strip ---------- */
+  var track = $('#stripTrack'), strip = $('#strip');
+  if (track){
+    var words = ['Penilaian 8 dimensi', 'Skor 0–100', '5 kategori kesiapan', 'Rencana 30/60/90 hari',
+                 'Gratis di langkah pertama', 'Lewat WhatsApp'];
+    var html = '';
+    for (var r = 0; r < 2; r++) words.forEach(function(w){ html += '<span>' + w + '</span>'; });
+    track.innerHTML = html;
+    if (strip){
+      strip.addEventListener('pointerdown', function(){ strip.classList.add('paused'); });
+      strip.addEventListener('pointerup', function(){ strip.classList.remove('paused'); });
+      strip.addEventListener('pointerleave', function(){ strip.classList.remove('paused'); });
+    }
+  }
+
+  /* ---------- reveal saat masuk layar ---------- */
+  var seen = {};
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting || seen[en.target.id]) return;
+      seen[en.target.id] = 1;
+      if (en.target.id === 'lscale') ladderRun();
+      if (en.target.id === 'wbars') barsRun();
+      if (en.target.id === 'map') mapRun();
+    });
+  }, { threshold: .35 });
+  ['lscale', 'wbars', 'map'].forEach(function(id){ var el = doc.getElementById(id); if (el) io.observe(el); });
+
+  /* ---------- kontrol gerak ---------- */
+  var btn = $('#motionBtn');
+  function applyMotion(on){
+    motion = on;
+    root.classList.toggle('no-motion', !on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? 'Gerak: Nyala' : 'Gerak: Mati';
+    if (on){
+      seen = {}; mapFinal();
+      ['lscale', 'wbars', 'map'].forEach(function(id){ var el = doc.getElementById(id); if (el) io.observe(el); });
+      ladderRun(); barsRun(); mapRun();
+      if (!reduced) disc.start(); else disc.final();
+    } else {
+      ladderFinal(); barsFinal(); mapFinal(); disc.final();
+    }
+  }
+  btn.addEventListener('click', function(){ applyMotion(!motion); });
+
+  if (reduced){ ladderFinal(); barsFinal(); mapFinal(); }
+})();
+</script>
+</body>
+</html>

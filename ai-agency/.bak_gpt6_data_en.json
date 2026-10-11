@@ -1,0 +1,28 @@
+{
+    "tag": "[ AI RADAR ]",
+    "tanggal": "SEPTEMBER 22, 2026 \u00b7 AI BRIEF",
+    "label_kartu": "WHAT YOU NEED TO KNOW",
+    "poin": [
+        {
+            "judul": "What happened",
+            "isi": "OpenAI released GPT-6 Sol and Luna on September 22. API prices were cut in half versus the previous series: Sol from 4 to 2 dollars per million input tokens, Luna from 0.20 to 0.10 dollars. The cut comes from better caching and more efficient inference."
+        },
+        {
+            "judul": "Why it matters",
+            "isi": "OpenAI says Sol makes about half as many factual mistakes as its predecessor and offers a 90 percent discount on cached input. Independent reviewers note the intelligence itself barely moved \u2014 what changed is the cost."
+        },
+        {
+            "judul": "For your business",
+            "isi": "A good moment to recalculate automation budgets: high-volume work like summarizing and extracting data just got much cheaper. Start with the one workflow you repeat most, measure the result, then expand."
+        }
+    ],
+    "headline": [
+        "AI COSTS CUT",
+        "IN HALF"
+    ],
+    "headline_caption": "OpenAI halves the price of its GPT-6 Sol and Luna models.",
+    "subjudul": "OpenAI releases GPT-6 Sol and Luna: running cost halved, fewer factual mistakes \u2014 raw intelligence barely moved.",
+    "cta": "BOOK A FREE CONSULTATION",
+    "kaki": "@omnisense_id \u2022 omnisense.id",
+    "hashtag": "#OmniSense #AIAgents #AIforBusiness #Automation #OmniSenseID"
+}

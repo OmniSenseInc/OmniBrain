@@ -1,0 +1,27 @@
+OmniSense social media poster, 4:5 portrait, style EXACTLY like the reference image (dark modern, monochrome dark, glassmorphism, geometric sans-serif extra-bold ALL-CAPS typography).
+
+*** THE REFERENCE IMAGE IS ONLY FOR VISUAL STYLE. IGNORE ALL TEXT IN THE REFERENCE COMPLETELY — THE REFERENCE TEXT IS INDONESIAN AND MUST NOT BE COPIED. EVERY SINGLE WORD IN THE NEW POSTER MUST BE IN ENGLISH. ***
+
+Background: obsidian black #09090B with a very dim city skyline at night + thin network lines, soft glow behind the card. Dark glass card #121215, rounded 20px, 1px border #27272A, centered.
+
+Header top-left, English only:
+line 1: "[ AI RADAR ]"
+line 2: "SEPTEMBER 19, 2026 · AI BRIEF"
+Top-right: small white spiral/radar logo + white wordmark "omnisense".
+
+Card contents, badge label: "WHAT YOU NEED TO KNOW"
+01 What happened — Meta released Muse for Mac. The assistant works inside your files, messages, calendar, notes, and mail, right in their own apps.
+02 Why it matters — AI is shifting from answering questions to actually doing the work. Muse went straight to the No. 1 spot on the US App Store.
+03 For your business — You choose what it can access, and it asks before any sensitive action. Start with the routine task that eats the most time.
+
+Below the card, white extra-bold ALL-CAPS headline on two lines. Copy these two lines CHARACTER BY CHARACTER, do not rephrase, do not add or remove words:
+line 1: "AI NOW WORKS ON"
+line 2: "YOUR OWN COMPUTER"
+
+One-line slate subtitle: "Pick one routine task this week, note how much time it takes, then compare the result with an AI agent on your side."
+
+Thin outline pill button: "BOOK A FREE CONSULTATION"
+
+Small dim grey centered footer: "@omnisense_id • omnisense.id"
+
+IMPORTANT: no Indonesian words anywhere. No extra text, no gibberish letters. No bright neon colors, no busy 3D ornaments.

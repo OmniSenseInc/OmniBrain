@@ -1,0 +1,18 @@
+📰 [OMNISENSE RADAR] Contract signing now runs inside your agents (EN version)
+
+Docusign opened its MCP Server to every AI agent (Sep 30). Agents in Claude, ChatGPT, Gemini, Copilot and Slack can now read past agreements, check company policy, and trigger signatures through one standard interface.
+
+Why it matters: the automation chain always broke at the signature step — agents could prepare documents, but a human had to step in to execute. That step now sits inside the agent loop, under account-level admin controls.
+
+For your business: start by answering three things — which data agents may open, which actions may run on their own, and who checks the results.
+
+OmniSense starts with those questions before choosing any tool. First consultation is free.
+
+DM / open profile → continue to WhatsApp.
+
+#OmniSense #AIAgents #Automation #AIConsultant #OmniSenseID
+
+Photo: Legal Contract & Signature - Warm Tones (CC BY 2.0) — Wikimedia Commons
+
+Balas 'post' untuk publish ke Instagram, 'batal' untuk tolak.
+MEDIA:/home/ubuntu/ai-agency/konten_berita_en.png

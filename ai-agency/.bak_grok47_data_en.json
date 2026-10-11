@@ -1,0 +1,28 @@
+{
+  "tag": "[ AI RADAR ]",
+  "tanggal": "SEPTEMBER 22, 2026 · AI BRIEF",
+  "label_kartu": "WHAT YOU NEED TO KNOW",
+  "poin": [
+    {
+      "judul": "What happened",
+      "isi": "xAI released Grok 4.7 on September 21 at 2 dollars per million input tokens and 6 dollars per million output tokens — the same price level as its predecessor, and far below top-tier models like GPT-5.6 Sol Max (4/20 dollars) and Fable 5.1 Max (10/50 dollars)."
+    },
+    {
+      "judul": "Why it matters",
+      "isi": "On the independent Artificial Analysis index, Grok 4.7 scores 46, while Claude Fable 5.1 and GPT-6 each score 53. On the agentic coding test Terminal-Bench 4.0 it reaches 26 percent, behind GPT-6 Astra (60 percent) and Fable 5.1 (55 percent)."
+    },
+    {
+      "judul": "For your business",
+      "isi": "AI prices are falling, but the cheapest model is not automatically the right one. Match the model to the job: high-volume routine work to efficient models, complex work to the most capable ones. A bad match creates rework."
+    }
+  ],
+  "headline": [
+    "AI MODEL PRICES KEEP FALLING",
+    "CHEAPEST ISN'T ALWAYS RIGHT"
+  ],
+  "headline_caption": "xAI releases Grok 4.7: cheap and fast, but not the most capable.",
+  "subjudul": "More capable models are getting cheaper. What decides the outcome is not the price tag, but the fit with the task.",
+  "cta": "BOOK A FREE CONSULTATION",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgents #AIforBusiness #AIModels #OmniSenseID"
+}

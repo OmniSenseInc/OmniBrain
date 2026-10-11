@@ -1,0 +1,28 @@
+Harga model AI terus turun. Tapi murah belum tentu paling tepat.
+
+Pada 21 September, xAI merilis Grok 4.7. Harganya 2 dolar per juta token input dan 6 dolar per juta token output — jauh di bawah model kelas atas seperti GPT-5.6 Sol Max (4/20 dolar) dan Fable 5.1 Max (10/50 dolar). Klaim xAI: dua kali lebih cepat.
+
+Yang perlu dicatat:
+• Di indeks independen Artificial Analysis, Grok 4.7 mendapat skor 46 — sementara Claude Fable 5.1 dan GPT-6 masing-masing 53.
+• Pada uji coding untuk agen (Terminal-Bench 4.0), skornya 26 persen, di bawah GPT-6 Astra (60 persen) dan Fable 5.1 (55 persen).
+• Artinya sederhana: harga murah bukan jaminan paling mampu, dan harga mahal bukan jaminan paling cocok.
+
+Untuk bisnis kamu, cara memilihnya bukan "mana yang termurah" atau "mana yang paling terkenal", tapi:
+1. Petakan dulu tugasnya — rutin dan bervolume besar, atau rumit dan jarang.
+2. Tugas rutin bisa berjalan di model hemat; tugas rumit sebaiknya di model paling mampu.
+3. Ukur hasil akhirnya, bukan hanya biayanya. Salah pasang model justru menambah kerja ulang.
+
+Kalau kamu sedang memilih model atau menyusun rencana AI untuk operasional bisnis, kita bisa mulai dari peta yang jelas: tugas mana yang layak dikerjakan lebih dulu, dan model seperti apa yang pas untuk masing-masing.
+
+DM / buka profil → lanjut chat ke WhatsApp untuk menjadwalkan konsultasi gratis.
+
+Catatan: OmniSense juga mengembangkan FNBSense untuk kebutuhan kasir & operasional kafe.
+
+Foto: Panasonic JE-552U keypad closeup (CC BY 4.0) — Wikimedia Commons, Fortunny.
+
+#OmniSense #AIAgent #AIuntukBisnis #ModelAI #KonsultanAI #OmniSenseID
+
+Versi English menyusul di pesan berikutnya.
+
+Balas 'post' untuk publish ke Instagram, 'batal' untuk tolak.
+MEDIA:/home/ubuntu/ai-agency/konten_berita_id.png

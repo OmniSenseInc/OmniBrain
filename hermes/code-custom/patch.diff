@@ -1,0 +1,20 @@
+diff --git a/gateway/authz_mixin.py b/gateway/authz_mixin.py
+index cd53d3aa3..9a2d85056 100644
+--- a/gateway/authz_mixin.py
++++ b/gateway/authz_mixin.py
+@@ -477,6 +477,15 @@ class GatewayAuthorizationMixin:
+         per-platform allow-all, adapter role auth, pairing store, env/config allowlists,
+         ``GATEWAY_ALLOW_ALL_USERS``, default deny.
+         """
++        # OmniSense: WhatsApp admin access is pinned to exactly three identities.
++        # Consultation is handled by pre-dispatch; pairing/group/global grants are not admin roles.
++        if source.platform == Platform.WHATSAPP:
++            try:
++                from gateway.omnisense_policy import whatsapp_admin_authorized
++                return whatsapp_admin_authorized(source)
++            except Exception:
++                return False
++
+         # HA events are system-generated (HASS_TOKEN); webhook events are HMAC-verified.
+         if source.platform in {Platform.HOMEASSISTANT, Platform.WEBHOOK}:
+             return True

@@ -1,0 +1,28 @@
+{
+  "tag": "[ AI RADAR ]",
+  "tanggal": "SEPTEMBER 21, 2026 · AI BRIEF",
+  "label_kartu": "WHAT YOU NEED TO KNOW",
+  "poin": [
+    {
+      "judul": "What happened",
+      "isi": "Tencent's Hunyuan Speech team and researchers from several universities introduced Gander: a model that processes speech, images, and text at the same time, can be interrupted at any moment, and keeps working on heavy tasks in the background — fixing a bug while you keep asking questions."
+    },
+    {
+      "judul": "Why it matters",
+      "isi": "The work is split in two: one part keeps the conversation flowing second by second, another handles long tasks — and that work brain can be swapped for other agent systems such as Codex or Claude Code without retraining. Honest caveat: on Full-Duplex-Bench v3, Gander had the best timing (interrupting users in 8% of cases vs 13.5% for GPT-Realtime), but its task accuracy still trails the weakest competitor."
+    },
+    {
+      "judul": "For your business",
+      "isi": "An AI assistant no longer has to stop talking while it works. And because the work brain is swappable, you do not rebuild everything each time a new model appears — you replace the engine, the workflow stays."
+    }
+  ],
+  "headline": [
+    "AI CAN NOW TALK",
+    "WHILE IT GETS WORK DONE"
+  ],
+  "headline_caption": "Tencent introduces Gander: an AI model that holds a live conversation while working on tasks in the background",
+  "subjudul": "Tencent splits the talking brain from the working brain — conversation stays smooth, tasks keep running.",
+  "cta": "BOOK A FREE CONSULTATION",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIforBusiness #AIAgent #ArtificialIntelligence #Consulting"
+}

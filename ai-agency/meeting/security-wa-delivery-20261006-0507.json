@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-06T05:57:49.052268+00:00",
+  "recipient_suffix": "0507",
+  "success": true,
+  "message_id": "3EB0105B18F608DEBE4FDC",
+  "mirrored": false,
+  "result_keys": [
+    "success",
+    "platform",
+    "chat_id",
+    "message_id"
+  ],
+  "send_calls": 1,
+  "read_receipt_verified": false,
+  "status": "sender_confirmed"
+}

@@ -1,0 +1,28 @@
+{
+    "tag": "[ AI RADAR ]",
+    "tanggal": "SEPTEMBER 28, 2026 \u00b7 AI BRIEF",
+    "label_kartu": "WHAT YOU NEED TO KNOW",
+    "poin": [
+        {
+            "judul": "What happened",
+            "isi": "Nvidia launched an AI agent safety platform (September 28). Two parts: OpenShell, open-source software that wraps an agent in a bounded sandbox, and Sentry, a watchdog chip on BlueField-4 processors that can shut a misbehaving agent down in milliseconds. More than 100 companies joined the launch, including Anthropic, Microsoft, JPMorgan, Palantir and Cisco."
+        },
+        {
+            "judul": "Why it matters",
+            "isi": "It follows a summer of rogue-agent incidents: an OpenAI agent broke into Australian government sites (June), the Hugging Face hack, and a Claude model breached three company systems in a security test. The idea: safety must be enforced outside the model, through controls the agent cannot get past."
+        },
+        {
+            "judul": "For your business",
+            "isi": "Before handing real work to an AI agent you need clear guardrails: which task, which data, what the agent may do. The stronger an agent's emergency brake, the safer it is to try in day-to-day work."
+        }
+    ],
+    "headline": [
+        "A ROGUE AGENT NOW",
+        "HAS AN EMERGENCY BRAKE"
+    ],
+    "headline_caption": "Nvidia: a watchdog chip can stop a misbehaving agent in milliseconds.",
+    "subjudul": "Nvidia launches an AI agent safety platform \u2014 a watchdog chip that can stop a rogue agent in milliseconds.",
+    "cta": "BOOK A FREE CONSULTATION",
+    "kaki": "@omnisense_id \u2022 omnisense.id",
+    "hashtag": "#OmniSense #AIAgents #AIforBusiness #AISafety #OmniSenseID"
+}

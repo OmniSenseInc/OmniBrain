@@ -1,0 +1,27 @@
+Poster media sosial OmniSense, rasio 4:5 portrait, gaya PERSIS seperti gambar referensi (dark modern, monokrom gelap, glassmorphism, tipografi sans-serif geometris tebal ALL-CAPS).
+
+*** GAMBAR REFERENSI HANYA UNTUK GAYA VISUAL. ABAIKAN SEMUA TEKS DI GAMBAR REFERENSI — JANGAN MENYALIN TEKSNYA. SEMUA TEKS DI POSTER BARU HARUS BAHASA INDONESIA SESUAI TULISAN DI BAWAH INI. ***
+
+Latar: hitam obsidian #09090B dengan skyline kota Jakarta malam yang sangat redup + garis network tipis, glow lembut di belakang kartu. Kartu kaca gelap #121215 rounded 20px border 1px #27272A di tengah.
+
+Header kiri atas:
+baris 1: "[ RADAR AI ]"
+baris 2: "19 SEPTEMBER 2026 · KABAR AI"
+Kanan atas: logo spiral/radar putih kecil + wordmark "omnisense" putih.
+
+Isi kartu, label kecil: "YANG PERLU KAMU TAHU"
+01 Apa yang terjadi — Meta merilis Muse untuk Mac. Asisten ini bisa membuka file, pesan, kalender, catatan, dan email kamu langsung di aplikasi aslinya.
+02 Kenapa ini penting — AI mulai pindah dari sekadar menjawab pertanyaan jadi benar-benar mengerjakan tugas. Muse langsung jadi aplikasi nomor 1 di App Store Amerika.
+03 Untuk bisnis kamu — Kamu yang menentukan apa yang boleh diakses, dan Muse selalu minta izin sebelum tindakan sensitif. Mulai dari tugas rutin yang paling menyita waktu.
+
+Di bawah kartu, headline putih extra-bold ALL-CAPS dua baris. SALIN PERSIS huruf per huruf, jangan diubah kalimatnya, jangan tambah atau kurangi kata:
+baris 1: "AI SEKARANG KERJA DI"
+baris 2: "KOMPUTER KAMU SENDIRI"
+
+Subjudul slate satu baris: "Pilih satu tugas rutin minggu ini, catat berapa lama waktu yang dipakai, lalu bandingkan hasilnya setelah dibantu AI."
+
+Tombol pill outline tipis: "JADWALKAN KONSULTASI GRATIS"
+
+Footer tengah kecil abu: "@omnisense_id • omnisense.id"
+
+PENTING: tidak boleh ada kata bahasa Inggris selain nama produk (Mac, Muse, AI, App Store). Tidak ada teks tambahan, tidak ada tulisan ngawur. Tanpa warna neon ramai, tanpa ornamen 3D.

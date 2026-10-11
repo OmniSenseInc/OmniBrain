@@ -1,0 +1,5 @@
+name: omnisense-consultation
+version: "1.0.0"
+description: "Consented website screening to restricted WhatsApp consultation and local team review queue."
+hooks:
+  - pre_gateway_dispatch

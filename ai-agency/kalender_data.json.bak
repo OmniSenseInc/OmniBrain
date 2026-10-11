@@ -1,0 +1,65 @@
+{
+  "siklus": "SIKLUS 1",
+  "periode": "21 SEP - 18 OKT 2026",
+  "subjudul": "4 PEKAN · 3 PERTEMUAN PER PEKAN (1 OFFLINE + 2 ONLINE) · RILIS 1X PER PEKAN",
+  "hari0": "HARI 0 · MIN 20 SEP — RAPAT OFFLINE KICKOFF 19:30 (kunci scope Siklus 1 & pasang sistem)",
+  "legenda": ["OFFLINE", "ONLINE", "KONTEN", "CUT-OFF / RILIS"],
+  "pekan": [
+    {
+      "label": "PEKAN 1",
+      "tema": "DATA PENJUALAN TERSIMPAN TERPUSAT",
+      "offline_info": "OFFLINE Sab 26 Sep 16:00",
+      "hari": [
+        {"tgl": "21", "tag": ["KONTEN #1"]},
+        {"tgl": "22", "tag": []},
+        {"tgl": "23", "tag": ["ONLINE-A 20:00"]},
+        {"tgl": "24", "tag": ["CUT-OFF 12:00", "KONTEN #2"]},
+        {"tgl": "25", "tag": ["ONLINE-B 20:00", "RILIS KANDIDAT"]},
+        {"tgl": "26", "tag": ["OFFLINE 16:00", "BUILD STABIL"], "tipe": "offline"},
+        {"tgl": "27", "tag": []}
+      ]
+    },
+    {
+      "label": "PEKAN 2",
+      "tema": "LAPORAN HARIAN OTOMATIS VIA WHATSAPP",
+      "offline_info": "OFFLINE Min 4 Okt 19:30",
+      "hari": [
+        {"tgl": "28", "tag": ["KONTEN #1"]},
+        {"tgl": "29", "tag": ["ONLINE-A 20:00"]},
+        {"tgl": "30", "tag": []},
+        {"tgl": "1", "tag": ["ONLINE-B 20:00", "CUT-OFF 12:00", "KONTEN #2"]},
+        {"tgl": "2", "tag": ["RILIS KANDIDAT"]},
+        {"tgl": "3", "tag": []},
+        {"tgl": "4", "tag": ["OFFLINE 19:30", "BUILD STABIL"], "tipe": "offline"}
+      ]
+    },
+    {
+      "label": "PEKAN 3",
+      "tema": "CRON STOK + SEKRETARIS 1 PERTANYAAN",
+      "offline_info": "OFFLINE Sab 10 Okt 16:00",
+      "hari": [
+        {"tgl": "5", "tag": ["KONTEN #1"]},
+        {"tgl": "6", "tag": []},
+        {"tgl": "7", "tag": ["ONLINE-A 20:00"]},
+        {"tgl": "8", "tag": ["ONLINE-B 20:00", "CUT-OFF 12:00", "KONTEN #2"]},
+        {"tgl": "9", "tag": ["RILIS KANDIDAT"]},
+        {"tgl": "10", "tag": ["OFFLINE 16:00", "BUILD STABIL"], "tipe": "offline"},
+        {"tgl": "11", "tag": []}
+      ]
+    },
+    {
+      "label": "PEKAN 4",
+      "tema": "HARDENING + SIAP BETA (DoD 6/6)",
+      "offline_info": "OFFLINE Min 18 Okt 19:30",
+      "hari": [
+        {"tgl": "12", "tag": ["KONTEN #1"]},
+        {"tgl": "13", "tag": ["ONLINE-A 20:00"]},
+        {"tgl": "14", "tag": []},
+        {"tgl": "15", "tag": ["ONLINE-B 20:00", "KONTEN #2"]},
+        {"tgl": "16", "tag": ["RILIS KANDIDAT"]},
+        {"tgl": "17", "tag": []},
+        {"tgl": "18", "tag": ["OFFLINE 19:30", "GERBANG SIKLUS"], "tipe": "offline"}
+      ]
+    }
+  ]
+}

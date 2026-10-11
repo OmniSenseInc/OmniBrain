@@ -1,0 +1,28 @@
+{
+  "tag": "[ AI RADAR ]",
+  "tanggal": "SEPTEMBER 20, 2026 · AI BRIEF",
+  "label_kartu": "WHAT YOU NEED TO KNOW",
+  "poin": [
+    {
+      "judul": "What happened",
+      "isi": "Unity released official plugins for Claude Code and OpenAI Codex. They carry \"skills\" written and maintained by Unity's own teams — the Codex version ships with 31 skills, covering interfaces, 2D graphics, audio, physics and in-app purchases."
+    },
+    {
+      "judul": "Why it matters",
+      "isi": "Unity says general-purpose agents usually copy old forum tutorials. The code may compile, yet often does not work as intended. With official skills, agents start from guidance that is correct and kept up to date."
+    },
+    {
+      "judul": "For your business",
+      "isi": "Agents are not magic. Start with one workflow, write clear instructions for that agent, then test the output before you rely on it every day."
+    }
+  ],
+  "headline": [
+    "AI AGENTS STOP GUESSING,",
+    "NOW THEY GET OFFICIAL SKILLS"
+  ],
+  "headline_caption": "Unity ships official plugins for Claude Code and OpenAI Codex: AI agents now work from vendor-maintained skills instead of stale tutorials",
+  "subjudul": "What an agent delivers comes down to the guidance you give it — not to luck.",
+  "cta": "BOOK A FREE CONSULTATION",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgent #AIforBusiness #ArtificialIntelligence #Consulting"
+}

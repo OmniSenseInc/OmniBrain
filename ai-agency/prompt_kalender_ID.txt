@@ -1,0 +1,71 @@
+========================================================================
+PROMPT 1 — BAHASA INDONESIA (tempel utuh ke image generator)
+========================================================================
+Poster kalender bulanan vertikal rasio 4:5 (1080x1350 px), gaya editorial premium
+minimalis Swiss tech, gelap monokrom, banyak ruang kosong. Latar hitam obsidian #09090B.
+Kartu kaca gelap #121215 di tengah, sudut membulat 20px, garis tepi tipis 1px #27272A.
+Isi penting hanya di area aman Y 135-1215 px. Tipografi sans-serif geometris modern
+(Inter Tight Bold / Montserrat ExtraBold), letter-spacing rapat, huruf tajam dan bersih.
+Header kiri atas: label kecil dalam kurung siku "[ KALENDER SIKLUS ]" warna abu slate #94A3B8.
+Header kanan atas: logo spiral putih #FFFFFF + wordmark huruf kecil "omnisense" warna putih.
+Judul ALL-CAPS extra-bold putih: "RENCANA BULANAN". Di bawahnya subjudul putih lebih kecil,
+lalu satu baris penjelas abu slate. Satu strip kaca gelap memuat satu baris teks putih kecil.
+Isi utama: grid 8 kolom x 4 baris — kolom paling kiri label pekan (putih) dengan tema kecil
+abu slate di bawahnya, 7 kolom hari SEN SEL RAB KAM JUM SAB MIN. Tiap sel: kotak membulat
+gelap berisi angka tanggal putih tebal; sel rapat offline diisi penuh putih #FFFFFF dengan
+angka tanggal hitam; sel rapat online bergaris tepi putih tipis 2px. Di bawah grid ada baris
+legenda kecil (kotak putih = OFFLINE, kotak garis putih = ONLINE) dan keterangan abu redup.
+Footer tengah bawah kecil abu redup: "@omnisense_id • omnisense.id".
+PALET TERKUNCI: hanya hitam #09090B, kaca #121215, putih #FFFFFF, abu slate #94A3B8 dan
+#64748B. TANPA warna lain, TANPA glow, TANPA gradasi warna-warni, TANPA ornamen 3D,
+TANPA foto orang, TANPA ikon ramai. Bersih, tenang, profesional.
+Legenda di bawah tabel: "RAPAT DATANG" (kotak putih), "RAPAT ONLINE" (kotak garis putih),
+dan tulisan kecil "tulisan kecil di kotak = tugas hari itu".
+
+TEKS YANG HARUS TERTULIS PERSIS (jangan diterjemahkan, jangan diubah, ejaan huruf demi huruf harus sama):
+- Subjudul: "SIKLUS 1 · 21 SEP - 18 OKT 2026"
+- Baris penjelas: "4 PEKAN · TIAP PEKAN 3 RAPAT (1 DATANG + 2 ONLINE) · TIAP PEKAN KELUAR 1 VERSI BARU"
+- Strip kaca di bawah judul: "HARI 0 · MIN 20 SEP — RAPAT KICKOFF DATANG 19:30 (kunci target Siklus 1 & pasang sistem)"
+
+ISI GRID (8 kolom x 4 baris). Kolom 1 = label pekan + tema; kolom 2-8 = hari SEN..MIN. Isi tiap sel:
+
+  PEKAN 1 | tema: "DATA PENJUALAN TERSIMPAN DI SATU TEMPAT" | catatan kaki kolom: "RAPAT DATANG Sab 26 Sep 16:00"
+    SEN tgl 21 -> kotak gelap biasa; tulisan kecil: KONTEN 1
+    SEL tgl 22 -> kotak gelap biasa; tulisan kecil: (kosong, hanya angka tanggal)
+    RAB tgl 23 -> KOTAK BERGARIS TEPI PUTIH (rapat online); tulisan kecil: RAPAT ONLINE 1, 20:00
+    KAM tgl 24 -> kotak gelap biasa; tulisan kecil: BATAS 12:00, KONTEN 2
+    JUM tgl 25 -> KOTAK BERGARIS TEPI PUTIH (rapat online); tulisan kecil: RAPAT ONLINE 2, 20:00, VERSI UJI
+    SAB tgl 26 -> KOTAK PUTIH PENUH (rapat datang); tulisan kecil: RAPAT DATANG, 16:00, VERSI JADI
+    MIN tgl 27 -> kotak gelap biasa; tulisan kecil: (kosong, hanya angka tanggal)
+
+  PEKAN 2 | tema: "LAPORAN HARIAN OTOMATIS LEWAT WHATSAPP" | catatan kaki kolom: "RAPAT DATANG Min 4 Okt 19:30"
+    SEN tgl 28 -> kotak gelap biasa; tulisan kecil: KONTEN 1
+    SEL tgl 29 -> KOTAK BERGARIS TEPI PUTIH (rapat online); tulisan kecil: RAPAT ONLINE 1, 20:00
+    RAB tgl 30 -> kotak gelap biasa; tulisan kecil: (kosong, hanya angka tanggal)
+    KAM tgl  1 -> KOTAK BERGARIS TEPI PUTIH (rapat online); tulisan kecil: RAPAT ONLINE 2, 20:00, BATAS 12:00, KONTEN 2
+    JUM tgl  2 -> kotak gelap biasa; tulisan kecil: VERSI UJI
+    SAB tgl  3 -> kotak gelap biasa; tulisan kecil: (kosong, hanya angka tanggal)
+    MIN tgl  4 -> KOTAK PUTIH PENUH (rapat datang); tulisan kecil: RAPAT DATANG, 19:30, VERSI JADI
+
+  PEKAN 3 | tema: "INGAT STOK OTOMATIS + TANYA JAWAB 1 PERTANYAAN" | catatan kaki kolom: "RAPAT DATANG Sab 10 Okt 16:00"
+    SEN tgl  5 -> kotak gelap biasa; tulisan kecil: KONTEN 1
+    SEL tgl  6 -> kotak gelap biasa; tulisan kecil: (kosong, hanya angka tanggal)
+    RAB tgl  7 -> KOTAK BERGARIS TEPI PUTIH (rapat online); tulisan kecil: RAPAT ONLINE 1, 20:00
+    KAM tgl  8 -> KOTAK BERGARIS TEPI PUTIH (rapat online); tulisan kecil: RAPAT ONLINE 2, 20:00, BATAS 12:00, KONTEN 2
+    JUM tgl  9 -> kotak gelap biasa; tulisan kecil: VERSI UJI
+    SAB tgl 10 -> KOTAK PUTIH PENUH (rapat datang); tulisan kecil: RAPAT DATANG, 16:00, VERSI JADI
+    MIN tgl 11 -> kotak gelap biasa; tulisan kecil: (kosong, hanya angka tanggal)
+
+  PEKAN 4 | tema: "PENGUATAN + SIAP DIPAKAI KLIEN" | catatan kaki kolom: "RAPAT DATANG Min 18 Okt 19:30"
+    SEN tgl 12 -> kotak gelap biasa; tulisan kecil: KONTEN 1
+    SEL tgl 13 -> KOTAK BERGARIS TEPI PUTIH (rapat online); tulisan kecil: RAPAT ONLINE 1, 20:00
+    RAB tgl 14 -> kotak gelap biasa; tulisan kecil: (kosong, hanya angka tanggal)
+    KAM tgl 15 -> KOTAK BERGARIS TEPI PUTIH (rapat online); tulisan kecil: RAPAT ONLINE 2, 20:00, KONTEN 2
+    JUM tgl 16 -> kotak gelap biasa; tulisan kecil: VERSI UJI
+    SAB tgl 17 -> kotak gelap biasa; tulisan kecil: (kosong, hanya angka tanggal)
+    MIN tgl 18 -> KOTAK PUTIH PENUH (rapat datang); tulisan kecil: RAPAT DATANG, 19:30, CEK AKHIR
+
+Legenda di bawah tabel: "RAPAT DATANG" (kotak putih) · "RAPAT ONLINE" (kotak garis putih) · "tulisan kecil di kotak = tugas hari itu"
+
+NEGATIF: warna selain hitam/putih/abu, glow, gradasi warna, foto orang, teks tanggal salah, teks blur/typo, watermark, tanda tangan, mockup perangkat.
+

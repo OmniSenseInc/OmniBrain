@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080e0d">
+  <meta name="description" content="OmniSense membantu perusahaan membenahi proses melalui digitalisasi, otomatisasi, dan agen AI yang dirancang sesuai kebutuhan bisnis. Mulai dengan konsultasi gratis.">
+  <meta name="robots" content="noindex">
+  <title>OmniSense — Bisnis Anda. Lebih terhubung.</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face{font-family:Inter;src:url('assets/fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:Inter;src:url('assets/fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    @font-face{font-family:Inter;src:url('assets/fonts/inter-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    :root{color-scheme:dark;--bg:#080e0d;--fg:#f3f5ef;--muted:#a1b2ab;--accent:#9cdeca;--line:rgba(207,235,223,.13);--gutter:clamp(24px,4.5vw,76px)}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    button,a{-webkit-tap-highlight-color:transparent}
+    button{font:inherit;color:inherit;cursor:pointer}
+    a{color:inherit;text-decoration:none}
+    button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+    button{border:0}
+    .skip{position:fixed;left:20px;top:-100px;z-index:30;padding:14px 20px;background:var(--accent);color:var(--bg)}
+    .skip:focus{top:12px}
+    .page{position:relative;isolation:isolate;min-height:100svh;display:flex;flex-direction:column;background:radial-gradient(ellipse at 84% 37%,rgba(26,75,59,.16),transparent 48%),#080e0d;overflow:clip}
+    .page::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(200,235,220,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(200,235,220,.035) 1px,transparent 1px);background-size:25% 33.333%;background-position:0 97px;mask-image:linear-gradient(transparent,black 24%,black 88%,transparent)}
+    .cross{position:absolute;width:9px;height:9px;pointer-events:none;opacity:.27}
+    .cross::before,.cross::after{content:'';position:absolute;background:var(--accent)}
+    .cross::before{width:9px;height:1px;top:4px}.cross::after{width:1px;height:9px;left:4px}
+    .c1{left:25%;top:33.3%}.c2{left:75%;top:33.3%}.c3{left:25%;top:66.6%}.c4{left:75%;top:66.6%}
+    header{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:27px var(--gutter);min-height:96px}
+    .brand{display:inline-flex;align-items:center;gap:10px;font-size:21px;font-weight:700;letter-spacing:-.8px;flex-shrink:0}
+    .brand img{width:33px;height:33px}
+    .desktop-nav{display:flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:40px;padding:5px;background:rgba(16,29,23,.45)}
+    .nav-item{background:transparent;padding:12px 19px;border-radius:30px;color:#b3c0ba;font-size:12px;transition:background .2s,color .2s}
+    .nav-item:hover{background:rgba(208,237,222,.075);color:var(--fg)}
+    .nav-item span{margin-right:7px;color:#789989;font-size:10px}
+    .header-contact{display:inline-flex;gap:22px;align-items:center;font-size:12px;border-bottom:1px solid #769c8c;padding:8px 0}
+    .header-contact:hover{color:var(--accent)}
+    .arrow{font-size:18px;line-height:1}
+    .menu-trigger{display:none;background:transparent;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+    .menu-trigger i{display:block;width:17px;height:1px;background:var(--fg)}
+    main{position:relative;flex:1;display:grid;grid-template-columns:1.05fr .95fr;gap:30px;padding:clamp(48px,7.5vh,96px) var(--gutter) 46px;align-items:center;min-height:620px}
+    .intro{position:relative;z-index:2;min-width:0;max-width:700px}
+    .eyebrow{display:flex;align-items:center;gap:11px;color:#a6b9ae;font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;margin:0 0 32px}
+    .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(156,222,202,.06)}
+    h1{font-size:clamp(55px,6.25vw,96px);line-height:1.035;letter-spacing:-4.5px;font-weight:400;margin:0;max-width:680px}
+    h1 span{display:block}
+    h1 em{color:#b1ddc8;font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-4px}
+    .description{color:var(--muted);font-size:14px;line-height:1.85;max-width:390px;margin:29px 0 0;text-wrap:pretty}
+    .actions{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:33px}
+    .primary{display:inline-flex;align-items:center;justify-content:center;gap:28px;min-height:49px;padding:15px 23px;background:#aadfc9;color:#0b1a13;border-radius:5px;font-size:12px;font-weight:500;transition:background .2s,transform .2s}
+    .primary:hover{background:#c0efd9;transform:translateY(-2px)}
+    .primary .arrow{font-size:19px}
+    .secondary{display:inline-flex;align-items:center;gap:13px;padding:14px 0;background:none;font-size:12px;color:#c8d6ce}
+    .secondary:hover{color:var(--accent)}
+    .consult-note{margin:15px 0 0;color:#8fa299;font-size:10px;line-height:1.6}
+    .scene{position:relative;min-width:0;aspect-ratio:1;width:min(115%,calc(100svh - 310px));max-width:680px;justify-self:center;transform:translateX(-1%);user-select:none;pointer-events:none}
+    .scene::before{content:'';position:absolute;inset:15%;border-radius:50%;background:#2c7353;opacity:.13;filter:blur(70px)}
+    .orbit-svg{position:absolute;width:100%;height:100%;inset:0;overflow:visible}
+    .orbital{transform-origin:340px 340px;animation:orbit 70s linear infinite}
+    .orbital.slow{animation-duration:95s;animation-direction:reverse}
+    .orbital .beacon{filter:drop-shadow(0 0 4px #afe0c8)}
+    .core{position:absolute;inset:27%;border:1px solid rgba(179,229,202,.2);border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 36% 29%,rgba(155,209,179,.12),transparent 49%),radial-gradient(circle at 63% 75%,rgba(37,90,59,.42),transparent 64%),#0c1b13;box-shadow:inset 0 0 44px rgba(55,127,82,.11),0 0 100px rgba(37,110,60,.07)}
+    .core::before{content:'';position:absolute;inset:8%;border-radius:50%;border:1px solid rgba(185,230,203,.09);box-shadow:0 0 0 20px rgba(130,177,149,.018),0 0 0 40px rgba(130,177,149,.018)}
+    .core::after{content:'';position:absolute;inset:-1px;border-radius:50%;border:1px solid transparent;border-top-color:rgba(172,236,201,.65);border-left-color:rgba(172,236,201,.14);transform:rotate(-28deg)}
+    .core img{width:29%;height:auto;opacity:.86;filter:drop-shadow(0 0 20px rgba(151,210,176,.14))}
+    .core-code{position:absolute;bottom:17%;left:0;right:0;text-align:center;color:#789a85;font-size:7px;font-weight:500;letter-spacing:2px}
+    .node{position:absolute;display:flex;flex-direction:column;gap:7px;padding:12px 0;background:linear-gradient(90deg,rgba(8,14,13,.7),transparent)}
+    .node .number{color:#5d8773;font-size:8px;letter-spacing:1px}
+    .node strong{font-size:11px;letter-spacing:1.2px;font-weight:500;text-transform:uppercase;color:#d9e7db}
+    .node p{color:#8a9d92;margin:0;font-size:9px;line-height:1.65;max-width:155px}
+    .node-a{left:13%;top:8%}.node-b{left:76%;top:48%}.node-c{left:5%;top:81%}
+    .mobile-capabilities{display:none}
+    .footer{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px var(--gutter) 27px;color:#809789;font-size:9px;letter-spacing:.2px}
+    .footer-left{display:flex;align-items:center;gap:10px}
+    .footer-left span{width:17px;height:1px;background:#567d65}
+    .footer-links{display:flex;align-items:center;gap:25px}
+    .footer-links a:hover{color:var(--accent)}
+    .footer-links a{padding:8px 0}
+    .watermark{position:absolute;z-index:-1;left:calc(var(--gutter) - 5px);bottom:40px;font-size:clamp(120px,20vw,280px);font-weight:700;letter-spacing:-15px;line-height:.8;color:rgba(163,206,174,.016);pointer-events:none}
+    .motion-toggle{display:inline-flex;align-items:center;gap:7px;font-size:9px;background:transparent;color:#98b1a2;padding:8px 0;min-height:36px}
+    .motion-toggle i{width:7px;height:7px;border:1px solid #98b1a2;border-radius:50%;background:#98b1a2}
+    .motion-toggle[aria-pressed=false] i{background:transparent}
+    .enter{animation:enter .85s cubic-bezier(.16,1,.3,1) both}
+    header.enter{animation-delay:.08s}.eyebrow.enter{animation-delay:.14s}h1.enter{animation-delay:.22s}.description.enter{animation-delay:.34s}.actions.enter{animation-delay:.42s}.scene.enter{animation-delay:.18s}.footer.enter{animation-delay:.46s}
+    dialog{background:#0b1410;color:var(--fg);border:1px solid #2e4337;border-radius:18px;padding:38px;max-width:660px;width:calc(100% - 40px);max-height:calc(100svh - 40px);overflow:auto;box-shadow:0 35px 150px #0009}
+    dialog::backdrop{background:rgba(3,9,6,.8);backdrop-filter:blur(8px)}
+    dialog .close{position:sticky;top:0;float:right;display:grid;place-items:center;border:1px solid #365041;background:#112117;border-radius:50%;width:42px;height:42px;font-size:22px;margin:-12px -12px 10px 20px}
+    dialog .panel-label{color:#8dab97;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin:12px 0 21px}
+    dialog h2{font-size:clamp(30px,4vw,44px);font-weight:400;line-height:1.2;letter-spacing:-1.5px;margin:0 0 21px}
+    dialog p{font-size:14px;color:#b0c0b5;line-height:1.8}
+    dialog .panel-actions{margin-top:28px;display:flex;gap:18px;flex-wrap:wrap}
+    .panel-card{padding:20px 0;border-top:1px solid var(--line)}
+    .panel-card h3{font-size:17px;font-weight:500;margin:0 0 6px;color:#e3ece2}
+    .panel-card p{font-size:13px;margin:0}
+    .panel-card .tag{display:block;color:#8dac97;font-size:9px;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+    #mobile-menu nav{display:flex;flex-direction:column;gap:6px;margin-top:30px}
+    #mobile-menu .menu-link{display:block;width:100%;padding:19px 0;border-bottom:1px solid var(--line);text-align:left;background:none;font-size:26px;font-weight:400}
+    #mobile-menu .menu-link span{font-size:11px;margin-right:20px;color:#82b594}
+    @keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes orbit{to{transform:rotate(360deg)}}
+    .no-motion *{animation:none!important;transition:none!important}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+    @media(min-width:1700px){main{max-width:1700px;width:100%;margin:auto}.scene{width:100%}}
+    @media(max-width:1100px){header{gap:15px}.nav-item{padding:11px 13px}.header-contact{font-size:11px;gap:14px}h1{font-size:clamp(54px,6.4vw,76px);letter-spacing:-3.5px}.scene{width:min(110%,calc(100svh - 270px))}.node-b{left:75%}.node p{max-width:125px}}
+    @media(max-width:860px){.desktop-nav,.header-contact{display:none}.menu-trigger{display:flex}header{padding-top:20px;padding-bottom:20px;min-height:84px}main{min-height:570px;gap:12px;padding-top:50px;padding-bottom:46px}.scene{width:128%;transform:translateX(-2%)}h1{font-size:clamp(48px,7.2vw,64px)}h1 em{letter-spacing:-3px}.node-a{left:18%;top:6%}.node-b{left:68%;top:68%}.node-c{left:0;top:83%}.node p{max-width:100px}.description{font-size:13px;max-width:340px}.actions{gap:9px}.primary{padding:14px 17px;gap:20px}.secondary{font-size:11px}.footer-links{gap:18px}}
+    @media(max-width:640px){:root{--gutter:24px}header{padding-bottom:13px}.brand{font-size:20px}.brand img{width:30px;height:30px}main{grid-template-columns:minmax(0,1fr);gap:0;min-height:0;padding-top:43px;padding-bottom:28px;align-items:start}.intro{max-width:100%}.eyebrow{margin-bottom:25px;font-size:8px;letter-spacing:1.35px}h1{font-size:clamp(47px,11.6vw,73px);letter-spacing:-2.7px;line-height:1.035}h1 em{letter-spacing:-2.8px}.description{font-size:13px;line-height:1.8;max-width:355px;margin-top:24px}.actions{gap:16px;margin-top:26px}.primary{min-height:48px;padding:14px 19px;gap:22px;font-size:11px}.secondary{font-size:11px;gap:8px}.consult-note{font-size:9px;margin-top:12px}.scene{position:relative;width:88%;max-width:370px;justify-self:center;transform:none;margin:5px 0 -9px;aspect-ratio:1}.node{display:none}.core-code{font-size:6px}.mobile-capabilities{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 16px;margin:0 0 2px;font-size:8px;letter-spacing:.3px;color:#a8c5b0}.mobile-capabilities span+span::before{content:'+';margin-right:16px;color:#5f816b}.footer{padding-top:12px;padding-bottom:19px;font-size:8px;align-items:flex-start;gap:10px}.footer-left{line-height:1.8;gap:8px}.footer-links{flex-wrap:wrap;justify-content:flex-end;gap:3px 17px;max-width:185px}.motion-toggle{font-size:8px;min-height:29px}.watermark{font-size:90px;letter-spacing:-6px;bottom:95px;left:12px}.cross{opacity:.14}.c2{top:54%}dialog{padding:28px 24px;width:calc(100% - 28px)}dialog .close{margin-right:-8px}dialog .panel-label{font-size:9px}dialog p{font-size:13px}}
+    @media(max-width:360px){:root{--gutter:20px}main{padding-top:30px}h1{font-size:44px;letter-spacing:-2.5px}h1 em{letter-spacing:-2.8px}.actions{gap:10px 18px}.secondary{font-size:10px}.scene{width:92%;margin-top:4px}.footer{flex-direction:column}.footer-links{max-width:none;justify-content:flex-start;gap:22px}.eyebrow{font-size:7px;letter-spacing:1px}}
+    @media(max-height:820px) and (min-width:861px){header{min-height:83px;padding-top:21px;padding-bottom:21px}main{padding-top:25px;padding-bottom:25px;min-height:calc(100svh - 165px)}h1{font-size:clamp(56px,6.1vw,79px)}.description{margin-top:20px}.eyebrow{margin-bottom:22px}.actions{margin-top:24px}.scene{width:min(110%,calc(100svh - 230px))}.footer{padding-top:14px;padding-bottom:17px}}
+    @media(max-height:650px) and (min-width:641px){main{padding-top:25px;padding-bottom:20px;min-height:470px}.scene{max-width:420px}h1{font-size:60px}.description{margin-top:20px}.eyebrow{margin-bottom:22px}.actions{margin-top:24px}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Lewati ke isi</a>
+  <div class="page">
+    <span class="cross c1" aria-hidden="true"></span><span class="cross c2" aria-hidden="true"></span><span class="cross c3" aria-hidden="true"></span><span class="cross c4" aria-hidden="true"></span>
+    <header class="enter">
+      <a class="brand" href="index.html" aria-label="OmniSense, beranda"><img src="assets/logo-mark-white-256.png" alt="" width="33" height="33">omnisense</a>
+      <nav class="desktop-nav" aria-label="Navigasi utama">
+        <button type="button" class="nav-item" data-panel="about"><span aria-hidden="true">01.</span>Tentang</button>
+        <button type="button" class="nav-item" data-panel="solutions"><span aria-hidden="true">02.</span>Solusi</button>
+        <button type="button" class="nav-item" data-panel="work"><span aria-hidden="true">03.</span>Karya</button>
+      </nav>
+      <a class="header-contact" href="konsultasi-v3.html">Mulai percakapan<span class="arrow" aria-hidden="true">↗</span></a>
+      <button type="button" class="menu-trigger" id="open-menu" aria-label="Buka menu" aria-haspopup="dialog" aria-controls="mobile-menu" aria-expanded="false"><i></i><i></i></button>
+    </header>
+    <main id="main">
+      <div class="intro">
+        <p class="eyebrow enter">Digitalisasi · Otomatisasi · Agen AI</p>
+        <h1 class="enter"><span>Bisnis Anda.</span><span>Lebih <em>terhubung.</em></span></h1>
+        <p class="description enter">OmniSense membantu perusahaan membenahi proses melalui digitalisasi, otomatisasi, dan agen AI yang dirancang sesuai kebutuhan bisnis.</p>
+        <div class="actions enter">
+          <a class="primary" href="konsultasi-v3.html">Konsultasi Gratis<span class="arrow" aria-hidden="true">↗</span></a>
+          <button class="secondary" type="button" data-panel="about">Kenali OmniSense<span class="arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <p class="consult-note">Mulai dari kebutuhan. Temukan langkah yang sesuai.</p>
+      </div>
+      <div class="scene enter" aria-hidden="true">
+        <svg class="orbit-svg" viewBox="0 0 680 680" fill="none">
+          <defs>
+            <linearGradient id="orbit-light" x1="76" y1="77" x2="615" y2="608" gradientUnits="userSpaceOnUse"><stop stop-color="#addbc0" stop-opacity=".44"/><stop offset=".52" stop-color="#619878" stop-opacity=".05"/><stop offset="1" stop-color="#a8d8b4" stop-opacity=".24"/></linearGradient>
+            <linearGradient id="wire-light" x1="110" y1="120" x2="585" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#86b79a" stop-opacity=".4"/><stop offset=".5" stop-color="#45674f" stop-opacity=".15"/><stop offset="1" stop-color="#addcc1" stop-opacity=".5"/></linearGradient>
+          </defs>
+          <circle cx="340" cy="340" r="278" stroke="#6b9c7c" stroke-opacity=".09"/>
+          <circle cx="340" cy="340" r="237" stroke="url(#orbit-light)" stroke-width=".8"/>
+          <circle cx="340" cy="340" r="197" stroke="#88b895" stroke-opacity=".06"/>
+          <ellipse cx="340" cy="340" rx="294" ry="120" transform="rotate(-38 340 340)" stroke="url(#orbit-light)"/>
+          <ellipse cx="340" cy="340" rx="277" ry="105" transform="rotate(42 340 340)" stroke="url(#orbit-light)" stroke-width=".6"/>
+          <g class="orbital"><circle class="beacon" cx="340" cy="103" r="3" fill="#bddec7"/><circle cx="340" cy="103" r="8" stroke="#bddec7" stroke-opacity=".2"/><circle cx="340" cy="577" r="1.6" fill="#6fa786"/></g>
+          <g class="orbital slow"><circle class="beacon" cx="86" cy="454" r="2.5" fill="#82b796"/><circle cx="602" cy="339" r="1.5" fill="#a4d1b5"/></g>
+          <path d="M176 154H250L297 191M487 345H540L572 373M250 483L190 553H126" stroke="url(#wire-light)" stroke-width=".8"/>
+          <rect x="163" y="149" width="8" height="8" stroke="#9dcab0" stroke-opacity=".4"/>
+          <rect x="575" y="375" width="8" height="8" stroke="#9dcab0" stroke-opacity=".4"/>
+          <rect x="115" y="550" width="8" height="8" stroke="#9dcab0" stroke-opacity=".4"/>
+          <path d="M325 43H355M340 28V58M325 637H355M340 622V652" stroke="#659976" stroke-opacity=".2" stroke-width=".7"/>
+        </svg>
+        <div class="core"><img src="assets/logo-mark-white-256.png" alt="" width="80" height="80"><span class="core-code">OMNISENSE / CORE</span></div>
+        <div class="node node-a"><span class="number">01 / FONDASI</span><strong>Digitalisasi</strong><p>Rapikan proses.<br>Hubungkan data.</p></div>
+        <div class="node node-b"><span class="number">02 / ALUR KERJA</span><strong>Otomatisasi</strong><p>Sederhanakan<br>pekerjaan berulang.</p></div>
+        <div class="node node-c"><span class="number">03 / INTELIGENSI</span><strong>Agen AI</strong><p>Bantu tugas yang<br>membutuhkan penalaran.</p></div>
+      </div>
+      <div class="mobile-capabilities" aria-hidden="true"><span>Digitalisasi</span><span>Otomatisasi</span><span>Agen AI</span></div>
+    </main>
+    <div class="watermark" aria-hidden="true">omnisense</div>
+    <footer class="footer enter">
+      <div class="footer-left"><span aria-hidden="true"></span>Dirancang untuk kebutuhan bisnis Anda.</div>
+      <div class="footer-links"><a href="https://instagram.com/omnisense_id" target="_blank" rel="noopener">Instagram ↗</a><a href="privacy.html">Privasi</a><button class="motion-toggle" id="motion" type="button" aria-label="Animasi" aria-pressed="true"><i aria-hidden="true"></i><span id="motion-text">Gerak aktif</span></button></div>
+    </footer>
+  </div>
+  <dialog id="about" aria-labelledby="about-title">
+    <button class="close" type="button" aria-label="Tutup tentang OmniSense" data-close>×</button>
+    <p class="panel-label">Tentang OmniSense</p>
+    <h2 id="about-title">Teknologi yang mengikuti<br>kebutuhan bisnis.</h2>
+    <p>Kami ingin digitalisasi dan AI menjadi fondasi yang berguna bagi perusahaan. Langkahnya dimulai dengan memahami pekerjaan sehari-hari, hambatan yang terjadi, dan hasil yang ingin dicapai.</p>
+    <p>Dari situ, kami membantu menentukan perbaikan yang sesuai: merapikan proses, menghubungkan sistem, mengotomatisasi tugas, atau membangun agen AI. Pilihannya mengikuti kebutuhan dan bukti yang ditemukan bersama.</p>
+    <div class="panel-actions"><a class="primary" href="konsultasi-v3.html">Mulai Konsultasi Gratis<span aria-hidden="true">↗</span></a></div>
+  </dialog>
+  <dialog id="solutions" aria-labelledby="solutions-title">
+    <button class="close" type="button" aria-label="Tutup solusi" data-close>×</button>
+    <p class="panel-label">Yang kami bantu</p><h2 id="solutions-title">Tiga kemampuan.<br>Sesuai kebutuhan Anda.</h2>
+    <div class="panel-card"><h3>01. Digitalisasi</h3><p>Rapikan pencatatan, alur kerja, dan data agar informasi mudah dipakai oleh tim.</p></div>
+    <div class="panel-card"><h3>02. Otomatisasi</h3><p>Hubungkan sistem dan sederhanakan pekerjaan berulang dengan aturan yang jelas.</p></div>
+    <div class="panel-card"><h3>03. Agen AI</h3><p>Bantu pekerjaan yang membutuhkan penalaran, dengan akses terbatas dan review manusia sesuai risiko.</p></div>
+    <div class="panel-actions"><a class="primary" href="konsultasi-v3.html">Bahas Kebutuhan Anda<span aria-hidden="true">↗</span></a></div>
+  </dialog>
+  <dialog id="work" aria-labelledby="work-title">
+    <button class="close" type="button" aria-label="Tutup karya" data-close>×</button>
+    <p class="panel-label">Karya OmniSense</p><h2 id="work-title">Berangkat dari<br>pekerjaan sehari-hari.</h2>
+    <div class="panel-card"><span class="tag">Produk · Food & Beverage</span><h3>FNBSense</h3><p>Sistem kasir web, pencatatan penjualan, dan laporan harian untuk membantu operasional kafe dan outlet F&B.</p></div>
+    <div class="panel-card"><span class="tag">Sistem · Logistik</span><h3>LogiSense</h3><p>Dashboard dan alur data untuk menyatukan informasi pengiriman, armada, serta keuangan dalam pekerjaan operasional.</p></div>
+    <div class="panel-actions"><a class="primary" href="konsultasi-v3.html">Bahas Proses Bisnis Anda<span aria-hidden="true">↗</span></a></div>
+  </dialog>
+  <dialog id="mobile-menu" aria-labelledby="menu-title">
+    <button class="close" type="button" aria-label="Tutup menu" data-close>×</button>
+    <p class="panel-label" id="menu-title">OmniSense</p>
+    <nav aria-label="Navigasi mobile"><button type="button" class="menu-link" data-panel="about"><span aria-hidden="true">01.</span>Tentang</button><button type="button" class="menu-link" data-panel="solutions"><span aria-hidden="true">02.</span>Solusi</button><button type="button" class="menu-link" data-panel="work"><span aria-hidden="true">03.</span>Karya</button></nav>
+    <div class="panel-actions"><a class="primary" href="konsultasi-v3.html">Konsultasi Gratis<span aria-hidden="true">↗</span></a></div>
+  </dialog>
+  <script>
+    (()=>{
+      const menu=document.getElementById('mobile-menu'), trigger=document.getElementById('open-menu');
+      const dialogs=[...document.querySelectorAll('dialog')];
+      let panelOpener=null;
+      document.querySelectorAll('[data-panel]').forEach(button=>button.addEventListener('click',()=>{
+        const fromMenu=menu.open;
+        if(fromMenu)menu.close();
+        panelOpener=fromMenu?trigger:button;
+        document.getElementById(button.dataset.panel).showModal();
+      }));
+      trigger.addEventListener('click',()=>{menu.showModal();trigger.setAttribute('aria-expanded','true')});
+      dialogs.forEach(dialog=>{
+        dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());
+        dialog.addEventListener('click',event=>{
+          if(event.target!==dialog)return;
+          const r=dialog.getBoundingClientRect();
+          if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();
+        });
+        dialog.addEventListener('close',()=>{
+          if(dialog===menu){trigger.setAttribute('aria-expanded','false');trigger.focus()}
+          else if(panelOpener){panelOpener.focus();panelOpener=null}
+          if(!dialogs.some(d=>d.open))document.body.style.overflow='';
+        });
+      });
+      dialogs.forEach(dialog=>new MutationObserver(()=>{
+        document.body.style.overflow=dialogs.some(d=>d.open)?'hidden':'';
+      }).observe(dialog,{attributes:true,attributeFilter:['open']}));
+      const motion=document.getElementById('motion'), motionText=document.getElementById('motion-text');
+      const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+      const applyMotion=active=>{
+        document.documentElement.classList.toggle('no-motion',!active);
+        motion.setAttribute('aria-pressed',String(active));motionText.textContent=active?'Gerak aktif':'Gerak mati';
+      };
+      applyMotion(!reduced.matches);
+      motion.addEventListener('click',()=>applyMotion(motion.getAttribute('aria-pressed')!=='true'));
+      reduced.addEventListener('change',event=>applyMotion(!event.matches));
+      document.addEventListener('visibilitychange',()=>document.querySelectorAll('.orbital').forEach(el=>el.style.animationPlayState=document.hidden?'paused':'running'));
+    })();
+  </script>
+</body>
+</html>

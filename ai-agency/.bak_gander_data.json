@@ -1,0 +1,28 @@
+{
+  "tag": "[ RADAR AI ]",
+  "tanggal": "21 SEPTEMBER 2026 · KABAR AI",
+  "label_kartu": "YANG PERLU KAMU TAHU",
+  "poin": [
+    {
+      "judul": "Apa yang terjadi",
+      "isi": "Tim riset Tencent (Hunyuan Speech) bersama peneliti beberapa universitas memperkenalkan Gander: model yang memproses suara, gambar, dan teks sekaligus, bisa disela kapan saja, dan tetap mengerjakan tugas berat di latar belakang — misalnya memperbaiki bug sambil kamu terus bertanya."
+    },
+    {
+      "judul": "Kenapa ini penting",
+      "isi": "Pekerjaannya dibagi dua: satu bagian menjaga obrolan tetap lancar detik per detik, satu bagian lagi menangani tugas panjang — dan bagian otak kerja itu bisa ditukar dengan sistem agen lain seperti Codex atau Claude Code tanpa melatih ulang. Catatan jujur: pada uji Full-Duplex-Bench v3, Gander paling tepat waktu (menyela pengguna 8% kasus, dibanding 13,5% GPT-Realtime), tapi akurasi tugasnya masih sedikit di bawah pesaing terlemah."
+    },
+    {
+      "judul": "Untuk bisnis kamu",
+      "isi": "Asisten AI tidak lagi harus berhenti bicara saat mengerjakan sesuatu. Karena bagian otaknya bisa ditukar, kamu tidak perlu membangun ulang setiap kali model baru muncul — cukup ganti mesinnya, alur kerjanya tetap."
+    }
+  ],
+  "headline": [
+    "AI KINI MENGOBROL",
+    "SAMBIL MENYELESAIKAN KERJA"
+  ],
+  "headline_caption": "Tencent memperkenalkan Gander: model AI yang mengobrol real-time sambil mengerjakan tugas di latar belakang",
+  "subjudul": "Tencent memisahkan otak bicara dan otak kerja — obrolan tetap lancar, tugas tetap jalan.",
+  "cta": "JADWALKAN KONSULTASI GRATIS",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #KecerdasanBuatan #BisnisIndonesia"
+}

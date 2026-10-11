@@ -1,0 +1,28 @@
+{
+  "tag": "[ RADAR AI ]",
+  "tanggal": "19 SEPTEMBER 2026 · KABAR AI",
+  "label_kartu": "YANG PERLU KAMU TAHU",
+  "poin": [
+    {
+      "judul": "Apa yang terjadi",
+      "isi": "Google merilis CC, agen AI untuk keluarga. Agen ini punya akun Google sendiri dan bisa disambungkan ke email, kalender, serta daftar tugas sampai enam anggota keluarga."
+    },
+    {
+      "judul": "Kenapa ini penting",
+      "isi": "Agen ini hanya melihat data yang tiap orang izinkan, dan izin itu diatur sejak awal, bukan ditambahkan belakangan."
+    },
+    {
+      "judul": "Untuk bisnis kamu",
+      "isi": "Pola yang sama dipakai di bisnis: satu agen yang paham konteks kamu, batas akses yang jelas, dan tugas berulang yang selesai sendiri."
+    }
+  ],
+  "headline": [
+    "AGEN AI SEKARANG PUNYA",
+    "AKUN DAN IZIN SENDIRI"
+  ],
+  "headline_caption": "CC dari Google: agen AI untuk keluarga yang punya akun dan izin sendiri",
+  "subjudul": "Tulis daftar tugas rutin mingguan kamu, lalu tandai mana yang boleh dikerjakan agen dan mana yang tetap kamu putuskan sendiri.",
+  "cta": "JADWALKAN KONSULTASI GRATIS",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #KecerdasanBuatan #BisnisIndonesia"
+}

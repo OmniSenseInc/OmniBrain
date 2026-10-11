@@ -1,0 +1,28 @@
+{
+  "tag": "[ RADAR AI ]",
+  "tanggal": "22 SEPTEMBER 2026 · KABAR AI",
+  "label_kartu": "YANG PERLU KAMU TAHU",
+  "poin": [
+    {
+      "judul": "Apa yang terjadi",
+      "isi": "xAI merilis Grok 4.7 (21 September) dengan harga 2 dolar per juta token input dan 6 dolar per juta token output — level harga yang sama seperti versi sebelumnya, jauh di bawah model kelas atas seperti GPT-5.6 Sol Max (4/20 dolar) dan Fable 5.1 Max (10/50 dolar)."
+    },
+    {
+      "judul": "Kenapa ini penting",
+      "isi": "Di indeks independen Artificial Analysis, Grok 4.7 mendapat skor 46, sementara Claude Fable 5.1 dan GPT-6 masing-masing 53. Pada uji coding untuk agen (Terminal-Bench 4.0), skornya 26 persen — di bawah GPT-6 Astra (60 persen) dan Fable 5.1 (55 persen)."
+    },
+    {
+      "judul": "Untuk bisnis kamu",
+      "isi": "Harga AI memang turun, tapi model termurah belum tentu paling tepat. Pasangkan model dengan tugasnya: pekerjaan rutin bervolume besar ke model hemat, pekerjaan rumit ke model paling mampu. Salah pasang justru menambah kerja ulang."
+    }
+  ],
+  "headline": [
+    "HARGA MODEL AI TURUN",
+    "YANG TEPAT BUKAN TERMURAH"
+  ],
+  "headline_caption": "xAI merilis Grok 4.7: murah dan cepat, tapi bukan yang paling mampu.",
+  "subjudul": "Makin banyak pilihan model di harga murah. Yang menentukan hasil bukan harganya, tapi kecocokan dengan tugas.",
+  "cta": "JADWALKAN KONSULTASI GRATIS",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #ModelAI #BisnisIndonesia"
+}

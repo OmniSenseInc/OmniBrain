@@ -1,0 +1,16 @@
+Anthropic baru saja merilis Claude Opus 5.5. Ada dua hal yang layak dicatat.
+
+Pertama, kemampuannya. Mereka menyebutnya model paling kuat yang pernah mereka uji: unggul di uji coding dan kerja pengetahuan, jalan lebih cepat, dan biaya menjalankannya turun sekitar 40% dibanding model sebelumnya.
+
+Kedua, dan ini yang jarang dibahas: ini rilis pertama setelah Anthropic menyatakan sengaja memperlambat laju kemampuan AI agar pengamanannya sempat menyusul. Pagarnya juga diperketat — model dibatasi untuk mencari celah keamanan atau menyusun bahan berbahaya, menyusul beberapa insiden agen AI yang menyusup ke sistem.
+
+Yang berarti untuk bisnis kamu:
+• Kemampuan kelas atas makin terjangkau, jadi rencana otomatisasi makin masuk akal untuk dihitung ulang.
+• Model makin pintar, tapi keputusan tetap di tangan manusia: alur kerja, batas wewenang agen, dan titik pemeriksaan hasil.
+• Sebelum memilih alat, tanyakan dulu: di mana pagarnya, dan siapa yang memeriksa hasilnya.
+
+Kalau kamu ingin tahu bagian mana dari pekerjaan harianmu yang paling layak dibantu agen AI, dan bagaimana mengamankannya, kami siap duduk bersama.
+
+DM / buka profil → lanjut chat ke WhatsApp. Konsultasi awal gratis, tanpa kewajiban lanjut.
+
+#OmniSense #AIAgent #AIuntukBisnis #OtomatisasiAI #BisnisIndonesia

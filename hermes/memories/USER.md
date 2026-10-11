@@ -1,0 +1,3 @@
+Building OmniSense = AI agency/badan usaha; roles me as its AI consultant. Lead magnet: free digitalization-readiness assessment (8-dimension weighted scoring → readiness %), then paid roadmap+implementation. Vertical focus F&B/cafe. Ecosystem: FNBSense (per-outlet Web POS cafe/FnB, Hermes agent backend, cron + 'personal secretary' for owners) & LogiSense (logistics, TBD). Matkul Penerapan Bisnis tugas akhir = OmniSense, harus berjalan 6 bulan. Competitor: RICE AI Consultant (riceai.net), near-identical funnel — inspiration, not copy.
+§
+Bahasa Indonesia santai (campur istilah Inggris). Sering minta transkrip percakapan dikirim ke kontak WhatsApp. Bisa berulang menantang jawaban dgn premis keliru — tetap koreksi pakai bukti, jangan ikut setuju.

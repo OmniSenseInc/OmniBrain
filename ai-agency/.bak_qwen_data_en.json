@@ -1,0 +1,28 @@
+{
+  "tag": "[ AI RADAR ]",
+  "tanggal": "SEPTEMBER 20, 2026 · AI BRIEF",
+  "label_kartu": "WHAT YOU NEED TO KNOW",
+  "poin": [
+    {
+      "judul": "What happened",
+      "isi": "Alibaba released Qwen3.8-Omni-Flash: a model that takes text, images, audio and video at once, then uses tools on its own to edit videos or summarise films. It costs $0.15 per million input tokens and $0.47 per million output tokens."
+    },
+    {
+      "judul": "Why it matters",
+      "isi": "For comparison, Gemini 3.8 Flash charges $0.75 for input and $3.75 for output per million tokens. On agentic and video tests, though, Qwen still trails Gemini — so this is about price, not about winning everywhere."
+    },
+    {
+      "judul": "For your business",
+      "isi": "Start with the task that comes up most: reading documents, recording calls, or reviewing footage. Test two models on that task, compare quality and cost, then choose."
+    }
+  ],
+  "headline": [
+    "AI MODELS KEEP GETTING CHEAPER,",
+    "BUT WHICH ONE FITS?"
+  ],
+  "headline_caption": "Alibaba releases Qwen3.8-Omni-Flash, an all-round agent model at roughly a fifth of Gemini 3.8 Flash's price",
+  "subjudul": "A lower price is not a reason to pick the cheapest — what matters is the fit.",
+  "cta": "BOOK A FREE CONSULTATION",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgent #AIforBusiness #ArtificialIntelligence #Consulting"
+}

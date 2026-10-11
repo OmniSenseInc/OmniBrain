@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-04",
+  "unit_integration_tests": 81,
+  "flow_checks": {
+    "contract_checks": 103,
+    "browser_checks": 42,
+    "parity_cases": 89,
+    "real_browser_messages": 4
+  },
+  "gateway_health": {
+    "status": "ok",
+    "gateway_version": "1.0",
+    "bank_revision": "2026-10-04-flow-1"
+  },
+  "whatsapp_bridge": "connected",
+  "public_https_smoke": {
+    "post_after_consult_action": 1,
+    "wa_draft_ready": true,
+    "wa_opened": false,
+    "wa_sent": false,
+    "synthetic_case_cleaned": true
+  },
+  "hermes_ingress": "real ingress, simulated transport",
+  "client_whatsapp_e2e": "not tested",
+  "model_probe": "active provider recovered after owner top-up; live tool-free completion passed",
+  "final_domain_deployment": "not performed",
+  "hermes_full_runner": "pytest unavailable in production venv",
+  "live_consultation_lane": {
+    "model_success": true,
+    "personalized_reply_used": true,
+    "application_question_appended": true,
+    "reply_quality_guard": true,
+    "transport": "simulated; no WhatsApp sent",
+    "database": "temporary; removed"
+  },
+  "omni_review": "Hermes chat --oneshot with [CODEX]; two progress documents read; no changes or home send in that session"
+}

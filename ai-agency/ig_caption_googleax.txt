@@ -1,0 +1,20 @@
+Agen AI makin pintar — tapi pertanyaan yang paling sering muncul sebelum dipakai kerja nyata selalu dua: dia boleh mengakses apa, dan siapa yang mengawasi?
+
+Hari ini Google membuka kode AX, pengatur tugas untuk agen AI. Konsepnya sengaja dibuat mirip Kubernetes, jadi terasa familiar buat tim teknis. Kamu menulis satu berkas perintah, lalu sistem menyiapkan kotak terisolasi, menyambungkan repositori, dan menjalankan tugasnya.
+
+Yang bisa kamu atur:
+• Kotak jalan dengan batas CPU dan memori — satu agen tidak bisa menelan seluruh mesin
+• Ruang kerja yang sudah tersambung ke repositori, server MCP, dan paket skill — agen mulai dalam keadaan siap
+• Gerbang jaringan dengan daftar alamat yang boleh diakses — bukan akses bebas ke mana saja
+• Model mana yang dipakai, dengan kredensial disimpan di sistem rahasia
+• Agen bisa dijeda lalu dilanjutkan, dan kamu bisa masuk untuk melihat apa yang sedang dikerjakannya
+
+Catatan jujur: Google sendiri menyebut konsepnya masih berubah dan bisa ada perubahan besar sebelum versi stabil. Jadi ini bahan belajar dan uji coba, belum fondasi yang selesai.
+
+Bacaan untuk bisnis kamu: pertanyaan "apa yang boleh diakses" dan "siapa yang mengawasi" itu bukan urusan teknis semata — itu keputusan operasional. Teknologi seperti ini membuat jawabannya bisa ditulis dan diperiksa, bukan cuma dijanjikan.
+
+Di OmniSense, kami membantu bisnis memetakan pekerjaan mana yang layak dijalankan dengan AI, lalu menyusun batas dan alur kerjanya — dari assessment gratis, roadmap, implementasi, sampai pendampingan.
+
+Mau tahu pekerjaan mana di bisnis kamu yang paling cepat terbantu — dan batas apa yang perlu disiapkan? DM atau buka profil → lanjut chat ke WhatsApp, dan jadwalkan konsultasi gratis. Tanpa biaya, tanpa komitmen.
+
+#OmniSense #AIAgent #AIuntukBisnis #KonsultanAI #OmniSenseID

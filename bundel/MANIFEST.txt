@@ -1,0 +1,61 @@
+MANIFEST BUNDEL MIGRASI OMNISENSE
+Host asal : VM-0-5-ubuntu
+Dibuat    : 20261011T123109Z (UTC)
+
+== Isi ==
+ 
+136M 01-hermes-home.zip
+136M 01-hermes-home.zip.enc
+45M 01-hermes-home.zip.enc.000.part
+45M 01-hermes-home.zip.enc.001.part
+45M 01-hermes-home.zip.enc.002.part
+557K 01-hermes-home.zip.enc.003.part
+778M 02-ai-agency-data.tar.gz
+778M 02-ai-agency-data.tar.gz.enc
+45M 02-ai-agency-data.tar.gz.enc.000.part
+45M 02-ai-agency-data.tar.gz.enc.001.part
+45M 02-ai-agency-data.tar.gz.enc.002.part
+45M 02-ai-agency-data.tar.gz.enc.003.part
+45M 02-ai-agency-data.tar.gz.enc.004.part
+45M 02-ai-agency-data.tar.gz.enc.005.part
+45M 02-ai-agency-data.tar.gz.enc.006.part
+45M 02-ai-agency-data.tar.gz.enc.007.part
+45M 02-ai-agency-data.tar.gz.enc.008.part
+45M 02-ai-agency-data.tar.gz.enc.009.part
+45M 02-ai-agency-data.tar.gz.enc.010.part
+45M 02-ai-agency-data.tar.gz.enc.011.part
+45M 02-ai-agency-data.tar.gz.enc.012.part
+45M 02-ai-agency-data.tar.gz.enc.013.part
+45M 02-ai-agency-data.tar.gz.enc.014.part
+45M 02-ai-agency-data.tar.gz.enc.015.part
+45M 02-ai-agency-data.tar.gz.enc.016.part
+13M 02-ai-agency-data.tar.gz.enc.017.part
+2.4K 03-apt-manual.txt
+11K 03-hermes-code-custom.tar.gz
+11K 03-hermes-code-custom.tar.gz.enc
+11K 03-hermes-code-custom.tar.gz.enc.000.part
+5.1K 03-iptables.txt
+186 03-npm-global.txt
+537 03-pip-freeze-agency.txt
+2.1K 03-pip-freeze-hermes.txt
+16 03-pip-freeze-web.txt
+5.6M 03-sistem.tar.gz
+5.6M 03-sistem.tar.gz.enc
+5.6M 03-sistem.tar.gz.enc.000.part
+311 03-ufw-rules.txt
+1.2K 03-unit-user.tar.gz
+1.2K 03-unit-user.tar.gz.enc
+1.2K 03-unit-user.tar.gz.enc.000.part
+344 03-versi.txt
+202K 04-9router.tar.gz
+202K 04-9router.tar.gz.enc
+202K 04-9router.tar.gz.enc.000.part
+4.0K hermes-code-custom
+106 MANIFEST.txt
+3.2K SHA256SUMS
+
+== Cara pakai di VPS baru ==
+1) git clone <repo> && cd repo
+2) gabungkan bagian: cat *.part > bundel.enc
+3) buka sandi   : openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in bundel.enc -out bundel.zip -pass env:MIGRASI_PASS
+4) jalankan pulihkan.sh (lihat README_MIGRASI.md)

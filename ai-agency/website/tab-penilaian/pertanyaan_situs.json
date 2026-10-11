@@ -1,0 +1,1129 @@
+{
+ "versi": "2.0",
+ "jumlah": 15,
+ "dimensi_soal": {
+  "D1": 2,
+  "D2": 3,
+  "D3": 2,
+  "D4": 2,
+  "D5": 2,
+  "D6": 2,
+  "D7": 1,
+  "D8": 1
+ },
+ "pertanyaan": [
+  {
+   "kode": "D1a",
+   "dim": "D1",
+   "nama": "Strategi & Kepemimpinan",
+   "t": "Untuk 1-3 tahun ke depan, arah bisnis Anda sudah jelas dan tertulis?",
+   "p": "Pilih yang paling jujur menggambarkan keadaan hari ini, bukan yang Anda inginkan.",
+   "o": [
+    "Belum ada arah yang jelas",
+    "Ada di kepala saya saja",
+    "Sudah saya ceritakan ke tim, belum tertulis",
+    "Tertulis, tapi belum ada target angkanya",
+    "Tertulis, ada target angka, dan tim tahu"
+   ],
+   "k": {
+    "1": [
+     "belum ada arah",
+     "belum kepikiran",
+     "tidak ada rencana",
+     "tidak punya rencana",
+     "belum tau mau kemana",
+     "belum tahu mau kemana",
+     "jalan aja dulu",
+     "jalani aja",
+     "ngalir aja",
+     "belum ada tujuan",
+     "bingung mau kemana",
+     "belum dipikirkan",
+     "tidak ada arah"
+    ],
+    "2": [
+     "di kepala",
+     "dalam pikiran",
+     "hanya saya yang tahu",
+     "cuma saya yang tahu",
+     "belum ditulis",
+     "masih angan",
+     "ada bayangan",
+     "belum pernah ditulis",
+     "saya simpan sendiri",
+     "belum dituangkan",
+     "belum pernah dituangkan",
+     "ada di ingatan"
+    ],
+    "3": [
+     "sudah saya ceritakan",
+     "sudah saya bilang",
+     "sudah saya sampaikan",
+     "dikasih tahu tim",
+     "sudah saya jelaskan",
+     "tim sudah tahu",
+     "sudah saya omongkan",
+     "sudah saya share",
+     "sudah saya infokan",
+     "sudah pernah saya jelaskan",
+     "belum tertulis",
+     "belum formal"
+    ],
+    "4": [
+     "sudah tertulis",
+     "ada dokumennya",
+     "ada catatannya",
+     "sudah saya tulis",
+     "tertulis tapi",
+     "tetapi belum ada target",
+     "belum ada angkanya",
+     "belum ada ukurannya",
+     "tertulis belum detail",
+     "ada dokumen tapi"
+    ],
+    "5": [
+     "tertulis dan ada target",
+     "ada target angka",
+     "target dan tim tahu",
+     "tertulis lengkap",
+     "ada targetnya",
+     "tertulis dan disosialisasikan",
+     "ada dokumen dan target",
+     "tertulis dan diketahui tim",
+     "ada target dan tim tahu",
+     "sudah ada target"
+    ]
+   }
+  },
+  {
+   "kode": "D1b",
+   "dim": "D1",
+   "nama": "Strategi & Kepemimpinan",
+   "t": "Anda punya cara untuk mengecek apakah rencana bisnis berjalan atau melenceng?",
+   "p": "Yang dinilai di sini bukan rapinya laporan, tapi apakah Anda punya cara mengetahuinya.",
+   "o": [
+    "Tidak ada rencana yang bisa dicek",
+    "Dicek kalau ingat saja",
+    "Dicek sesekali, tidak terjadwal",
+    "Dicek rutin, tapi tanpa angka pembanding",
+    "Dicek rutin dan dibandingkan dengan target angka"
+   ],
+   "k": {
+    "1": [
+     "tidak pernah mengecek",
+     "belum pernah mengecek",
+     "tidak ada cara",
+     "nggak pernah ngecek",
+     "tidak pernah ngecek",
+     "tidak tahu mengecek",
+     "belum pernah evaluasi",
+     "tidak pernah dibahas",
+     "tidak ada pengecekan",
+     "tidak pernah dicek",
+     "belum ada pengecekan"
+    ],
+    "2": [
+     "kadang-kadang",
+     "kalau ingat",
+     "sesekali",
+     "jarang",
+     "kalau sempat",
+     "tidak rutin",
+     "belum teratur",
+     "kadang saja",
+     "tidak terjadwal",
+     "kadang lihat",
+     "tidak tentu",
+     "kalau lagi ingat"
+    ],
+    "3": [
+     "lihat laporan",
+     "cek laporan",
+     "lihat sekilas",
+     "lihat catatan",
+     "bandingkan sesekali",
+     "lihat laporan bulanan",
+     "kadang saya cek",
+     "lihat laporan saja",
+     "tanya orang"
+    ],
+    "4": [
+     "evaluasi rutin",
+     "setiap bulan",
+     "kami evaluasi",
+     "rapat bulanan",
+     "dicek rutin",
+     "ada jadwalnya",
+     "selalu kami bahas",
+     "rutin dibahas",
+     "ada rapat"
+    ],
+    "5": [
+     "setiap bulan kami bandingkan",
+     "ada target dan dicek",
+     "rutin dan tertulis",
+     "ada rapat dan catatan",
+     "selalu dibandingkan dengan target",
+     "evaluasi terjadwal dan tercatat",
+     "rutin dibandingkan target",
+     "rutin dan tercatat"
+    ]
+   }
+  },
+  {
+   "kode": "D2a",
+   "dim": "D2",
+   "nama": "Kesiapan Data",
+   "t": "Kalau saya minta untung bersih bulan lalu, berapa lama Anda bisa menyebutkan angkanya?",
+   "p": "Ini dimensi paling menentukan. Di sinilah proyek AI paling sering gagal, bukan di teknologinya.",
+   "o": [
+    "Tidak tahu angkanya",
+    "Perlu dihitung manual dulu, hitungan hari",
+    "Bisa, tapi menunggu orang tertentu",
+    "Bisa, perlu saya buka beberapa catatan",
+    "Bisa saya sebutkan saat ini juga, akurat"
+   ],
+   "k": {
+    "1": [
+     "tidak tahu",
+     "belum tahu",
+     "tidak pernah dihitung",
+     "nggak tau",
+     "tidak ada angkanya",
+     "belum pernah hitung",
+     "tidak tahu untungnya",
+     "tidak pernah dicatat",
+     "belum pernah dihitung",
+     "tidak tau"
+    ],
+    "2": [
+     "manual",
+     "dihitung dulu",
+     "butuh beberapa hari",
+     "harus rekap",
+     "hitung dulu",
+     "perlu waktu",
+     "beberapa hari",
+     "harus saya jumlahkan",
+     "rekap dulu",
+     "dua tiga hari",
+     "tiga hari",
+     "dua hari",
+     "beberapa jam",
+     "harus saya hitung",
+     "perlu dihitung"
+    ],
+    "3": [
+     "tunggu",
+     "menunggu",
+     "orang tertentu",
+     "tanya admin",
+     "tanya bagian keuangan",
+     "tanya istri",
+     "tanya orang",
+     "harus tanya",
+     "tunggu yang pegang",
+     "tanya bagian",
+     "yang pegang catatan",
+     "menunggu orang"
+    ],
+    "4": [
+     "buka catatan",
+     "lihat pembukuan",
+     "cek dulu sebentar",
+     "ada catatannya",
+     "buka buku",
+     "lihat catatan",
+     "saya cek sebentar",
+     "lihat aplikasi",
+     "buka laporan",
+     "ada di catatan",
+     "buka beberapa catatan"
+    ],
+    "5": [
+     "sudah tahu",
+     "sekarang juga",
+     "langsung bisa",
+     "akurat",
+     "sudah ada laporannya",
+     "bisa langsung",
+     "sudah saya hafal",
+     "saat ini juga",
+     "sudah tersedia",
+     "saya hafal",
+     "tahu pasti"
+    ]
+   }
+  },
+  {
+   "kode": "D2b",
+   "dim": "D2",
+   "nama": "Kesiapan Data",
+   "t": "Kalau saya tanya produk atau menu mana yang paling menguntungkan bulan lalu, Anda bisa jawab?",
+   "p": "Banyak pemilik tahu yang paling laris, tapi belum tentu yang paling menguntungkan.",
+   "o": [
+    "Tidak tahu, belum pernah dihitung",
+    "Kira-kira saja, tanpa angka",
+    "Bisa, tapi harus hitung manual dulu",
+    "Bisa, dari catatan penjualan yang ada",
+    "Bisa sekarang, angkanya sudah tersedia rapi"
+   ],
+   "k": {
+    "1": [
+     "tidak tahu",
+     "belum tahu",
+     "tidak pernah dihitung",
+     "belum pernah cek",
+     "tidak ada datanya",
+     "tidak tahu menunya",
+     "tidak tau",
+     "belum tahu mana"
+    ],
+    "2": [
+     "kira-kira",
+     "perkiraan",
+     "tebak",
+     "feeling",
+     "biasanya yang laris",
+     "asal tahu",
+     "kira kira aja",
+     "saya rasa",
+     "belum pasti",
+     "hanya perkiraan",
+     "kira-kira aja",
+     "kira kira"
+    ],
+    "3": [
+     "tanya admin",
+     "tunggu",
+     "harus tanya",
+     "tanya kasir",
+     "lihat catatan dulu",
+     "menunggu",
+     "tanya orang",
+     "tanya bagian",
+     "harus cek dulu",
+     "tanya dulu"
+    ],
+    "4": [
+     "lihat catatan",
+     "buka laporan",
+     "cek dulu",
+     "ada catatannya",
+     "buka aplikasi",
+     "lihat pembukuan",
+     "ada di laporan",
+     "lihat laporannya"
+    ],
+    "5": [
+     "sudah tahu",
+     "ada laporannya",
+     "tahu pasti",
+     "sudah ada datanya",
+     "bisa langsung",
+     "ada laporan menunya",
+     "sudah terdata",
+     "langsung bisa sebutkan",
+     "sudah tahu pasti",
+     "ada data menunya",
+     "ada datanya"
+    ]
+   }
+  },
+  {
+   "kode": "D2c",
+   "dim": "D2",
+   "nama": "Kesiapan Data",
+   "t": "Berapa lama setelah transaksi terjadi, catatan penjualan Anda terisi?",
+   "p": "Yang dinilai: jarak antara kejadian dan catatannya. Makin jauh jaraknya, makin mudah ada yang hilang.",
+   "o": [
+    "Tidak dicatat",
+    "Dicatat kalau sempat, sering menumpuk",
+    "Dicatat di akhir hari",
+    "Dicatat langsung saat transaksi",
+    "Tercatat otomatis, tidak perlu diisi manual"
+   ],
+   "k": {
+    "1": [
+     "tidak pernah dicatat",
+     "tidak dicatat",
+     "belum pernah dicatat",
+     "tidak ada catatan",
+     "nggak pernah",
+     "tidak pernah",
+     "belum dicatat",
+     "tidak pernah nulis",
+     "tidak sempat dicatat"
+    ],
+    "2": [
+     "kalau sempat",
+     "kadang seminggu",
+     "tidak rutin",
+     "sering lupa",
+     "kadang lupa",
+     "nanti-nanti",
+     "tidak tentu",
+     "sering tidak dicatat",
+     "seminggu sekali",
+     "kalau ingat",
+     "kadang tidak dicatat",
+     "sering terlewat",
+     "sering menumpuk",
+     "menumpuk"
+    ],
+    "3": [
+     "akhir hari",
+     "setelah tutup",
+     "nanti sore",
+     "malam",
+     "sore",
+     "setelah selesai",
+     "di akhir hari",
+     "tutup toko",
+     "habis tutup",
+     "nanti malam",
+     "di akhir",
+     "setelah tutup toko"
+    ],
+    "4": [
+     "langsung",
+     "saat transaksi",
+     "waktu transaksi",
+     "begitu transaksi",
+     "langsung dicatat",
+     "seketika",
+     "saat itu juga",
+     "langsung saya catat",
+     "dilangsung"
+    ],
+    "5": [
+     "otomatis",
+     "masuk sistem",
+     "tercatat sendiri",
+     "terekam",
+     "tersimpan sendiri",
+     "otomatis tercatat",
+     "langsung masuk sistem",
+     "otomatis tersimpan",
+     "tanpa saya catat"
+    ]
+   }
+  },
+  {
+   "kode": "D3a",
+   "dim": "D3",
+   "nama": "Infrastruktur & Teknologi",
+   "t": "Alat yang dipakai sehari-hari (kasir, stok, catatan penjualan) sudah berupa sistem, atau masih HP dan buku?",
+   "p": "Sistem di sini artinya aplikasi yang menyimpan data sendiri, bukan sekadar chat atau Excel lepas.",
+   "o": [
+    "Buku dan ingatan",
+    "HP pribadi dan catatan lepas",
+    "Sudah ada aplikasi, tapi hanya sebagian bagian",
+    "Sudah ada sistem inti, tapi masih ada input ulang",
+    "Sistem inti jalan dan terhubung otomatis"
+   ],
+   "k": {
+    "1": [
+     "buku",
+     "kertas",
+     "manual",
+     "hp pribadi",
+     "tulis tangan",
+     "masih manual",
+     "catatan kertas",
+     "buku tulis",
+     "serba kertas",
+     "semua manual"
+    ],
+    "2": [
+     "sebagian",
+     "campur",
+     "setengah",
+     "ada yang hp ada yang kertas",
+     "sebagian pakai hp",
+     "belum semua",
+     "sebagian masih kertas",
+     "separuh",
+     "sebagian kertas",
+     "campur-campur"
+    ],
+    "3": [
+     "pakai aplikasi",
+     "ada aplikasi",
+     "sudah pakai hp",
+     "pakai excel",
+     "spreadsheet",
+     "aplikasi sederhana",
+     "hp untuk catat",
+     "pakai hp",
+     "excel"
+    ],
+    "4": [
+     "sudah pakai sistem",
+     "pakai sistem kasir",
+     "mesin kasir",
+     "sudah ada sistem",
+     "kasir",
+     "aplikasi kasir",
+     "sistem kasir"
+    ],
+    "5": [
+     "terhubung",
+     "satu sistem",
+     "semua terhubung",
+     "tersambung",
+     "sudah terintegrasi",
+     "satu aplikasi semua",
+     "terhubung semua",
+     "terintegrasi"
+    ]
+   }
+  },
+  {
+   "kode": "D3b",
+   "dim": "D3",
+   "nama": "Infrastruktur & Teknologi",
+   "t": "Perangkat yang dipakai sehari-hari di tempat usaha (komputer, HP, mesin kasir) keadaannya bagaimana?",
+   "p": "Perangkat yang sering bermasalah membuat sistem sebagus apa pun tidak terpakai.",
+   "o": [
+    "Belum ada, atau satu HP dipakai bergantian",
+    "Ada, tapi sering rusak atau lambat",
+    "Cukup, tapi hanya satu orang yang bisa pakai",
+    "Cukup dan dipakai bergantian dengan lancar",
+    "Lengkap, layak, dan tiap bagian punya sendiri"
+   ],
+   "k": {
+    "1": [
+     "cuma hp",
+     "hanya hp",
+     "tidak ada komputer",
+     "belum ada",
+     "tidak punya",
+     "hp pribadi saja",
+     "tidak ada perangkat",
+     "belum punya",
+     "hp pribadi",
+     "satu hp dipakai bergantian",
+     "satu hp bergantian",
+     "dipakai bergantian"
+    ],
+    "2": [
+     "rusak",
+     "lambat",
+     "sering rusak",
+     "lemot",
+     "sudah tua",
+     "tidak memadai",
+     "sering error",
+     "ketinggalan",
+     "komputer lama",
+     "sering mati"
+    ],
+    "3": [
+     "cukup",
+     "lumayan",
+     "masih jalan",
+     "memadai",
+     "bisa dipakai",
+     "standar",
+     "cukup untuk kerja",
+     "biasa saja",
+     "cukup memadai"
+    ],
+    "4": [
+     "sudah bagus",
+     "lancar",
+     "cepat",
+     "memadai dan lancar",
+     "perangkat bagus",
+     "bagus",
+     "cukup lancar"
+    ],
+    "5": [
+     "sangat baik",
+     "terbaru",
+     "lengkap",
+     "semua tersedia",
+     "sangat memadai",
+     "perangkat modern",
+     "lengkap dan lancar",
+     "sangat bagus"
+    ]
+   }
+  },
+  {
+   "kode": "D4a",
+   "dim": "D4",
+   "nama": "Digitalisasi Proses",
+   "t": "Kalau orang yang paling hafal jalan bisnis Anda cuti mendadak, pelayanan tetap normal?",
+   "p": "Ketergantungan pada satu orang adalah hal pertama yang biasanya bisa dibantu agen AI.",
+   "o": [
+    "Bisnis langsung kacau",
+    "Banyak yang macet",
+    "Jalan, tapi banyak yang terlewat",
+    "Jalan normal, tapi jadi lebih lambat",
+    "Normal, karena semuanya sudah terdokumentasi"
+   ],
+   "k": {
+    "1": [
+     "kacau",
+     "berantakan",
+     "tidak jalan",
+     "bingung",
+     "kolaps",
+     "tidak bisa jalan",
+     "semua tergantung saya",
+     "berhenti",
+     "tidak jalan sama sekali",
+     "hancur"
+    ],
+    "2": [
+     "agak kacau",
+     "sedikit kacau",
+     "agak lambat",
+     "terganggu",
+     "agak berantakan",
+     "tidak normal",
+     "sedikit terganggu",
+     "agak terganggu"
+    ],
+    "3": [
+     "bisa jalan",
+     "tetap jalan",
+     "ada yang hafal",
+     "ada pengganti",
+     "jalan tapi lambat",
+     "tetap berjalan",
+     "jalan karena ada",
+     "tetap bisa"
+    ],
+    "4": [
+     "jalan lancar",
+     "tetap normal",
+     "aman",
+     "tidak masalah",
+     "lancar saja",
+     "tetap aman",
+     "normal",
+     "lancar"
+    ],
+    "5": [
+     "ada panduan",
+     "terdokumentasi",
+     "siapa pun bisa",
+     "ada sop",
+     "sudah tertulis",
+     "ada standarnya",
+     "semua bisa gantikan",
+     "sudah terstandar",
+     "ada prosedurnya",
+     "terdokumentasi rapi"
+    ]
+   }
+  },
+  {
+   "kode": "D4b",
+   "dim": "D4",
+   "nama": "Digitalisasi Proses",
+   "t": "Pekerjaan rutin di bisnis Anda sudah ada panduan tertulisnya, atau masih ikut kebiasaan?",
+   "p": "Panduan tertulis adalah syarat pertama sebelum pekerjaan bisa diserahkan ke agen AI.",
+   "o": [
+    "Semua ikut kebiasaan, tidak ada catatan",
+    "Ada catatan lepas, tidak lengkap",
+    "Sebagian sudah tertulis",
+    "Hampir semua tertulis, tapi belum dipakai konsisten",
+    "Tertulis, dipakai, dan diperbarui kalau ada perubahan"
+   ],
+   "k": {
+    "1": [
+     "belum ada",
+     "tidak ada",
+     "ikut kebiasaan",
+     "kebiasaan",
+     "tidak ada panduan",
+     "belum ada sop",
+     "cara lama",
+     "tidak tertulis",
+     "belum ada panduannya",
+     "masih kebiasaan"
+    ],
+    "2": [
+     "kadang ada",
+     "sebagian ada",
+     "tidak lengkap",
+     "hanya lisan",
+     "dikasih tahu lisan",
+     "tidak formal",
+     "hanya diomongkan",
+     "diomongkan saja",
+     "lisan"
+    ],
+    "3": [
+     "ada catatan",
+     "ada sebagian",
+     "ada beberapa",
+     "panduan sederhana",
+     "ada checklist",
+     "sebagian tertulis",
+     "ada catatan sederhana",
+     "sebagian ada",
+     "sebagian sudah tertulis",
+     "sebagian sudah ada"
+    ],
+    "4": [
+     "ada panduan",
+     "sudah ada",
+     "ada sop",
+     "ada dokumennya",
+     "tertulis",
+     "sudah terdokumentasi",
+     "ada dokumen",
+     "ada panduannya"
+    ],
+    "5": [
+     "lengkap",
+     "tertulis lengkap",
+     "lengkap dan dipakai",
+     "terdokumentasi rapi",
+     "selalu dipakai",
+     "lengkap dan diperbarui",
+     "lengkap dan dipakai tim",
+     "tertulis dipakai dan diperbarui",
+     "dipakai dan diperbarui"
+    ]
+   }
+  },
+  {
+   "kode": "D5a",
+   "dim": "D5",
+   "nama": "Organisasi & Budaya",
+   "t": "Terakhir kali Anda mengenalkan cara atau alat baru ke tim, bagaimana reaksinya?",
+   "p": "Jawab dengan kejadian nyata yang terakhir, bukan perkiraan.",
+   "o": [
+    "Ada penolakan, akhirnya tidak jadi",
+    "Dipakai sebentar lalu ditinggalkan",
+    "Netral, jalan apa adanya",
+    "Diterima, perlu waktu menyesuaikan",
+    "Cepat terbiasa dan mereka malah minta tambahan"
+   ],
+   "k": {
+    "1": [
+     "menolak",
+     "tidak mau",
+     "susah",
+     "keberatan",
+     "tetap pakai cara lama",
+     "tidak mau berubah",
+     "resisten",
+     "banyak yang menolak",
+     "menolak berubah",
+     "susah diajak"
+    ],
+    "2": [
+     "ragu",
+     "takut",
+     "bingung",
+     "khawatir",
+     "tidak percaya",
+     "malu",
+     "sungkan",
+     "ragu-ragu",
+     "was-was",
+     "kurang percaya"
+    ],
+    "3": [
+     "biasa saja",
+     "netral",
+     "jalan saja",
+     "mau tapi pasif",
+     "tidak antusias",
+     "mengikuti saja",
+     "cuek",
+     "biasa",
+     "pasif"
+    ],
+    "4": [
+     "semangat",
+     "tertarik",
+     "senang",
+     "menerima",
+     "antusias",
+     "mau mencoba",
+     "mau",
+     "menerima dengan baik",
+     "senang mencoba"
+    ],
+    "5": [
+     "sangat antusias",
+     "mengajari",
+     "jadi contoh",
+     "inisiatif",
+     "menyebarkan",
+     "membantu yang lain",
+     "semangat sekali",
+     "jadi penggerak",
+     "mengajari yang lain",
+     "sangat semangat"
+    ]
+   }
+  },
+  {
+   "kode": "D5b",
+   "dim": "D5",
+   "nama": "Organisasi & Budaya",
+   "t": "Keputusan penting di bisnis Anda biasanya diambil berdasarkan apa?",
+   "p": "Budaya berbasis angka membuat hasil agen AI dipercaya. Budaya feeling membuatnya diabaikan.",
+   "o": [
+    "Feeling pemilik saja",
+    "Pengalaman dan ingatan",
+    "Kadang lihat catatan kalau ada waktu",
+    "Sering pakai catatan atau angka",
+    "Selalu pakai angka, dan hasilnya dibahas bersama tim"
+   ],
+   "k": {
+    "1": [
+     "perasaan",
+     "feeling",
+     "insting",
+     "pengalaman saja",
+     "perasaan saja",
+     "tebak",
+     "saran teman",
+     "ikut orang",
+     "tidak ada data",
+     "hanya perasaan",
+     "asal"
+    ],
+    "2": [
+     "kadang lihat data",
+     "kadang feeling",
+     "campuran",
+     "kadang perasaan",
+     "kadang data",
+     "campur aduk",
+     "kadang-kadang lihat",
+     "campur",
+     "kadang data kadang feeling"
+    ],
+    "3": [
+     "lihat catatan",
+     "lihat penjualan",
+     "pertimbangan",
+     "diskusi",
+     "saya pertimbangkan",
+     "lihat situasi",
+     "tanya tim",
+     "lihat dulu",
+     "pertimbangan saya",
+     "kadang lihat catatan"
+    ],
+    "4": [
+     "lihat data",
+     "berdasarkan data",
+     "lihat laporan",
+     "lihat angka",
+     "pakai data penjualan",
+     "lihat datanya",
+     "data penjualan"
+    ],
+    "5": [
+     "data dan laporan lengkap",
+     "berdasarkan laporan",
+     "data lengkap dan dianalisis",
+     "selalu pakai data",
+     "berbasis data",
+     "laporan lengkap",
+     "data lengkap"
+    ]
+   }
+  },
+  {
+   "kode": "D6a",
+   "dim": "D6",
+   "nama": "SDM & Keterampilan",
+   "t": "Dari seluruh tim, siapa yang siap belajar lebih dulu kalau ada sistem baru?",
+   "p": "Kesediaan belajar lebih menentukan hasil akhir daripada keterampilan hari ini.",
+   "o": [
+    "Tidak ada, saya sendiri juga berat",
+    "Hanya saya sebagai pemilik",
+    "Ada satu orang, tapi masih ragu",
+    "Ada beberapa orang yang mau belajar",
+    "Ada orang yang jelas mau, dan pernah berhasil belajar alat baru"
+   ],
+   "k": {
+    "1": [
+     "tidak ada",
+     "belum ada",
+     "nggak ada",
+     "tidak ada yang siap",
+     "belum ada yang bisa",
+     "tidak ada satu pun",
+     "tidak ada yang mau",
+     "tidak ada seorang pun",
+     "belum ada satu orang"
+    ],
+    "2": [
+     "saya sendiri",
+     "cuma saya",
+     "hanya saya",
+     "saya saja",
+     "saya sendiri yang belajar",
+     "saya dan satu orang",
+     "cuma saya sendiri"
+    ],
+    "3": [
+     "satu orang",
+     "ada satu",
+     "satu dua orang",
+     "beberapa orang",
+     "ada yang bisa",
+     "ada satu orang",
+     "satu orang saja",
+     "dua orang"
+    ],
+    "4": [
+     "banyak yang siap",
+     "banyak yang bisa",
+     "mayoritas siap",
+     "lumayan banyak",
+     "banyak",
+     "sebagian besar siap",
+     "cukup banyak"
+    ],
+    "5": [
+     "semua",
+     "hampir semua",
+     "seluruh tim",
+     "semua siap",
+     "semua bisa",
+     "semua mau",
+     "siap semua",
+     "semuanya siap"
+    ]
+   }
+  },
+  {
+   "kode": "D6b",
+   "dim": "D6",
+   "nama": "SDM & Keterampilan",
+   "t": "Dari tim Anda, berapa orang yang nyaman memakai aplikasi atau HP untuk pekerjaan?",
+   "p": "Ini soal kebiasaan memakai alat digital sehari-hari, bukan soal pintar atau tidak.",
+   "o": [
+    "Tidak ada, semua serba kertas",
+    "Satu orang, itu pun saya sendiri",
+    "Sebagian kecil",
+    "Sebagian besar sudah nyaman",
+    "Hampir semua nyaman, dan bisa mengajari yang lain"
+   ],
+   "k": {
+    "1": [
+     "tidak ada",
+     "tidak ada yang bisa",
+     "semua manual",
+     "tidak bisa hp",
+     "tidak ada yang nyaman",
+     "serba kertas",
+     "tidak ada satu pun",
+     "belum ada yang bisa"
+    ],
+    "2": [
+     "satu orang",
+     "saya sendiri",
+     "cuma saya",
+     "hanya saya",
+     "satu orang saja",
+     "saya saja",
+     "cuma saya sendiri"
+    ],
+    "3": [
+     "sebagian kecil",
+     "sedikit",
+     "satu dua orang",
+     "belum banyak",
+     "sebagian",
+     "beberapa",
+     "satu dua",
+     "sebagian kecil saja"
+    ],
+    "4": [
+     "sebagian besar",
+     "hampir semua bisa",
+     "sudah nyaman",
+     "banyak yang bisa",
+     "mayoritas",
+     "sebagian besar sudah",
+     "banyak yang nyaman"
+    ],
+    "5": [
+     "hampir semua",
+     "semua bisa",
+     "bisa mengajari",
+     "mahir",
+     "nyaman semua",
+     "semua nyaman",
+     "hampir semua dan bisa mengajari",
+     "semua bisa dan mengajari"
+    ]
+   }
+  },
+  {
+   "kode": "D7",
+   "dim": "D7",
+   "nama": "Tata Kelola, Keamanan & Kepatuhan",
+   "t": "Kalau HP atau komputer yang menyimpan data usaha hilang besok, data Anda masih aman?",
+   "p": "Termasuk data pelanggan dan keuangan. Aturan perlindungan data pribadi di Indonesia menuntut ini.",
+   "o": [
+    "Hilang ikut perangkatnya",
+    "Ada salinan, tapi tidak teratur",
+    "Ada salinan sesekali, tidak ada jadwal",
+    "Ada salinan rutin, belum otomatis",
+    "Tersalin otomatis dan ada yang bisa akses terbatas"
+   ],
+   "k": {
+    "1": [
+     "hilang",
+     "ikut hilang",
+     "tidak ada backup",
+     "tidak aman",
+     "hilang semua",
+     "tidak ada cadangan",
+     "hilang semua data",
+     "data hilang",
+     "tidak ada salinan"
+    ],
+    "2": [
+     "hanya di komputer",
+     "tidak ada backup",
+     "tidak dicadangkan",
+     "cuma satu tempat",
+     "belum ada backup",
+     "disimpan tapi tidak dicadangkan",
+     "di komputer saja",
+     "tidak pernah dicadangkan"
+    ],
+    "3": [
+     "kadang backup",
+     "jarang backup",
+     "kadang dicadangkan",
+     "sesekali",
+     "tidak rutin",
+     "pernah backup",
+     "kadang-kadang backup",
+     "jarang dicadangkan"
+    ],
+    "4": [
+     "backup rutin",
+     "ada backup",
+     "dicadangkan",
+     "sudah backup",
+     "cloud",
+     "google drive",
+     "ada cadangan",
+     "sudah ada backup",
+     "ada backup rutin",
+     "rutin dicadangkan"
+    ],
+    "5": [
+     "aman",
+     "otomatis tercadang",
+     "ada cadangan lengkap",
+     "backup otomatis",
+     "aman semua",
+     "tercadang otomatis",
+     "dicadangkan otomatis",
+     "backup otomatis dan aman"
+    ]
+   }
+  },
+  {
+   "kode": "D8",
+   "dim": "D8",
+   "nama": "Anggaran & Finansial",
+   "t": "Ada anggaran bulanan yang memang disiapkan untuk teknologi?",
+   "p": "Angka nominalnya tidak perlu disebut di sini. Tim kami yang akan membahasnya bersama Anda.",
+   "o": [
+    "Belum ada sama sekali",
+    "Ada, tapi hanya kalau mendesak",
+    "Ada, tapi tidak menentu jumlahnya",
+    "Ada, tapi baru untuk sekali jalan",
+    "Ada, rutin tiap bulan dan berkelanjutan"
+   ],
+   "k": {
+    "1": [
+     "tidak ada",
+     "belum ada",
+     "tidak ada anggaran",
+     "nggak ada",
+     "belum dianggarkan",
+     "tidak khusus",
+     "tidak pernah",
+     "tidak ada alokasi",
+     "belum ada anggaran"
+    ],
+    "2": [
+     "kalau perlu",
+     "kalau butuh",
+     "kalau ada uang",
+     "beli kalau perlu",
+     "kalau perlu baru beli",
+     "tidak tetap",
+     "tidak rutin",
+     "sewaktu-waktu",
+     "kalau mendesak",
+     "seadanya"
+    ],
+    "3": [
+     "ada sedikit",
+     "ada sisihan",
+     "kadang ada",
+     "ada tapi kecil",
+     "sebagian kecil",
+     "ada sedikit anggaran",
+     "kecil",
+     "ada sedikit saja",
+     "tidak menentu",
+     "tidak tetap jumlahnya",
+     "kadang ada kadang tidak"
+    ],
+    "4": [
+     "ada anggaran",
+     "sudah ada",
+     "dianggarkan",
+     "ada alokasi",
+     "rutin ada",
+     "ada khusus",
+     "ada anggarannya",
+     "ada alokasi khusus"
+    ],
+    "5": [
+     "ada dan rutin",
+     "sudah direncanakan",
+     "ada anggaran rutin",
+     "direncanakan",
+     "ada anggaran dan direncanakan",
+     "rutin dan direncanakan",
+     "direncanakan dan rutin",
+     "tiap bulan",
+     "setiap bulan",
+     "rutin tiap bulan",
+     "ada tiap bulan"
+    ]
+   }
+  }
+ ],
+ "aturan_soal": {
+  "R1": {
+   "D2": "D2a",
+   "D3": "D3a"
+  },
+  "R3": {
+   "D5": "D5b",
+   "D6": "D6a"
+  },
+  "R4": {
+   "D7": "D7",
+   "D3": "D3a"
+  }
+ },
+ "catatan_aturan_soal": "Aturan konsistensi di pertanyaan.json memakai kode DIMENSI (D2, D3, ...). Di sini dipetakan ke kode SOAL yang paling mewakili maksud aturan. R1 menyebut bukti angka keuangan vs alat harian -> D2a & D3a. R3 menyebut tim menerima cara baru tapi belum ada yang menjalankan -> D5b & D6a. R4 menyebut keamanan akses vs alat harian -> D7 & D3a."
+}

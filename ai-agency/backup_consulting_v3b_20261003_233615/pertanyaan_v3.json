@@ -1,0 +1,434 @@
+{
+  "version": "3.0",
+  "updated": "2026-10-03",
+  "status": "DRAF USULAN — menunggu kalibrasi tim; bobot & ambang = heuristik internal, bukan hasil validasi empiris",
+  "owner_note": "Bobot resmi (10/20/15/15/10/15/10/5) = heuristik internal OmniSense untuk dikalibrasi. Bukan angka yang ditentukan NIST AI RMF Playbook atau OECD; kedua sumber itu dipakai sebagai rujukan konteks & proses, bukan penentu bobot.",
+  "unknown_policy": "Jawaban 'belum tahu / tidak pernah dicek' dicatat sebagai null (unknown), BUKAN 1, BUKAN 3. Unknown tidak masuk rata-rata; tetap ditandai 'belum terverifikasi', wajib satu kali probe, dan dipisah dari fakta. Jangan pernah menulis unknown sebagai skor rendah maupun netral.",
+  "scoring": {
+    "anchors": "1-5 perilaku/bukti yang bisa diverifikasi; 5 hanya untuk yang SUDAH jalan & terukur, bukan rencana.",
+    "aggregation": "skor_dimensi = rata-rata soal terjawab dalam dimensi (unknown dikeluarkan dari penyebut). skor_total = jumlah(skor_dimensi x bobot). persen = skor_total/5*100, dibulatkan 1 desimal.",
+    "gate_rule": "Kelemahan kritis (kualitas/akses data, pemilik data, pemulihan/backup) menjadi PRASYARAT rekomendasi: jangan sarankan AI/deploy sebelum fondasi itu dibereskan. Gerbang mengubah REKOMENDASI, bukan angka skor.",
+    "tech_value_rule": "Nilai teknologi TIDAK diukur dari jumlah perangkat, besar omzet, atau mahalnya alat. Yang dinilai: apakah ada sistem yang menyimpan & menyatukan data, dan apakah proses jadi terukur."
+  },
+  "dimensions": [
+    { "id": "D1", "name": "Strategi & Kepemimpinan", "weight": 0.10 },
+    { "id": "D2", "name": "Kesiapan Data", "weight": 0.20 },
+    { "id": "D3", "name": "Infrastruktur & Teknologi", "weight": 0.15 },
+    { "id": "D4", "name": "Digitalisasi Proses", "weight": 0.15 },
+    { "id": "D5", "name": "Organisasi & Budaya", "weight": 0.10 },
+    { "id": "D6", "name": "SDM & Keterampilan", "weight": 0.15 },
+    { "id": "D7", "name": "Tata Kelola, Keamanan & Kepatuhan", "weight": 0.10 },
+    { "id": "D8", "name": "Anggaran & Finansial", "weight": 0.05 }
+  ],
+  "context": {
+    "note": "Pertanyaan konteks — TIDAK diskor. Dijawab sebelum/selama discovery. Jangan mewajibkan klien membocorkan nominal uang atau kredensial; cukup sifat/ketersediaan.",
+    "items": [
+      { "id": "C1", "focus": "proses_sasaran", "question": "Proses atau bagian mana yang paling ingin dibantu lebih dulu?", "evidence": "Nama proses + langkahnya, dalam kata klien.", "probe": "Kenapa bagian itu yang pertama, bukan yang lain?" },
+      { "id": "C2", "focus": "masalah", "question": "Masalah apa yang paling mengganggu dari proses itu hari ini?", "evidence": "Contoh kejadian terakhir, bukan keluhan umum.", "probe": "Kapan terakhir kejadian itu, dan apa akibatnya saat itu?" },
+      { "id": "C3", "focus": "dampak_baseline", "question": "Seberapa sering dan berapa besar dampaknya? Sebutkan unit dan periodenya.", "evidence": "Angka + satuan (mis. jam/minggu, kejadian/bulan, Rp/bulan) + periode.", "probe": "Angka itu untuk periode apa, dan dari mana Anda tahu?" },
+      { "id": "C4", "focus": "pic", "question": "Siapa yang menjalankan proses ini dan siapa yang akan merawat perbaikannya?", "evidence": "Nama/peran; apakah orang itu punya waktu.", "probe": "Kalau ada perubahan, siapa yang mengeksekusi harian?" },
+      { "id": "C5", "focus": "urgensi", "question": "Ada tenggat atau pemicu yang membuat ini mendesak sekarang?", "evidence": "Tanggal/peristiwa konkret bila ada; 'belum ada' itu sah.", "probe": "Kalau ditunda tiga bulan, apa yang terjadi?" },
+      { "id": "C6", "focus": "stakeholder_keputusan", "question": "Siapa yang harus setuju agar perbaikan ini bisa jalan?", "evidence": "Pemilik keputusan + siapa lagi yang terdampak.", "probe": "Siapa yang bisa menolak rencana ini?" }
+    ]
+  },
+  "screening": [
+    {
+      "id": "S1a", "dimension": "D1",
+      "question": "Arah dan target bisnis 1-3 tahun ke depan sudah tertulis dan punya angka yang bisa dicek?",
+      "anchors": { "1": "Belum ada arah/target", "2": "Ada di kepala, belum pernah ditulis", "3": "Sudah diceritakan ke tim, belum tertulis", "4": "Tertulis, belum ada angka target", "5": "Tertulis, ada angka target, tim tahu" },
+      "evidence": "Minta lihat dokumen/rencana, atau minta sebutkan satu angka target terdekat.",
+      "probe": "Boleh tunjukkan di mana tertulisnya, atau sebutkan satu angkanya?",
+      "critical": false
+    },
+    {
+      "id": "S1b", "dimension": "D1",
+      "question": "Ada satu orang yang jelas mengawal rencana ini dan berwenang mengambil keputusan?",
+      "anchors": { "1": "Tidak ada yang mengawal", "2": "Semua serba pemilik, sering tertunda", "3": "Ada niat, belum ada penanggung jawab", "4": "Ada penanggung jawab, kewenangan terbatas", "5": "Ada penanggung jawab jelas, bisa memutuskan cepat" },
+      "evidence": "Tanyakan keputusan teknologi terakhir: siapa memutuskan dan berapa lama.",
+      "probe": "Siapa yang akan memutuskan kalau besok harus memilih alat?",
+      "critical": false
+    },
+    {
+      "id": "S2a", "dimension": "D2",
+      "question": "Kalau diminta untung/rugi bersih periode terakhir, berapa lama sampai angkanya keluar?",
+      "anchors": { "1": "Tidak bisa disebut", "2": "Hitungan hari, manual", "3": "Bisa, tapi menunggu orang tertentu", "4": "Bisa, perlu buka beberapa catatan", "5": "Bisa disebut saat itu juga dan akurat" },
+      "evidence": "Minta angka spesifik periode lalu; catat satuan waktu (jam/hari).",
+      "probe": "Sebutkan angkanya sekarang; kalau harus dihitung, butuh berapa lama?",
+      "critical": true
+    },
+    {
+      "id": "S2b", "dimension": "D2",
+      "question": "Catatan transaksi masuk ke satu tempat yang sama, atau tersebar di beberapa tempat?",
+      "anchors": { "1": "Tidak dicatat / hanya ingatan", "2": "Tersebar di buku & HP, sering menumpuk", "3": "Sebagian digital, belum menyatu", "4": "Satu tempat, tapi masih ada input ulang", "5": "Satu sumber, otomatis, tanpa input ulang" },
+      "evidence": "Minta lihat sumber catatannya; cek apakah satu atau banyak.",
+      "probe": "Coba sebutkan semua tempat catatan penjualan pekan lalu.",
+      "critical": true
+    },
+    {
+      "id": "S3a", "dimension": "D3",
+      "question": "Alat operasional utama (kasir/stok/pesanan) sudah berupa sistem yang menyimpan datanya sendiri?",
+      "anchors": { "1": "Buku dan ingatan", "2": "HP pribadi / catatan lepas", "3": "Ada aplikasi, hanya sebagian bagian", "4": "Ada sistem inti, masih ada input ulang", "5": "Sistem inti jalan dan saling terhubung" },
+      "evidence": "Minta nama alat/sistemnya; bedakan chat/Excel lepas vs sistem.",
+      "probe": "Sebutkan nama alatnya dan bagian mana yang belum masuk ke situ.",
+      "critical": false
+    },
+    {
+      "id": "S3b", "dimension": "D3",
+      "question": "Koneksi internet dan perangkat cukup andal untuk operasional harian?",
+      "anchors": { "1": "Sering putus / perangkat sering gagal", "2": "Fluktuatif, sering mengganggu", "3": "Cukup, kadang terganggu", "4": "Andal, jarang bermasalah", "5": "Andal dan ada cadangan (jaringan/daya)" },
+      "evidence": "Tanyakan berapa jam sehari stabil & pernah gagal transaksi atau tidak.",
+      "probe": "Kapan terakhir transaksi gagal karena jaringan atau perangkat?",
+      "critical": false
+    },
+    {
+      "id": "S4a", "dimension": "D4",
+      "question": "Kalau orang paling hafal operasional tidak masuk, layanan tetap normal?",
+      "anchors": { "1": "Bisnis langsung kacau", "2": "Banyak yang macet", "3": "Jalan, tapi banyak terlewat", "4": "Jalan, hanya lebih lambat", "5": "Normal, semua terdokumentasi" },
+      "evidence": "Minta contoh terakhir saat orang kunci tidak ada.",
+      "probe": "Apa yang terjadi terakhir kali orang itu tidak masuk?",
+      "critical": false
+    },
+    {
+      "id": "S4b", "dimension": "D4",
+      "question": "Prosedur kerja utama tertulis dan dijalankan seragam, atau ikut kebiasaan?",
+      "anchors": { "1": "Semua ikut kebiasaan", "2": "Hanya lisan, tidak lengkap", "3": "Sebagian tertulis", "4": "Hampir semua tertulis, belum konsisten", "5": "Tertulis, dipakai, dan diperbarui" },
+      "evidence": "Minta lihat satu SOP/checklist yang benar-benar dipakai.",
+      "probe": "Boleh tunjukkan satu panduan yang dipakai tim hari ini?",
+      "critical": false
+    },
+    {
+      "id": "S5a", "dimension": "D5",
+      "question": "Terakhir kali cara/alat baru diperkenalkan, bagaimana reaksi tim?",
+      "anchors": { "1": "Ditolak, akhirnya tidak jadi", "2": "Dipakai sebentar lalu ditinggalkan", "3": "Netral, jalan apa adanya", "4": "Diterima, perlu waktu menyesuaikan", "5": "Cepat terbiasa, malah minta tambahan" },
+      "evidence": "Minta kejadian nyata terakhir, bukan perkiraan.",
+      "probe": "Ceritakan alat terakhir yang dicoba tim; apa hasilnya?",
+      "critical": false
+    },
+    {
+      "id": "S5b", "dimension": "D5",
+      "question": "Keputusan penting biasanya berbasis angka/catatan, atau feeling?",
+      "anchors": { "1": "Feeling / insting saja", "2": "Pengalaman & ingatan", "3": "Kadang lihat catatan", "4": "Sering pakai catatan/angka", "5": "Selalu pakai angka, dibahas bersama tim" },
+      "evidence": "Minta contoh keputusan terakhir dan dasarnya.",
+      "probe": "Keputusan terakhir soal stok/harga; apa dasarnya?",
+      "critical": false
+    },
+    {
+      "id": "S6a", "dimension": "D6",
+      "question": "Ada orang (selain pemilik) yang siap belajar dan merawat sistem baru?",
+      "anchors": { "1": "Tidak ada", "2": "Hanya pemilik", "3": "Ada satu, masih ragu", "4": "Ada beberapa yang mau belajar", "5": "Ada yang jelas mau dan pernah berhasil belajar alat baru" },
+      "evidence": "Sebut nama/perannya; tanyakan alat baru yang pernah ia kuasai.",
+      "probe": "Siapa orangnya dan alat apa yang terakhir ia pelajari sampai bisa?",
+      "critical": false
+    },
+    {
+      "id": "S6b", "dimension": "D6",
+      "question": "Berapa proporsi tim yang nyaman memakai alat digital untuk pekerjaan?",
+      "anchors": { "1": "Tidak ada, serba kertas", "2": "Satu orang (pemilik)", "3": "Sebagian kecil", "4": "Sebagian besar", "5": "Hampir semua, bisa mengajari yang lain" },
+      "evidence": "Minta jumlah relatif, bukan hanya 'banyak/sedikit'.",
+      "probe": "Dari seluruh tim, berapa orang yang biasa pakai aplikasi/HP untuk kerja?",
+      "critical": false
+    },
+    {
+      "id": "S7a", "dimension": "D7",
+      "question": "Kalau perangkat penyimpan data hilang besok, data masih bisa dipulihkan?",
+      "anchors": { "1": "Hilang ikut perangkat", "2": "Ada salinan, tidak teratur", "3": "Salinan sesekali, tanpa jadwal", "4": "Salinan rutin, belum otomatis", "5": "Tersalin otomatis & teruji bisa dipulihkan" },
+      "evidence": "Tanyakan kapan terakhir backup dan di mana salinannya.",
+      "probe": "Kapan terakhir data disalin, dan pernah dicoba dipulihkan?",
+      "critical": true
+    },
+    {
+      "id": "S7b", "dimension": "D7",
+      "question": "Akses data dibatasi per peran dan ada yang bertanggung jawab?",
+      "anchors": { "1": "Terbuka, sembarang orang bisa akses", "2": "Akun dipakai bersama", "3": "Ada pembatasan informal", "4": "Ada pembatasan jelas, belum terdokumentasi", "5": "Peran & pemilik data jelas, akses terbatas" },
+      "evidence": "Tanyakan siapa saja yang bisa lihat data keuangan/pelanggan.",
+      "probe": "Siapa saja yang bisa membuka data keuangan dan data pelanggan?",
+      "critical": true
+    },
+    {
+      "id": "S8a", "dimension": "D8",
+      "question": "Ada alokasi biaya rutin untuk teknologi, atau hanya saat mendesak?",
+      "anchors": { "1": "Tidak ada", "2": "Hanya kalau mendesak", "3": "Ada, jumlahnya tidak menentu", "4": "Ada, tapi sekali jalan", "5": "Ada, rutin dan berkelanjutan" },
+      "evidence": "Tanyakan sifat alokasi (rutin vs sekali); nominal tidak wajib disebut.",
+      "probe": "Anggaran ini muncul tiap bulan atau hanya saat ada masalah?",
+      "critical": false
+    },
+    {
+      "id": "S8b", "dimension": "D8",
+      "question": "Bersedia menanggung biaya berjalan bulanan (langganan/dukungan) untuk sistem?",
+      "anchors": { "1": "Tidak bersedia / tidak ada", "2": "Ragu, ingin gratis", "3": "Bersedia kecil, belum pasti", "4": "Bersedia, perlu lihat hasil dulu", "5": "Bersedia berkelanjutan bila terbukti bernilai" },
+      "evidence": "Tanyakan kesediaan, bukan nominal; catat sebagai sikap.",
+      "probe": "Kalau sistemnya terbukti menghemat, siap ada biaya bulanan?",
+      "critical": false
+    }
+  ],
+  "discovery": [
+    {
+      "id": "D1a", "dimension": "D1",
+      "question": "Arah 1-3 tahun sudah punya target angka yang bisa dicek, dan siapa yang tahu?",
+      "anchors": { "1": "Tidak ada arah", "2": "Di kepala pemilik", "3": "Diceritakan lisan ke tim", "4": "Tertulis, tanpa angka", "5": "Tertulis, ada angka, tim tahu & dipakai" },
+      "evidence": "Lihat dokumen rencana; cek angka target dan siapa yang bisa menyebutnya.",
+      "probe": "Sebutkan satu target angkanya dan siapa di tim yang tahu angka itu.",
+      "critical": false
+    },
+    {
+      "id": "D1b", "dimension": "D1",
+      "question": "Ada sponsor yang mengawal proyek ini dengan waktu & keputusan nyata?",
+      "anchors": { "1": "Tidak ada", "2": "Dukungan di mulut saja", "3": "Ada, tidak menentu", "4": "Ada, ada waktu khusus", "5": "Sponsor aktif, akuntabel, keputusan cepat" },
+      "evidence": "Bukti keputusan terakhir soal teknologi dan waktu yang dipakai.",
+      "probe": "Kapan terakhir Anda memutuskan hal teknologi, dan berapa lama prosesnya?",
+      "critical": false
+    },
+    {
+      "id": "D1c", "dimension": "D1",
+      "question": "Alasan berbenah sekarang berasal dari masalah bisnis konkret, atau ikut tren?",
+      "anchors": { "1": "Ikut tren / disuruh pihak lain", "2": "Sadar, tapi samar", "3": "Ada masalah, belum terukur", "4": "Masalah nyata, dampak bisa dijelaskan", "5": "Masalah nyata + dampak rupiah/jam terukur" },
+      "evidence": "Minta masalah + dampaknya dalam angka/unit.",
+      "probe": "Masalah itu dampaknya berapa per bulan, dan bagaimana Anda tahu?",
+      "critical": false
+    },
+    {
+      "id": "D1d", "dimension": "D1",
+      "question": "Tim operasional tahu & sepakat dengan arah yang sama?",
+      "anchors": { "1": "Tidak tahu", "2": "Sekadar dengar", "3": "Sebagian tahu", "4": "Sebagian besar tahu", "5": "Semua tahu dan bisa menjelaskan perannya" },
+      "evidence": "Tanyakan ke perwakilan tim, bukan hanya pemilik.",
+      "probe": "Kalau saya tanya staf, arah bisnis ini akan ia jelaskan bagaimana?",
+      "critical": false
+    },
+    {
+      "id": "D2a", "dimension": "D2",
+      "question": "Untung/rugi bersih bisa disebut akurat, cepat, dan mandiri (tanpa menunggu orang)?",
+      "anchors": { "1": "Tidak bisa", "2": "Manual, hitungan hari", "3": "Bisa, menunggu orang tertentu", "4": "Bisa, buka beberapa catatan", "5": "Saat itu juga, akurat, mandiri" },
+      "evidence": "Uji langsung: minta angka periode lalu dan satuan waktunya.",
+      "probe": "Sebutkan sekarang; kalau tidak bisa, siapa/apa yang menghalangi?",
+      "critical": false
+    },
+    {
+      "id": "D2b", "dimension": "D2",
+      "question": "Data transaksi terkumpul di satu sumber tunggal dan konsisten formatnya?",
+      "anchors": { "1": "Tidak tercatat", "2": "Tersebar & menumpuk", "3": "Sebagian digital, belum menyatu", "4": "Satu sumber, masih ada input ulang", "5": "Satu sumber, format konsisten, otomatis" },
+      "evidence": "Lihat sumbernya; hitung berapa tempat data tersebar.",
+      "probe": "Semua tempat catatan pekan lalu; mana yang paling sering dipakai?",
+      "critical": false
+    },
+    {
+      "id": "D2c", "dimension": "D2",
+      "question": "Kualitas data terjaga (akurat, tanpa duplikat, koreksi manual minimal)?",
+      "anchors": { "1": "Tidak tahu kualitasnya", "2": "Sering salah/duplikat", "3": "Kadang perlu koreksi manual", "4": "Jarang bermasalah", "5": "Terjaga & ada aturan pengecekan" },
+      "evidence": "Minta contoh koreksi/duplikat terakhir.",
+      "probe": "Kapan terakhir ada angka yang harus dikoreksi manual, dan kenapa?",
+      "critical": false
+    },
+    {
+      "id": "D2d", "dimension": "D2",
+      "question": "Data bisa diambil/ekspor mandiri, dan jelas siapa pemiliknya?",
+      "anchors": { "1": "Data terkunci di alat/orang", "2": "Bisa, tapi harus minta orang", "3": "Bisa, perlu bantuan teknis", "4": "Bisa mandiri, belum ada pemilik jelas", "5": "Bisa mandiri + pemilik data jelas" },
+      "evidence": "Tanyakan cara mengekspor data & siapa yang berhak.",
+      "probe": "Kalau besok butuh data mentahnya, siapa yang bisa mengeluarkan, dan seberapa cepat?",
+      "critical": true
+    },
+    {
+      "id": "D3a", "dimension": "D3",
+      "question": "Ada sistem inti yang menaungi proses utama (kasir/stok/pesanan) dan dipakai konsisten?",
+      "anchors": { "1": "Tidak ada", "2": "Sebagian, terpisah-pisah", "3": "Ada, hanya sebagian proses", "4": "Ada sistem inti, ada input ulang", "5": "Sistem inti jalan & dipakai konsisten" },
+      "evidence": "Sebut nama sistem & proses yang belum tercakup.",
+      "probe": "Proses mana yang masih di luar sistem itu?",
+      "critical": false
+    },
+    {
+      "id": "D3b", "dimension": "D3",
+      "question": "Antar alat saling terhubung otomatis, atau masih input ulang antar bagian?",
+      "anchors": { "1": "Serba manual", "2": "Sebagian ekspor-impor manual", "3": "Sebagian terhubung", "4": "Sebagian besar terhubung", "5": "Terintegrasi penuh, tanpa input ulang" },
+      "evidence": "Tanyakan bagian yang paling sering diketik dua kali.",
+      "probe": "Data apa yang paling sering Anda ketik ulang dari satu alat ke alat lain?",
+      "critical": false
+    },
+    {
+      "id": "D3c", "dimension": "D3",
+      "question": "Koneksi & daya cukup andal, dan ada cadangan saat gangguan?",
+      "anchors": { "1": "Sering putus / lumpuh", "2": "Fluktuatif", "3": "Cukup, kadang terganggu", "4": "Andal, tanpa cadangan", "5": "Andal + ada cadangan (jaringan/daya)" },
+      "evidence": "Frekuensi gangguan & ada/tidaknya cadangan.",
+      "probe": "Kalau listrik/jaringan mati 2 jam, operasional bagaimana?",
+      "critical": false
+    },
+    {
+      "id": "D3d", "dimension": "D3",
+      "question": "Perangkat memadai & layak untuk menjalankan sistem yang dibutuhkan?",
+      "anchors": { "1": "Belum ada / satu alat bergantian", "2": "Ada, sering rusak/lambat", "3": "Cukup, terbatas", "4": "Cukup & dipakai lancar", "5": "Lengkap & layak per bagian" },
+      "evidence": "Sebut jenis & kondisi perangkat yang dipakai harian.",
+      "probe": "Perangkat mana yang paling sering jadi penghambat?",
+      "critical": false
+    },
+    {
+      "id": "D4a", "dimension": "D4",
+      "question": "Operasional berjalan tanpa bergantung pada satu orang kunci?",
+      "anchors": { "1": "Lumpuh tanpa dia", "2": "Banyak macet", "3": "Jalan, banyak terlewat", "4": "Jalan, lebih lambat", "5": "Normal, semua bisa gantikan" },
+      "evidence": "Contoh terakhir saat orang kunci tidak ada.",
+      "probe": "Siapa orang kunci itu, dan apa yang bergantung padanya?",
+      "critical": false
+    },
+    {
+      "id": "D4b", "dimension": "D4",
+      "question": "Prosedur inti terdokumentasi dan dijalankan seragam oleh semua orang?",
+      "anchors": { "1": "Verbal/ingatan", "2": "Sebagian, tidak lengkap", "3": "Sebagian tertulis", "4": "Terdokumentasi, belum konsisten", "5": "Terdokumentasi, seragam, diperbarui" },
+      "evidence": "Lihat SOP yang benar-benar dipakai; cek versi terbaru.",
+      "probe": "Tunjukkan satu prosedur, dan bagaimana Anda tahu staf mengikutinya?",
+      "critical": false
+    },
+    {
+      "id": "D4c", "dimension": "D4",
+      "question": "Proses yang paling makan waktu sudah teridentifikasi dan diukur?",
+      "anchors": { "1": "Tidak tahu", "2": "Kira-kira saja", "3": "Tahu, belum diukur", "4": "Tahu & diukur kasar", "5": "Terukur (jam/periode) & dipantau" },
+      "evidence": "Angka jam/minggu atau kejadian/bulan untuk proses itu.",
+      "probe": "Proses itu makan berapa jam per minggu, dan sejak kapan Anda mengukurnya?",
+      "critical": false
+    },
+    {
+      "id": "D4d", "dimension": "D4",
+      "question": "Proses inti sudah cukup standar sehingga bisa diotomasi/dibantu alat?",
+      "anchors": { "1": "Serba improvisasi", "2": "Bervariasi per orang", "3": "Setengah standar", "4": "Sebagian besar standar", "5": "Standar & konsisten, siap dibantu alat" },
+      "evidence": "Bandingkan cara dua orang berbeda melakukan proses yang sama.",
+      "probe": "Kalau dua staf mengerjakan proses ini, hasilnya sama atau beda?",
+      "critical": false
+    },
+    {
+      "id": "D5a", "dimension": "D5",
+      "question": "Ada bukti nyata tim pernah mengadopsi perubahan dengan baik?",
+      "anchors": { "1": "Pernah menolak", "2": "Dipakai lalu ditinggalkan", "3": "Netral", "4": "Diterima dengan penyesuaian", "5": "Cepat terbiasa & mengajari yang lain" },
+      "evidence": "Contoh alat/cara baru terakhir + hasilnya.",
+      "probe": "Alat baru terakhir apa, dan sampai sekarang masih dipakai?",
+      "critical": false
+    },
+    {
+      "id": "D5b", "dimension": "D5",
+      "question": "Keputusan sehari-hari berbasis data, bukan feeling?",
+      "anchors": { "1": "Feeling saja", "2": "Pengalaman/ingatan", "3": "Kadang data", "4": "Sering pakai data", "5": "Selalu berbasis data & dibahas bersama" },
+      "evidence": "Contoh keputusan terakhir dan dasarnya.",
+      "probe": "Keputusan terakhir (harga/stok/menu); angka apa yang dipakai?",
+      "critical": false
+    },
+    {
+      "id": "D5c", "dimension": "D5",
+      "question": "Pemilik siap memimpin perubahan cara lama, bukan hanya menyetujui?",
+      "anchors": { "1": "Keras pada cara lama", "2": "Mau tapi pelan", "3": "Netral", "4": "Mendorong", "5": "Memimpin & jadi contoh" },
+      "evidence": "Contoh perubahan yang pemilik sendiri jalankan.",
+      "probe": "Perubahan apa yang terakhir Anda pimpin sendiri di tim?",
+      "critical": false
+    },
+    {
+      "id": "D5d", "dimension": "D5",
+      "question": "Ada cara sehat menangani penolakan karyawan terhadap perubahan?",
+      "anchors": { "1": "Mundur/membatalkan", "2": "Memaksa", "3": "Cuek", "4": "Membicarakan", "5": "Mendampingi & melibatkan" },
+      "evidence": "Cerita penanganan penolakan terakhir.",
+      "probe": "Terakhir ada yang menolak, apa yang Anda lakukan?",
+      "critical": false
+    },
+    {
+      "id": "D6a", "dimension": "D6",
+      "question": "Ada orang yang siap belajar lebih dulu (learnability), bukan hanya yang sudah mahir?",
+      "anchors": { "1": "Tidak ada", "2": "Hanya pemilik", "3": "Satu orang, ragu", "4": "Beberapa orang mau", "5": "Ada yang jelas mau & pernah berhasil belajar" },
+      "evidence": "Nama/peran + alat yang pernah ia kuasai.",
+      "probe": "Siapa, dan alat baru apa yang terakhir ia pelajari sampai bisa?",
+      "critical": false
+    },
+    {
+      "id": "D6b", "dimension": "D6",
+      "question": "Sebagian besar tim nyaman memakai alat digital harian?",
+      "anchors": { "1": "Nyaris semua tidak", "2": "Satu orang", "3": "Sebagian kecil", "4": "Sebagian besar", "5": "Hampir semua & bisa mengajari" },
+      "evidence": "Jumlah relatif yang nyaman.",
+      "probe": "Berapa dari seluruh tim yang biasa pakai aplikasi/HP untuk kerja?",
+      "critical": false
+    },
+    {
+      "id": "D6c", "dimension": "D6",
+      "question": "Pernah ada pelatihan/waktu khusus untuk belajar teknologi?",
+      "anchors": { "1": "Tidak pernah", "2": "Pernah sekali", "3": "Kadang", "4": "Ada jadwal, tidak rutin", "5": "Rutin & terencana" },
+      "evidence": "Jadwal/rekaman pelatihan bila ada.",
+      "probe": "Kapan terakhir tim belajar alat baru secara khusus?",
+      "critical": false
+    },
+    {
+      "id": "D6d", "dimension": "D6",
+      "question": "Ada orang (selain pemilik) yang bisa membaca & memahami laporan/angka?",
+      "anchors": { "1": "Tidak ada", "2": "Hanya pemilik", "3": "Satu orang", "4": "Beberapa orang", "5": "Beberapa orang & dipakai untuk keputusan" },
+      "evidence": "Sebut siapa & laporan apa yang ia baca.",
+      "probe": "Siapa lagi yang bisa membaca laporan penjualan/keuangan?",
+      "critical": false
+    },
+    {
+      "id": "D7a", "dimension": "D7",
+      "question": "Ada backup terjadwal dan pernah diuji bisa dipulihkan?",
+      "anchors": { "1": "Tidak ada backup", "2": "Salinan tidak teratur", "3": "Backup kadang, tanpa jadwal", "4": "Backup rutin, belum diuji", "5": "Backup otomatis & pemulihan teruji" },
+      "evidence": "Jadwal backup + bukti uji pemulihan.",
+      "probe": "Kapan terakhir backup, dan pernah dicoba pulihkan dari salinan itu?",
+      "critical": true
+    },
+    {
+      "id": "D7b", "dimension": "D7",
+      "question": "Kontrol akses per peran dan pemilik data ditetapkan jelas?",
+      "anchors": { "1": "Terbuka / akun bersama", "2": "Informal", "3": "Sebagian dibatasi", "4": "Dibatasi, belum terdokumentasi", "5": "Peran & pemilik data jelas, terdokumentasi" },
+      "evidence": "Daftar siapa yang bisa akses apa.",
+      "probe": "Siapa saja yang bisa membuka data keuangan & pelanggan, dan siapa pemiliknya?",
+      "critical": true
+    },
+    {
+      "id": "D7c", "dimension": "D7",
+      "question": "Ada prosedur saat sistem salah hitung/insiden, dengan review manusia?",
+      "anchors": { "1": "Tidak ada", "2": "Baru dipikir kalau terjadi", "3": "Ada informal", "4": "Ada prosedur, belum konsisten", "5": "Ada prosedur + review manusia jelas" },
+      "evidence": "Contoh insiden terakhir & cara penanganannya.",
+      "probe": "Terakhir sistem salah, siapa yang menangani dan bagaimana?",
+      "critical": false
+    },
+    {
+      "id": "D7d", "dimension": "D7",
+      "question": "Pengelolaan akun aman & sadar aturan perlindungan data pelanggan?",
+      "anchors": { "1": "Berbagi akun / tak sadar", "2": "Sekadar tahu", "3": "Sebagian terkelola", "4": "Akun terkelola, kepatuhan sebagian", "5": "Akun terkelola + patuh aturan data" },
+      "evidence": "Cara mengelola akun & pengetahuan aturan data.",
+      "probe": "Bagaimana akun dikelola, dan apa yang Anda tahu soal aturan data pribadi?",
+      "critical": false
+    },
+    {
+      "id": "D8a", "dimension": "D8",
+      "question": "Ada alokasi rutin (bukan mendadak) untuk teknologi?",
+      "anchors": { "1": "Tidak ada", "2": "Kalau mendesak saja", "3": "Ada, tidak menentu", "4": "Ada, sekali jalan", "5": "Ada, rutin & berkelanjutan" },
+      "evidence": "Sifat alokasi (rutin vs sekali); nominal opsional.",
+      "probe": "Alokasi ini rutin tiap bulan atau hanya saat perlu?",
+      "critical": false
+    },
+    {
+      "id": "D8b", "dimension": "D8",
+      "question": "Ada kesediaan menanggung biaya operasional berjalan (langganan/dukungan)?",
+      "anchors": { "1": "Tidak ada", "2": "Ingin gratis", "3": "Kecil, belum pasti", "4": "Bersedia setelah lihat hasil", "5": "Bersedia berkelanjutan bila terbukti" },
+      "evidence": "Sikap kesediaan; nominal tidak wajib.",
+      "probe": "Kalau terbukti menghemat, siap ada biaya bulanan?",
+      "critical": false
+    },
+    {
+      "id": "D8c", "dimension": "D8",
+      "question": "Pernah menghitung kerugian akibat cara manual (salah catat, stok, lembur)?",
+      "anchors": { "1": "Belum pernah", "2": "Perkiraan saja", "3": "Pernah, kasar", "4": "Pernah, dengan angka", "5": "Pernah & dipakai untuk keputusan" },
+      "evidence": "Angka kerugian manual bila pernah dihitung.",
+      "probe": "Berapa yang hilang sebulan karena cara manual, dan bagaimana Anda tahu?",
+      "critical": false
+    },
+    {
+      "id": "D8d", "dimension": "D8",
+      "question": "Ada riwayat berbelanja teknologi (pernah bayar alat/jasa digital)?",
+      "anchors": { "1": "Belum pernah bayar", "2": "Pernah sekali", "3": "Kadang", "4": "Rutin berlangganan", "5": "Rutin & dievaluasi manfaatnya" },
+      "evidence": "Sebut langganan/jasa yang pernah dibayar.",
+      "probe": "Aplikasi/jasa digital apa yang terakhir Anda bayar, dan masih dipakai?",
+      "critical": false
+    }
+  ],
+  "critical_ids": ["S2a", "S2b", "S7a", "S7b", "D2d", "D7a", "D7b"],
+  "critical_note": "critical_ids = butir yang menyangkut kualitas/akses data, pemilik data, dan pemulihan (backup). Bila butir kritis terjawab lemah/unknown, rekomendasi AI/deploy ditahan (prasyarat), tanpa mengubah angka skor agregat.",
+  "legacy": {
+    "note": "Bank lama (key_questions_client.md 8 soal, key_questions_lengkap.md 32 soal, SOP_Kesiapan_Digitalisasi.md, riset_validasi_kesiapan.md) memakai mode LEGACY: 'tidak tahu' diperlakukan sebagai skor rendah/netral dan klaim 'TERVALIDASI RISET' merujuk triangulasi literatur, BUKAN validasi empiris. Angka skor historis TIDAK diubah. Untuk sesi baru, pakai pertanyaan_v3.json + PLAYBOOK_KONSULTAN.md.",
+    "known_biases": ["bias kasir/omzet sebagai penanda kesiapan", "pilihan jawaban ganda (dua fokus dalam satu soal)", "rekomendasi otomatis mengarah ke AI tanpa membandingkan alternatif non-AI"]
+  },
+  "references": [
+    { "id": "nist-airmf-map", "use": "Konteks, tujuan, dan pemetaan termasuk pertimbangan alternatif non-AI sebelum mengadopsi AI.", "url": "https://airc.nist.gov/airmf-resources/playbook/map/" },
+    { "id": "nist-airmf-measure", "use": "Evaluasi sesuai penggunaan: ukur manfaat & risiko terhadap tujuan yang dinyatakan.", "url": "https://airc.nist.gov/airmf-resources/playbook/measure/" },
+    { "id": "nist-airmf-manage", "use": "Kelola: lanjut/tunda sesuai manfaat & risiko, termasuk opsi berhenti/rollback.", "url": "https://airc.nist.gov/airmf-resources/playbook/manage/" },
+    { "id": "oecd-sme-ai", "use": "Hambatan adopsi AI pada usaha kecil: data, keterampilan, infrastruktur, pembiayaan.", "url": "https://www.oecd.org/en/publications/ai-adoption-by-small-and-medium-sized-enterprises_426399c1-en.html" }
+  ]
+}

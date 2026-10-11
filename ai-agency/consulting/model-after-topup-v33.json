@@ -1,0 +1,4 @@
+{
+  "success": true,
+  "reply": "PluginLlmCompleteResult(text='Langkah terpenting: uji end-to-end dengan satu pesan WhatsApp nyata dari nomor klien sungguhan (bukan simulator) sampai tiket intake tersimpan di backend, guna memverifikasi webhook, consent, skor, dan pemetaan data berjalan di jalur produksi. Tanpa itu, jalur inbound WA belum bisa dinyatakan siap klien.', provider='custom', model='deepseek-v4.1-flash', agent_id='default', usage=PluginLlmUsage(input_tokens=97, output_tokens=85, total_tokens=182, cache_read_tokens=0, cache_write_tokens=0, cost_usd=None), audit={'plugin_id': 'omnisense-consultation', 'purpose': 'Owner-authorized model recovery probe', 'profile': '', 'task': ''})"
+}

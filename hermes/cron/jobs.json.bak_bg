@@ -1,0 +1,121 @@
+{
+  "jobs": [
+    {
+      "id": "510af029056e",
+      "name": "AI News Digest untuk Michael",
+      "prompt": "Riset berita/update TERBARU & PALING ANYAR dunia AI untuk bahan konten (Bahasa Indonesia). Prioritas maksimum pada kebaruan (newest) dan kekompakan (compact).\n\nPEDOMAN KONTEN: fokus pada AI agents & perkembangan AI yang mendukung kemajuan teknologi dan berkesinambungan dengan OmniSense (agency AI: agent, otomatisasi, tooling, model, tren AI untuk bisnis). BUKAN terbatas F&B (FNBSense hanya 1 produk, bukan tema sentral).\n\nSUMBER GANDA (pakai sebanyak mungkin, jangan cuma 1):\n1. web_search multi-query (AI agents, AI otomatisasi, AI untuk bisnis, OpenAI, Anthropic, Nvidia, Google, model baru, tren AI Indonesia) + web_extract baca detail.\n2. X/Twitter real-time via skill 'xurl': cari post/viral AI terbaru — utama buat yang lagi hangat dibahas.\n3. arXiv via skill 'arxiv': paper AI terbaru (agents, RAG, fine-tuning, interpretability) buat sense 'akan datang'.\n4. RSS/blog tech AI via blogwatcher/rss-feeds kalau tersedia.\n\nKRITERIA LINK: pilih 3-5 item urutan prioritas = (a) benar-benar BARU (within 24-48 jam kalau ada) dan belum pernah dilaporkan, (b) relevan & berkesinambungan dengan OmniSense (AI agents, otomatisasi, tooling AI, model baru), (c) berdampak nyata (bukan rumor). Setiap item WAJIB diverifikasi dari ≥1 situs kredibel (Reuters/CNBC/Bloomberg/TechCrunch/blog resmi vendor).\n\nOUTPUT COMPACT per item:\n• Judul singkat\n• Ringkasan 1-2 kalimat: apa yang terjadi\n• Relevansi 1 kalimat buat OmniSense (AI consultancy/agents)\n• 1 angle konten singkat\n• [Tanggal + sumber ringkas]\n\nUntuk ITEM PALING LAYAK (hanya teratas): lampirkan juga prompt poster news versi Indonesia (template locked omnisense-content: rasio 4:5, monokrom gelap obsidian #09090B/putih #FFFFFF/slate #94A3B8, glass viewport, tag [OMNISENSE RADAR], headline ALL-CAPS 2 baris, sub-headline, CTA 'JADWALKAN KONSULTASI GRATIS', footer @omnisense_id; tulis warna sebagai hex+nama warna) + caption IG (full) + caption X (max 280 char). Item lain cukup research compact.\n\nATURAN: JANGAN ulangi item yang pernah dilaporkan di output sebelumnya (pakai continuity). Kalau tidak ada update baru signifikan sejak terakhir: respond '[SILENT]'. Nada premium/memberdayakan, dilarang kata 'usaha kecil'/'UMKM kecil' (ganti 'bisnis kamu'/'bisnis lokal'), dilarang hard-selling. Tanpa intro panjang.\n\n## ALUR POSTING INSTAGRAM (PREVIEW DULU — jangan pernah publish sendiri)\nSetelah poster ID+EN selesai digambar dan caption IG final sudah jadi:\n1. Tulis caption IG final (TANPA hashtag) ke file `/home/ubuntu/ai-agency/ig_caption_pending.txt` dengan write_file.\n2. Antrekan sebagai kandidat — BELUM live:\n   `cd /home/ubuntu/ai-agency && python3 ig_queue.py queue --image konten_berita_id.png --caption-file ig_caption_pending.txt --key <slug-topik-singkat>`\n   (kalau ada kandidat sebelumnya masih menunggu, sebutkan di laporan bahwa kandidat lama diganti)\n3. Kirim preview ke grup home WhatsApp supaya user bisa menilai gambarnya:\n   `hermes send --to whatsapp \"<caption IG lengkap + hashtag>\n\nBalas 'post' untuk publish ke Instagram, 'batal' untuk tolak.\nMEDIA:/home/ubuntu/ai-agency/konten_berita_id.png\"`\n   Satu MEDIA per pesan — kirim poster versi EN di pesan terpisah.\n4. DILARANG menjalankan `ig_post.py --publish` atau `ig_queue.py publish` sendiri. Posting hanya terjadi setelah user menyetujui (balas 'post').\n5. Kalau tidak ada berita baru ([SILENT]): jangan antrekan apa pun, jangan kirim apa pun.\n6. QA WAJIB sebelum antre: `.venv/bin/python konten_harian.py --cek` (zona aman teks Y 135–1215) + buka PNG dengan vision_analyze (teks kepotong/tumpang, kartu kosong, angka hilang).\n7. Kalau user minta revisi poster/caption: render/ganti teks, antre ulang dengan `ig_queue.py queue` (kandidat lama otomatis diganti), lalu kirim preview baru.",
+      "skills": [
+        "omnisense-content",
+        "arxiv",
+        "xurl",
+        "rss-feeds"
+      ],
+      "skill": "omnisense-content",
+      "model": "deepseek-v4.1-flash",
+      "provider": "Api.b.ai",
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": [
+        "self"
+      ],
+      "schedule": {
+        "kind": "interval",
+        "minutes": 300,
+        "display": "every 300m"
+      },
+      "schedule_display": "every 300m",
+      "repeat": {
+        "times": null,
+        "completed": 61
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-09-08T02:15:49.912775+08:00",
+      "next_run_at": "2026-09-20T05:16:32.910542+08:00",
+      "last_run_at": "2026-09-20T00:16:32.910542+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "last_delivery_unverified": null,
+      "failure_streak": 0,
+      "deliver": "origin",
+      "origin": {
+        "platform": "whatsapp",
+        "chat_id": "120363411213386519@g.us",
+        "chat_name": "120363411213386519",
+        "thread_id": null,
+        "user_id": "52776591724663@lid",
+        "scope_id": null
+      },
+      "enabled_toolsets": [
+        "web",
+        "terminal",
+        "file",
+        "vision"
+      ],
+      "workdir": "/home/ubuntu/ai-agency",
+      "last_dispatch": {
+        "scheduled_at": "2026-09-19T16:50:57.417039+08:00",
+        "dispatched_at": "2026-09-19T16:51:32.784652+08:00",
+        "lateness_seconds": 35.4,
+        "kind": "on_time"
+      },
+      "fire_claim": null
+    },
+    {
+      "id": "4f133924e144",
+      "name": "IG token auto-refresh (OmniSense)",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": "ig_token_refresh.sh",
+      "no_agent": true,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1",
+        "display": "0 9 * * 1"
+      },
+      "schedule_display": "0 9 * * 1",
+      "repeat": {
+        "times": null,
+        "completed": 1
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-09-19T23:58:37.687467+08:00",
+      "next_run_at": "2026-09-21T09:00:00+08:00",
+      "last_run_at": "2026-09-19T23:58:57.953361+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "last_delivery_unverified": null,
+      "failure_streak": 0,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null,
+      "failure_deliver": "whatsapp",
+      "fire_claim": null
+    }
+  ],
+  "updated_at": "2026-09-20T01:10:05.406508+08:00"
+}

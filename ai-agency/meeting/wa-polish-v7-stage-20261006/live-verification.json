@@ -1,0 +1,7 @@
+{
+  "version": "wa-polish-v7",
+  "live_code_matches_tested": true,
+  "gateway_sha256": "86f5df379c1e56f271445292c046e8e1572bb7e9338a45dff13602e61d82d81d",
+  "plugin_sha256": "9cb8121a860dbd0e931d9e54a9ae88cac4c77f9f0753e6921cc78c1bc01511f7",
+  "no_real_whatsapp_test_send": true
+}

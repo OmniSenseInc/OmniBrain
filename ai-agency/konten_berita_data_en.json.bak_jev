@@ -1,0 +1,28 @@
+{
+  "tag": "[ AI RADAR ]",
+  "tanggal": "SEPTEMBER 19, 2026 · AI BRIEF",
+  "label_kartu": "WHAT YOU NEED TO KNOW",
+  "poin": [
+    {
+      "judul": "What happened",
+      "isi": "A former OpenAI researcher released a new AI model called Jev. It does not write text - it makes decisions for automated tasks."
+    },
+    {
+      "judul": "Why it matters",
+      "isi": "Because the answers are set in advance, the model cannot make things up. In real tests it ran 5-18x faster and far cheaper."
+    },
+    {
+      "judul": "For your business",
+      "isi": "Repetitive work - sorting orders, cleaning data, routine replies - can be handed to AI without fear of invented answers."
+    }
+  ],
+  "headline": [
+    "NEW AI: FAST, CHEAP,",
+    "NO MADE-UP ANSWERS"
+  ],
+  "headline_caption": "New AI model Jev: fast, cheap, and it cannot hallucinate",
+  "subjudul": "Automation is getting affordable and trustworthy. Start with the small tasks that eat your week.",
+  "cta": "BOOK A FREE CONSULTATION",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgents #AIforBusiness #ArtificialIntelligence #IndonesiaBusiness"
+}

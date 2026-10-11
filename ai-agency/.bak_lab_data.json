@@ -1,0 +1,28 @@
+{
+  "tag": "[ RADAR AI ]",
+  "tanggal": "22 SEPTEMBER 2026 · KABAR AI",
+  "label_kartu": "YANG PERLU KAMU TAHU",
+  "poin": [
+    {
+      "judul": "Apa yang terjadi",
+      "isi": "Anthropic membangun laboratorium biologi sendiri di kawasan San Francisco. Rencananya, Claude memandu robot menjalankan eksperimen obat dengan campur tangan manusia yang minimal. Dua alat pendukung sudah dilepas: Claude Science dan standar perangkat keras untuk peralatan lab."
+    },
+    {
+      "judul": "Kenapa ini penting",
+      "isi": "Selama ini AI membantu di layar: menulis, menganalisis, menyusun rencana. Kali ini agen AI masuk ke pekerjaan fisik, menjalankan langkah uji, mengukur, lalu mengulanginya di lab sungguhan. Anthropic menyebut peluang terbesarnya ada di penyakit yang sampai kini belum punya obat."
+    },
+    {
+      "judul": "Untuk bisnis kamu",
+      "isi": "Polanya akan menyusul di pekerjaan rutin lain: agen mengerjakan langkah teknis yang berulang, manusia memegang keputusan. Yang perlu disiapkan dari sekarang: alur kerja yang jelas dan titik pemeriksaan manusia."
+    }
+  ],
+  "headline": [
+    "AGEN AI MASUK",
+    "LAB NYATA"
+  ],
+  "headline_caption": "Claude memandu robot menjalankan eksperimen obat di lab milik Anthropic.",
+  "subjudul": "Anthropic membangun lab biologi sendiri: agen AI menjalankan eksperimen, manusia tetap mengawasi.",
+  "cta": "JADWALKAN KONSULTASI GRATIS",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgent #AIuntukBisnis #OtomatisasiAI #BisnisIndonesia"
+}

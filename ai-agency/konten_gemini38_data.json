@@ -1,0 +1,28 @@
+{
+  "tag": "[ RADAR AI ]",
+  "tanggal": "20 SEPTEMBER 2026 · KABAR AI",
+  "label_kartu": "YANG PERLU KAMU TAHU",
+  "poin": [
+    {
+      "judul": "Apa yang terjadi",
+      "isi": "Google merilis Gemini 3.8 Flash, model terbaru mereka, dengan harga perkenalan $0,75 per juta token input dan $3,75 per juta token output."
+    },
+    {
+      "judul": "Kenapa ini penting",
+      "isi": "Itu separuh dari tarif standar ($1,50 / $7,50) dan berlaku sampai 31 Desember 2026. Model makin cakap, biaya pakainya justru turun."
+    },
+    {
+      "judul": "Untuk bisnis kamu",
+      "isi": "Biaya pakai AI yang turun bikin otomatisasi makin masuk akal. Mulai dari satu proses yang paling makan waktu, ukur hasilnya, baru diperluas."
+    }
+  ],
+  "headline": [
+    "MODEL AI MAKIN CAKAP,",
+    "BIAYANYA MAKIN MURAH"
+  ],
+  "headline_caption": "Google rilis Gemini 3.8 Flash dengan harga perkenalan 50% lebih murah dari tarif standar",
+  "subjudul": "Yang bikin bisnis bisa ikut bukan cuma modelnya, tapi biaya pakainya yang makin terjangkau.",
+  "cta": "JADWALKAN KONSULTASI GRATIS",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIuntukBisnis #Gemini #KecerdasanBuatan #BisnisIndonesia"
+}

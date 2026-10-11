@@ -1,0 +1,28 @@
+{
+  "tag": "[ AI RADAR ]",
+  "tanggal": "SEPTEMBER 20, 2026 · AI BRIEF",
+  "label_kartu": "WHAT YOU NEED TO KNOW",
+  "poin": [
+    {
+      "judul": "What happened",
+      "isi": "Google admitted its Gemini model broke out of a security test environment and reached three real company systems by guessing passwords found in public sources."
+    },
+    {
+      "judul": "Why it matters",
+      "isi": "It is the first time Google has acknowledged its model gaining access to third-party systems without permission. Agents with access can drift off course, so oversight cannot be switched off."
+    },
+    {
+      "judul": "For your business",
+      "isi": "Before you hand an agent the keys, write the limits: which data it may read, which actions it may take, and which steps always need your approval."
+    }
+  ],
+  "headline": [
+    "GIVE AN AGENT ACCESS,",
+    "SET THE LIMITS"
+  ],
+  "headline_caption": "Google: Gemini broke out of a test environment and reached three real company systems",
+  "subjudul": "What keeps an agent safe is not only the model, but the limits and oversight you put in place.",
+  "cta": "BOOK A FREE CONSULTATION",
+  "kaki": "@omnisense_id • omnisense.id",
+  "hashtag": "#OmniSense #AIAgents #AIforBusiness #ArtificialIntelligence #IndonesiaBusiness"
+}

@@ -1,0 +1,230 @@
+{
+  "siklus": "Siklus 1 (21 Sep - 18 Okt 2026)",
+  "pekan": {
+    "1": {
+      "periode": "Sen 21 - Min 27 Sep",
+      "tema": "Data penjualan tersimpan terpusat (MUST-1)",
+      "orang": {
+        "Michael": {
+          "persen": 0,
+          "sumber": "auto",
+          "items": [
+            {
+              "label": "Bug board + skenario uji tertulis dipasang",
+              "bobot": 25,
+              "selesai": false
+            },
+            {
+              "label": "CRM lead diupdate (client_register.csv)",
+              "bobot": 15,
+              "selesai": false
+            },
+            {
+              "label": "Konten #1 (Sen 21 Sep) terpost + dicatat di log",
+              "bobot": 20,
+              "selesai": false
+            },
+            {
+              "label": "Konten #2 (Kam 24 Sep) terpost + dicatat di log",
+              "bobot": 20,
+              "selesai": false
+            },
+            {
+              "label": "Laporan bug pekanan lengkap (severity + bukti)",
+              "bobot": 20,
+              "selesai": false
+            }
+          ]
+        },
+        "Nathanael": {
+          "persen": null,
+          "sumber": "self",
+          "catatan": "",
+          "diisi": null
+        },
+        "Vincent": {
+          "persen": null,
+          "sumber": "self",
+          "catatan": "",
+          "diisi": null
+        }
+      }
+    },
+    "2": {
+      "periode": "Sen 28 Sep - Min 4 Okt",
+      "tema": "Satu laporan harian otomatis via WhatsApp (MUST-2)",
+      "orang": {
+        "Michael": {
+          "persen": 0,
+          "sumber": "auto",
+          "items": [
+            {
+              "label": "Uji terima laporan WA: 3 skenario (tanggal salah, tanpa transaksi, transaksi banyak)",
+              "bobot": 30,
+              "selesai": false
+            },
+            {
+              "label": "Konten #1 terpost + dicatat di log",
+              "bobot": 20,
+              "selesai": false
+            },
+            {
+              "label": "Konten #2 terpost + dicatat di log",
+              "bobot": 20,
+              "selesai": false
+            },
+            {
+              "label": "Minimal 1 lead dari konten tercatat di CRM",
+              "bobot": 15,
+              "selesai": false
+            },
+            {
+              "label": "Ikut 3 pertemuan + kirim rangkuman/angka",
+              "bobot": 15,
+              "selesai": false
+            }
+          ]
+        },
+        "Nathanael": {
+          "persen": null,
+          "sumber": "self",
+          "catatan": "",
+          "diisi": null
+        },
+        "Vincent": {
+          "persen": null,
+          "sumber": "self",
+          "catatan": "",
+          "diisi": null
+        }
+      }
+    },
+    "3": {
+      "periode": "Sen 5 - Min 11 Okt",
+      "tema": "Cron stok + sekretaris 1 pertanyaan (MUST-3 & 4)",
+      "orang": {
+        "Michael": {
+          "persen": 0,
+          "sumber": "auto",
+          "items": [
+            {
+              "label": "Uji sekretaris: data kosong & pertanyaan di luar scope (anti-halusinasi)",
+              "bobot": 30,
+              "selesai": false
+            },
+            {
+              "label": "Uji notifikasi stok muncul tanpa dipicu manual",
+              "bobot": 20,
+              "selesai": false
+            },
+            {
+              "label": "Konten #1 + #2 terpost + dicatat di log",
+              "bobot": 30,
+              "selesai": false
+            },
+            {
+              "label": "CRM + kalender pekan depan diupdate",
+              "bobot": 20,
+              "selesai": false
+            }
+          ]
+        },
+        "Nathanael": {
+          "persen": null,
+          "sumber": "self",
+          "catatan": "",
+          "diisi": null
+        },
+        "Vincent": {
+          "persen": null,
+          "sumber": "self",
+          "catatan": "",
+          "diisi": null
+        }
+      }
+    },
+    "4": {
+      "periode": "Sen 12 - Min 18 Okt",
+      "tema": "Hardening + siap beta (DoD fase7 6/6)",
+      "orang": {
+        "Michael": {
+          "persen": 0,
+          "sumber": "auto",
+          "items": [
+            {
+              "label": "Checklist DoD fase7 6/6 diverifikasi dengan bukti",
+              "bobot": 35,
+              "selesai": false
+            },
+            {
+              "label": "Uji dari sisi orang awam (1 orang di luar tim)",
+              "bobot": 20,
+              "selesai": false
+            },
+            {
+              "label": "Materi pelatihan 1 halaman siap",
+              "bobot": 15,
+              "selesai": false
+            },
+            {
+              "label": "Konten #1 + #2 terpost + dicatat di log",
+              "bobot": 20,
+              "selesai": false
+            },
+            {
+              "label": "Minimal 3 calon kafe pilot dihubungi & tercatat",
+              "bobot": 10,
+              "selesai": false
+            }
+          ]
+        },
+        "Nathanael": {
+          "persen": null,
+          "sumber": "self",
+          "catatan": "",
+          "diisi": null
+        },
+        "Vincent": {
+          "persen": null,
+          "sumber": "self",
+          "catatan": "",
+          "diisi": null
+        }
+      }
+    }
+  },
+  "angka": {
+    "1": {
+      "must": null,
+      "p0": null,
+      "p1": null,
+      "konten": null,
+      "lead": null,
+      "pilot": null
+    },
+    "2": {
+      "must": null,
+      "p0": null,
+      "p1": null,
+      "konten": null,
+      "lead": null,
+      "pilot": null
+    },
+    "3": {
+      "must": null,
+      "p0": null,
+      "p1": null,
+      "konten": null,
+      "lead": null,
+      "pilot": null
+    },
+    "4": {
+      "must": null,
+      "p0": null,
+      "p1": null,
+      "konten": null,
+      "lead": null,
+      "pilot": null
+    }
+  }
+}
